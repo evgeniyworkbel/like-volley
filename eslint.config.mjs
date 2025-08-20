@@ -14,6 +14,7 @@ const eslintConfig = [
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
     rules: {
       "import/no-anonymous-default-export": "off",
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     },
   }),
   {
