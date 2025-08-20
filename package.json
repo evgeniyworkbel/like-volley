@@ -12,7 +12,7 @@
     "format": "prettier -w .",
     "prepare": "husky"
   },
-    "lint-staged": {
+  "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier -w --ignore-unknown"
