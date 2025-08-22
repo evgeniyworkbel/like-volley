@@ -13,23 +13,15 @@ export function Header() {
           height={59}
           alt="Header picture"
         />
-        <div className="flex items-center gap-15">
-          <Link className="font-bold" href={home.href}>
-            {home.title}{" "}
-          </Link>
-          <Link className="font-bold" href={blog.href}>
-            {blog.title}
-          </Link>
-          <Link className="font-bold" href={about.href}>
-            {about.title}
-          </Link>
-          <Link className="font-bold" href={reviews.href}>
-            {reviews.title}
-          </Link>
-          <Link className="font-bold text-orange-500" href={phone.href}>
+        <nav className="flex items-center gap-15 font-bold">
+          <Link href={home.href}>{home.title}</Link>
+          <Link href={blog.href}>{blog.title}</Link>
+          <Link href={about.href}>{about.title}</Link>
+          <Link href={reviews.href}>{reviews.title}</Link>
+          <Link className="text-orange-500" href={phone.href}>
             {phone.title}
           </Link>
-        </div>
+        </nav>
       </div>
     </header>
   );
