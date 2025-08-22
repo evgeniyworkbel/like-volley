@@ -1,27 +1,35 @@
-import { HeaderMenu } from "@/shared/ui";
 import Link from "next/link";
+import Image from "next/image";
+import { navLinks } from "@/shared/constants/navigation";
 
 export function Header() {
+  const { home, blog, about, reviews, phone } = navLinks;
   return (
     <header>
-      <div className="flex justify-end w-screen h-27 py-6 px-21 ">
-        <HeaderMenu>
-          <Link href="page/name" className="font-urbanist">
-            Главная
+      <div className="flex justify-between h-27 py-6 px-21">
+        <Image
+          src="/assets/header.png"
+          width={89}
+          height={59}
+          alt="Header picture"
+        />
+        <div className="flex items-center gap-15">
+          <Link className="font-bold" href={home.href}>
+            {home.title}{" "}
           </Link>
-          <Link href="page/name" className="font-urbanist">
-            Блог
+          <Link className="font-bold" href={blog.href}>
+            {blog.title}
           </Link>
-          <Link href="page/name" className="font-urbanist">
-            О школе
+          <Link className="font-bold" href={about.href}>
+            {about.title}
           </Link>
-          <Link href="page/name" className="font-urbanist">
-            Отзывы
+          <Link className="font-bold" href={reviews.href}>
+            {reviews.title}
           </Link>
-          <Link href="page/name" className="font-urbanist text-orange-500">
-            +375 25 663 33 22
+          <Link className="font-bold text-orange-500" href={phone.href}>
+            {phone.title}
           </Link>
-        </HeaderMenu>
+        </div>
       </div>
     </header>
   );
