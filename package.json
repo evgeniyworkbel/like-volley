@@ -34,6 +34,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
+    "@evgeniyworkbel/prettier-config": "^1.0.2",
     "@evgeniyworkbel/stylelint-config": "^1.0.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
