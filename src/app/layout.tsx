@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Shantell_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const shantelSans = Shantell_Sans({
-  variable: "--font-shantel",
+const shantellSans = Shantell_Sans({
+  variable: "--font-shantell-sans",
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${shantelSans.variable}  ${inter.variable}  antialiased`}
+        className={`${shantellSans.variable}  ${inter.variable}  antialiased`}
       >
         {children}
       </body>

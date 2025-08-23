@@ -8,10 +8,10 @@ export function Header() {
     <header>
       <div className="flex justify-between h-27 py-6 px-21">
         <Image
-          src="/assets/header.png"
+          src="/header.png"
           width={89}
           height={59}
-          alt="Header picture"
+          alt="Логотип школы волейбола Like Volley"
         />
         <nav className="flex items-center gap-15 font-bold">
           <Link href={home.href}>{home.title}</Link>
