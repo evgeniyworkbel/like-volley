@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "tsc && next build --turbopack",
     "start": "next start",
     "lint:lang": "eslint .",
     "lint:style": "stylelint \"**/*.css\"",
@@ -35,7 +35,7 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
     "@evgeniyworkbel/prettier-config": "^1.0.2",
-    "@evgeniyworkbel/stylelint-config": "^1.0.1",
+    "@evgeniyworkbel/stylelint-config": "^1.0.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
