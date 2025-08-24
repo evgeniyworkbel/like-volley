@@ -24,8 +24,6 @@
   :root {
     --background: oklch(0 0 0deg);
     --foreground: oklch(1 0 0deg);
-    --accent-orange: oklch(0.6795 0.2075 39.59deg);
-    --accent-blue: oklch(0.5381 0.2545 270.46deg);
   }
 }
 
