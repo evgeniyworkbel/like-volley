@@ -16,7 +16,7 @@ export function Header() {
         <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
         <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
         <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
-        <Link className="text-orange-500" href={navLinks.phone.href}>
+        <Link className="text-accent-orange" href={navLinks.phone.href}>
           {navLinks.phone.title}
         </Link>
       </nav>
