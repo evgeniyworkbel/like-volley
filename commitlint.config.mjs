@@ -6,7 +6,7 @@ export default {
     "scope-enum": [
       2,
       "always",
-      ["public", "app", "widgets", "shared", "root", "packaging", "env"],
+      ["public", "app", "widgets", "shared", "packaging", "project"],
     ],
     "body-max-line-length": [2, "always", 200],
   },
