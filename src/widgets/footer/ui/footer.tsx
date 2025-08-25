@@ -22,7 +22,7 @@ export function Footer() {
         </p>
       </div>
       <div className="relative flex flex-col justify-between">
-        <p className="font-shantell text-[38px] font-normal">Меню</p>
+        <p className="font-shantell text-[38px] font-normal">МЕНЮ</p>
         <nav className="mt-[-40px] flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
           <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
