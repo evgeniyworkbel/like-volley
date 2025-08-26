@@ -8,7 +8,8 @@ export function Footer() {
     <footer className="bg-accent-orange pt-25 flex justify-between rounded-t-[20px] px-20 pb-[81px]">
       <div className="flex flex-col gap-4">
         <Image
-          src="/logo-2.svg"
+          className="bg-white"
+          src="/logo.png"
           width={51}
           height={37}
           alt="Логотип школы волейбола Like Volley"
