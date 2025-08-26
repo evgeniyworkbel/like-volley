@@ -1,19 +1,15 @@
+import { cn } from "@/shared/lib";
 import { ReactNode } from "react";
 
 type ButtonProps = {
-  children: ReactNode;
   className?: string;
   onClick?: () => void;
-  ariaLabel?: string;
+  children: ReactNode;
 };
 
-export function Button({ children, ...props }: ButtonProps) {
+export function Button({ children, className, ...props }: ButtonProps) {
   return (
-    <button
-      {...props}
-      className={`h-fit w-fit ${props.className}`}
-      aria-label={props.ariaLabel}
-    >
+    <button {...props} className={cn("w-fit", className)}>
       {children}
     </button>
   );
