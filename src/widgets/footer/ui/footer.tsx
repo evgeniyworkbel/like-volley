@@ -15,11 +15,11 @@ export function Footer() {
           height={37}
           alt="Логотип школы волейбола Like Volley"
         />
-        <div className="flex flex-col gap-2 text-sm">
+        <p className="flex flex-col gap-2 text-sm">
           <span>Волейбол для всех возрастов</span>
           <span>с индивидуальным подходом и</span>
           <span>современными методиками обучения.</span>
-        </div>
+        </p>
       </div>
       <div className="relative flex flex-col justify-between">
         <p className="font-shantell text-[38px] uppercase">меню</p>
@@ -76,12 +76,12 @@ export function Footer() {
         <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-white">
           Записаться
         </Button>
-        <div className="flex flex-col gap-2 text-sm">
-          <span>ИП Бла бла бла</span>
-          <span>НИП 0002920192381984720928573-4901</span>
-          <span className="mb-4">ИНН 2039847948</span>
-          <span>© 2024 LikeVolley Все права защищены.</span>
-        </div>
+        <ul className="flex flex-col gap-2 text-sm">
+          <li>ИП Бла бла бла</li>
+          <li>НИП 0002920192381984720928573-4901</li>
+          <li className="mb-4">ИНН 2039847948</li>
+          <li>© 2024 LikeVolley Все права защищены.</li>
+        </ul>
       </div>
     </footer>
   );

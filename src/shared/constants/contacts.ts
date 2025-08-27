@@ -6,7 +6,7 @@ export const contactsLinks = {
     href: "/",
   },
   instagram: {
-    href: "https://www.instagram.com/like.volley.by/",
+    href: "https://www.instagram.com/like.volley.by",
   },
   phone: {
     href: "tel:+375298020748",
