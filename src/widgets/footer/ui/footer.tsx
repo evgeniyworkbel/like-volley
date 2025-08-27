@@ -2,10 +2,11 @@ import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import Image from "next/image";
 import { Button } from "@/shared/ui";
+import { contactsLinks } from "@/shared/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-accent-orange pt-25 flex justify-between rounded-t-[20px] px-20 pb-[81px]">
+    <footer className="bg-accent-orange pt-25 flex justify-between rounded-t-[20px] px-20 pb-20">
       <div className="flex flex-col gap-4">
         <Image
           className="bg-white"
@@ -21,7 +22,7 @@ export function Footer() {
         </div>
       </div>
       <div className="relative flex flex-col justify-between">
-        <p className="font-shantell text-[38px]">МЕНЮ</p>
+        <p className="font-shantell text-[38px] uppercase">меню</p>
         <nav className="mb-10 flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
           <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
@@ -36,7 +37,7 @@ export function Footer() {
           alt="Декоративная стрелка указателя"
         />
         <div className="flex gap-6">
-          <Link href={"/"}>
+          <Link href={contactsLinks.phone.href}>
             <Image
               src="/phone.svg"
               width={68}
@@ -44,25 +45,25 @@ export function Footer() {
               alt="Телефон школы волейбола Like Volley"
             />
           </Link>
-          <Link href={"/"}>
+          <Link href={contactsLinks.location.href}>
             <Image
-              src="/local.svg"
+              src="/location.svg"
               width={68}
               height={68}
               alt="Локация школы волейбола Like Volley"
             />
           </Link>
-          <Link href={"/"}>
+          <Link href={contactsLinks.email.href}>
             <Image
-              src="/mail.svg"
+              src="/email.svg"
               width={68}
               height={68}
               alt="Почта школы волейбола Like Volley"
             />
           </Link>
-          <Link href={"/"}>
+          <Link href={contactsLinks.instagram.href}>
             <Image
-              src="/inst.svg"
+              src="/instagram.svg"
               width={68}
               height={68}
               alt="Instagram школы волейбола Like Volley"
@@ -72,7 +73,7 @@ export function Footer() {
         </div>
       </div>
       <div className="flex flex-col gap-20">
-        <Button className="text-background rounded-[40px] bg-white px-20 py-4 text-2xl font-medium">
+        <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-white">
           Записаться
         </Button>
         <div className="flex flex-col gap-2 text-sm">

@@ -7,7 +7,7 @@ type ButtonProps = {
   children: ReactNode;
 };
 
-export function Button({ children, className, ...props }: ButtonProps) {
+export function Button({ className, children, ...props }: ButtonProps) {
   return (
     <button {...props} className={cn("w-fit", className)}>
       {children}
