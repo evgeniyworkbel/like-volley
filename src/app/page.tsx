@@ -1,3 +1,4 @@
+import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 
 export default function Home() {
@@ -5,7 +6,7 @@ export default function Home() {
     <div>
       <Header />
       <main></main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
