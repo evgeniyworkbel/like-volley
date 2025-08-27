@@ -73,7 +73,7 @@ export function Footer() {
         </div>
       </div>
       <div className="flex flex-col gap-20">
-        <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-white">
+        <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium">
           Записаться
         </Button>
         <ul className="flex flex-col gap-2 text-sm">
