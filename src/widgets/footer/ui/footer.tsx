@@ -23,21 +23,21 @@ export function Footer() {
       </div>
       <div className="relative flex flex-col justify-between">
         <p className="font-shantell text-[38px] uppercase">меню</p>
-        <nav className="mb-10 flex items-center gap-[34px] text-2xl">
+        <nav className="z-10 mb-10 flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
           <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
           <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
           <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
         </nav>
         <Image
-          className="pointer-events-none absolute right-0 top-0 translate-x-[70%] translate-y-[25%] transform"
+          className="absolute right-0 top-0 z-0 translate-x-[70%] translate-y-[25%] transform"
           src="/arrow.svg"
           width={188}
           height={162}
           alt="Декоративная стрелка указателя"
         />
         <div className="flex gap-6">
-          <a
+          <Link
             href={contactsLinks.phone.href}
             target="_blank"
             rel="noopener noreferrer"
@@ -48,8 +48,8 @@ export function Footer() {
               height={68}
               alt="Телефон школы волейбола Like Volley"
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href={contactsLinks.location.href}
             target="_blank"
             rel="noopener noreferrer"
@@ -60,8 +60,8 @@ export function Footer() {
               height={68}
               alt="Локация школы волейбола Like Volley"
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href={contactsLinks.email.href}
             target="_blank"
             rel="noopener noreferrer"
@@ -72,8 +72,8 @@ export function Footer() {
               height={68}
               alt="Почта школы волейбола Like Volley"
             />
-          </a>
-          <a
+          </Link>
+          <Link
             href={contactsLinks.instagram.href}
             target="_blank"
             rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export function Footer() {
               height={68}
               alt="Instagram школы волейбола Like Volley"
             />
-          </a>
+          </Link>
           <div />
         </div>
       </div>
