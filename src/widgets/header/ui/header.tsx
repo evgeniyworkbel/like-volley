@@ -4,7 +4,7 @@ import { navLinks } from "@/shared/constants";
 
 export function Header() {
   return (
-    <header className="h-27 px-21 flex justify-between py-6">
+    <header className="h-27 px-21 bg-accent-orange flex justify-between rounded-b-[14px] py-6">
       <Image
         src="/logo.png"
         width={89}
@@ -16,9 +16,7 @@ export function Header() {
         <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
         <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
         <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
-        <Link className="text-accent-orange" href={navLinks.phone.href}>
-          {navLinks.phone.title}
-        </Link>
+        <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
     </header>
   );
