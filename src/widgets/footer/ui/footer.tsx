@@ -23,7 +23,7 @@ export function Footer() {
       </div>
       <div className="relative flex flex-col justify-between">
         <p className="font-shantell text-[38px] uppercase">меню</p>
-        <nav className="mb-10 flex items-center gap-[34px] text-2xl">
+        <nav className="z-10 mb-10 flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
           <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
           <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
@@ -37,7 +37,11 @@ export function Footer() {
           alt="Декоративная стрелка указателя"
         />
         <div className="flex gap-6">
-          <Link href={contactsLinks.phone.href}>
+          <Link
+            href={contactsLinks.phone.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/phone.svg"
               width={68}
@@ -45,7 +49,11 @@ export function Footer() {
               alt="Телефон школы волейбола Like Volley"
             />
           </Link>
-          <Link href={contactsLinks.location.href}>
+          <Link
+            href={contactsLinks.location.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/location.svg"
               width={68}
@@ -53,7 +61,11 @@ export function Footer() {
               alt="Локация школы волейбола Like Volley"
             />
           </Link>
-          <Link href={contactsLinks.email.href}>
+          <Link
+            href={contactsLinks.email.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/email.svg"
               width={68}
@@ -61,7 +73,11 @@ export function Footer() {
               alt="Почта школы волейбола Like Volley"
             />
           </Link>
-          <Link href={contactsLinks.instagram.href}>
+          <Link
+            href={contactsLinks.instagram.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/instagram.svg"
               width={68}
