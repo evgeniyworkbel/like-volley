@@ -22,12 +22,12 @@
   --font-inter: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: oklch(0 0 0deg);
     --foreground: oklch(1 0 0deg);
   }
-}
+} */
 
 body {
   background: var(--background);
