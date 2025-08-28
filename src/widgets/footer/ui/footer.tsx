@@ -30,7 +30,7 @@ export function Footer() {
           <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
         </nav>
         <Image
-          className="absolute right-0 top-0 z-0 translate-x-[70%] translate-y-[25%] transform"
+          className="absolute right-0 top-0 translate-x-[70%] translate-y-[25%] transform"
           src="/arrow.svg"
           width={188}
           height={162}
