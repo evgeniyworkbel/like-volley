@@ -30,45 +30,61 @@ export function Footer() {
           <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
         </nav>
         <Image
-          className="absolute right-0 top-0 translate-x-[70%] translate-y-[25%] transform"
+          className="pointer-events-none absolute right-0 top-0 translate-x-[70%] translate-y-[25%] transform"
           src="/arrow.svg"
           width={188}
           height={162}
           alt="Декоративная стрелка указателя"
         />
         <div className="flex gap-6">
-          <Link href={contactsLinks.phone.href}>
+          <a
+            href={contactsLinks.phone.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/phone.svg"
               width={68}
               height={68}
               alt="Телефон школы волейбола Like Volley"
             />
-          </Link>
-          <Link href={contactsLinks.location.href}>
+          </a>
+          <a
+            href={contactsLinks.location.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/location.svg"
               width={68}
               height={68}
               alt="Локация школы волейбола Like Volley"
             />
-          </Link>
-          <Link href={contactsLinks.email.href}>
+          </a>
+          <a
+            href={contactsLinks.email.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/email.svg"
               width={68}
               height={68}
               alt="Почта школы волейбола Like Volley"
             />
-          </Link>
-          <Link href={contactsLinks.instagram.href}>
+          </a>
+          <a
+            href={contactsLinks.instagram.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/instagram.svg"
               width={68}
               height={68}
               alt="Instagram школы волейбола Like Volley"
             />
-          </Link>
+          </a>
           <div />
         </div>
       </div>
