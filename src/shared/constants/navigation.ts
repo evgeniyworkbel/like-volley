@@ -19,9 +19,9 @@ export const navLinks = {
     title: "+375 25 663 33 22",
     href: "tel:+375256633322",
   },
-  offer: {
+  offerAgreement: {
     title: "Договор оферты",
-    href: "/offer",
+    href: "/offer-agreement",
   },
   policy: {
     title: "Политика приватности",

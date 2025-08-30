@@ -6,7 +6,7 @@ import { contactsLinks } from "@/shared/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-accent-orange pt-25 md:gap-x-15 grid rounded-t-[20px] px-20 pb-20 md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(3,1fr)]">
+    <footer className="bg-accent-orange pt-25 md:gap-x-15 grid rounded-t-[20px] px-20 pb-20 md:grid-cols-2 lg:grid-cols-3">
       <div className="md:mb-15 flex flex-col gap-4 md:col-span-2 md:items-center lg:col-span-1 lg:mb-0 lg:items-start">
         <Image
           className="bg-accent-orange md:relative md:right-28 lg:static lg:right-0"
@@ -33,7 +33,9 @@ export function Footer() {
         </nav>
         <div className="flex gap-x-20 text-xs">
           <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
-          <Link href={navLinks.offer.href}>{navLinks.offer.title}</Link>
+          <Link href={navLinks.offerAgreement.href}>
+            {navLinks.offerAgreement.title}
+          </Link>
         </div>
         <div className="flex gap-6">
           <Link
