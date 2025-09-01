@@ -6,7 +6,7 @@ import { contactsLinks } from "@/shared/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-accent-orange pt-25 flex justify-between rounded-t-[20px] px-20 pb-20">
+    <footer className="flex justify-between rounded-t-[20px] bg-accent-orange px-20 pt-25 pb-20">
       <div className="flex flex-col gap-4">
         <Image
           className="bg-white"
@@ -30,7 +30,7 @@ export function Footer() {
           <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
         </nav>
         <Image
-          className="absolute right-0 top-0 translate-x-[70%] translate-y-[25%] transform"
+          className="absolute top-0 right-0 translate-x-[70%] translate-y-[25%] transform"
           src="/arrow.svg"
           width={188}
           height={162}
