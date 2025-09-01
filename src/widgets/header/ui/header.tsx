@@ -4,14 +4,14 @@ import { navLinks } from "@/shared/constants";
 
 export function Header() {
   return (
-    <header className="h-27 px-21 bg-accent-orange flex justify-between rounded-b-[14px] py-6">
+    <header className="flex h-27 justify-between rounded-b-[14px] bg-accent-orange px-21 py-6">
       <Image
         src="/logo.png"
         width={89}
         height={59}
         alt="Логотип школы волейбола Like Volley"
       />
-      <nav className="gap-15 flex items-center font-bold">
+      <nav className="flex items-center gap-15 font-bold">
         <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
         <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
         <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
