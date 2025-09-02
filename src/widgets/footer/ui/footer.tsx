@@ -7,7 +7,7 @@ import { contactsLinks } from "@/shared/constants";
 export function Footer() {
   return (
     <footer className="grid grid-cols-[auto_auto_auto] rounded-t-[20px] bg-accent-orange px-20 pt-25 pb-20 lg:gap-x-15">
-      <div className="flex flex-col gap-4 md:col-span-3 md:mb-15 md:items-center lg:col-span-1 lg:mb-0 lg:items-start">
+      <div className="flex flex-col gap-4 md:col-span-full md:mb-15 md:items-center lg:col-span-1 lg:mb-0 lg:items-start">
         <Image
           className="bg-accent-orange md:relative md:right-28 lg:static lg:right-0"
           src="/logo.png"
@@ -89,7 +89,7 @@ export function Footer() {
           <div />
         </div>
       </div>
-      <div className="flex flex-col gap-20 md:items-center lg:items-start">
+      <div className="flex flex-col gap-20 md:col-span-2 md:items-center lg:col-span-1 lg:items-start">
         <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium">
           Записаться
         </Button>
