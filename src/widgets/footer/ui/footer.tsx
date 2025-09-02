@@ -6,10 +6,10 @@ import { contactsLinks } from "@/shared/constants";
 
 export function Footer() {
   return (
-    <footer className="flex justify-between rounded-t-[20px] bg-accent-orange px-20 pt-25 pb-20">
-      <div className="flex flex-col gap-4">
+    <footer className="grid grid-cols-[auto_auto_auto] rounded-t-[20px] bg-accent-orange px-20 pt-25 pb-20 lg:gap-x-15">
+      <div className="flex flex-col gap-4 md:col-span-3 md:mb-15 md:items-center lg:col-span-1 lg:mb-0 lg:items-start">
         <Image
-          className="bg-white"
+          className="bg-accent-orange md:relative md:right-28 lg:static lg:right-0"
           src="/logo.png"
           width={51}
           height={37}
@@ -21,21 +21,22 @@ export function Footer() {
           <span>современными методиками обучения.</span>
         </p>
       </div>
-      <div className="relative flex flex-col justify-between">
+      <div className="flex flex-col justify-between md:mr-auto lg:mr-0">
         <p className="font-shantell text-[38px] uppercase">меню</p>
-        <nav className="z-10 mb-10 flex items-center gap-[34px] text-2xl">
+        <nav className="flex items-center gap-8.5 text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
           <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
-          <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
+          <Link className="text-nowrap" href={navLinks.about.href}>
+            {navLinks.about.title}
+          </Link>
           <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
         </nav>
-        <Image
-          className="absolute top-0 right-0 translate-x-[70%] translate-y-[25%] transform"
-          src="/arrow.svg"
-          width={188}
-          height={162}
-          alt="Декоративная стрелка указателя"
-        />
+        <div className="flex gap-x-20 text-xs">
+          <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
+          <Link href={navLinks.offerAgreement.href}>
+            {navLinks.offerAgreement.title}
+          </Link>
+        </div>
         <div className="flex gap-6">
           <Link
             href={contactsLinks.phone.href}
@@ -88,7 +89,7 @@ export function Footer() {
           <div />
         </div>
       </div>
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20 md:items-center lg:items-start">
         <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium">
           Записаться
         </Button>
