@@ -4,10 +4,9 @@
   --background: oklch(1 0 0deg);
   --foreground: oklch(0 0 0deg);
   --accent-orange: oklch(0.6795 0.2075 39.59deg);
+  --accent-orange-light: oklch(0.8508 0.0629 45.9deg);
   --accent-blue: oklch(0.5381 0.2545 270.46deg);
   --white: oklch(1 0 0deg);
-  --black: oklch(0 0 0deg);
-  --orange: oklch(0.8508 0.0629 45.9deg);
 }
 
 @theme {
@@ -18,10 +17,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent-orange: var(--accent-orange);
+  --color-accent-orange-light: var(--accent-orange-light);
   --color-accent-blue: var(--accent-blue);
   --color-white: var(--white);
-  --color-black: var(--black);
-  --color-orange: var(--orange);
   --font-shantell: var(--font-shantell-sans);
   --font-inter: var(--font-inter);
 }
@@ -37,12 +35,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
-}
-
-details > summary img {
-  transition: transform 0.3s ease;
-}
-
-details[open] > summary img {
-  transform: rotate(180deg);
 }
