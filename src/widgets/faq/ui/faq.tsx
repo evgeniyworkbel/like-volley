@@ -5,7 +5,7 @@ export function Faq() {
   return (
     <div className="flex flex-col gap-32 px-20 py-10">
       <hgroup className="flex flex-col items-center gap-4 text-lg">
-        <Title className="font-shantell text-6xl font-bold whitespace-nowrap text-accent-orange">
+        <Title className="font-shantell text-6xl font-bold text-accent-orange">
           Вопросы<Title className="inline text-foreground"> и ответы</Title>
         </Title>
         <p className="flex flex-col items-center">
