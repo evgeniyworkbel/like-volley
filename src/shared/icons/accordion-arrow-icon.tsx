@@ -1,4 +1,4 @@
-import { IconPropsType } from "../ types";
+import { IconPropsType } from "../types";
 
 export function AccordionArrowIcon({
   className,
