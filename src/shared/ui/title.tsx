@@ -1,9 +1,5 @@
-type TitleProps = Pick<
-  React.HTMLAttributes<HTMLHeadingElement>,
-  "className"
-> & {
-  children: React.ReactNode;
-};
+type TitleProps = Pick<React.HTMLAttributes<HTMLHeadingElement>, "className"> &
+  Required<Pick<React.PropsWithChildren, "children">>;
 
 export function Title({ children, ...props }: TitleProps) {
   return (
