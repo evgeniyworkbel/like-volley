@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-
-type TitleProps = {
-  className?: string;
-  children: ReactNode;
+type TitleProps = Pick<
+  React.HTMLAttributes<HTMLHeadingElement>,
+  "className"
+> & {
+  children: React.ReactNode;
 };
 
 export function Title({ children, ...props }: TitleProps) {

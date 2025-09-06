@@ -1,6 +1,4 @@
-import { SVGAttributes } from "react";
-
-export type IconPropsType = Pick<
-  SVGAttributes<SVGElement>,
+export type IconProps = Pick<
+  React.SVGAttributes<SVGElement>,
   "className" | "width" | "height"
 >;

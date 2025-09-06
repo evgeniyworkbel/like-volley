@@ -1,10 +1,10 @@
-import { IconPropsType } from "../types";
+import { IconProps } from "../types";
 
 export function AccordionArrowIcon({
   className,
   width = 20,
   height = 20,
-}: IconPropsType) {
+}: IconProps) {
   return (
     <svg
       className={className}
@@ -18,7 +18,7 @@ export function AccordionArrowIcon({
         fillRule="evenodd"
         clipRule="evenodd"
         d="M11 20.6343C5.47715 20.6343 0.999998 16.1571 0.999998 10.6343C0.999998 5.11143 5.47715 0.634277 11 0.634277C16.5228 0.634277 21 5.11143 21 10.6343C21 16.1571 16.5228 20.6343 11 20.6343Z"
-        fill="none"
+        fill="#FDA781"
         stroke="white"
         strokeLinecap="round"
       />
