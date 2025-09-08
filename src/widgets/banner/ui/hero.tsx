@@ -51,7 +51,7 @@ export function Hero() {
             <Title className="flex text-green-light">для всех возрастов</Title>
           </div>
           <Image
-            className="h-auto max-w-full xl:absolute xl:right-0 xl:bottom-0"
+            className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
             src="/hero.svg"
             width={543}
             height={446}
