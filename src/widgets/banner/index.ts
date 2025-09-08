@@ -1,1 +1,1 @@
-export { Banner } from "./ui/banner";
+export { Hero } from "./ui/hero";
