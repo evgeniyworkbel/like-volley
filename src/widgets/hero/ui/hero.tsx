@@ -9,7 +9,7 @@ export function Hero() {
   const [age, setAge] = useState<"children" | "adults">("children");
 
   return (
-    <div className="flex flex-col px-5 py-[50px] xl:px-20 xl:py-[50px]">
+    <div className="flex flex-col px-5 py-[50px] xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
         <Button
           className={cn(
