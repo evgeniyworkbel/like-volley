@@ -69,7 +69,7 @@ export function Hero() {
         </div>
         <Button
           className={cn(
-            "rounded-[40px] px-15 py-3 text-xs text-white xl:px-25 xl:py-4 xl:text-xl",
+            "rounded-3xl px-15 py-3 text-xs text-white xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl",
             {
               "bg-accent-blue": age === "children",
               "bg-accent-orange": age === "adults",
