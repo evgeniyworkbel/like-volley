@@ -47,7 +47,7 @@ export function Hero() {
       >
         <div className="flex flex-col">
           <Title className="inline text-center text-white xl:block xl:text-left">
-            Волейбольная школа
+            Волейбольная школа&nbsp;
             <span className="xl:block">
               для
               <span className="text-green-light">&nbsp;всех возрастов</span>
