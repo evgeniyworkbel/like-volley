@@ -6,11 +6,12 @@ import { Header } from "@/widgets/header";
 export default function Home() {
   return (
     <div>
-      <Header />
-      <Advantages />
-      <main></main>
-      <Faq />
-      <Footer />
+      {/* <Header /> */}
+      <main>
+        <Advantages />
+        {/* <Faq /> */}
+      </main>
+      {/* <Footer /> */}
     </div>
   );
 }
