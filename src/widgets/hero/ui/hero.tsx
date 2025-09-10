@@ -1,21 +1,21 @@
 "use client";
 
-import { Button, Title } from "@/shared/ui";
+import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
-import Image from "next/image";
+import { Button, Title } from "@/shared/ui";
 
 export function Hero() {
   const [age, setAge] = useState<"children" | "adults">("children");
 
   return (
-    <div className="flex flex-col px-5 py-[50px] xl:px-20">
+    <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
         <Button
           className={cn(
-            "flex-1 cursor-pointer rounded-t-2xl border-t border-r border-l border-solid border-accent-orange px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
+            "flex-1 rounded-t-2xl border-t border-r border-l border-solid border-accent-orange px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
             {
-              "bg-accent-orange text-white": age === "children",
+              "bg-accent-orange": age === "children",
               "bg-none text-accent-orange": age === "adults",
             },
           )}
@@ -25,10 +25,10 @@ export function Hero() {
         </Button>
         <Button
           className={cn(
-            "flex-1 cursor-pointer rounded-t-2xl border-t border-r border-l border-solid border-b-accent-blue px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
+            "flex-1 rounded-t-2xl border-t border-r border-l border-solid border-b-accent-blue px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
             {
               "bg-none text-accent-blue": age === "children",
-              "bg-accent-blue text-white": age === "adults",
+              "bg-accent-blue": age === "adults",
             },
           )}
           onClick={() => setAge("adults")}
@@ -46,30 +46,27 @@ export function Hero() {
         )}
       >
         <div className="flex flex-col">
-          <Title className="inline text-center text-white xl:block xl:text-left">
-            Волейбольная школа&nbsp;
-            <span className="xl:block">
-              для
-              <span className="text-green-light">&nbsp;всех возрастов</span>
-            </span>
+          <Title className="text-inherit xl:max-w-[678px] xl:text-left">
+            Волейбольная школа для&nbsp;
+            <span className="text-accent-green">всех возрастов</span>
           </Title>
         </div>
         <Image
           className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
-          src="/hero.svg"
+          src="/hero.png"
           width={543}
           height={446}
           alt="Фото учеников школы волейбола Like Volley"
         />
-        <div className="flex flex-col text-center text-sm text-white xl:text-start xl:text-lg">
+        <p className="flex flex-col text-sm xl:text-start xl:text-lg">
           <span>
             Качественное обучение для детей и взрослых с индивидуальным
           </span>
           <span>подходом и современными методиками.</span>
-        </div>
+        </p>
         <Button
           className={cn(
-            "rounded-3xl px-15 py-3 text-xs text-white xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl",
+            "rounded-3xl px-15 py-3 text-xs xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl",
             {
               "bg-accent-blue": age === "children",
               "bg-accent-orange": age === "adults",
@@ -79,6 +76,6 @@ export function Hero() {
           Записаться
         </Button>
       </div>
-    </div>
+    </section>
   );
 }

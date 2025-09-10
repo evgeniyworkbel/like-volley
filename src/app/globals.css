@@ -7,7 +7,7 @@
   --accent-orange-light: oklch(0.8508 0.0629 45.9deg);
   --accent-blue: oklch(0.5381 0.2545 270.46deg);
   --white: oklch(1 0 0deg);
-  --green-light: oklch(0.9451 0.1243 101.54deg);
+  --accent-green: oklch(0.9451 0.1243 101.54deg);
 }
 
 @theme {
@@ -21,7 +21,7 @@
   --color-accent-orange-light: var(--accent-orange-light);
   --color-accent-blue: var(--accent-blue);
   --color-white: var(--white);
-  --color-green-light: var(--green-light);
+  --color-accent-green: var(--accent-green);
   --font-shantell: var(--font-shantell-sans);
   --font-inter: var(--font-inter);
 }
