@@ -6,13 +6,12 @@ import { Header } from "@/widgets/header";
 export default function Home() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Hero />
+        <Faq />
       </main>
-
-      {/* <Faq />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
