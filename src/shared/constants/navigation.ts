@@ -4,7 +4,7 @@ export const navLinks = {
     href: "/",
   },
   location: {
-    title: "Локация",
+    title: "Локации",
     href: "/location",
   },
   about: {
