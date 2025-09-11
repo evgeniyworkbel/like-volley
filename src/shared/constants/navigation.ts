@@ -3,17 +3,17 @@ export const navLinks = {
     title: "Главная",
     href: "/",
   },
-  blog: {
-    title: "Блог",
-    href: "/blog",
+  location: {
+    title: "Локация",
+    href: "/location",
   },
   about: {
     title: "О школе",
     href: "/about",
   },
-  reviews: {
-    title: "Отзывы",
-    href: "/reviews",
+  gallery: {
+    title: "Галерея",
+    href: "/gallery",
   },
   phone: {
     title: "+375 25 663 33 22",

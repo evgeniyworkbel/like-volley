@@ -25,9 +25,9 @@ export function Footer() {
         <p className="font-shantell text-[38px] uppercase">меню</p>
         <nav className="z-10 mb-10 flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-          <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
+          <Link href={navLinks.location.href}>{navLinks.location.title}</Link>
           <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-          <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
+          <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         </nav>
         <Image
           className="absolute top-0 right-0 translate-x-[70%] translate-y-[25%] transform"
