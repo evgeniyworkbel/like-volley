@@ -51,13 +51,23 @@ export function Hero() {
             <span className="text-accent-green">всех возрастов</span>
           </Title>
         </div>
-        <Image
-          className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
-          src="/hero.png"
-          width={543}
-          height={446}
-          alt="Фото учеников школы волейбола Like Volley"
-        />
+        {age === "children" ? (
+          <Image
+            className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
+            src="/hero.png"
+            width={543}
+            height={446}
+            alt="Фото учеников школы волейбола Like Volley"
+          />
+        ) : (
+          <Image
+            className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
+            src="/hero-adults.png"
+            width={543}
+            height={446}
+            alt="Фото учеников 18+ школы волейбола Like Volley"
+          />
+        )}
         <p className="flex flex-col text-sm xl:text-start xl:text-lg">
           <span>
             Качественное обучение для детей и взрослых с индивидуальным
