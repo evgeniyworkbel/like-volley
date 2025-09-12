@@ -4,44 +4,39 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
+import { HeroTab } from "./hero-tab";
 
 export function Hero() {
-  const [age, setAge] = useState<"children" | "adults">("children");
+  const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
 
   return (
     <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
-        <Button
-          className={cn(
-            "flex-1 rounded-t-2xl border-t border-r border-l border-solid border-accent-orange px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
-            {
-              "bg-accent-orange": age === "children",
-              "bg-none text-accent-orange": age === "adults",
-            },
-          )}
-          onClick={() => setAge("children")}
+        <HeroTab
+          className={cn({
+            "bg-accent-orange": ageGroup === "children",
+            "bg-none text-accent-orange": ageGroup === "adults",
+          })}
+          onClick={() => setAgeGroup("children")}
         >
           Для детей
-        </Button>
-        <Button
-          className={cn(
-            "flex-1 rounded-t-2xl border-t border-r border-l border-solid border-b-accent-blue px-3 py-4 text-sm font-medium xl:ml-5 xl:flex-none xl:rounded-t-[20px] xl:px-20 xl:py-4 xl:text-lg",
-            {
-              "bg-none text-accent-blue": age === "children",
-              "bg-accent-blue": age === "adults",
-            },
-          )}
-          onClick={() => setAge("adults")}
+        </HeroTab>
+        <HeroTab
+          className={cn({
+            "bg-none text-accent-blue": ageGroup === "children",
+            "bg-accent-blue": ageGroup === "adults",
+          })}
+          onClick={() => setAgeGroup("adults")}
         >
           Для взрослых
-        </Button>
+        </HeroTab>
       </div>
       <div
         className={cn(
           "flex flex-col items-center gap-4 rounded-[20px] px-5 pt-16 pb-5 xl:relative xl:items-start xl:gap-6 xl:pb-[78px]",
           {
-            "bg-accent-orange": age === "children",
-            "bg-accent-blue": age === "adults",
+            "bg-accent-orange": ageGroup === "children",
+            "bg-accent-blue": ageGroup === "adults",
           },
         )}
       >
@@ -51,35 +46,36 @@ export function Hero() {
             <span className="text-accent-green">всех возрастов</span>
           </Title>
         </div>
-        {age === "children" ? (
+        {ageGroup === "children" && (
           <Image
-            className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
-            src="/hero.png"
+            className="max-h-full xl:absolute xl:right-0 xl:bottom-0"
+            src="/hero/hero.png"
             width={543}
             height={446}
+            priority={true}
             alt="Фото учеников школы волейбола Like Volley"
           />
-        ) : (
+        )}
+        {ageGroup === "adults" && (
           <Image
-            className="max-h-full max-w-full xl:absolute xl:right-0 xl:bottom-0"
-            src="/hero-adults.png"
+            className="max-h-full xl:absolute xl:right-0 xl:bottom-0"
+            src="/hero/hero-adults.png"
             width={543}
             height={446}
-            alt="Фото учеников 18+ школы волейбола Like Volley"
+            priority={true}
+            alt="Фото взрослых учеников школы волейбола Like Volley"
           />
         )}
-        <p className="flex flex-col text-sm xl:text-start xl:text-lg">
-          <span>
-            Качественное обучение для детей и взрослых с индивидуальным
-          </span>
-          <span>подходом и современными методиками.</span>
+        <p className="flex max-w-2xs flex-col text-sm xl:max-w-[678px] xl:text-start xl:text-lg">
+          Качественное обучение для детей и взрослых с индивидуальным подходом и
+          современными методиками.
         </p>
         <Button
           className={cn(
             "rounded-3xl px-15 py-3 text-xs xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl",
             {
-              "bg-accent-blue": age === "children",
-              "bg-accent-orange": age === "adults",
+              "bg-accent-blue": ageGroup === "children",
+              "bg-accent-orange": ageGroup === "adults",
             },
           )}
         >

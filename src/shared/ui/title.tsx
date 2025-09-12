@@ -18,5 +18,3 @@ export function Title({ className, children, ...props }: TitleProps) {
     </h2>
   );
 }
-
-//  className={cn("w-fit", className)}>
