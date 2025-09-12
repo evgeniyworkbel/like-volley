@@ -1,3 +1,4 @@
+import { Advantages } from "@/widgets/advantages";
 import { Hero } from "@/widgets/hero";
 import { Faq } from "@/widgets/faq";
 import { Footer } from "@/widgets/footer";
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Advantages />
         <Faq />
       </main>
       <Footer />
