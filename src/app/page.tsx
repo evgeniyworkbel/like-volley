@@ -1,3 +1,4 @@
+import { faqData } from "@/shared/constants/faqData";
 import { Advantages } from "@/widgets/advantages";
 import { Faq } from "@/widgets/faq";
 import { Footer } from "@/widgets/footer";
@@ -9,7 +10,11 @@ export default function Home() {
       <Header />
       <main>
         <Advantages />
-        <Faq />
+        <div className="flex flex-col">
+          {faqData.map(({ question, answer }) => (
+            <Faq key={question} question={question} answer={answer} />
+          ))}
+        </div>
       </main>
       <Footer />
     </div>

@@ -1,7 +1,9 @@
 import { AccordionArrowIcon } from "@/shared/icons";
 import { Title } from "@/shared/ui";
 
-export function Faq() {
+type faqProps = { question: string; answer: string };
+
+export function Faq({ question, answer }: faqProps) {
   return (
     <div className="flex flex-col gap-32 px-20 py-10">
       <hgroup className="flex flex-col items-center gap-4 text-lg">
@@ -22,14 +24,10 @@ export function Faq() {
       <div>
         <details className="group cursor-pointer rounded-xl border border-solid border-accent-orange-light hover:border-accent-orange">
           <summary className="mb-2 flex list-none items-center justify-between p-6 text-lg font-semibold">
-            Выдается ли сертификат об обучении?
+            {question}
             <AccordionArrowIcon className="group-open:rotate-180 [&>:first-child]:fill-accent-orange-light [&>:first-child]:hover:fill-accent-orange" />
           </summary>
-          <p className="px-6 py-3">
-            Да, выдается сертификат установленного государственного образца и
-            именной сертификат курса, а так же грант на обучение ученика в
-            Германии.
-          </p>
+          <p className="px-6 py-3">{answer}</p>
         </details>
       </div>
     </div>
