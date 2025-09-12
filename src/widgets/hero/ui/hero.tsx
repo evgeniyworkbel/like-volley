@@ -33,7 +33,7 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 rounded-[20px] px-5 pt-16 pb-5 xl:relative xl:items-start xl:gap-6 xl:pb-[78px]",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] px-5 pt-16 pb-5 xl:relative xl:items-start xl:gap-6 xl:pb-[78px]",
           {
             "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
@@ -48,21 +48,21 @@ export function Hero() {
         </div>
         {ageGroup === "children" && (
           <Image
-            className="max-h-full xl:absolute xl:right-0 xl:bottom-0"
+            className="xl:absolute xl:right-0 xl:bottom-0"
             src="/hero/children.png"
             width={543}
             height={446}
-            priority={true}
+            priority
             alt="Фото учеников школы волейбола Like Volley"
           />
         )}
         {ageGroup === "adults" && (
           <Image
-            className="max-h-full xl:absolute xl:right-0 xl:bottom-0"
+            className="overflow-hidden xl:absolute xl:right-0 xl:bottom-0"
             src="/hero/adults.png"
             width={543}
             height={446}
-            priority={true}
+            priority
             alt="Фото взрослых учеников школы волейбола Like Volley"
           />
         )}
