@@ -10,11 +10,7 @@ export default function Home() {
       <Header />
       <main>
         <Advantages />
-        <div className="flex flex-col">
-          {faqData.map(({ question, answer }) => (
-            <Faq key={question} question={question} answer={answer} />
-          ))}
-        </div>
+        <Faq faqList={faqData}></Faq>
       </main>
       <Footer />
     </div>
