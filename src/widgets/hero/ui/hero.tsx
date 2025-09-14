@@ -58,7 +58,7 @@ export function Hero() {
         )}
         {ageGroup === "adults" && (
           <Image
-            className="overflow-hidden xl:absolute xl:right-0 xl:bottom-0"
+            className="xl:absolute xl:right-0 xl:bottom-0"
             src="/hero/adults.png"
             width={543}
             height={446}
