@@ -1,13 +1,18 @@
+import { cn } from "../lib";
+
 type TitleProps = Pick<
   React.HTMLAttributes<HTMLHeadingElement>,
   "className" | "children"
 >;
 
-export function Title({ children, ...props }: TitleProps) {
+export function Title({ className, children, ...props }: TitleProps) {
   return (
     <h2
       {...props}
-      className="font-shantell text-6xl font-bold text-accent-orange"
+      className={cn(
+        "font-shantell text-[32px] font-bold text-accent-orange xl:text-6xl",
+        className,
+      )}
     >
       {children}
     </h2>
