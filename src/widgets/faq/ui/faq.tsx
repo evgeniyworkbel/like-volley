@@ -1,6 +1,6 @@
-import { faqData } from "@/shared/constants";
 import { Title } from "@/shared/ui";
 import { Accordion } from "@/shared/ui";
+import { faqData } from "../model/faq/data";
 
 export function Faq() {
   return (
