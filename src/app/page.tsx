@@ -1,4 +1,3 @@
-import { faqData } from "@/shared/constants/faqData";
 import { Advantages } from "@/widgets/advantages";
 import { Hero } from "@/widgets/hero";
 import { Faq } from "@/widgets/faq";
@@ -12,7 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <Advantages />
-        <Faq faqList={faqData}></Faq>
+        <Faq />
       </main>
       <Footer />
     </div>

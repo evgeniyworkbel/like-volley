@@ -1,4 +1,4 @@
 export * from "./navigation";
 export * from "./contacts";
 export * from "./advantagesData";
-export * from "./faqData";
+export * from "../../widgets/faq/model/faq/data";
