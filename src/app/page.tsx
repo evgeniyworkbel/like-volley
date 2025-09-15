@@ -13,7 +13,7 @@ export default function Home() {
         <Advantages />
         <Faq />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

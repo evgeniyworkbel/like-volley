@@ -17,7 +17,7 @@ export function MenuIcon({ className, width, height }: IconProps) {
         y2="1.66675"
         stroke="#FC5C15"
         strokeWidth="2"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <line
         x1="1"
@@ -26,7 +26,7 @@ export function MenuIcon({ className, width, height }: IconProps) {
         y2="11.6667"
         stroke="#FC5C15"
         strokeWidth="2"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <line
         x1="1"
@@ -35,7 +35,7 @@ export function MenuIcon({ className, width, height }: IconProps) {
         y2="21.6667"
         stroke="#FC5C15"
         strokeWidth="2"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );
