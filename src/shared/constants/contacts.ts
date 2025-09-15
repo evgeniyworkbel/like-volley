@@ -11,4 +11,7 @@ export const contactsLinks = {
   phone: {
     href: "tel:+375298020748",
   },
+  telegram: {
+    href: "https://www.telegram.com/like.volley.by",
+  },
 } as const;
