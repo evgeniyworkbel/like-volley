@@ -1,5 +1,5 @@
 import { Accordion, Title } from "@/shared/ui";
-import { faqData } from "../model/data";
+import { faqData } from "../model/meta";
 
 export function Faq() {
   return (
