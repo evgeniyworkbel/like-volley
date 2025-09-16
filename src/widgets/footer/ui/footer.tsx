@@ -28,14 +28,11 @@ export function Footer() {
             <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
             <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
           </nav>
-          <div className="flex justify-between gap-x-12 text-sm xl:text-xs">
-            <Link className="flex hover:underline" href={navLinks.policy.href}>
+          <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
+            <Link className="flex" href={navLinks.policy.href}>
               {navLinks.policy.title}
             </Link>
-            <Link
-              className="flex hover:underline"
-              href={navLinks.offerAgreement.href}
-            >
+            <Link className="flex" href={navLinks.offerAgreement.href}>
               {navLinks.offerAgreement.title}
             </Link>
           </div>
