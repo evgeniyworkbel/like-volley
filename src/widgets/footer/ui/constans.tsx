@@ -18,7 +18,7 @@ export function Contacts() {
         />
       </Link>
       <Link
-        href={contactsLinks.location.href}
+        href={contactsLinks.locations.href}
         target="_blank"
         rel="noopener noreferrer"
       >

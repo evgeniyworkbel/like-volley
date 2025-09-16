@@ -3,13 +3,17 @@ export const navLinks = {
     title: "Главная",
     href: "/",
   },
-  blog: {
-    title: "Блог",
-    href: "/blog",
+  locations: {
+    title: "Локации",
+    href: "/location",
   },
   about: {
     title: "О школе",
     href: "/about",
+  },
+  blog: {
+    title: "Блог",
+    href: "/blog",
   },
   reviews: {
     title: "Отзывы",
