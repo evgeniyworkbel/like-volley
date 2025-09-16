@@ -1,6 +1,6 @@
 import { Header } from "@/widgets/header";
 
-export default function Location() {
+export default function Locations() {
   return (
     <div>
       <Header />

@@ -25,7 +25,7 @@ export function Footer() {
         <p className="font-shantell text-[38px] uppercase">меню</p>
         <nav className="z-10 mb-10 flex items-center gap-[34px] text-2xl">
           <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-          <Link href={navLinks.location.href}>{navLinks.location.title}</Link>
+          <Link href={navLinks.locations.href}>{navLinks.locations.title}</Link>
           <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
           <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         </nav>
@@ -50,12 +50,12 @@ export function Footer() {
             />
           </Link>
           <Link
-            href={contactsLinks.location.href}
+            href={contactsLinks.locations.href}
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              src="/location.svg"
+              src="/locations.svg"
               width={68}
               height={68}
               alt="Локация школы волейбола Like Volley"

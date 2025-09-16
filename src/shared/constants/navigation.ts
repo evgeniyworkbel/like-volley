@@ -3,7 +3,7 @@ export const navLinks = {
     title: "Главная",
     href: "/",
   },
-  location: {
+  locations: {
     title: "Локации",
     href: "/location",
   },
