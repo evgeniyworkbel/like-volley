@@ -9,7 +9,6 @@
   --accent-blue: oklch(0.5381 0.2545 270.46deg);
   --accent-green: oklch(0.9451 0.1243 101.54deg);
   --white: oklch(1 0 0deg);
-  --black: oklch(0 0 0deg);
 }
 
 @theme {
@@ -25,7 +24,6 @@
   --color-accent-blue: var(--accent-blue);
   --color-accent-green: var(--accent-green);
   --color-white: var(--white);
-  --color-black: var(--black);
   --font-shantell: var(--font-shantell-sans);
   --font-inter: var(--font-inter);
 }

@@ -2,14 +2,13 @@ import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import Image from "next/image";
 import { Button } from "@/shared/ui";
-import { contactsLinks } from "@/shared/constants";
+import { Contacts } from "./constans";
 
 export function Footer() {
   return (
-    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:mx-0 xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:gap-[8vw] xl:p-20">
+    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:gap-[8vw] xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Image
-          className="bg-accent-orange"
           src="/logo.png"
           width={89}
           height={60}
@@ -41,59 +40,10 @@ export function Footer() {
               {navLinks.offerAgreement.title}
             </Link>
           </div>
-          <div className="flex gap-6">
-            <Link
-              href={contactsLinks.phone.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/phone.svg"
-                width={68}
-                height={68}
-                alt="Телефон школы волейбола Like Volley"
-              />
-            </Link>
-            <Link
-              href={contactsLinks.location.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/location.svg"
-                width={68}
-                height={68}
-                alt="Локация школы волейбола Like Volley"
-              />
-            </Link>
-            <Link
-              href={contactsLinks.email.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/email.svg"
-                width={68}
-                height={68}
-                alt="Почта школы волейбола Like Volley"
-              />
-            </Link>
-            <Link
-              href={contactsLinks.instagram.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/instagram.svg"
-                width={68}
-                height={68}
-                alt="Instagram школы волейбола Like Volley"
-              />
-            </Link>
-          </div>
+          <Contacts />
         </div>
         <div className="flex flex-col gap-20 xl:justify-between">
-          <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-black">
+          <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground">
             Записаться
           </Button>
           <ul className="flex flex-col gap-2 text-sm">
