@@ -7,11 +7,11 @@ import { Header } from "@/widgets/header";
 export default function Home() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <main>
-        {/* <Hero />
+        <Hero />
         <Advantages />
-        <Faq /> */}
+        <Faq />
       </main>
       <Footer />
     </div>

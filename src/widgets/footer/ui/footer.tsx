@@ -6,7 +6,7 @@ import { Contacts } from "./constans";
 
 export function Footer() {
   return (
-    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:gap-[8vw] xl:p-20">
+    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:gap-15 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Image
           src="/logo.png"
@@ -19,7 +19,6 @@ export function Footer() {
           методиками обучения.
         </p>
       </div>
-
       <div className="flex flex-wrap justify-center gap-15 xl:justify-between">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <p className="font-shantell text-[38px] uppercase">меню</p>

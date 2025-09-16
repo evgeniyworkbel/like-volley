@@ -15,6 +15,10 @@ export const navLinks = {
     title: "Блог",
     href: "/blog",
   },
+  gallery: {
+    title: "Галерея",
+    href: "/gallery",
+  },
   reviews: {
     title: "Отзывы",
     href: "/reviews",
