@@ -1,7 +1,7 @@
 import { navLinks } from "@/shared/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { BurgerMenu } from "./ burger-menu";
+import { BurgerMenu } from "./burger-menu";
 
 export function Header() {
   return (
