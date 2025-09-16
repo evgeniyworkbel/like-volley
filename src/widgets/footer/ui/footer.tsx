@@ -55,7 +55,7 @@ export function Footer() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/locations.svg"
+              src="/location.svg"
               width={68}
               height={68}
               alt="Локация школы волейбола Like Volley"
