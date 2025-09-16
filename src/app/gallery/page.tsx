@@ -1,6 +1,6 @@
 import { Header } from "@/widgets/header";
 
-export default function Reviews() {
+export default function Gallery() {
   return (
     <div>
       <Header />

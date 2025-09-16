@@ -1,6 +1,6 @@
 import { Header } from "@/widgets/header";
 
-export default function Blog() {
+export default function Locations() {
   return (
     <div>
       <Header />
