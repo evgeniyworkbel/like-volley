@@ -1,15 +1,20 @@
 import { AccordionArrowIcon } from "../icons";
 
-type AccordionProps = { question: string; answer: React.ReactNode };
+type AccordionProps = {
+  items: {
+    question: string;
+    answer: React.ReactNode;
+  }[];
+};
 
-export function Accordion({ faqList }: { faqList: AccordionProps[] }) {
+export function Accordion({ items }: AccordionProps) {
   return (
-    <div>
-      {faqList.map(({ question, answer }) => {
+    <div className="flex flex-col gap-5">
+      {items.map(({ question, answer }) => {
         return (
           <details
             key={question}
-            className="group mb-5 cursor-pointer rounded-xl border border-solid border-accent-orange-light hover:border-accent-orange"
+            className="group cursor-pointer rounded-xl border border-accent-orange-light hover:border-accent-orange"
           >
             <summary className="mb-2 flex list-none items-center justify-between p-6 text-lg font-semibold">
               {question}

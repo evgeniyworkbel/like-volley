@@ -1,6 +1,5 @@
-import { Title } from "@/shared/ui";
-import { Accordion } from "@/shared/ui";
-import { faqData } from "../model/faq/data";
+import { Accordion, Title } from "@/shared/ui";
+import { faqData } from "../model/data";
 
 export function Faq() {
   return (
@@ -20,7 +19,7 @@ export function Faq() {
           </span>
         </p>
       </hgroup>
-      <Accordion faqList={faqData} />
+      <Accordion items={faqData} />
     </div>
   );
 }
