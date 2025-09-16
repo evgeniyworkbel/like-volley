@@ -1,6 +1,7 @@
 import { navLinks } from "@/shared/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { BurgerMenu } from "./ burger-menu";
 
 export function Header() {
   return (
@@ -18,11 +19,7 @@ export function Header() {
         <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
-      <div className="flex flex-col gap-2 xl:hidden [&_>*]:w-8 [&_>*]:border [&_>*]:border-accent-orange">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <BurgerMenu />
     </header>
   );
 }
