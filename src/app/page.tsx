@@ -12,10 +12,10 @@ export default function Home() {
       <main>
         <Hero />
         <Advantages />
-        <Faq />
         <ContactForm />
+        <Faq />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
