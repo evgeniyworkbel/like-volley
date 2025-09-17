@@ -1,23 +1,25 @@
-import Link from "next/link";
-import Image from "next/image";
 import { navLinks } from "@/shared/constants";
+import Image from "next/image";
+import Link from "next/link";
+import { BurgerMenu } from "./burger-menu";
 
 export function Header() {
   return (
-    <header className="flex h-27 justify-between rounded-b-[14px] bg-accent-orange px-21 py-6">
+    <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
       <Image
         src="/logo.png"
         width={89}
         height={59}
         alt="Логотип школы волейбола Like Volley"
       />
-      <nav className="flex items-center gap-15 font-bold">
+      <nav className="hidden items-center gap-15 font-bold xl:flex xl:text-lg [&>a:hover]:underline">
         <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-        <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
+        <Link href={navLinks.locations.href}>{navLinks.locations.title}</Link>
         <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-        <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
+        <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
+      <BurgerMenu />
     </header>
   );
 }
