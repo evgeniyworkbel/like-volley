@@ -1,4 +1,4 @@
 export type IconProps = Pick<
   React.SVGAttributes<SVGElement>,
-  "className" | "width" | "height"
+  "className" | "width" | "height" | "onClick"
 >;

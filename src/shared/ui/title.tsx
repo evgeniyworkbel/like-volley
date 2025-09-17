@@ -5,12 +5,13 @@ type TitleProps = Pick<
   "className" | "children"
 >;
 
-export function Title({ children, ...props }: TitleProps) {
+export function Title({ className, children, ...props }: TitleProps) {
   return (
     <h2
       {...props}
       className={cn(
         "font-shantell text-[32px] font-bold text-accent-orange xl:text-6xl",
+        className,
       )}
     >
       {children}
