@@ -12,18 +12,16 @@ export function Banner() {
       </div>
       <Image
         className="hidden xl:block"
-        src="/banner/banner_laptop.png"
+        src="/banner/promo-desktop.png"
         width={1280}
         height={297}
-        loading="lazy"
         alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
       />
       <Image
         className="xl:hidden"
-        src="/banner/banner_mobile.png"
+        src="/banner/promo-mobile.png"
         width={320}
         height={484}
-        loading="lazy"
         alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
       />
     </section>
