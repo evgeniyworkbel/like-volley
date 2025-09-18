@@ -1,4 +1,5 @@
 import { Advantages } from "@/widgets/advantages";
+import { Banner } from "@/widgets/banner";
 import { Hero } from "@/widgets/hero";
 import { Faq } from "@/widgets/faq";
 import { Footer } from "@/widgets/footer";
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <Advantages />
         <Faq />
+        <Banner />
       </main>
       <Footer />
     </div>
