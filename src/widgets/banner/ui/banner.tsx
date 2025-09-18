@@ -3,27 +3,27 @@ import Image from "next/image";
 
 export function Banner() {
   return (
-    <section className="relative flex justify-center px-1 py-[50px] xl:px-20">
-      <div className="absolute top-0 left-0 flex translate-x-[16%] translate-y-[100%] flex-col items-center gap-6 font-extrabold text-white xl:translate-x-[26%] xl:translate-y-[100%] xl:items-start">
-        <Title className="text-4xl text-inherit">Приведи друга</Title>
-        <h3 className="text-[15px] xl:text-2xl">
-          Вы оба получите скидку в 20%
-        </h3>
+    <section className="flex justify-center px-5 py-[50px] xl:px-20">
+      <div className="relative flex h-121 w-full justify-center pt-4 xl:h-[297px] xl:items-center xl:justify-start">
+        <div className="z-10 flex flex-col items-center gap-6 font-extrabold text-white xl:items-start xl:pl-10">
+          <Title className="text-4xl text-inherit">Приведи друга</Title>
+          <h3 className="text-[15px] xl:text-2xl">
+            Вы оба получите скидку в 20%
+          </h3>
+        </div>
+        <Image
+          className="hidden xl:block"
+          src="/banner/promo-desktop.png"
+          fill
+          alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
+        />
+        <Image
+          className="absolute top-0 left-0 xl:hidden"
+          src="/banner/promo-mobile.png"
+          fill
+          alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
+        />
       </div>
-      <Image
-        className="hidden xl:block"
-        src="/banner/promo-desktop.png"
-        width={1280}
-        height={297}
-        alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
-      />
-      <Image
-        className="xl:hidden"
-        src="/banner/promo-mobile.png"
-        width={320}
-        height={484}
-        alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
-      />
     </section>
   );
 }
