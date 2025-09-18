@@ -3,27 +3,28 @@ import Image from "next/image";
 
 export function Banner() {
   return (
-    <section className="relative flex px-1 md:px-3.5 md:py-[50px] xl:px-20">
-      <div className="absolute flex flex-col gap-6 font-extrabold text-white">
-        <Title className="text-inherit">Приведи друга</Title>
-        <h3 className="text-2xl">Вы оба получите скидку в 20%</h3>
+    <section className="relative flex justify-center px-1 py-[50px] xl:px-20">
+      <div className="absolute top-0 left-0 flex translate-x-[16%] translate-y-[100%] flex-col items-center gap-6 font-extrabold text-white xl:translate-x-[26%] xl:translate-y-[100%] xl:items-start">
+        <Title className="text-4xl text-inherit">Приведи друга</Title>
+        <h3 className="text-[15px] xl:text-2xl">
+          Вы оба получите скидку в 20%
+        </h3>
       </div>
-
       <Image
-        className="h-[108px] w-full rounded-r-xl border-r-[4.57px] object-cover object-left md:h-56 xl:h-auto xl:object-center"
-        src="/banner/banner.png"
+        className="hidden xl:block"
+        src="/banner/banner_laptop.png"
         width={1280}
         height={297}
-        loading="eager"
-        alt="Акция школы волейбола Like Volley"
+        loading="lazy"
+        alt="Баннер синего цвета с декоративными иконками и справа надпись 'приведи друга'"
       />
       <Image
-        className="absolute bottom-0 left-0 max-h-[30px] translate-x-[70%] translate-y-[-74%] md:max-h-16 md:translate-x-[208%] md:translate-y-[-180%] xl:max-h-none xl:translate-x-[284%] xl:translate-y-[-116%]"
-        src="/banner/100+.png"
-        width={190}
-        height={84}
-        loading="eager"
-        alt="Значек уровня навыков"
+        className="xl:hidden"
+        src="/banner/banner_mobile.png"
+        width={320}
+        height={484}
+        loading="lazy"
+        alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
       />
     </section>
   );
