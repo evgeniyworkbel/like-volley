@@ -4,6 +4,7 @@ import { Hero } from "@/widgets/hero";
 import { Faq } from "@/widgets/faq";
 import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
+import { CarouselCoaches } from "@/widgets/carousel-coaches";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <Advantages />
+        <CarouselCoaches />
         <Faq />
         <Banner />
       </main>
