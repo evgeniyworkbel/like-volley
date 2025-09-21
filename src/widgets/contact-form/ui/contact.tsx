@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Route } from "next";
+import Image, { ImageProps } from "next/image";
+import Link, { LinkProps } from "next/link";
 
 type ContactProps = {
   title: string;
-  href: Route;
+  href: Pick<LinkProps<Route>, "href">["href"];
   imageSrc: string;
-  alt: string;
+  alt: Pick<ImageProps, "alt">["alt"];
 };
 
 export function Contact({ title, imageSrc, alt, href }: ContactProps) {
@@ -21,7 +21,7 @@ export function Contact({ title, imageSrc, alt, href }: ContactProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {href}
+          {typeof href === "string" ? href : href.pathname}
         </Link>
       </div>
     </div>
