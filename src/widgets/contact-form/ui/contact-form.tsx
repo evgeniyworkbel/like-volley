@@ -1,6 +1,7 @@
 import { Title } from "@/shared/ui";
-import { Contacts } from "./contacts";
+import { Contact } from "./contact";
 import { Form } from "./form";
+import { contacts } from "../model/contacts";
 
 export function ContactForm() {
   return (
@@ -17,7 +18,15 @@ export function ContactForm() {
             Свяжитесь с нами для получения персональной консультации
           </p>
         </div>
-        <Contacts />
+        {contacts.map(({ title, imageSrc, alt, href }) => (
+          <Contact
+            title={title}
+            imageSrc={imageSrc}
+            href={href}
+            alt={alt}
+            key={title}
+          />
+        ))}
       </div>
       <Form />
     </section>

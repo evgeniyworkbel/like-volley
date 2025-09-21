@@ -1,4 +1,4 @@
-export const contactsData = [
+export const contacts = [
   {
     title: "Телефон",
     href: "tel:+375298020748",

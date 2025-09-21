@@ -1,4 +1,4 @@
 export * from "./navigation";
 export * from "./contacts";
 export * from "./advantagesData";
-export * from "./contactsData";
+export * from "../../widgets/contact-form/model/contacts";
