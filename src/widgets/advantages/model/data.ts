@@ -1,11 +1,6 @@
-type advantagesDataProps = {
-  title: string;
-  imageSrc: string;
-  description: string;
-  alt: string;
-};
+import { Advantage } from "./types";
 
-export const advantagesData: advantagesDataProps[] = [
+export const advantagesData: Advantage[] = [
   {
     title: "Школа волейбола №1 в Бресте",
     imageSrc: "/advantages/award.svg",

@@ -18,11 +18,11 @@ export function ContactForm() {
         </div>
         {contactsData.map(({ title, imageSrc, alt, href, label }) => (
           <Contact
+            key={title}
             title={title}
             imageSrc={imageSrc}
             href={href}
             alt={alt}
-            key={title}
             label={label}
           />
         ))}
