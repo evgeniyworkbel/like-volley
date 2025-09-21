@@ -2,12 +2,11 @@ import { Route } from "next";
 import Image, { ImageProps } from "next/image";
 import Link, { LinkProps } from "next/link";
 
-type ContactProps = {
-  title: string;
-  href: Pick<LinkProps<Route>, "href">["href"];
-  imageSrc: string;
-  alt: Pick<ImageProps, "alt">["alt"];
-};
+type ContactProps = Pick<LinkProps<Route>, "href"> &
+  Pick<ImageProps, "alt"> & {
+    title: string;
+    imageSrc: string;
+  };
 
 export function Contact({ title, imageSrc, alt, href }: ContactProps) {
   return (
