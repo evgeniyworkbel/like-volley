@@ -16,13 +16,14 @@ export function ContactForm() {
             Свяжитесь с нами для получения персональной консультации
           </p>
         </div>
-        {contactsData.map(({ title, imageSrc, alt, href }) => (
+        {contactsData.map(({ title, imageSrc, alt, href, label }) => (
           <Contact
             title={title}
             imageSrc={imageSrc}
             href={href}
             alt={alt}
             key={title}
+            label={label}
           />
         ))}
       </div>

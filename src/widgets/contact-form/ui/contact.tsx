@@ -6,9 +6,10 @@ type ContactProps = Pick<LinkProps<Route>, "href"> &
   Pick<ImageProps, "alt"> & {
     title: string;
     imageSrc: string;
+    label: string;
   };
 
-export function Contact({ title, imageSrc, alt, href }: ContactProps) {
+export function Contact({ title, imageSrc, alt, href, label }: ContactProps) {
   return (
     <div className="flex gap-6 xl:gap-7">
       <Image src={imageSrc} width={48} height={48} alt={alt} />
@@ -20,7 +21,7 @@ export function Contact({ title, imageSrc, alt, href }: ContactProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {typeof href === "string" ? href : href.pathname}
+          {label}
         </Link>
       </div>
     </div>
