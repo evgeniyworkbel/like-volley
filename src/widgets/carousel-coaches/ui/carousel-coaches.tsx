@@ -4,12 +4,34 @@ import useEmblaCarousel from "embla-carousel-react";
 import { CoachesCard } from "./coaches-сard";
 import { coachesData } from "../model/data";
 import { CarouselControls } from "./carousel-controls";
+import { Title } from "@/shared/ui";
+import Image from "next/image";
 
 export function CarouselCoaches() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   return (
     <section className="flex flex-col gap-6 px-5 py-10">
+      <Image
+        src="/coaches/Ivanov.png"
+        width={314}
+        height={438}
+        alt="Фото тренера Ивана Иванова"
+      />
+      <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-2.5 [&_>*]:text-center">
+          <Title className="text-foreground">Иван Иванов</Title>
+          <span className="text-foreground-secondary">
+            Основатель волейбольной школы
+            <span className="text-accent-orange"> LikeVolley</span>
+          </span>
+        </div>
+        <p className="flex max-w-[300px] items-center text-center text-sm">
+          Профессиональный тренер по волейболу с более чем 10-летним опытом
+          работы. Специализируется на развитии техники, командной стратегии и
+          физической подготовки игроков.
+        </p>
+      </div>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {coachesData.map(({ name, description, imageSrc, alt }) => (
