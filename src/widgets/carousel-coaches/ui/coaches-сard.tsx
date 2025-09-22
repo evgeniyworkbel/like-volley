@@ -1,25 +1,28 @@
-import { Button } from "@/shared/ui";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
-export function CoachesCard({ name, description, imageSrc, alt }) {
+type CoachesCardProps = Pick<ImageProps, "alt"> & {
+  name: string;
+  description: string;
+  imageSrc: string;
+};
+
+export function CoachesCard({
+  name,
+  description,
+  imageSrc,
+  alt,
+}: CoachesCardProps) {
   return (
-    <div className="flex flex-col items-center justify-between p-[18px]">
-      return (
-      <div key={name} className="flex flex-col items-center">
-        <Image src={imageSrc} width={269} height={269} alt={alt} />
-        <div className="flex flex-col items-center gap-8">
-          <p className="flex flex-col items-center gap-3">
-            <span className="text-xl font-bold text-accent-orange">{name}</span>
-            <span className="text-center text-foreground-secondary">
-              {description}
-            </span>
-          </p>
-          <Button className="rounded-[20px] bg-accent-blue px-10 py-[10px] text-base font-semibold text-white xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl">
-            Подробнее
-          </Button>
-        </div>
+    <div key={name} className="flex flex-col items-center gap-5">
+      <Image src={imageSrc} width={269} height={269} alt={alt} />
+      <div className="flex flex-col items-center">
+        <p className="flex flex-col items-center gap-3">
+          <span className="text-xl font-bold text-accent-orange">{name}</span>
+          <span className="text-center text-sm text-foreground-secondary">
+            {description}
+          </span>
+        </p>
       </div>
-      );
     </div>
   );
 }

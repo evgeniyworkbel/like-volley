@@ -2,22 +2,30 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { CoachesCard } from "./coaches-сard";
-import { CarouselArrowLeft, CarouselArrowRight } from "@/shared/icons";
-// import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import { coachesData } from "../model/data";
+import { CarouselControls } from "./carousel-controls";
 
 export function CarouselCoaches() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
-  // const { selectedIndex, scrollSnaps, onDotButtonClick } =
-  //   useDotButton(emblaApi);
-
   return (
-    <section className="flex items-center px-5 py-10">
+    <section className="flex flex-col gap-6 px-5 py-10">
       <div className="overflow-hidden" ref={emblaRef}>
-        <CoachesCard />
-        <CarouselArrowLeft />
-        <CarouselArrowRight />
+        <div className="flex">
+          {coachesData.map(({ name, description, imageSrc, alt }) => (
+            <div key={name} className="w-full flex-shrink-0">
+              <CoachesCard
+                name={name}
+                description={description}
+                imageSrc={imageSrc}
+                alt={alt}
+              />
+            </div>
+          ))}
+        </div>
       </div>
+
+      <CarouselControls emblaApi={emblaApi} />
     </section>
   );
 }

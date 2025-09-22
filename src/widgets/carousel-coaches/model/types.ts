@@ -1,6 +1,10 @@
+import { EmblaCarouselType } from "embla-carousel";
+
 export type UsePrevNextButtonsType = {
-  prevBtnDisabled: boolean;
-  nextBtnDisabled: boolean;
   onPrevButtonClick: () => void;
   onNextButtonClick: () => void;
+};
+
+export type CarouselControlsProps = {
+  emblaApi: EmblaCarouselType | undefined;
 };

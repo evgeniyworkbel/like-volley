@@ -5,9 +5,6 @@ import { UsePrevNextButtonsType } from "../model/types";
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined,
 ): UsePrevNextButtonsType => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = React.useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = React.useState(true);
-
   const onPrevButtonClick = React.useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
@@ -15,24 +12,11 @@ export const usePrevNextButtons = (
 
   const onNextButtonClick = React.useCallback(() => {
     if (!emblaApi) return;
+    console.log("sdfsef");
     emblaApi.scrollNext();
   }, [emblaApi]);
 
-  const onSelect = React.useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  React.useEffect(() => {
-    if (!emblaApi) return;
-
-    onSelect(emblaApi);
-    emblaApi.on("reInit", onSelect).on("select", onSelect);
-  }, [emblaApi, onSelect]);
-
   return {
-    prevBtnDisabled,
-    nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
   };
