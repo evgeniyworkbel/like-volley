@@ -3,7 +3,7 @@ import React from "react";
 import { UsePrevNextButtonsType } from "../model/types";
 
 export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined,
+  emblaApi?: EmblaCarouselType,
 ): UsePrevNextButtonsType => {
   const onPrevButtonClick = React.useCallback(() => {
     if (!emblaApi) return;

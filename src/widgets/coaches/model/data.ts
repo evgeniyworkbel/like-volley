@@ -1,26 +1,28 @@
-export const coachesData = [
+import { Coach } from "./types";
+
+export const coachesData: Coach[] = [
   {
     name: "Евгений Быков",
     description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
-    imageSrc: "/coaches/Bulls.png",
-    alt: "Фото тренера Евгений Быков",
+    src: "/coaches/bulls.png",
+    alt: "Фото тренера Евгения Быкова",
   },
   {
     name: "Александр Рыбко",
     description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
-    imageSrc: "/coaches/Rybko.png",
-    alt: "Фото тренера Александр Рыбко",
+    src: "/coaches/rybko.png",
+    alt: "Фото тренера Александра Рыбко",
   },
   {
     name: "Игорь Гурский",
     description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
-    imageSrc: "/coaches/Gursky.png",
-    alt: "Фото тренера Игорь Гурский",
+    src: "/coaches/gursky.png",
+    alt: "Фото тренера Игоря Гурского",
   },
   {
     name: "Ангелина Горбачева",
     description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
-    imageSrc: "/coaches/Gorbachev's.png",
-    alt: "Фото тренера Ангелина Горбачева",
+    src: "/coaches/gorbachev's.png",
+    alt: "Фото тренера Ангелины Горбачевой",
   },
 ] as const;
