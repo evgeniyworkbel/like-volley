@@ -13,20 +13,20 @@ export function CarouselCoaches() {
   return (
     <section className="flex flex-col gap-6 px-5 py-10">
       <Image
-        src="/coaches/Ivanov.png"
+        src="/coaches/Golodukhin.png"
         width={314}
         height={438}
-        alt="Фото тренера Ивана Иванова"
+        alt="Фото тренера Владислав Голодухин"
       />
       <div className="flex flex-col items-center gap-5">
         <div className="flex flex-col items-center gap-2.5 [&_>*]:text-center">
-          <Title className="text-foreground">Иван Иванов</Title>
-          <span className="text-foreground-secondary">
-            Основатель волейбольной школы
-            <span className="text-accent-orange"> LikeVolley</span>
-          </span>
+          <Title className="text-foreground">Владислав Голодухин</Title>
+          <p className="text-foreground-secondary">
+            Основатель волейбольной школы&nbsp;
+            <span className="text-accent-orange">LikeVolley</span>
+          </p>
         </div>
-        <p className="flex max-w-[300px] items-center text-center text-sm">
+        <p className="flex max-w-76 items-center text-center text-sm">
           Профессиональный тренер по волейболу с более чем 10-летним опытом
           работы. Специализируется на развитии техники, командной стратегии и
           физической подготовки игроков.
@@ -46,7 +46,6 @@ export function CarouselCoaches() {
           ))}
         </div>
       </div>
-
       <CarouselControls emblaApi={emblaApi} />
     </section>
   );

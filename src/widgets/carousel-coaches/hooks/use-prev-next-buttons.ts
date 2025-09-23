@@ -12,7 +12,6 @@ export const usePrevNextButtons = (
 
   const onNextButtonClick = React.useCallback(() => {
     if (!emblaApi) return;
-    console.log("sdfsef");
     emblaApi.scrollNext();
   }, [emblaApi]);
 

@@ -8,3 +8,8 @@ export type UsePrevNextButtonsType = {
 export type CarouselControlsProps = {
   emblaApi: EmblaCarouselType | undefined;
 };
+
+export type UseDotType = {
+  selectedIndex: number;
+  scrollSnaps: number[];
+};
