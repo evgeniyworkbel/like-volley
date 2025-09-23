@@ -10,7 +10,7 @@ export function CarouselControls({ emblaApi }: CarouselControlsProps) {
   const { selectedIndex, scrollSnaps } = useDotButton(emblaApi);
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between xl:justify-center xl:gap-30">
       <Button onClick={onPrevButtonClick}>
         <CarouselArrowLeft />
       </Button>
