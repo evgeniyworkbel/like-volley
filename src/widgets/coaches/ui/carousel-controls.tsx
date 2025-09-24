@@ -1,4 +1,4 @@
-import { CarouselArrowLeft, CarouselArrowRight } from "@/shared/icons";
+import { CarouselArrow } from "@/shared/icons";
 import { Button } from "@/shared/ui";
 import { usePrevNextButtons } from "../hooks/use-prev-next-buttons";
 import { CarouselControlsProps } from "../model/types";
@@ -12,7 +12,7 @@ export function CarouselControls({ emblaApi }: CarouselControlsProps) {
   return (
     <div className="flex items-center justify-between xl:justify-center xl:gap-30">
       <Button onClick={onPrevButtonClick}>
-        <CarouselArrowLeft />
+        <CarouselArrow className="rotate-180" />
       </Button>
       <div className="flex gap-[18px]">
         {scrollSnaps.map((_, index) => (
@@ -24,7 +24,7 @@ export function CarouselControls({ emblaApi }: CarouselControlsProps) {
         ))}
       </div>
       <Button onClick={onNextButtonClick}>
-        <CarouselArrowRight />
+        <CarouselArrow />
       </Button>
     </div>
   );
