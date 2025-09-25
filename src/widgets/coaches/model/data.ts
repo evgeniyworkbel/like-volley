@@ -1,5 +1,4 @@
-import { Coach } from "./types";
-
+import { Coach } from "@/shared/types";
 export const coachesData: Coach[] = [
   {
     name: "Евгений Быков",
