@@ -44,6 +44,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-useeffect": "^1.0.12",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "prettier": "3.6.2",

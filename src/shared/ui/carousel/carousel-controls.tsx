@@ -1,9 +1,9 @@
 import { CarouselArrow } from "@/shared/icons";
 import { Button } from "@/shared/ui";
-import { usePrevNextButtons } from "../hooks/use-prev-next-buttons";
-import { CarouselControlsProps } from "../model/types";
+import { usePrevNextButtons } from "./hooks/use-prev-next-buttons";
+import { CarouselControlsProps } from "./model/types";
 import { CarouselDot } from "./carousel-dot";
-import { useDotButton } from "../hooks/use-dot-button";
+import { useDotButton } from "./hooks/use-dot-button";
 
 export function CarouselControls({ emblaApi }: CarouselControlsProps) {
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);

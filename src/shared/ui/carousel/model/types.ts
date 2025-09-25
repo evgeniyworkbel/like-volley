@@ -19,3 +19,7 @@ export type Coach = Pick<ImageProps, "alt" | "src"> & {
   name: string;
   description: string;
 };
+
+export type CarouselProps = {
+  data: Coach[];
+};
