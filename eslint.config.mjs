@@ -13,9 +13,11 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.config({
     extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    plugins: ["eslint-plugin-react-useeffect"],
     rules: {
       "import/no-anonymous-default-export": "off",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+      "react-useeffect/no-non-function-return": "error",
     },
   }),
   {
