@@ -2,7 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { coachesData } from "../model/data";
-import { CarouselControls } from "../../../shared/ui/carousel/carousel-controls";
+import { CarouselControls } from "@/shared/ui/carousel/carousel-controls";
 import { SelectedCoach } from "./selected-coach";
 import { Carousel } from "@/shared/ui";
 
