@@ -3,7 +3,7 @@ import { Header } from "@/widgets/header";
 
 export default function Policy() {
   return (
-    <section className="">
+    <section>
       <Header />
       <h3 className="text-center text-2xl font-extrabold">
         Политика в отношении обработки персональных данных
@@ -29,9 +29,8 @@ export default function Policy() {
             данных (далее — Политика) применяется ко всей информации, которую
             Оператор может получить о посетителях веб-сайта
             <span className="text-accent-orange">
-              &nbsp;https://culturagraphica.ru
+              &nbsp;https://culturagraphica.ru.
             </span>
-            .
           </li>
           <li>2. Основные понятия, используемые в Политике</li>
           <li>
@@ -48,9 +47,8 @@ export default function Policy() {
             материалов, а также программ для ЭВМ и баз данных, обеспечивающих
             их доступность в сети интернет по сетевому адресу
             <span className="text-accent-orange">
-              &nbsp;https://culturagraphica.ru
+              &nbsp;https://culturagraphica.ru .
             </span>
-            .
           </li>
           <li>
             2.4. Информационная система персональных данных — совокупность
@@ -85,9 +83,8 @@ export default function Policy() {
             2.8. Персональные данные — любая информация, относящаяся прямо или
             косвенно к определенному или определяемому Пользователю веб-сайта{" "}
             <span className="text-accent-orange">
-              &nbsp;https://culturagraphica.ru
+              &nbsp;https://culturagraphica.ru.
             </span>
-            .
           </li>
           <li>
             2.9. Персональные данные, разрешенные субъектом персональных данных
@@ -101,9 +98,8 @@ export default function Policy() {
           <li>
             2.10. Пользователь — любой посетитель веб-сайта{" "}
             <span className="text-accent-orange">
-              &nbsp;https://culturagraphica.ru
+              &nbsp;https://culturagraphica.ru.
             </span>
-            .
           </li>
           <li>
             2.11. Предоставление персональных данных — действия, направленные
