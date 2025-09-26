@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <section>
+    <div>
       <Header />
-      <div className="flex flex-col items-center gap-12 px-[24px] pt-30 pb-[170px] xl:px-115">
+      <section className="flex flex-col items-center gap-12 px-[24px] pt-30 pb-[170px] xl:px-115">
         <Title className="text-[74px] text-foreground xl:text-9xl">
           4<span className="text-accent-orange">0</span>4
         </Title>
@@ -21,8 +21,8 @@ export default function NotFound() {
             alt="Декоративная картинка мяч"
           />
         </div>
-      </div>
+      </section>
       <Footer />
-    </section>
+    </div>
   );
 }
