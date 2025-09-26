@@ -5,24 +5,24 @@ import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <div>
+    <section>
       <Header />
-      <div className="mt-[120px] mb-[170px] flex flex-col items-center gap-12">
-        <Title className="text-[74px] text-foreground">
+      <div className="flex flex-col items-center gap-12 px-[24px] pt-30 pb-[170px] xl:px-115">
+        <Title className="text-[74px] text-foreground xl:text-9xl">
           4<span className="text-accent-orange">0</span>4
         </Title>
-        <h3 className="font-shantell text-2xl font-bold">
+        <h3 className="font-shantell text-2xl font-bold xl:text-[40px]">
           Страница не найдена :(
         </h3>
-        <Image
-          className="flex"
-          width={308}
-          height={226}
-          src="/not-found/boll.png"
-          alt="Декоративная картинка мяч"
-        />
+        <div className="relative flex h-[226px] w-full xl:h-[380px]">
+          <Image
+            fill
+            src="/not-found/boll.png"
+            alt="Декоративная картинка мяч"
+          />
+        </div>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }
