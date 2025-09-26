@@ -9,6 +9,7 @@
   --accent-orange-muted: oklch(0.647 0.285 29.3deg / 10%);
   --accent-blue: oklch(0.5381 0.2545 270.46deg);
   --accent-green: oklch(0.9451 0.1243 101.54deg);
+  --hzch: oklch(0.9761 0 0deg);
   --white: oklch(1 0 0deg);
 }
 
@@ -26,6 +27,7 @@
   --color-accent-blue: var(--accent-blue);
   --color-accent-green: var(--accent-green);
   --color-white: var(--white);
+  --color-hzch: var(--hzch);
   --font-shantell: var(--font-shantell-sans);
   --font-inter: var(--font-inter);
 }
