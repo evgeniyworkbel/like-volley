@@ -7,13 +7,11 @@ import { ContactForm } from "@/widgets/contact-form";
 export default function Home() {
   return (
     <div>
-      <main>
-        <Hero />
-        <Advantages />
-        <ContactForm />
-        <Faq />
-        <Banner />
-      </main>
+      <Hero />
+      <Advantages />
+      <ContactForm />
+      <Faq />
+      <Banner />
     </div>
   );
 }
