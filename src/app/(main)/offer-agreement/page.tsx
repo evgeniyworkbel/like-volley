@@ -1,9 +1,8 @@
 import { Header } from "@/widgets/header";
 
-export default function Gallery() {
+export default function OfferAgreement() {
   return (
     <div>
-      <Header />
       <main></main>
     </div>
   );
