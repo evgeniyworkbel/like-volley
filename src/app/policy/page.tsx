@@ -1,14 +1,10 @@
-import { Footer } from "@/widgets/footer";
-import { Header } from "@/widgets/header";
-
 export default function Policy() {
   return (
-    <div>
-      <Header />
+    <section>
       <h3 className="text-center text-2xl font-extrabold">
         Политика в отношении обработки персональных данных
       </h3>
-      <main className="flex flex-col items-center bg-hzch p-5 text-sm">
+      <div className="flex flex-col items-center bg-hzch p-5 text-sm">
         <ol className="xl:max-w-[860px]">
           <li>
             1. Общие положения Настоящая политика обработки персональных данных
@@ -130,8 +126,7 @@ export default function Policy() {
             уничтожаются материальные носители персональных данных.
           </li>
         </ol>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </section>
   );
 }
