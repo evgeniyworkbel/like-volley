@@ -1,5 +1,4 @@
-import { Footer } from "@/widgets/footer";
-import { Header } from "@/widgets/header";
+import { Footer, Header } from "@/widgets";
 
 type LayoutProps = { children: React.ReactNode };
 
