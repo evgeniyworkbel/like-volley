@@ -1,8 +1,4 @@
-import { Advantages } from "@/widgets/advantages";
-import { Banner } from "@/widgets/banner";
-import { Hero } from "@/widgets/hero";
-import { Faq } from "@/widgets/faq";
-import { ContactForm } from "@/widgets/contact-form";
+import { Hero, Advantages, ContactForm, Faq, Banner } from "@/widgets";
 
 export default function Home() {
   return (
