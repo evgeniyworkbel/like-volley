@@ -1,12 +1,12 @@
 import { Footer, Header } from "@/widgets";
 
-type LayoutProps = { children: React.ReactNode };
+type MainLayoutProps = Readonly<{ children: React.ReactNode }>;
 
-export default function Layout({ children }: LayoutProps) {
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div>
       <Header />
-      <main> {children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );
