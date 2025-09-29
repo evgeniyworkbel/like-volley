@@ -9,8 +9,8 @@ export function ContactForm() {
       <div className="flex flex-col gap-10 xl:max-w-[494px] xl:gap-12">
         <div className="flex flex-col gap-4 text-center xl:pt-28">
           <Title className="xl:text-left">
-            Запишись&nbsp;
-            <span className="text-foreground">на первую тренировку</span>
+            <span className="text-accent-orange">Запишись&nbsp;</span>
+            на первую тренировку
           </Title>
           <p className="text-base text-foreground-secondary">
             Свяжитесь с нами для получения персональной консультации
