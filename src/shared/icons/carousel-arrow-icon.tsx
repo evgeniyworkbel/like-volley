@@ -1,6 +1,6 @@
 import { IconProps } from "../types";
 
-export function CarouselArrow({
+export function CarouselArrowIcon({
   className,
   width = 48,
   height = 48,

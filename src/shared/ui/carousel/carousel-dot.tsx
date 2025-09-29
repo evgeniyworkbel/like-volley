@@ -8,8 +8,7 @@ type CarouselDotProps = {
 export function CarouselDot({ index, selectedIndex }: CarouselDotProps) {
   return (
     <span
-      className={cn("h-6 w-6 rounded-full", {
-        "bg-foreground-secondary": index !== selectedIndex,
+      className={cn("h-6 w-6 rounded-full bg-hzch", {
         "bg-accent-orange": index === selectedIndex,
       })}
     />

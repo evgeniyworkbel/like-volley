@@ -1,26 +1,19 @@
 "use client";
 
-import { CarouselProps } from "./model/types";
-import { CoachCard } from "@/shared/ui/carousel/coaches-сard";
 import useEmblaCarousel from "embla-carousel-react";
 import { CarouselControls } from "./carousel-controls";
+import { CarouselItems } from "./carousel-items";
+import { CarouselProps } from "./types";
 
-export function Carousel({ data }: CarouselProps) {
+export function Carousel({ children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   return (
     <>
-      <div className="flex overflow-hidden" ref={emblaRef}>
-        {data.map(({ name, description, src, alt }) => (
-          <div key={name} className="w-full flex-shrink-0 xl:w-1/4">
-            <CoachCard
-              name={name}
-              description={description}
-              src={src}
-              alt={alt}
-            />
-          </div>
-        ))}
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          <CarouselItems>{children}</CarouselItems>
+        </div>
       </div>
       <CarouselControls emblaApi={emblaApi} />
     </>

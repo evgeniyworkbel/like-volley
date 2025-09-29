@@ -1,9 +1,13 @@
 import { EmblaCarouselType } from "embla-carousel";
-import { UsePrevNextButtonsType } from "../model/types";
+
+export type UsePrevNextButtonsReturn = {
+  onPrevButtonClick: VoidFunction;
+  onNextButtonClick: VoidFunction;
+};
 
 export const usePrevNextButtons = (
   emblaApi?: EmblaCarouselType,
-): UsePrevNextButtonsType => {
+): UsePrevNextButtonsReturn => {
   const onPrevButtonClick = () => {
     if (emblaApi) {
       emblaApi.scrollPrev();

@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { Coach } from "./model/types";
 
-export function CoachCard({ name, description, src, alt }: Coach) {
+type CoachCardProps = Coach;
+
+export function CoachCard({ name, description, src, alt }: CoachCardProps) {
   return (
     <div className="flex flex-col items-center gap-5">
       <div className="relative h-[270px] w-[270px] overflow-hidden rounded-[20px] border-4 border-accent-blue">

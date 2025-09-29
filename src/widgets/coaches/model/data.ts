@@ -1,4 +1,5 @@
-import { Coach } from "@/shared/types";
+import { Coach } from "../ui/model/types";
+
 export const coachesData: Coach[] = [
   {
     name: "Евгений Быков",
