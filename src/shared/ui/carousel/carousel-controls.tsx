@@ -6,9 +6,10 @@ import { CarouselDot } from "./carousel-dot";
 import { useDotButton } from "./hooks/use-dot-button";
 
 export function CarouselControls({ emblaApi }: CarouselControlsProps) {
-  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
   const { selectedIndex, scrollSnaps } = useDotButton(emblaApi);
+  const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
+  console.log(scrollSnaps);
   return (
     <div className="flex items-center justify-between xl:justify-center xl:gap-30">
       <Button onClick={onPrevButtonClick}>

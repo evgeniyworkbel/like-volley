@@ -3,16 +3,16 @@ import { Coach } from "./model/types";
 
 export function CoachCard({ name, description, src, alt }: Coach) {
   return (
-    <hgroup className="flex flex-col items-center gap-5">
-      <div className="relative h-[268px] w-[268px] overflow-hidden rounded-[20px] border-4 border-accent-blue">
+    <div className="flex flex-col items-center gap-5">
+      <div className="relative h-[270px] w-[270px] overflow-hidden rounded-[20px] border-4 border-accent-blue">
         <Image src={src} alt={alt} fill />
       </div>
-      <h4 className="flex flex-col items-center gap-3">
-        <p className="text-xl font-bold text-accent-orange">{name}</p>
-        <span className="text-center text-sm text-foreground-secondary">
+      <hgroup className="flex flex-col items-center gap-3">
+        <h4 className="text-xl font-bold text-accent-orange">{name}</h4>
+        <p className="text-center text-sm text-foreground-secondary">
           {description}
-        </span>
-      </h4>
-    </hgroup>
+        </p>
+      </hgroup>
+    </div>
   );
 }

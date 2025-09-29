@@ -2,8 +2,8 @@ import { EmblaCarouselType } from "embla-carousel";
 import { ImageProps } from "next/image";
 
 export type UsePrevNextButtonsType = {
-  onPrevButtonClick: () => void;
-  onNextButtonClick: () => void;
+  onPrevButtonClick: VoidFunction;
+  onNextButtonClick: VoidFunction;
 };
 
 export type CarouselControlsProps = {

@@ -18,7 +18,6 @@ export function CarouselArrow({
         <div
           style={{
             backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)", // Для Safari
             clipPath: "url(#bgblur_0_895_568_clip_path)",
             height: "100%",
             width: "100%",
