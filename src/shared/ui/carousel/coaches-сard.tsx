@@ -5,7 +5,7 @@ export function CoachCard({ name, description, src, alt }: Coach) {
   return (
     <hgroup className="flex flex-col items-center gap-5">
       <div className="relative h-[268px] w-[268px] overflow-hidden rounded-[20px] border-4 border-accent-blue">
-        <Image className="object-cover object-top" src={src} alt={alt} fill />
+        <Image src={src} alt={alt} fill />
       </div>
       <h4 className="flex flex-col items-center gap-3">
         <p className="text-xl font-bold text-accent-orange">{name}</p>
