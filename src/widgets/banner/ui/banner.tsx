@@ -13,13 +13,13 @@ export function Banner() {
         </div>
         <Image
           className="hidden xl:block"
-          src="/banner/promo-desktop.png"
+          src="/banner/promo-desktop.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
         />
         <Image
           className="absolute top-0 left-0 xl:hidden"
-          src="/banner/promo-mobile.png"
+          src="/banner/promo-mobile.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
