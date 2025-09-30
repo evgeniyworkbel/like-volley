@@ -1,6 +1,6 @@
 import { EmblaCarouselType } from "embla-carousel";
 
-export type UsePrevNextButtonsReturn = {
+type UsePrevNextButtonsReturn = {
   onPrevButtonClick: VoidFunction;
   onNextButtonClick: VoidFunction;
 };
