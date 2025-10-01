@@ -13,7 +13,7 @@ export function Accordion({ items }: AccordionProps) {
       {items.map(({ question, answer }) => {
         return (
           <details
-            name="requirements"
+            name="faq"
             key={question}
             className="group cursor-pointer rounded-xl border border-accent-orange-light hover:border-accent-orange"
           >
