@@ -2,6 +2,7 @@
 
 import { Button } from "@/shared/ui";
 import { useForm } from "react-hook-form";
+import { WarningIcon } from "./warning-icon";
 
 export function Form() {
   const {
@@ -12,7 +13,7 @@ export function Form() {
   } = useForm({
     defaultValues: {
       name: "",
-      phone: "",
+      phone: "+375 (__) ___-__-__",
     },
   });
 
@@ -21,22 +22,26 @@ export function Form() {
   return (
     <div className="flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6">
       <form
-        className="flex flex-col text-base text-white [&_>input]:h-10 [&_>input]:w-full [&_>input]:rounded-lg [&_>input]:bg-white"
+        className="flex flex-col items-center gap-6"
         onSubmit={handleSubmit((data) => {
           alert(JSON.stringify(data));
         })}
       >
-        <label>Имя</label>
-        <input {...register("name")} defaultValue="test" />
+        <div className="flex w-full flex-col gap-1.5">
+          <label className="text-white">Имя</label>
+          <input {...register("name")} className="h-10 rounded-lg bg-white" />
+        </div>
 
-        <label>Телефон</label>
-        <input
-          className="text-foreground-secondary"
-          placeholder="+375 (__) ___-__-__"
-          {...register("phone", { required: true, maxLength: 10 })}
-        />
+        <div className="flex w-full flex-col gap-1.5">
+          <label className="text-white">Телефон</label>
+          <input
+            className="h-10 rounded-lg bg-white pl-3 text-foreground-secondary"
+            {...register("phone", { required: true, maxLength: 10 })}
+          />
+          {errors.phone && <WarningIcon />}
+        </div>
 
-        <Button className="rounded-[40px] bg-white px-10 py-4 text-lg xl:px-52">
+        <Button className="rounded-[40px] bg-white px-10 py-4 text-lg text-foreground xl:px-52">
           Отправить сообщение
         </Button>
       </form>
