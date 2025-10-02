@@ -16,11 +16,7 @@ export function CarouselControls({ emblaApi }: CarouselControlsProps) {
       </Button>
       <div className="flex gap-[18px]">
         {scrollSnaps.map((_, index) => (
-          <CarouselDot
-            key={index}
-            index={index}
-            selectedIndex={selectedIndex}
-          />
+          <CarouselDot key={index} isActive={index === selectedIndex} />
         ))}
       </div>
       <Button onClick={onNextButtonClick}>

@@ -7,7 +7,7 @@ export type UseDotReturn = {
 };
 
 export const useDotButton = (emblaApi?: EmblaCarouselType): UseDotReturn => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const onInit = (emblaApi: EmblaCarouselType) => {

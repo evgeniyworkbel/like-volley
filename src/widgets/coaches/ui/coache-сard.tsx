@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Coach } from "./model/types";
+import { Coach } from "../model/types";
 
 type CoachCardProps = Coach;
 

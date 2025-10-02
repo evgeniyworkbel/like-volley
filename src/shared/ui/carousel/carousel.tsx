@@ -2,20 +2,23 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { CarouselControls } from "./carousel-controls";
-import { CarouselItems } from "./carousel-items";
+import { CarouselItem } from "./carousel-item";
 import { CarouselProps } from "./types";
+import { Children } from "react";
 
 export function Carousel({ children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   return (
-    <>
-      <div className="overflow-hidden" ref={emblaRef}>
+    <div>
+      <div ref={emblaRef} className="overflow-hidden">
         <div className="flex">
-          <CarouselItems>{children}</CarouselItems>
+          {Children.map(children, (child) => (
+            <CarouselItem>{child}</CarouselItem>
+          ))}
         </div>
       </div>
       <CarouselControls emblaApi={emblaApi} />
-    </>
+    </div>
   );
 }

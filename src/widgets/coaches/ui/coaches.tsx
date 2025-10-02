@@ -1,12 +1,12 @@
 import { coachesData, ownerData } from "../model/data";
 import { CoachCard } from "./coache-сard";
-import { SelectedCoach } from "./selected-coach";
+import { Owner } from "./owner";
 import { Carousel } from "@/shared/ui";
 
 export function Coaches() {
   return (
     <section className="flex flex-col gap-6 px-5 py-10">
-      <SelectedCoach {...ownerData} />
+      <Owner {...ownerData} />
       <Carousel>
         {coachesData.map((coach) => (
           <CoachCard

@@ -1,10 +1,10 @@
-import { Coach } from "../ui/model/types";
+import { Coach } from "./types";
 
 export const coachesData: Coach[] = [
   {
     name: "Евгений Быков",
     description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
-    src: "/coaches/bulls.webp",
+    src: "/coaches/bykov.webp",
     alt: "Фото тренера Евгения Быкова",
   },
   {
