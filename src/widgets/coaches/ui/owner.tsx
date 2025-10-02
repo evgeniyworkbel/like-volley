@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Coach } from "../model/types";
+import { ownerData } from "../model/data";
 
-export function Owner(ownerData: Coach) {
+export function Owner() {
   return (
     <div className="flex flex-col xl:flex-row xl:justify-center xl:gap-14">
       <Image src={ownerData.src} width={314} height={438} alt={ownerData.alt} />
