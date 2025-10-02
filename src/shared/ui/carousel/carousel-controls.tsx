@@ -1,9 +1,13 @@
 import { CarouselArrowIcon } from "@/shared/icons";
+import { EmblaCarouselType } from "embla-carousel";
 import { Button } from "@/shared/ui";
 import { usePrevNextButtons } from "./use-prev-next-buttons";
-import { CarouselControlsProps } from "./types";
 import { CarouselDot } from "./carousel-dot";
 import { useDotButton } from "./use-dot-button";
+
+export type CarouselControlsProps = {
+  emblaApi?: EmblaCarouselType;
+};
 
 export function CarouselControls({ emblaApi }: CarouselControlsProps) {
   const { selectedIndex, scrollSnaps } = useDotButton(emblaApi);

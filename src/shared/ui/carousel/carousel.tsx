@@ -2,9 +2,12 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { CarouselControls } from "./carousel-controls";
-import { CarouselItem } from "./carousel-item";
-import { CarouselProps } from "./types";
 import { Children } from "react";
+import { CarouselItem } from "./carousel-item";
+
+export type CarouselProps = {
+  children: React.ReactElement[];
+};
 
 export function Carousel({ children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

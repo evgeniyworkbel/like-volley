@@ -1,5 +1,5 @@
 import { coachesData, ownerData } from "../model/data";
-import { CoachCard } from "./coache-сard";
+import { CoachCard } from "./coach-сard";
 import { Owner } from "./owner";
 import { Carousel } from "@/shared/ui";
 
