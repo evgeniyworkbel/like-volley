@@ -1,10 +1,10 @@
 export default function Policy() {
   return (
-    <main>
+    <div>
       <h1 className="text-center text-2xl font-extrabold">
         Политика в отношении обработки персональных данных
       </h1>
-      <div className="flex flex-col items-center bg-background-secondary p-5 text-sm">
+      <div className="flex flex-col items-center p-5 text-sm">
         <ol className="xl:max-w-[860px]">
           <li>
             1. Общие положения Настоящая политика обработки персональных данных
@@ -127,6 +127,6 @@ export default function Policy() {
           </li>
         </ol>
       </div>
-    </main>
+    </div>
   );
 }
