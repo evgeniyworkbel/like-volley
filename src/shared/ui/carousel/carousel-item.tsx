@@ -3,5 +3,5 @@ export type CarouselItemProps = {
 };
 
 export function CarouselItem({ children }: CarouselItemProps) {
-  return <div className="w-full flex-shrink-0 xl:w-1/4">{children}</div>;
+  return <div className="w-full shrink-0 xl:w-1/4">{children}</div>;
 }
