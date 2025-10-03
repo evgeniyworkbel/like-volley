@@ -49,7 +49,7 @@ export function Hero() {
         {ageGroup === "children" && (
           <Image
             className="xl:absolute xl:right-0 xl:bottom-0"
-            src="/hero/children.png"
+            src="/hero/children.webp"
             width={543}
             height={446}
             priority
@@ -59,7 +59,7 @@ export function Hero() {
         {ageGroup === "adults" && (
           <Image
             className="xl:absolute xl:right-0 xl:bottom-0"
-            src="/hero/adults.png"
+            src="/hero/adults.webp"
             width={543}
             height={446}
             priority

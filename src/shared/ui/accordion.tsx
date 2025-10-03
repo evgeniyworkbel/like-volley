@@ -13,10 +13,11 @@ export function Accordion({ items }: AccordionProps) {
       {items.map(({ question, answer }) => {
         return (
           <details
+            name="faq"
             key={question}
             className="group cursor-pointer rounded-xl border border-accent-orange-light hover:border-accent-orange"
           >
-            <summary className="mb-2 flex list-none items-center justify-between p-6 text-lg font-semibold">
+            <summary className="mb-2 flex list-none items-center justify-between p-6 text-lg font-semibold select-none">
               {question}
               <AccordionArrowIcon className="group-open:rotate-180 [&>:first-child]:fill-accent-orange-light [&>:first-child]:hover:fill-accent-orange" />
             </summary>

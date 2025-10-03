@@ -6,9 +6,9 @@ export function Faq() {
     <div className="flex flex-col gap-32 px-20 py-10">
       <hgroup className="flex flex-col items-center gap-4 text-lg">
         <Title>
-          Вопросы<span className="text-foreground"> и ответы</span>
+          Вопросы<span className="text-accent-orange"> и ответы</span>
         </Title>
-        <p className="flex flex-col items-center">
+        <p className="flex flex-col items-center text-foreground-secondary">
           <span>
             Выберите формат обучения, который лучше всего соответствует вашим
             предпочтениям, расписанию и бюджету.
