@@ -13,7 +13,7 @@ export function Banner() {
         </div>
         <Image
           className="hidden xl:block"
-          src="/banner/promo-desktop.png"
+          src="/banner/promo-desktop.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
         />
@@ -21,6 +21,7 @@ export function Banner() {
           className="absolute top-0 left-0 xl:hidden"
           src="/banner/promo-mobile.png"
           fill
+          quality={100}
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
       </div>

@@ -8,7 +8,7 @@ export function Faq() {
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>
         </Title>
-        <p className="flex flex-col items-center">
+        <p className="flex flex-col items-center text-foreground-secondary">
           <span>
             Выберите формат обучения, который лучше всего соответствует вашим
             предпочтениям, расписанию и бюджету.
