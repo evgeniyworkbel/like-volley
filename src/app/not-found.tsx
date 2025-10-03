@@ -1,5 +1,4 @@
 import { Title } from "@/shared/ui";
-import Image from "next/image";
 
 export default function NotFound() {
   return (
@@ -10,7 +9,10 @@ export default function NotFound() {
       <Title className="text-2xl text-foreground xl:text-[40px]">
         Страница не найдена :(
       </Title>
-      <Image src="/not-found/boll.png" alt="" fill />
+      <video autoPlay loop muted playsInline>
+        <source src="/not-found/like-volley.webm" />
+        <source src="/not-found/like volley.mp4" />
+      </video>
     </section>
   );
 }
