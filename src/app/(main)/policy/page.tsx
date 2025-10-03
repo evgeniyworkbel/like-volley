@@ -1,9 +1,9 @@
 export default function Policy() {
   return (
-    <section>
-      <h3 className="text-center text-2xl font-extrabold">
+    <main>
+      <h1 className="text-center text-2xl font-extrabold">
         Политика в отношении обработки персональных данных
-      </h3>
+      </h1>
       <div className="flex flex-col items-center bg-background-secondary p-5 text-sm">
         <ol className="xl:max-w-[860px]">
           <li>
@@ -127,6 +127,6 @@ export default function Policy() {
           </li>
         </ol>
       </div>
-    </section>
+    </main>
   );
 }
