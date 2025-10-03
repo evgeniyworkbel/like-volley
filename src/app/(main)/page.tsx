@@ -1,4 +1,5 @@
 import { Hero, Advantages, ContactForm, Faq, Banner } from "@/widgets";
+import { Coaches } from "@/widgets/coaches";
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <Hero />
       <Advantages />
       <ContactForm />
+      <Coaches />
       <Faq />
       <Banner />
     </div>
