@@ -7,9 +7,10 @@ import { CarouselItem } from "./carousel-item";
 
 export type CarouselProps = {
   children: React.ReactElement[];
+  count: number;
 };
 
-export function Carousel({ children }: CarouselProps) {
+export function Carousel({ children, count }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   return (
@@ -17,7 +18,7 @@ export function Carousel({ children }: CarouselProps) {
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex gap-10">
           {Children.map(children, (child) => (
-            <CarouselItem>{child}</CarouselItem>
+            <CarouselItem count={count}>{child}</CarouselItem>
           ))}
         </div>
       </div>
