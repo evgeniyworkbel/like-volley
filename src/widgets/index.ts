@@ -5,3 +5,5 @@ export { Faq } from "@/widgets/faq";
 export { Hero } from "@/widgets/hero";
 export { Footer } from "@/widgets/footer";
 export { Header } from "@/widgets/header";
+export { Coaches } from "@/widgets/coaches";
+export { Gallery } from "@/widgets/gallery";

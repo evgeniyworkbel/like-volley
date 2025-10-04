@@ -15,7 +15,7 @@ export function Carousel({ children }: CarouselProps) {
   return (
     <div>
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex">
+        <div className="flex gap-10">
           {Children.map(children, (child) => (
             <CarouselItem>{child}</CarouselItem>
           ))}

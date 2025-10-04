@@ -1,5 +1,12 @@
-import { Hero, Advantages, ContactForm, Faq, Banner } from "@/widgets";
-import { Coaches } from "@/widgets/coaches";
+import {
+  Hero,
+  Advantages,
+  ContactForm,
+  Faq,
+  Banner,
+  Gallery,
+  Coaches,
+} from "@/widgets";
 
 export default function Home() {
   return (
@@ -10,6 +17,7 @@ export default function Home() {
       <Coaches />
       <Faq />
       <Banner />
+      <Gallery />
     </div>
   );
 }
