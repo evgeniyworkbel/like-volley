@@ -7,9 +7,9 @@ export function Header() {
   return (
     <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
       <Image
-        src="/logo.png"
-        width={89}
-        height={59}
+        src="/logo.svg"
+        width={122}
+        height={78}
         alt="Логотип школы волейбола Like Volley"
       />
       <nav className="hidden items-center gap-15 font-bold xl:flex xl:text-lg [&>a:hover]:underline">
