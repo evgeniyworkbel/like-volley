@@ -9,7 +9,6 @@ export function Footer() {
     <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Image
-          className=""
           src="/logo-footer.svg"
           width={122}
           height={78}
