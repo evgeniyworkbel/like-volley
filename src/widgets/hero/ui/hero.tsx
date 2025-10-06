@@ -41,7 +41,7 @@ export function Hero() {
         )}
       >
         <div className="flex flex-col">
-          <Title className="text-inherit xl:max-w-[678px] xl:text-left">
+          <Title className="leading-[0.85] text-inherit xl:max-w-[678px] xl:text-left xl:leading-none">
             Волейбольная школа для&nbsp;
             <span className="text-accent-green">всех возрастов</span>
           </Title>
