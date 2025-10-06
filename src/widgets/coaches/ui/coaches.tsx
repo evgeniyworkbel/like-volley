@@ -7,7 +7,7 @@ export function Coaches() {
   return (
     <section className="flex flex-col gap-6 px-5 py-10">
       <Owner />
-      <Carousel count={4}>
+      <Carousel countSlides={4}>
         {coachesData.map((coach) => (
           <CoachCard
             key={coach.name}

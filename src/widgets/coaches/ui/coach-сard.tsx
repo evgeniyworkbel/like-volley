@@ -11,7 +11,7 @@ export function CoachCard({ name, description, src, alt }: CoachCardProps) {
       </div>
       <hgroup className="flex flex-col items-center gap-3">
         <h4 className="text-xl font-bold text-accent-orange">{name}</h4>
-        <p className="text-center text-sm text-foreground-secondary">
+        <p className="max-w-64 text-center text-sm text-foreground-secondary">
           {description}
         </p>
       </hgroup>

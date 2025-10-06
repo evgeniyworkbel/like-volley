@@ -7,10 +7,10 @@ import { CarouselItem } from "./carousel-item";
 
 export type CarouselProps = {
   children: React.ReactElement[];
-  count: number;
+  countSlides: number;
 };
 
-export function Carousel({ children, count }: CarouselProps) {
+export function Carousel({ children, countSlides }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     breakpoints: { "(min-width: 1280px)": { align: "start" } },
@@ -19,9 +19,12 @@ export function Carousel({ children, count }: CarouselProps) {
   return (
     <div>
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex justify-between">
+        <div
+          className="grid auto-cols-max grid-flow-col xl:auto-cols-[calc(100%/var(--count))]"
+          style={{ "--count": countSlides } as React.CSSProperties}
+        >
           {Children.map(children, (child) => (
-            <CarouselItem count={count}>{child}</CarouselItem>
+            <CarouselItem>{child}</CarouselItem>
           ))}
         </div>
       </div>
