@@ -6,11 +6,11 @@ import { Children } from "react";
 import { CarouselItem } from "./carousel-item";
 
 export type CarouselProps = {
-  children: React.ReactElement[];
   slidesPerView: number;
+  children: React.ReactElement[];
 };
 
-export function Carousel({ children, slidesPerView }: CarouselProps) {
+export function Carousel({ slidesPerView, children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     breakpoints: { "(min-width: 1280px)": { align: "start" } },
