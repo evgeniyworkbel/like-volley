@@ -11,12 +11,15 @@ export type CarouselProps = {
 };
 
 export function Carousel({ children, count }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    breakpoints: { "(min-width: 1280px)": { align: "start" } },
+  });
 
   return (
     <div>
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex gap-10">
+        <div className="flex justify-between">
           {Children.map(children, (child) => (
             <CarouselItem count={count}>{child}</CarouselItem>
           ))}

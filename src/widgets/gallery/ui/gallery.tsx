@@ -6,7 +6,7 @@ export function Gallery() {
   return (
     <section className="flex flex-col gap-6 px-5 py-10">
       <Title className="text-center">Галерея</Title>
-      <Carousel>
+      <Carousel count={3}>
         {galleryData.map((coach) => (
           <GalleryCard key={coach.alt} src={coach.src} alt={coach.alt} />
         ))}
