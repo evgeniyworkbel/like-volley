@@ -9,9 +9,9 @@ export function Footer() {
     <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Image
-          src="/logo.png"
-          width={89}
-          height={60}
+          src="/logo-footer.svg"
+          width={122}
+          height={78}
           alt="Логотип школы волейбола Like Volley"
         />
         <p className="flex max-w-[270px] flex-col gap-2 text-center text-lg xl:max-w-[350px] xl:text-left">
