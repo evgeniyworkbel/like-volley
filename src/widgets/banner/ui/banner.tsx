@@ -8,7 +8,10 @@ export function Banner() {
         <div className="z-10 flex flex-col items-center gap-6 font-extrabold text-white xl:items-start xl:pl-10">
           <Title className="text-4xl text-inherit">Приведи друга</Title>
           <h3 className="text-[15px] xl:text-2xl">
-            Вы оба получите скидку в 20%
+            Вы оба получите скидку в&nbsp;
+            <span className="font-shantell text-[oklch(0.9451_0.1243_101.54)]">
+              20%
+            </span>
           </h3>
         </div>
         <Image
