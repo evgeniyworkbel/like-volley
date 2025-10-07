@@ -1,14 +1,17 @@
+import { contactsLinks } from "@/shared/constants";
 import Image from "next/image";
-import { Promo } from "../model/types";
+import Link from "next/link";
+import { GalleryItem } from "../model/types";
 
-type GalleryCardProps = Promo;
+type GalleryCardProps = GalleryItem;
 
 export function GalleryCard({ src, alt }: GalleryCardProps) {
   return (
-    <div className="flex flex-col items-center gap-5">
-      <div className="relative mb-20 h-[366px] w-80 overflow-hidden rounded-[18px] xl:w-[366px]">
-        <Image src={src} alt={alt} fill />
-      </div>
-    </div>
+    <Link
+      className="relative flex h-[366px] w-80 flex-col items-center gap-5 overflow-hidden rounded-[18px] xl:w-[366px]"
+      href={contactsLinks.gallery.href}
+    >
+      <Image src={src} alt={alt} fill />
+    </Link>
   );
 }

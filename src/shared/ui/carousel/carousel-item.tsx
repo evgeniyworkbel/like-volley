@@ -2,11 +2,11 @@ import { cn } from "@/shared/lib";
 
 export type CarouselItemProps = {
   children: React.ReactElement;
-  count: number;
+  slidesPerView: number;
 };
 
-export function CarouselItem({ children, count }: CarouselItemProps) {
-  const width = `${100 / count}%`;
+export function CarouselItem({ children, slidesPerView }: CarouselItemProps) {
+  const width = `${100 / slidesPerView}%`;
   return (
     <div
       className={cn("mr-7 w-full shrink-0 xl:mr-0")}
