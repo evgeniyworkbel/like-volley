@@ -17,7 +17,7 @@ export function Accordion({ items }: AccordionProps) {
             key={question}
             className="group cursor-pointer rounded-xl border border-accent-orange-light hover:border-accent-orange"
           >
-            <summary className="mb-2 flex list-none items-center justify-between p-6 text-lg font-semibold select-none">
+            <summary className="mb-2 flex list-none items-center justify-between p-6 text-sm font-semibold select-none xl:text-lg">
               {question}
               <AccordionArrowIcon className="group-open:rotate-180 [&>:first-child]:fill-accent-orange-light [&>:first-child]:hover:fill-accent-orange" />
             </summary>
