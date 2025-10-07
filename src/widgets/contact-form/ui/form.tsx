@@ -3,24 +3,29 @@
 import { Button } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMask } from "@react-input/mask";
-import { Controller, useForm } from "react-hook-form";
+import {
+  Controller,
+  SubmitErrorHandler,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
 import ReactSelect from "react-select";
 import { formSchema, formSchemaType } from "../lib/form-shema";
 import { WarningIcon } from "./warning-icon";
+import { useState } from "react";
+import { cn } from "@/shared/lib";
 
 export function Form() {
+  const [isSubmitted, setIsSubmitted] = useState<false | true>(false);
+
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      phone: "",
-      message: "",
-      consent: false,
       ReactSelect: { value: "change", label: "Выберите город" },
     },
   });
@@ -30,13 +35,32 @@ export function Form() {
     replacement: { _: /\d/ },
   });
 
+  const onSubmit: SubmitHandler<formSchemaType> = (data) => {
+    setIsSubmitted(!isSubmitted);
+    console.log(data, "Done!");
+  };
+  const onError: SubmitErrorHandler<formSchemaType> = (errors) =>
+    console.log(errors);
+
+  console.log(isValid, errors.phone);
+
   return (
-    <div className="flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6">
+    <div
+      className={cn(
+        "relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6",
+        {
+          "bg-[oklch(0.5381_0.2545_270.46)]": isSubmitted === true,
+        },
+      )}
+    >
+      {isSubmitted && (
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-shantell font-bold text-[oklch(0.701_0.2122_145.88)] xl:text-6xl">
+          Отправлено!
+        </span>
+      )}
       <form
         className="flex flex-col items-center gap-6 text-white"
-        onSubmit={handleSubmit((data) => {
-          alert(JSON.stringify(data));
-        })}
+        onSubmit={handleSubmit(onSubmit, onError)}
       >
         <div className="flex w-full flex-col gap-1.5 rounded-[20px]">
           <label className="text-xl font-semibold">Группа:</label>
@@ -46,6 +70,7 @@ export function Form() {
             render={({ field }) => (
               <ReactSelect
                 {...field}
+                className="text-foreground"
                 options={[
                   { value: "brest", label: "Брест" },
                   { value: "minsk", label: "Минск" },
@@ -101,7 +126,10 @@ export function Form() {
           </label>
         </div>
 
-        <Button className="rounded-[40px] bg-white px-10 py-4 text-lg text-foreground xl:px-52">
+        <Button
+          className="rounded-[40px] bg-white px-9 py-4 text-lg text-foreground xl:px-52"
+          disabled={!isValid}
+        >
           Отправить сообщение
         </Button>
       </form>

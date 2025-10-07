@@ -1,11 +1,9 @@
 import { cn } from "@/shared/lib";
-import { ReactNode } from "react";
 
-type ButtonProps = {
-  className?: string;
-  onClick?: () => void;
-  children: ReactNode;
-};
+type ButtonProps = Pick<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "disabled" | "children" | "className" | "onClick"
+>;
 
 export function Button({ className, children, ...props }: ButtonProps) {
   return (
