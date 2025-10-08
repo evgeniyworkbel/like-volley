@@ -6,11 +6,15 @@ export type CarouselItemProps = {
 };
 
 export function CarouselItem({ children, slidesPerView }: CarouselItemProps) {
-  const itemWidth = `${100 / slidesPerView}%`;
   return (
     <div
-      className={cn("mr-7 w-full shrink-0 xl:mr-0")}
-      style={{ flex: `0 0 ${itemWidth}` }}
+      className={cn("mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0")}
+      style={
+        {
+          "--width": `${100 / slidesPerView}%`,
+          "--mr": `${(100 - 8 * (slidesPerView - 1)) / slidesPerView}%`,
+        } as React.CSSProperties
+      }
     >
       {children}
     </div>
