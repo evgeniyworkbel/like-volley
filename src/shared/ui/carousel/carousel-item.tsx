@@ -1,7 +1,22 @@
+import { cn } from "@/shared/lib";
+
 export type CarouselItemProps = {
+  slidesPerView: number;
   children: React.ReactElement;
 };
 
-export function CarouselItem({ children }: CarouselItemProps) {
-  return <div className="w-full shrink-0 xl:w-1/4">{children}</div>;
+export function CarouselItem({ children, slidesPerView }: CarouselItemProps) {
+  return (
+    <div
+      className={cn("mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0")}
+      style={
+        {
+          "--width": `${100 / slidesPerView}%`,
+          "--mr": `${(100 - 8 * (slidesPerView - 1)) / slidesPerView}%`,
+        } as React.CSSProperties
+      }
+    >
+      {children}
+    </div>
+  );
 }
