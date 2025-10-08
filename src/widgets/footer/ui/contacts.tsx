@@ -30,18 +30,6 @@ export function Contacts() {
         />
       </Link>
       <Link
-        href={contactsLinks.email.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/email.svg"
-          width={68}
-          height={68}
-          alt="Декоративная иконка почты школы волейбола Like Volley"
-        />
-      </Link>
-      <Link
         href={contactsLinks.instagram.href}
         target="_blank"
         rel="noopener noreferrer"
@@ -51,6 +39,18 @@ export function Contacts() {
           width={68}
           height={68}
           alt="Декоративная иконка Instagram школы волейбола Like Volley"
+        />
+      </Link>
+      <Link
+        href={contactsLinks.telegram.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/telegram.svg"
+          width={68}
+          height={68}
+          alt="Декоративная иконка telegram школы волейбола Like Volley"
         />
       </Link>
     </div>

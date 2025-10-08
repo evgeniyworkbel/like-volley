@@ -1,7 +1,4 @@
 export const contactsLinks = {
-  email: {
-    href: "/",
-  },
   locations: {
     href: "/",
   },
