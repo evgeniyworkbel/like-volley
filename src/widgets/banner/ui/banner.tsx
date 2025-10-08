@@ -24,7 +24,7 @@ export function Banner() {
           className="absolute top-0 left-0 xl:hidden"
           src="/banner/promo-mobile.png"
           fill
-          // quality={100}
+          quality={100}
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
       </div>
