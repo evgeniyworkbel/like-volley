@@ -9,11 +9,13 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
-import ReactSelect from "react-select";
 import { formSchema, formSchemaType } from "../lib/form-shema";
 import { WarningIcon } from "./warning-icon";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
+import Link from "next/link";
+import { navLinks } from "@/shared/constants";
+import { SentMessage } from "./sent-message";
 
 export function Form() {
   const [isSubmitted, setIsSubmitted] = useState<false | true>(false);
@@ -26,12 +28,13 @@ export function Form() {
   } = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      ReactSelect: { value: "change", label: "Выберите город" },
+      phone: "",
+      citySelect: "change",
     },
   });
 
   const phoneRef = useMask({
-    mask: "+375 (___) ___-__-__",
+    mask: "+375 (__) ___-__-__",
     replacement: { _: /\d/ },
   });
 
@@ -42,22 +45,19 @@ export function Form() {
   const onError: SubmitErrorHandler<formSchemaType> = (errors) =>
     console.log(errors);
 
-  console.log(isValid, errors.phone);
+  console.log(isValid, errors);
 
   return (
     <div
       className={cn(
         "relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6",
+        // {не понятно как добавить тень}
         {
           "bg-[oklch(0.5381_0.2545_270.46)]": isSubmitted === true,
         },
       )}
     >
-      {isSubmitted && (
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-shantell font-bold text-[oklch(0.701_0.2122_145.88)] xl:text-6xl">
-          Отправлено!
-        </span>
-      )}
+      {isSubmitted && <SentMessage />}
       <form
         className="flex flex-col items-center gap-6 text-white"
         onSubmit={handleSubmit(onSubmit, onError)}
@@ -65,17 +65,19 @@ export function Form() {
         <div className="flex w-full flex-col gap-1.5 rounded-[20px]">
           <label className="text-xl font-semibold">Группа:</label>
           <Controller
-            name="ReactSelect"
+            name="citySelect"
             control={control}
             render={({ field }) => (
-              <ReactSelect
+              <select
                 {...field}
-                className="text-foreground"
-                options={[
-                  { value: "brest", label: "Брест" },
-                  { value: "minsk", label: "Минск" },
-                ]}
-              />
+                className="h-10 w-full appearance-none rounded-lg bg-white pl-3 text-foreground"
+              >
+                <option value="change" disabled>
+                  Выберите город
+                </option>
+                <option value="brest">Брест</option>
+                <option value="minsk">Минск</option>
+              </select>
             )}
           />
         </div>
@@ -118,17 +120,28 @@ export function Form() {
           <input
             id="consent"
             type="checkbox"
-            className="border-gray-300 text-blue-600 focus:ring-blue-500 mt-1 h-5 w-5 rounded"
+            className="border-gray-300 text-blue-600 focus:ring-blue-500 h-5 w-5 rounded"
             {...register("consent")}
           />
-          <label htmlFor="consent" className="text-sm text-white">
-            Я согласен на обработку моих персональных данных
+          <label
+            htmlFor="consent"
+            className="flex flex-col items-center text-sm text-white"
+          >
+            Я согласен на обработку моих&nbsp;
+            <Link className="hover:underline" href={navLinks.policy.href}>
+              персональных данных
+            </Link>
           </label>
         </div>
 
         <Button
-          className="rounded-[40px] bg-white px-9 py-4 text-lg text-foreground xl:px-52"
-          disabled={!isValid}
+          className={cn(
+            "rounded-[40px] bg-white px-9 py-4 text-lg text-foreground hover:bg-gradient-to-br hover:text-white xl:px-52",
+            isSubmitted
+              ? "bg-[oklch(0.6559_0.1604_257.81)] text-white"
+              : "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br",
+          )}
+          disabled={!isValid || isSubmitted}
         >
           Отправить сообщение
         </Button>
