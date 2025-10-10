@@ -45,7 +45,7 @@ export function Form() {
   const onError: SubmitErrorHandler<formSchemaType> = (errors) =>
     console.log(errors);
 
-  console.log(isValid, errors);
+  console.log(isValid, errors, errors.phone);
 
   return (
     <div
@@ -70,7 +70,7 @@ export function Form() {
             render={({ field }) => (
               <select
                 {...field}
-                className="h-10 w-full appearance-none rounded-lg bg-white pl-3 text-foreground"
+                className="h-10 w-full appearance-none rounded-lg bg-white pl-3 text-foreground focus:outline-none"
               >
                 <option value="change" disabled>
                   Выберите город
@@ -85,7 +85,7 @@ export function Form() {
         <div className="flex w-full flex-col gap-1.5">
           <label className="text-white">Имя</label>
           <input
-            className="h-10 rounded-lg bg-white pl-3 text-foreground"
+            className="h-10 rounded-lg bg-white pl-3 text-foreground focus:outline-none"
             {...register("name")}
           />
         </div>
@@ -99,7 +99,7 @@ export function Form() {
               <input
                 {...field}
                 ref={phoneRef}
-                className="h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary"
+                className="h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
                 placeholder="+375 (__) ___-__-__"
               />
             )}
@@ -111,7 +111,7 @@ export function Form() {
           <label className="text-white">Сообщение</label>
           <textarea
             placeholder="Расскажите о ваших целях..."
-            className="min-h-66 rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary"
+            className="min-h-66 rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
             {...register("message")}
           />
         </div>
