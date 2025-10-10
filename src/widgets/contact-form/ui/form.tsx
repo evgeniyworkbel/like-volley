@@ -10,7 +10,7 @@ import {
   useForm,
 } from "react-hook-form";
 import { formSchema, formSchemaType } from "../lib/form-shema";
-import { WarningIcon } from "./warning-icon";
+import { WarningMessage } from "./warning-message";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import Link from "next/link";
@@ -104,7 +104,7 @@ export function Form() {
               />
             )}
           />
-          {errors.phone && <WarningIcon />}
+          {errors.phone && <WarningMessage />}
         </div>
 
         <div className="flex w-full flex-col gap-1.5">
