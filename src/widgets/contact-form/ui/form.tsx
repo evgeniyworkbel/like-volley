@@ -3,13 +3,8 @@
 import { Button } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMask } from "@react-input/mask";
-import {
-  Controller,
-  SubmitErrorHandler,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
-import { formSchema, formSchemaType } from "../lib/form-shema";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { ContacfFormModel, ContacfFormModelType } from "../model/config";
 import { WarningMessage } from "./warning-message";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
@@ -25,11 +20,11 @@ export function Form() {
     handleSubmit,
     control,
     formState: { errors, isValid },
-  } = useForm<formSchemaType>({
-    resolver: zodResolver(formSchema),
+  } = useForm<ContacfFormModelType>({
+    resolver: zodResolver(ContacfFormModel),
     defaultValues: {
       phone: "",
-      citySelect: "change",
+      city: "change",
     },
   });
 
@@ -38,12 +33,10 @@ export function Form() {
     replacement: { _: /\d/ },
   });
 
-  const onSubmit: SubmitHandler<formSchemaType> = (data) => {
+  const onSubmit: SubmitHandler<ContacfFormModelType> = (data) => {
     setIsSubmitted(!isSubmitted);
     console.log(data, "Done!");
   };
-  const onError: SubmitErrorHandler<formSchemaType> = (errors) =>
-    console.log(errors);
 
   console.log(isValid, errors, errors.phone);
 
@@ -53,19 +46,19 @@ export function Form() {
         "relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6",
         // {не понятно как добавить тень}
         {
-          "bg-[oklch(0.5381_0.2545_270.46)]": isSubmitted === true,
+          "bg-[oklch(0.5381_0.2545_270.46)]": isSubmitted,
         },
       )}
     >
       {isSubmitted && <SentMessage />}
       <form
         className="flex flex-col items-center gap-6 text-white"
-        onSubmit={handleSubmit(onSubmit, onError)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full flex-col gap-1.5 rounded-[20px]">
           <label className="text-xl font-semibold">Группа:</label>
           <Controller
-            name="citySelect"
+            name="city"
             control={control}
             render={({ field }) => (
               <select
@@ -85,8 +78,8 @@ export function Form() {
         <div className="flex w-full flex-col gap-1.5">
           <label className="text-white">Имя</label>
           <input
-            className="h-10 rounded-lg bg-white pl-3 text-foreground focus:outline-none"
             {...register("name")}
+            className="h-10 rounded-lg bg-white pl-3 text-foreground focus:outline-none"
           />
         </div>
 
@@ -110,23 +103,19 @@ export function Form() {
         <div className="flex w-full flex-col gap-1.5">
           <label className="text-white">Сообщение</label>
           <textarea
+            {...register("message")}
             placeholder="Расскажите о ваших целях..."
             className="min-h-66 rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
-            {...register("message")}
           />
         </div>
 
         <div className="flex w-full items-start gap-2">
           <input
-            id="consent"
+            {...register("agreement")}
             type="checkbox"
             className="border-gray-300 text-blue-600 focus:ring-blue-500 h-5 w-5 rounded"
-            {...register("consent")}
           />
-          <label
-            htmlFor="consent"
-            className="flex flex-col items-center text-sm text-white"
-          >
+          <label className="flex flex-col items-center text-sm text-white">
             Я согласен на обработку моих&nbsp;
             <Link className="hover:underline" href={navLinks.policy.href}>
               персональных данных

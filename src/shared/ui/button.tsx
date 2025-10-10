@@ -2,7 +2,7 @@ import { cn } from "@/shared/lib";
 
 type ButtonProps = Pick<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "disabled" | "children" | "className" | "onClick"
+  "className" | "children" | "onClick" | "disabled"
 >;
 
 export function Button({ className, children, ...props }: ButtonProps) {
