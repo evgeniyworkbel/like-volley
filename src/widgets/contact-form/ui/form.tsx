@@ -120,13 +120,13 @@ export function Form() {
           />
         </div>
 
-        <div className="flex w-full items-start gap-2">
+        <div className="flex w-full justify-start gap-2 xl:justify-end">
           <input
             {...register("agreement")}
             type="checkbox"
             className="border-gray-300 text-blue-600 focus:ring-blue-500 h-5 w-5 rounded"
           />
-          <label className="flex flex-col items-center text-sm text-white">
+          <label className="flex flex-col text-sm text-white xl:flex-row">
             Я согласен на обработку моих&nbsp;
             <Link className="hover:underline" href={navLinks.policy.href}>
               персональных данных
