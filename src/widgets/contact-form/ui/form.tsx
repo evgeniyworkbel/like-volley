@@ -6,25 +6,23 @@ import { useMask } from "@react-input/mask";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { ContacfFormModel, ContacfFormModelType } from "../model/config";
 import { WarningMessage } from "./warning-message";
-import { useState } from "react";
 import { cn } from "@/shared/lib";
 import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import { SentMessage } from "./sent-message";
+import { formDefaultValues } from "../model/config";
 
 export function Form() {
-  const [isSubmitted, setIsSubmitted] = useState<false | true>(false);
-
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitted },
   } = useForm<ContacfFormModelType>({
     resolver: zodResolver(ContacfFormModel),
     defaultValues: {
-      phone: "",
-      city: "change",
+      phone: formDefaultValues.phone,
+      city: formDefaultValues.city,
     },
   });
 
@@ -34,11 +32,12 @@ export function Form() {
   });
 
   const onSubmit: SubmitHandler<ContacfFormModelType> = (data) => {
-    setIsSubmitted(!isSubmitted);
     console.log(data, "Done!");
   };
 
-  console.log(isValid, errors, errors.phone);
+  const isDisabled = !isValid || isSubmitted;
+
+  console.log(isValid, isSubmitted, errors, errors.phone);
 
   return (
     <div
@@ -65,7 +64,7 @@ export function Form() {
                 {...field}
                 className="h-10 w-full appearance-none rounded-lg bg-white pl-3 text-foreground focus:outline-none"
               >
-                <option value="change" disabled>
+                <option value="chooseCity" disabled>
                   Выберите город
                 </option>
                 <option value="brest">Брест</option>
@@ -130,7 +129,7 @@ export function Form() {
               ? "bg-[oklch(0.6559_0.1604_257.81)] text-white"
               : "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br",
           )}
-          disabled={!isValid || isSubmitted}
+          disabled={isDisabled}
         >
           Отправить сообщение
         </Button>
