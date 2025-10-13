@@ -4,13 +4,16 @@ import { Button } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMask } from "@react-input/mask";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { ContacfFormModel, ContacfFormModelType } from "../model/config";
+import {
+  ContacfFormModel,
+  ContacfFormModelType,
+  formDefaultValues,
+} from "../model/config";
 import { WarningMessage } from "./warning-message";
 import { cn } from "@/shared/lib";
 import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import { SentMessage } from "./sent-message";
-import { formDefaultValues } from "../model/config";
 
 export function Form() {
   const {
@@ -125,9 +128,11 @@ export function Form() {
         <Button
           className={cn(
             "rounded-[40px] bg-white px-9 py-4 text-lg text-foreground hover:bg-gradient-to-br hover:text-white xl:px-52",
-            isSubmitted
-              ? "bg-[oklch(0.6559_0.1604_257.81)] text-white"
-              : "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br",
+            {
+              "bg-[oklch(0.6559_0.1604_257.81)] text-white": isSubmitted,
+              "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br":
+                !isSubmitted,
+            },
           )}
           disabled={isDisabled}
         >
