@@ -124,7 +124,7 @@ export function Form() {
           <input
             {...register("agreement")}
             type="checkbox"
-            className="border-gray-300 text-blue-600 focus:ring-blue-500 h-5 w-5 rounded"
+            className="h-5 w-5 rounded"
           />
           <label className="flex flex-col text-sm text-white xl:flex-row">
             Я согласен на обработку моих&nbsp;
