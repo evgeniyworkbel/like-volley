@@ -3,13 +3,13 @@
 import { Button } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMask } from "@react-input/mask";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import {
-  ContacfFormModel,
-  ContacfFormModelType,
+  formSchema,
+  ContactFormModel,
   formDefaultValues,
 } from "../model/config";
-import { WarningMessage } from "./warning-message";
+import { ErrorMessage } from "./error-message";
 import { cn } from "@/shared/lib";
 import Link from "next/link";
 import { navLinks } from "@/shared/constants";
@@ -17,16 +17,13 @@ import { SentMessage } from "./sent-message";
 
 export function Form() {
   const {
-    register,
     handleSubmit,
     control,
-    formState: { errors, isValid, isSubmitted },
-  } = useForm<ContacfFormModelType>({
-    resolver: zodResolver(ContacfFormModel),
-    defaultValues: {
-      phone: formDefaultValues.phone,
-      city: formDefaultValues.city,
-    },
+    formState: { isValid, isSubmitted },
+  } = useForm<ContactFormModel>({
+    resolver: zodResolver(formSchema),
+    defaultValues: formDefaultValues,
+    mode: "onChange",
   });
 
   const phoneRef = useMask({
@@ -34,7 +31,7 @@ export function Form() {
     replacement: { _: /\d/ },
   });
 
-  const onSubmit: SubmitHandler<ContacfFormModelType> = (data) => {
+  const onSubmit = (data: ContactFormModel) => {
     console.log(data, "Done!");
   };
 
@@ -50,7 +47,6 @@ export function Form() {
         },
       )}
     >
-      {isSubmitted && <SentMessage />}
       <form
         className="flex flex-col items-center gap-6 text-white"
         onSubmit={handleSubmit(onSubmit)}
@@ -66,7 +62,7 @@ export function Form() {
                   {...field}
                   className="mt-1.5 h-10 w-full appearance-none rounded-lg bg-white pl-3 text-base text-foreground focus:outline-none"
                 >
-                  <option value="chooseCity">Выберите город</option>
+                  <option value="">Выберите город</option>
                   <option value="brest">Брест</option>
                   <option value="minsk">Минск</option>
                 </select>
@@ -76,27 +72,35 @@ export function Form() {
         </div>
 
         <div className="w-full">
-          <label className="text-white">
-            Имя
-            <input
-              {...register("name")}
-              className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
-            />
-          </label>
+          <Controller
+            name="name"
+            control={control}
+            render={({ field, fieldState }) => (
+              <label className="text-white">
+                Имя
+                <input
+                  {...field}
+                  className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
+                />
+                {fieldState.error && <ErrorMessage error={fieldState.error} />}
+              </label>
+            )}
+          />
         </div>
 
         <div className="w-full">
           <Controller
             name="phone"
             control={control}
-            render={({ field }) => {
-              const { ...restField } = field;
+            render={({ field, fieldState }) => {
+              const { ref, ...restField } = field;
               return (
                 <label className="text-white">
                   Телефон
                   <input
                     {...restField}
                     ref={(node) => {
+                      ref(node);
                       if (node) {
                         phoneRef.current = node;
                       }
@@ -104,34 +108,53 @@ export function Form() {
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
                     placeholder="+375 (__) ___-__-__"
                   />
+                  {fieldState.error && (
+                    <ErrorMessage error={fieldState.error} />
+                  )}
                 </label>
               );
             }}
           />
-          {errors.phone && <WarningMessage />}
         </div>
 
         <div className="flex w-full flex-col gap-1.5">
-          <label className="text-white">Сообщение</label>
-          <textarea
-            {...register("message")}
-            placeholder="Расскажите о ваших целях..."
-            className="min-h-66 rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
+          <Controller
+            name="message"
+            control={control}
+            render={({ field }) => (
+              <div>
+                <label className="text-white">Сообщение</label>
+                <textarea
+                  {...field}
+                  placeholder="Расскажите о ваших целях..."
+                  className="mt-1.5 min-h-66 w-full rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
+                />
+              </div>
+            )}
           />
         </div>
 
         <div className="flex w-full justify-start gap-2 xl:justify-end">
-          <input
-            {...register("agreement")}
-            type="checkbox"
-            className="h-5 w-5 rounded"
+          <Controller
+            name="agreement"
+            control={control}
+            render={({ field }) => (
+              <label className="flex items-start gap-2 text-sm text-white">
+                <input
+                  {...field}
+                  value="agreed"
+                  type="checkbox"
+                  className="mt-0.5 h-5 w-5 rounded"
+                />
+                <span className="flex flex-col xl:flex-row">
+                  Я согласен на обработку моих&nbsp;
+                  <Link className="hover:underline" href={navLinks.policy.href}>
+                    персональных данных
+                  </Link>
+                </span>
+              </label>
+            )}
           />
-          <label className="flex flex-col text-sm text-white xl:flex-row">
-            Я согласен на обработку моих&nbsp;
-            <Link className="hover:underline" href={navLinks.policy.href}>
-              персональных данных
-            </Link>
-          </label>
         </div>
 
         <Button
@@ -148,6 +171,7 @@ export function Form() {
           Отправить сообщение
         </Button>
       </form>
+      {isSubmitted && <SentMessage />}
     </div>
   );
 }
