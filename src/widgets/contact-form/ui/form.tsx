@@ -40,8 +40,6 @@ export function Form() {
 
   const isDisabled = !isValid || isSubmitted;
 
-  console.log(isValid, isSubmitted, errors, errors.phone);
-
   return (
     <div
       className={cn(
@@ -57,47 +55,58 @@ export function Form() {
         className="flex flex-col items-center gap-6 text-white"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="flex w-full flex-col gap-1.5 rounded-[20px]">
-          <label className="text-xl font-semibold">Группа:</label>
+        <div className="w-full rounded-[20px]">
           <Controller
             name="city"
             control={control}
             render={({ field }) => (
-              <select
-                {...field}
-                className="h-10 w-full appearance-none rounded-lg bg-white pl-3 text-foreground focus:outline-none"
-              >
-                <option value="chooseCity" disabled>
-                  Выберите город
-                </option>
-                <option value="brest">Брест</option>
-                <option value="minsk">Минск</option>
-              </select>
+              <label className="text-xl">
+                Группа:
+                <select
+                  {...field}
+                  className="mt-1.5 h-10 w-full appearance-none rounded-lg bg-white pl-3 text-base text-foreground focus:outline-none"
+                >
+                  <option value="chooseCity">Выберите город</option>
+                  <option value="brest">Брест</option>
+                  <option value="minsk">Минск</option>
+                </select>
+              </label>
             )}
           />
         </div>
 
-        <div className="flex w-full flex-col gap-1.5">
-          <label className="text-white">Имя</label>
-          <input
-            {...register("name")}
-            className="h-10 rounded-lg bg-white pl-3 text-foreground focus:outline-none"
-          />
+        <div className="w-full">
+          <label className="text-white">
+            Имя
+            <input
+              {...register("name")}
+              className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
+            />
+          </label>
         </div>
 
-        <div className="flex w-full flex-col gap-1.5">
-          <label className="text-white">Телефон</label>
+        <div className="w-full">
           <Controller
             name="phone"
             control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                ref={phoneRef}
-                className="h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
-                placeholder="+375 (__) ___-__-__"
-              />
-            )}
+            render={({ field }) => {
+              const { ...restField } = field;
+              return (
+                <label className="text-white">
+                  Телефон
+                  <input
+                    {...restField}
+                    ref={(node) => {
+                      if (node) {
+                        phoneRef.current = node;
+                      }
+                    }}
+                    className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
+                    placeholder="+375 (__) ___-__-__"
+                  />
+                </label>
+              );
+            }}
           />
           {errors.phone && <WarningMessage />}
         </div>
