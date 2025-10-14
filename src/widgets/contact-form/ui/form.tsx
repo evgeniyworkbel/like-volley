@@ -1,18 +1,18 @@
 "use client";
 
-import { Button } from "@/shared/ui";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMask } from "@react-input/mask";
+import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
+import { useMask } from "@react-input/mask";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { navLinks } from "@/shared/constants";
+import { cn } from "@/shared/lib";
+import { Button } from "@/shared/ui";
 import {
-  formSchema,
   ContactFormModel,
   formDefaultValues,
+  formSchema,
 } from "../model/config";
 import { ErrorMessage } from "./error-message";
-import { cn } from "@/shared/lib";
-import Link from "next/link";
-import { navLinks } from "@/shared/constants";
 import { SentMessage } from "./sent-message";
 
 export function Form() {
@@ -21,9 +21,8 @@ export function Form() {
     control,
     formState: { isValid, isSubmitted },
   } = useForm<ContactFormModel>({
-    resolver: zodResolver(formSchema),
     defaultValues: formDefaultValues,
-    mode: "onChange",
+    resolver: zodResolver(formSchema),
   });
 
   const phoneRef = useMask({
@@ -75,16 +74,20 @@ export function Form() {
           <Controller
             name="name"
             control={control}
-            render={({ field, fieldState }) => (
-              <label className="text-white">
-                Имя
-                <input
-                  {...field}
-                  className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
-                />
-                {fieldState.error && <ErrorMessage error={fieldState.error} />}
-              </label>
-            )}
+            render={({ field, fieldState }) => {
+              const { error } = fieldState;
+              const errorMessage = error?.message;
+              return (
+                <label className="text-white">
+                  Имя
+                  <input
+                    {...field}
+                    className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
+                  />
+                  {error && <ErrorMessage error={errorMessage} />}
+                </label>
+              );
+            }}
           />
         </div>
 
@@ -93,6 +96,8 @@ export function Form() {
             name="phone"
             control={control}
             render={({ field, fieldState }) => {
+              const { error } = fieldState;
+              const errorMessage = error?.message;
               const { ref, ...restField } = field;
               return (
                 <label className="text-white">
@@ -108,9 +113,7 @@ export function Form() {
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
                     placeholder="+375 (__) ___-__-__"
                   />
-                  {fieldState.error && (
-                    <ErrorMessage error={fieldState.error} />
-                  )}
+                  {fieldState.error && <ErrorMessage error={errorMessage} />}
                 </label>
               );
             }}
@@ -138,22 +141,28 @@ export function Form() {
           <Controller
             name="agreement"
             control={control}
-            render={({ field }) => (
-              <label className="flex items-start gap-2 text-sm text-white">
-                <input
-                  {...field}
-                  value="agreed"
-                  type="checkbox"
-                  className="mt-0.5 h-5 w-5 rounded"
-                />
-                <span className="flex flex-col xl:flex-row">
-                  Я согласен на обработку моих&nbsp;
-                  <Link className="hover:underline" href={navLinks.policy.href}>
-                    персональных данных
-                  </Link>
-                </span>
-              </label>
-            )}
+            render={({ field }) => {
+              const { value, ...restField } = field;
+              return (
+                <label className="flex items-start gap-2 text-sm text-white">
+                  <input
+                    type="checkbox"
+                    {...restField}
+                    className="mt-0.5 h-5 w-5 rounded"
+                    checked={value}
+                  />
+                  <span className="flex flex-col xl:flex-row">
+                    Я согласен на обработку моих&nbsp;
+                    <Link
+                      className="hover:underline"
+                      href={navLinks.policy.href}
+                    >
+                      персональных данных
+                    </Link>
+                  </span>
+                </label>
+              );
+            }}
           />
         </div>
 

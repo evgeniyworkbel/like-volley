@@ -1,7 +1,5 @@
-import { FieldError } from "react-hook-form";
-
 type ErrorMessageProps = {
-  error?: FieldError;
+  error?: string;
 };
 
 export function ErrorMessage({ error }: ErrorMessageProps) {
@@ -11,7 +9,7 @@ export function ErrorMessage({ error }: ErrorMessageProps) {
         <span className="flex h-4 w-4 items-center justify-center rounded-full border-2 border-white bg-accent-orange">
           !
         </span>
-        <span className="flex">{error.message}</span>
+        <span className="flex">{error}</span>
       </p>
     );
   }

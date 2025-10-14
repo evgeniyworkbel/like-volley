@@ -1,6 +1,7 @@
 import * as z from "zod";
 
 export const formSchema = z.object({
+  city: z.string(),
   name: z.string().min(4, "Поле должно быть заполнено"),
   phone: z
     .string()
@@ -9,14 +10,14 @@ export const formSchema = z.object({
       "Поле должно быть заполнено",
     ),
   message: z.string().optional(),
-  agreement: z.literal(true),
-  city: z.string(),
+  agreement: z.boolean().refine((val) => val === true),
 });
 
 export type ContactFormModel = z.infer<typeof formSchema>;
 
-export const formDefaultValues: Omit<ContactFormModel, "agreement"> = {
+export const formDefaultValues: ContactFormModel = {
+  city: "",
   name: "",
   phone: "",
-  city: "",
+  agreement: false,
 };
