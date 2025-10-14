@@ -99,7 +99,6 @@ export function Form() {
               const { error } = fieldState;
               const errorMessage = error?.message;
               const { ref, ...restField } = field;
-              console.log(error, errorMessage);
               return (
                 <label className="text-white">
                   Телефон
