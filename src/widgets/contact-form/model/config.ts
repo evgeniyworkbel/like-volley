@@ -19,5 +19,6 @@ export const formDefaultValues: ContactFormModel = {
   city: "",
   name: "",
   phone: "",
+  message: "",
   agreement: false,
 };

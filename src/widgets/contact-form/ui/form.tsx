@@ -84,7 +84,7 @@ export function Form() {
                     {...field}
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
                   />
-                  {error && <ErrorMessage error={errorMessage} />}
+                  {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
             }}
@@ -113,7 +113,7 @@ export function Form() {
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
                     placeholder="+375 (__) ___-__-__"
                   />
-                  {error && <ErrorMessage error={errorMessage} />}
+                  {errorMessage && <ErrorMessage message={errorMessage!} />}
                 </label>
               );
             }}
