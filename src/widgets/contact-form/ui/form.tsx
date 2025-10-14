@@ -99,6 +99,7 @@ export function Form() {
               const { error } = fieldState;
               const errorMessage = error?.message;
               const { ref, ...restField } = field;
+              console.log(error, errorMessage);
               return (
                 <label className="text-white">
                   Телефон
@@ -113,7 +114,7 @@ export function Form() {
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground-secondary focus:outline-none"
                     placeholder="+375 (__) ___-__-__"
                   />
-                  {fieldState.error && <ErrorMessage error={errorMessage} />}
+                  {error && <ErrorMessage error={errorMessage} />}
                 </label>
               );
             }}
