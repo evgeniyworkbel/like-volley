@@ -30,6 +30,8 @@ export function Form() {
     replacement: { _: /\d/ },
   });
 
+  //  bg-[oklch(0.195_0_0/0.5)]
+
   const onSubmit = (data: ContactFormModel) => {
     console.log(data, "Done!");
   };
@@ -37,15 +39,7 @@ export function Form() {
   const isDisabled = !isValid || isSubmitted;
 
   return (
-    <div
-      className={cn(
-        "relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6",
-        // {не понятно как добавить тень}
-        {
-          "bg-[oklch(0.5381_0.2545_270.46)]": isSubmitted,
-        },
-      )}
-    >
+    <div className="relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6">
       <form
         className="flex flex-col items-center gap-6 text-white"
         onSubmit={handleSubmit(onSubmit)}
