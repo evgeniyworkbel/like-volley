@@ -9,7 +9,7 @@ export const formSchema = z.object({
       /^\+375 \(\d{2,3}\) \d{3}-\d{2}-\d{2}$/,
       "Поле должно быть заполнено",
     ),
-  message: z.string().optional(),
+  message: z.string().max(2000).optional(),
   agreement: z.boolean().refine((val) => val === true),
 });
 
@@ -22,3 +22,5 @@ export const formDefaultValues: ContactFormModel = {
   message: "",
   agreement: false,
 };
+
+export const FORM_RESET = 3000;

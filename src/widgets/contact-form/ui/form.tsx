@@ -11,6 +11,7 @@ import {
   ContactFormModel,
   formDefaultValues,
   formSchema,
+  FORM_RESET,
 } from "../model/config";
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
@@ -18,8 +19,9 @@ import { SentMessage } from "./sent-message";
 export function Form() {
   const {
     handleSubmit,
+    reset,
     control,
-    formState: { isValid, isSubmitted },
+    formState: { isValid, isSubmitted, isSubmitSuccessful },
   } = useForm<ContactFormModel>({
     defaultValues: formDefaultValues,
     resolver: zodResolver(formSchema),
@@ -30,13 +32,12 @@ export function Form() {
     replacement: { _: /\d/ },
   });
 
-  //  bg-[oklch(0.195_0_0/0.5)]
-
   const onSubmit = (data: ContactFormModel) => {
     console.log(data, "Done!");
+    setTimeout(() => reset(formDefaultValues), FORM_RESET);
   };
 
-  const isDisabled = !isValid || isSubmitted;
+  const isDisabled = isSubmitted && !isValid;
 
   return (
     <div className="relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6">
@@ -167,6 +168,7 @@ export function Form() {
               "bg-[oklch(0.6559_0.1604_257.81)] text-white": isSubmitted,
               "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br":
                 !isSubmitted,
+              "bg-[oklch(0.7818_0.062_256.94)] opacity-25": isDisabled,
             },
           )}
           disabled={isDisabled}
@@ -174,7 +176,7 @@ export function Form() {
           Отправить сообщение
         </Button>
       </form>
-      {isSubmitted && <SentMessage />}
+      {isSubmitSuccessful && <SentMessage />}
     </div>
   );
 }
