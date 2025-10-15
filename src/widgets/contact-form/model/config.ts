@@ -1,4 +1,5 @@
 import * as z from "zod";
+import { ContactFormModel } from "./types";
 
 export const formSchema = z.object({
   city: z.string(),
@@ -13,8 +14,6 @@ export const formSchema = z.object({
   agreement: z.boolean().refine((val) => val === true),
 });
 
-export type ContactFormModel = z.infer<typeof formSchema>;
-
 export const formDefaultValues: ContactFormModel = {
   city: "",
   name: "",
@@ -23,4 +22,4 @@ export const formDefaultValues: ContactFormModel = {
   agreement: false,
 };
 
-export const FORM_RESET = 3000;
+export const RESET_TIMEOUT_MS = 3000;

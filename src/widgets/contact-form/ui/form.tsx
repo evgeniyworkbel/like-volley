@@ -8,13 +8,13 @@ import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
 import {
-  ContactFormModel,
   formDefaultValues,
   formSchema,
-  FORM_RESET,
+  RESET_TIMEOUT_MS,
 } from "../model/config";
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
+import { ContactFormModel } from "../model/types";
 
 export function Form() {
   const {
@@ -34,7 +34,7 @@ export function Form() {
 
   const onSubmit = (data: ContactFormModel) => {
     console.log(data, "Done!");
-    setTimeout(() => reset(formDefaultValues), FORM_RESET);
+    setTimeout(() => reset(formDefaultValues), RESET_TIMEOUT_MS);
   };
 
   const isDisabled = isSubmitted && !isValid;
@@ -49,19 +49,24 @@ export function Form() {
           <Controller
             name="city"
             control={control}
-            render={({ field }) => (
-              <label className="text-xl">
-                Группа:
-                <select
-                  {...field}
-                  className="mt-1.5 h-10 w-full appearance-none rounded-lg bg-white pl-3 text-base text-foreground focus:outline-none"
-                >
-                  <option value="">Выберите город</option>
-                  <option value="brest">Брест</option>
-                  <option value="minsk">Минск</option>
-                </select>
-              </label>
-            )}
+            render={({ field, fieldState }) => {
+              const { error } = fieldState;
+              const errorMessage = error?.message;
+              return (
+                <label className="text-xl">
+                  Группа:
+                  <select
+                    {...field}
+                    className="mt-1.5 h-10 w-full appearance-none rounded-lg bg-white pl-3 text-base text-foreground focus:outline-none"
+                  >
+                    <option value="">Выберите город</option>
+                    <option value="brest">Брест</option>
+                    <option value="minsk">Минск</option>
+                  </select>
+                  {errorMessage && <ErrorMessage message={errorMessage} />}
+                </label>
+              );
+            }}
           />
         </div>
 
@@ -119,16 +124,21 @@ export function Form() {
           <Controller
             name="message"
             control={control}
-            render={({ field }) => (
-              <div>
-                <label className="text-white">Сообщение</label>
-                <textarea
-                  {...field}
-                  placeholder="Расскажите о ваших целях..."
-                  className="mt-1.5 min-h-66 w-full rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
-                />
-              </div>
-            )}
+            render={({ field, fieldState }) => {
+              const { error } = fieldState;
+              const errorMessage = error?.message;
+              return (
+                <label className="text-white">
+                  Сообщение
+                  <textarea
+                    {...field}
+                    placeholder="Расскажите о ваших целях..."
+                    className="mt-1.5 min-h-66 w-full rounded-lg bg-white py-3 pr-2 pl-3 text-foreground-secondary focus:outline-none"
+                  />
+                  {errorMessage && <ErrorMessage message={errorMessage} />}
+                </label>
+              );
+            }}
           />
         </div>
 
