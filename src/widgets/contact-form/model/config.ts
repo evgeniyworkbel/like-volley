@@ -11,7 +11,9 @@ export const formSchema = z.object({
       "Поле должно быть заполнено",
     ),
   message: z.string().max(2000).optional(),
-  agreement: z.boolean().refine((val) => val === true),
+  agreement: z
+    .boolean()
+    .refine((val) => val === true, "Требуется подтверждение!"),
 });
 
 export const formDefaultValues: ContactFormModel = {

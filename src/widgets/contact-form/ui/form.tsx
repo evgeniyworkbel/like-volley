@@ -27,6 +27,8 @@ export function Form() {
     resolver: zodResolver(formSchema),
   });
 
+  const isDisabled = isSubmitted && !isValid;
+
   const phoneRef = useMask({
     mask: "+375 (__) ___-__-__",
     replacement: { _: /\d/ },
@@ -36,8 +38,6 @@ export function Form() {
     console.log(data, "Done!");
     setTimeout(() => reset(formDefaultValues), RESET_TIMEOUT_MS);
   };
-
-  const isDisabled = isSubmitted && !isValid;
 
   return (
     <div className="relative flex w-full flex-col items-center gap-6 rounded-3xl bg-accent-blue p-6">
@@ -146,8 +146,10 @@ export function Form() {
           <Controller
             name="agreement"
             control={control}
-            render={({ field }) => {
+            render={({ field, fieldState }) => {
               const { value, ...restField } = field;
+              const { error } = fieldState;
+              const errorMessage = error?.message;
               return (
                 <label className="flex items-start gap-2 text-sm text-white">
                   <input
@@ -159,12 +161,13 @@ export function Form() {
                   <span className="flex flex-col xl:flex-row">
                     Я согласен на обработку моих&nbsp;
                     <Link
-                      className="hover:underline"
+                      className="items-start hover:underline"
                       href={navLinks.policy.href}
                     >
                       персональных данных
                     </Link>
                   </span>
+                  {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
             }}
