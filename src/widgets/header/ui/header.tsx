@@ -1,9 +1,15 @@
-import { navLinks } from "@/shared/constants";
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { navLinks } from "@/shared/constants";
+import { useState } from "react";
 import { BurgerMenu } from "./burger-menu";
+import { CloseMeny } from "./close-meny";
 
 export function Header() {
+  const [open, setOpen] = useState<false | true>(false);
+
   return (
     <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
       <Image
@@ -19,7 +25,8 @@ export function Header() {
         <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
-      <BurgerMenu />
+      {open && <BurgerMenu onClick={() => setOpen(!open)} />}
+      {!open && <CloseMeny onClick={() => setOpen(!open)} />}
     </header>
   );
 }
