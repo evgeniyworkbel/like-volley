@@ -25,8 +25,8 @@ export function Header() {
         <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
         <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
-      {open && <BurgerMenu onClick={() => setOpen(!open)} />}
-      {!open && <MobileMeny onClick={() => setOpen(!open)} />}
+      {!open && <BurgerMenu onClick={() => setOpen(!open)} />}
+      {open && <MobileMeny onClick={() => setOpen(!open)} />}
     </header>
   );
 }
