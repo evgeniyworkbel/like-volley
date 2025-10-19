@@ -1,9 +1,5 @@
 import { Button } from "@/shared/ui";
-
-type BurgerMenuProps = Pick<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "onClick"
->;
+import { BurgerMenuProps } from "../model/types";
 
 export function BurgerMenu({ onClick }: BurgerMenuProps) {
   return (

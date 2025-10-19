@@ -5,7 +5,7 @@ import Image from "next/image";
 import { navLinks } from "@/shared/constants";
 import { useState } from "react";
 import { BurgerMenu } from "./burger-menu";
-import { CloseMeny } from "./close-meny";
+import { MobileMeny } from "./mobile-meny";
 
 export function Header() {
   const [open, setOpen] = useState<false | true>(false);
@@ -26,7 +26,7 @@ export function Header() {
         <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
       </nav>
       {open && <BurgerMenu onClick={() => setOpen(!open)} />}
-      {!open && <CloseMeny onClick={() => setOpen(!open)} />}
+      {!open && <MobileMeny onClick={() => setOpen(!open)} />}
     </header>
   );
 }
