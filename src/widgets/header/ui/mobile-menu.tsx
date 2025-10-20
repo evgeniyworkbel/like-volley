@@ -1,10 +1,10 @@
 import { navLinks } from "@/shared/constants";
 import { Button } from "@/shared/ui";
 import Link from "next/link";
-import { CloseMeny } from "./close-meny";
+import { CloseMeny } from "./close-menu";
 import { BurgerMenuProps } from "../model/types";
 
-export function MobileMeny({ onClick }: BurgerMenuProps) {
+export function MobileMenu({ onClick }: BurgerMenuProps) {
   return (
     <div>
       <CloseMeny onClick={onClick} />
