@@ -2,13 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { navLinks } from "@/shared/constants";
-import { useState } from "react";
 import { BurgerMenu } from "./burger-menu";
 import { MobileMenu } from "./mobile-menu";
 
 export function Header() {
   const [open, setOpen] = useState<false | true>(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [open]);
 
   return (
     <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
