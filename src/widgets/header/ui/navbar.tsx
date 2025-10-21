@@ -2,7 +2,7 @@ import Link, { LinkRestProps } from "next/link";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 
-type NavbarProps = Pick<LinkRestProps, "className">;
+type NavbarProps = Partial<Pick<LinkRestProps, "className">>;
 
 export function Navbar({ className }: NavbarProps) {
   return (
