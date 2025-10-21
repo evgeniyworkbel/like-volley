@@ -11,7 +11,7 @@ export function Header() {
         height={78}
         alt="Логотип школы волейбола Like Volley"
       />
-      <Navbar />
+      <Navbar className="hidden xl:flex" />
       <MobileMenu />
     </header>
   );
