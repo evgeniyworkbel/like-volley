@@ -1,7 +1,7 @@
 import { Button } from "@/shared/ui";
-import { BurgerMenuProps } from "../model/types";
+import { ButtonProps } from "@/shared/ui/button";
 
-export function CloseMeny({ onClick }: BurgerMenuProps) {
+export function CloseMenu({ onClick }: ButtonProps) {
   return (
     <Button onClick={onClick}>
       <div className="relative h-7 w-7 xl:hidden">

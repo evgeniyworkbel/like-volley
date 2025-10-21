@@ -1,24 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { navLinks } from "@/shared/constants";
 import { BurgerMenu } from "./burger-menu";
 import { MobileMenu } from "./mobile-menu";
+import { Navbar } from "./navbar";
 
 export function Header() {
-  const [open, setOpen] = useState<false | true>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    if (open) {
+    if (isOpen) {
       document.body.classList.add("overflow-hidden");
-    }
-
-    return () => {
+    } else {
       document.body.classList.remove("overflow-hidden");
-    };
-  }, [open]);
+    }
+  }, [isOpen]);
 
   return (
     <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
@@ -28,15 +25,9 @@ export function Header() {
         height={78}
         alt="Логотип школы волейбола Like Volley"
       />
-      <nav className="hidden items-center gap-15 font-bold xl:flex xl:text-lg [&>a:hover]:underline">
-        <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-        <Link href={navLinks.locations.href}>{navLinks.locations.title}</Link>
-        <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-        <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
-        <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
-      </nav>
-      {!open && <BurgerMenu onClick={() => setOpen(!open)} />}
-      {open && <MobileMenu onClick={() => setOpen(!open)} />}
+      <Navbar />
+      {!isOpen && <BurgerMenu onClick={() => setIsOpen(!isOpen)} />}
+      {isOpen && <MobileMenu onClick={() => setIsOpen(!isOpen)} />}
     </header>
   );
 }
