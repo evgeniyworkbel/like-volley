@@ -31,6 +31,24 @@ export const coachesData: Coach[] = [
     src: "/coaches/kiselyov.webp",
     alt: "Фото тренера Ангелины Горбачевой",
   },
+  {
+    name: "Виктория Крупко",
+    description: "ведущий тренер в Бресте",
+    src: "/coaches/krupko.webp",
+    alt: "Фото тренера Виктории Крупко",
+  },
+  {
+    name: "Наталья Андриевич",
+    description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
+    src: "/coaches/andrievich.webp",
+    alt: "Фото тренера Натальи Андриевич",
+  },
+  {
+    name: "Владислав Сабиров",
+    description: "Старший тренер в городе Бресте, чемпион по волейболу 2018г",
+    src: "/coaches/sabirov.webp",
+    alt: "Фото тренера Владислава Сабирова",
+  },
 ] as const;
 
 export const ownerData: Coach = {
