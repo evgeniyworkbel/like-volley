@@ -13,7 +13,7 @@ export const YandexMetrikaScript = () => {
     window.ym(YM_COUNTER_ID, "hit", pathname);
   }, [pathname]);
 
-  return <Script src="/metrika.js" />;
+  return <script id="test" src="/metrika.js" async />;
   // return (
   //   <Script
   //     id="yandex-metrika-analytics"
