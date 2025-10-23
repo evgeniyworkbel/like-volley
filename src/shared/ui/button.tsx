@@ -1,6 +1,6 @@
 import { cn } from "@/shared/lib";
 
-type ButtonProps = Pick<
+export type ButtonProps = Pick<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   "className" | "children" | "onClick" | "disabled"
 >;

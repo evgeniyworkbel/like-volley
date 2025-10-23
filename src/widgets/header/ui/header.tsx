@@ -1,7 +1,6 @@
-import { navLinks } from "@/shared/constants";
 import Image from "next/image";
-import Link from "next/link";
-import { BurgerMenu } from "./burger-menu";
+import { MobileMenu } from "./mobile-menu";
+import { Navbar } from "./navbar";
 
 export function Header() {
   return (
@@ -12,14 +11,8 @@ export function Header() {
         height={78}
         alt="Логотип школы волейбола Like Volley"
       />
-      <nav className="hidden items-center gap-15 font-bold xl:flex xl:text-lg [&>a:hover]:underline">
-        <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-        <Link href={navLinks.locations.href}>{navLinks.locations.title}</Link>
-        <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-        <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
-        <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
-      </nav>
-      <BurgerMenu />
+      <Navbar className="hidden xl:flex" />
+      <MobileMenu />
     </header>
   );
 }
