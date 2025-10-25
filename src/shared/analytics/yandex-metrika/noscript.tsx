@@ -2,14 +2,10 @@ import { YM_COUNTER_ID } from "./config";
 
 export function YandexMetrikaNoscript() {
   return (
-    <noscript>
-      <picture>
-        <img
-          className="sr-only"
-          src={`https://mc.yandex.ru/watch/${YM_COUNTER_ID}`}
-          alt=""
-        />
-      </picture>
-    </noscript>
+    <noscript
+      dangerouslySetInnerHTML={{
+        __html: `<div><img src="https://mc.yandex.ru/watch/${YM_COUNTER_ID}" style="position:absolute; left:-9999px;" alt="" /></div>`,
+      }}
+    ></noscript>
   );
 }
