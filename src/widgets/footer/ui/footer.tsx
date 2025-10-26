@@ -11,7 +11,7 @@ export function Footer() {
         <Image
           src="/logo-footer.svg"
           width={122}
-          height={78}
+          height={76}
           alt="Логотип школы волейбола Like Volley"
         />
         <p className="flex max-w-[270px] flex-col gap-2 text-center text-lg xl:max-w-[350px] xl:text-left">
