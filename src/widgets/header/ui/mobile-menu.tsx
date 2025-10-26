@@ -32,7 +32,10 @@ export function MobileMenu() {
           <Button onClick={closeMenu}>
             <CloseMenuIcon />
           </Button>
-          <Navbar className="fixed top-40 left-0 flex w-full flex-col rounded-b-2xl bg-[oklch(1_0_0_/_60%)] pb-5 font-shantell text-2xl backdrop-blur-sm transition-all duration-900 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline" />
+          <Navbar
+            className="fixed top-40 left-0 flex w-full flex-col rounded-b-2xl bg-[oklch(1_0_0_/_60%)] pb-5 font-shantell text-2xl backdrop-blur-sm transition-all duration-900 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline"
+            onClick={closeMenu}
+          />
         </div>
       )}
     </div>

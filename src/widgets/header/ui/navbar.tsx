@@ -2,9 +2,9 @@ import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 
-type NavbarProps = { className?: string };
+type NavbarProps = { className?: string; onClick?: VoidFunction };
 
-export function Navbar({ className }: NavbarProps) {
+export function Navbar({ className, onClick }: NavbarProps) {
   return (
     <nav
       className={cn(
@@ -12,11 +12,21 @@ export function Navbar({ className }: NavbarProps) {
         className,
       )}
     >
-      <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
-      <Link href={navLinks.locations.href}>{navLinks.locations.title}</Link>
-      <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-      <Link href={navLinks.gallery.href}>{navLinks.gallery.title}</Link>
-      <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
+      <Link href={navLinks.home.href} onClick={onClick}>
+        {navLinks.home.title}
+      </Link>
+      <Link href={navLinks.locations.href} onClick={onClick}>
+        {navLinks.locations.title}
+      </Link>
+      <Link href={navLinks.about.href} onClick={onClick}>
+        {navLinks.about.title}
+      </Link>
+      <Link href={navLinks.gallery.href} onClick={onClick}>
+        {navLinks.gallery.title}
+      </Link>
+      <Link href={navLinks.phone.href} onClick={onClick}>
+        {navLinks.phone.title}
+      </Link>
     </nav>
   );
 }
