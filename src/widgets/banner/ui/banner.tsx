@@ -10,7 +10,7 @@ export function Banner() {
           <h3 className="text-[15px] xl:text-2xl">
             Вы оба получите скидку в&nbsp;
             <span className="font-shantell text-[oklch(0.9451_0.1243_101.54)]">
-              20%
+              20 Рублей
             </span>
           </h3>
         </div>
