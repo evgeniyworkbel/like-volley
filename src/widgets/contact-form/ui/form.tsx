@@ -83,6 +83,7 @@ export function Form() {
                   <input
                     {...field}
                     className="mt-1.5 h-10 w-full rounded-lg bg-white pl-3 text-foreground focus:outline-none"
+                    placeholder="Введите имя"
                   />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>

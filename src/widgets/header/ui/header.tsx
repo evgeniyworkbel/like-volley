@@ -8,7 +8,7 @@ export function Header() {
       <Image
         src="/logo.svg"
         width={122}
-        height={78}
+        height={76}
         alt="Логотип школы волейбола Like Volley"
       />
       <Navbar className="hidden xl:flex" />
