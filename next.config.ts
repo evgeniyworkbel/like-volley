@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   typedRoutes: true,
   images: {
-    qualities: [100],
+    qualities: [75, 100],
   },
 };
 
