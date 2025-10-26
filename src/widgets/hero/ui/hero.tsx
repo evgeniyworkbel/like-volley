@@ -9,6 +9,16 @@ import { HeroTab } from "./hero-tab";
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
 
+  const handleScroll = () => {
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
@@ -78,6 +88,7 @@ export function Hero() {
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
+          onClick={handleScroll}
         >
           Записаться
         </Button>
