@@ -8,7 +8,7 @@ export function Navbar({ className, onClick }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "items-center gap-15 font-bold xl:text-lg [&>a:hover]:underline",
+        "flex items-center gap-15 font-bold xl:text-lg [&>a:hover]:underline",
         className,
       )}
     >
