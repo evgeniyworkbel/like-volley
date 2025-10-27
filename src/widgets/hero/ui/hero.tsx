@@ -4,20 +4,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
+import { handleClick } from "@/shared/lib/handle-click";
+import { contactFormId } from "@/shared/constants/htmlAttrs";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
-
-  const handleScroll = () => {
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-      contactForm.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
     <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
@@ -88,7 +80,7 @@ export function Hero() {
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
-          onClick={handleScroll}
+          onClick={() => handleClick(contactFormId)}
         >
           Записаться
         </Button>
