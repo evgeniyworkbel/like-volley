@@ -1,4 +1,4 @@
-import { advantagesData } from "@/shared/constants";
+import { advantagesData } from "../model/data";
 import Image from "next/image";
 
 export function Advantages() {
