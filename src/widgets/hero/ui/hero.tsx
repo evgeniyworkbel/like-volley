@@ -4,12 +4,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
-import { handleClick } from "@/shared/lib/handle-click";
-import { contactFormId } from "@/shared/constants/htmlAttrs";
+import { contactFormId } from "@/shared/constants/html-attrs";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
+
+  const handleClick = (elementById: string) => {
+    const nameElement = document.getElementById(elementById);
+    if (nameElement) {
+      nameElement.scrollIntoView();
+    }
+  };
 
   return (
     <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
