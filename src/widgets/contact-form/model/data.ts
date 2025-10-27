@@ -6,7 +6,7 @@ export const contactsData = [
     href: contactsLinks.phone.href,
     imageSrc: "/contact-form/phone.svg",
     alt: "Декоративная иконка телефона школы волейбола Like Volley",
-    label: contactsLinks.phone.href,
+    label: "+375 (25) 722-13-13",
   },
   {
     title: "Telegram",
