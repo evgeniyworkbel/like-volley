@@ -1,5 +1,5 @@
 import { Title } from "@/shared/ui";
-import { contactFormId } from "@/shared/constants/html-attrs";
+import { contactFormId } from "@/shared/constants";
 import { Contact } from "./contact";
 import { Form } from "./form";
 import { contactsData } from "../model/data";

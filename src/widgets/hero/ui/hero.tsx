@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
-import { contactFormId } from "@/shared/constants/html-attrs";
+import { contactFormId } from "@/shared/constants";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
 
-  const handleClick = (elementById: string) => {
-    const nameElement = document.getElementById(elementById);
+  const handleClick = () => {
+    const nameElement = document.getElementById(contactFormId);
     if (nameElement) {
       nameElement.scrollIntoView();
     }
@@ -86,7 +86,7 @@ export function Hero() {
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
-          onClick={() => handleClick(contactFormId)}
+          onClick={handleClick}
         >
           Записаться
         </Button>
