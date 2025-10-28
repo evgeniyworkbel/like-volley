@@ -1,6 +1,6 @@
 export function BurgerMenuIcon() {
   return (
-    <div className="z-20 flex flex-col gap-2 [&_>*]:w-8 [&_>*]:border [&_>*]:border-accent-orange">
+    <div className="flex flex-col gap-2 [&_>*]:w-8 [&_>*]:border [&_>*]:border-accent-orange">
       <div></div>
       <div></div>
       <div></div>
