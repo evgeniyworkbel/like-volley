@@ -29,7 +29,7 @@ export function MobileMenu() {
         </Button>
       )}
       {isOpen && (
-        <Button onClick={closeMenu}>
+        <Button className="z-20" onClick={closeMenu}>
           <CloseMenuIcon />
         </Button>
       )}
