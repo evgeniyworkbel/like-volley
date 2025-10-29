@@ -11,9 +11,9 @@ export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
 
   const handleClick = () => {
-    const nameElement = document.getElementById(contactFormId);
-    if (nameElement) {
-      nameElement.scrollIntoView();
+    const contactForm = document.getElementById(contactFormId);
+    if (contactForm) {
+      contactForm.scrollIntoView();
     }
   };
 
