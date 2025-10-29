@@ -4,10 +4,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
+import { contactFormId } from "@/shared/constants";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
+
+  const handleClick = () => {
+    const contactForm = document.getElementById(contactFormId);
+    if (contactForm) {
+      contactForm.scrollIntoView();
+    }
+  };
 
   return (
     <section className="flex flex-col px-5 py-[50px] text-center text-white xl:px-20">
@@ -78,6 +86,7 @@ export function Hero() {
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
+          onClick={handleClick}
         >
           Записаться
         </Button>
