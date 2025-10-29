@@ -13,13 +13,13 @@ export const contactsData = [
     href: contactsLinks.telegram.href,
     imageSrc: "/contact-form/telegram.svg",
     alt: "Декоративная иконка Telegram школы волейбола Like Volley",
-    label: contactsLinks.telegram.href,
+    label: "@LikeVolley_club",
   },
   {
     title: "Instagram",
     href: contactsLinks.instagram.href,
     imageSrc: "/contact-form/instagram.svg",
     alt: "Декоративная иконка Instagram школы волейбола Like Volley",
-    label: contactsLinks.instagram.href,
+    label: "@LikeVolley_club",
   },
 ] as const;
