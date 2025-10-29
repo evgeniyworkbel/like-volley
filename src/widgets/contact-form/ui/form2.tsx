@@ -9,9 +9,9 @@ export function Form2() {
   };
 
   return (
-    <div className="relative h-[700px] max-w-[700px] overflow-hidden rounded-3xl bg-accent-blue p-6">
+    <div className="relative h-[700px] max-w-[700px] overflow-hidden rounded-3xl bg-accent-blue p-6 xl:h-[775px]">
       <Image
-        className="absolute bottom-0 left-1/2 w-[460px] -translate-x-1/2 -translate-y-20 scale-[1.6]"
+        className="absolute bottom-0 left-1/2 w-[460px] -translate-x-1/2 -translate-y-20 scale-[1.6] xl:w-full xl:translate-y-0 xl:scale-100"
         width={700}
         height={618}
         src="/contact-form/players.webp"
