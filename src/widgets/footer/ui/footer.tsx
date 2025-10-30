@@ -1,17 +1,27 @@
+"use client";
+//  todo: избавиться от рендера футера на клиенте путем замены кнопки с хендлером на ссылку
+
 import Link from "next/link";
-import { navLinks } from "@/shared/constants";
 import Image from "next/image";
+import { contactFormId, navLinks } from "@/shared/constants";
 import { Button } from "@/shared/ui";
 import { Contacts } from "./contacts";
 
 export function Footer() {
+  const handleClick = () => {
+    const contactForm = document.getElementById(contactFormId);
+    if (contactForm) {
+      contactForm.scrollIntoView();
+    }
+  };
+
   return (
     <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Image
           src="/logo-footer.svg"
           width={122}
-          height={78}
+          height={76}
           alt="Логотип школы волейбола Like Volley"
         />
         <p className="flex max-w-[270px] flex-col gap-2 text-center text-lg xl:max-w-[350px] xl:text-left">
@@ -39,7 +49,10 @@ export function Footer() {
           <Contacts />
         </div>
         <div className="flex flex-col gap-20 xl:justify-between">
-          <Button className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground">
+          <Button
+            className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground"
+            onClick={handleClick}
+          >
             Записаться
           </Button>
           <ul className="flex flex-col gap-2 text-sm">

@@ -4,7 +4,7 @@ import { ownerData } from "../model/data";
 export function Owner() {
   return (
     <div className="flex flex-col xl:flex-row xl:justify-center xl:gap-14">
-      <Image src={ownerData.src} width={314} height={438} alt={ownerData.alt} />
+      <Image src={ownerData.src} width={314} height={407} alt={ownerData.alt} />
       <div className="flex flex-col gap-5 xl:justify-center">
         <hgroup className="flex flex-col items-center gap-2.5 xl:items-start">
           {/* помню про заголвки в 32px, но он ломает верстку */}
