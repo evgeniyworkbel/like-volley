@@ -2,7 +2,7 @@ import { formatPhone } from "../lib";
 
 const contacts = {
   phone: "+375298020748",
-  instagram: "LikeVolley_club",
+  instagram: "like.volley.by",
   telegram: "LikeVolley_club",
 } as const;
 
@@ -11,15 +11,15 @@ export const contactsLinks = {
     href: "/",
   },
   instagram: {
-    href: "https://www.instagram.com/like.volley.by",
+    href: `https://www.instagram.com/${contacts.instagram}`,
     label: `@${contacts.instagram}`,
   },
   phone: {
-    href: "tel:+375298020748",
-    label: formatPhone(`${contacts.phone}`),
+    href: `tel:${contacts.phone}`,
+    label: formatPhone(contacts.phone),
   },
   telegram: {
-    href: "https://t.me/s/LikeVolley_club",
+    href: `https://t.me/s/${contacts.telegram}`,
     label: `@${contacts.telegram}`,
   },
   gallery: {
