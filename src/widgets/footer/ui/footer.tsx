@@ -1,4 +1,5 @@
 "use client";
+//  todo: избавиться от рендера футера на клиенте путем замены кнопки с хендлером на ссылку
 
 import Link from "next/link";
 import Image from "next/image";
