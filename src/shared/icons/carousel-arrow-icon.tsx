@@ -10,11 +10,11 @@ export function CarouselArrowIcon({
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 38 43"
+      viewBox="0 0 43 43"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <foreignObject x="-23.5" y="-23.7681" width="85" height="85">
+      <foreignObject x="-2.5" y="-2.5" width="48" height="48">
         <div
           style={{
             backdropFilter: "blur(12px)",
@@ -24,16 +24,18 @@ export function CarouselArrowIcon({
           }}
         ></div>
       </foreignObject>
-      <path
-        data-figma-bg-blur-radius="24"
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M5.12215 34.8221C7.7508 36.7319 11.5005 36.7319 19 36.7319C26.4995 36.7319 30.2492 36.7319 32.8779 34.8221C33.7268 34.2053 34.4734 33.4587 35.0902 32.6098C37 29.9811 37 26.2314 37 18.7319C37 11.2325 37 7.48274 35.0902 4.85408C34.4734 4.00514 33.7268 3.25855 32.8779 2.64176C30.2492 0.731931 26.4995 0.731931 19 0.731931C11.5005 0.73193 7.75081 0.73193 5.12215 2.64176C4.2732 3.25855 3.52663 4.00513 2.90983 4.85408C1 7.48274 1 11.2325 1 18.7319C1 26.2314 1 29.9811 2.90983 32.6098C3.52663 33.4587 4.2732 34.2053 5.12215 34.8221Z"
-        fill="#FC5C15"
-        stroke="white"
-        strokeLinecap="round"
-      />
-      <g filter="url(#filter1_d_895_568)">
+      <g transform="translate(2.5, 2.5)">
+        <path
+          data-figma-bg-blur-radius="24"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M5.12215 34.8221C7.7508 36.7319 11.5005 36.7319 19 36.7319C26.4995 36.7319 30.2492 36.7319 32.8779 34.8221C33.7268 34.2053 34.4734 33.4587 35.0902 32.6098C37 29.9811 37 26.2314 37 18.7319C37 11.2325 37 7.48274 35.0902 4.85408C34.4734 4.00514 33.7268 3.25855 32.8779 2.64176C30.2492 0.731931 26.4995 0.731931 19 0.731931C11.5005 0.73193 7.75081 0.73193 5.12215 2.64176C4.2732 3.25855 3.52663 4.00513 2.90983 4.85408C1 7.48274 1 11.2325 1 18.7319C1 26.2314 1 29.9811 2.90983 32.6098C3.52663 33.4587 4.2732 34.2053 5.12215 34.8221Z"
+          fill="#FC5C15"
+          stroke="white"
+          strokeLinecap="round"
+        />
+      </g>
+      <g transform="translate(2.5, 2.5)" filter="url(#filter1_d_895_568)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -44,7 +46,7 @@ export function CarouselArrowIcon({
       <defs>
         <clipPath
           id="bgblur_0_895_568_clip_path"
-          transform="translate(23.5 23.7681)"
+          transform="translate(2.5 2.5)"
         >
           <path
             fillRule="evenodd"
