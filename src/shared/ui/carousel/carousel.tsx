@@ -13,19 +13,17 @@ export type CarouselProps = {
 export function Carousel({ slidesPerView, children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    breakpoints: { "(min-width: 1280px)": { align: "start" } },
   });
 
   return (
-    <div>
+    <CarouselControls emblaApi={emblaApi} className="flex">
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex pb-20">
+        <div className="flex gap-1 pb-20 xl:pb-0">
           {Children.map(children, (child) => (
             <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
           ))}
         </div>
       </div>
-      <CarouselControls emblaApi={emblaApi} />
-    </div>
+    </CarouselControls>
   );
 }
