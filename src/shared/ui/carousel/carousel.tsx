@@ -20,7 +20,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
 
   return (
     <div className="relative">
-      <CarouselButton onClick={onNextButtonClick} position={"right"} />
+      <CarouselButton onClick={onPrevButtonClick} position="left" />
       <div className="flex items-center justify-between xl:justify-center xl:gap-30">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex gap-1 pb-20 xl:pb-0">
@@ -30,7 +30,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
           </div>
         </div>
       </div>
-      <CarouselButton onClick={onPrevButtonClick} position={"left"} />
+      <CarouselButton onClick={onNextButtonClick} position="right" />
     </div>
   );
 }
