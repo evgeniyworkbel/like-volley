@@ -9,6 +9,7 @@ import { CarouselButton } from "./ carousel-button";
 export type CarouselProps = {
   slidesPerView: number;
   children: React.ReactElement[];
+  ow;
 };
 
 export function Carousel({ slidesPerView, children }: CarouselProps) {
