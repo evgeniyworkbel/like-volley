@@ -17,7 +17,6 @@ export function CarouselArrowIcon({
       <foreignObject x="-2.5" y="-2.5" width="48" height="48">
         <div
           style={{
-            backdropFilter: "blur(12px)",
             clipPath: "url(#bgblur_0_895_568_clip_path)",
             height: "100%",
             width: "100%",
