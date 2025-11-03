@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Children } from "react";
 import { CarouselItem } from "./carousel-item";
 import { usePrevNextButtons } from "./use-prev-next-buttons";
-import { CarouselButton } from "./ carousel-button";
+import { CarouselButton } from "./carousel-button";
 
 export type CarouselProps = {
   slidesPerView: number;
@@ -19,17 +19,29 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="relative">
+    <div className="grid gap-4 xl:grid-cols-[auto_1fr_auto]">
       <CarouselButton onClick={onPrevButtonClick} position="left" />
-      <div className="flex items-center justify-between xl:justify-center xl:gap-30">
-        <div ref={emblaRef} className="overflow-hidden">
-          <div className="flex gap-1 pb-20 xl:pb-0">
-            {Children.map(children, (child) => (
-              <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
-            ))}
-          </div>
+      <div ref={emblaRef} className="overflow-hidden">
+        <div className="flex gap-1">
+          {Children.map(children, (child) => (
+            <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
+          ))}
         </div>
       </div>
+
+      <div className="flex justify-between xl:hidden">
+        <CarouselButton
+          onClick={onPrevButtonClick}
+          position="left"
+          className="block"
+        />
+        <CarouselButton
+          onClick={onNextButtonClick}
+          position="right"
+          className="block"
+        />
+      </div>
+
       <CarouselButton onClick={onNextButtonClick} position="right" />
     </div>
   );
