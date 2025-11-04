@@ -20,7 +20,11 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
 
   return (
     <div className="grid gap-4 xl:grid-cols-[auto_1fr_auto]">
-      <CarouselButton onClick={onPrevButtonClick} position="left" />
+      <CarouselButton
+        className="hidden xl:inline"
+        position="left"
+        onClick={onPrevButtonClick}
+      />
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex gap-1">
           {Children.map(children, (child) => (
@@ -30,19 +34,15 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
       </div>
 
       <div className="flex justify-between xl:hidden">
-        <CarouselButton
-          onClick={onPrevButtonClick}
-          position="left"
-          className="block"
-        />
-        <CarouselButton
-          onClick={onNextButtonClick}
-          position="right"
-          className="block"
-        />
+        <CarouselButton position="left" onClick={onPrevButtonClick} />
+        <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>
 
-      <CarouselButton onClick={onNextButtonClick} position="right" />
+      <CarouselButton
+        className="hidden xl:inline"
+        position="right"
+        onClick={onNextButtonClick}
+      />
     </div>
   );
 }

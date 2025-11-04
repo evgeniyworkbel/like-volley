@@ -7,20 +7,16 @@ type CarouselButtonProps = Pick<ButtonProps, "className" | "onClick"> & {
 };
 
 export function CarouselButton({
-  position = "right",
   className,
+  position = "right",
   onClick,
 }: CarouselButtonProps) {
   return (
-    <Button onClick={onClick}>
+    <Button className={className} onClick={onClick}>
       <CarouselArrowIcon
-        className={cn(
-          "hidden xl:block",
-          {
-            "rotate-180": position === "left",
-          },
-          className,
-        )}
+        className={cn({
+          "rotate-180": position === "left",
+        })}
       />
     </Button>
   );
