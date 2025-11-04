@@ -14,7 +14,7 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={question}
-            className="group mb-2 cursor-pointer list-none items-center justify-between rounded-xl border border-accent-orange-light p-6 text-sm hover:border-accent-orange xl:text-lg"
+            className="group mb-2 cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light p-6 text-sm hover:border-accent-orange xl:text-lg"
           >
             <div className="flex items-center justify-between font-semibold select-none">
               {question}
