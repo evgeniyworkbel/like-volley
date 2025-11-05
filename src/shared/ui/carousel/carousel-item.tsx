@@ -13,10 +13,7 @@ export function CarouselItem({
 }: CarouselItemProps) {
   return (
     <div
-      className={cn("mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0", {
-        "border-[oklch(83.27%_0.002_247.32deg)]": !isActive,
-        "border-accent-orange": isActive,
-      })}
+      className="mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0"
       style={
         {
           "--width": `${100 / slidesPerView}%`,
