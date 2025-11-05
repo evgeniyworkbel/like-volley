@@ -3,7 +3,7 @@ import { ContactFormModel } from "./types";
 
 export const formSchema = z.object({
   city: z.string(),
-  name: z.string().min(4, "Поле должно быть заполнено"),
+  name: z.string().min(2, "Поле должно быть заполнено"),
   phone: z
     .string()
     .regex(
