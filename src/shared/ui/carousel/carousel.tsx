@@ -5,7 +5,6 @@ import { Children } from "react";
 import { CarouselItem } from "./carousel-item";
 import { usePrevNextButtons } from "./use-prev-next-buttons";
 import { CarouselButton } from "./carousel-button";
-import { useFrameCard } from "./use-frame-card";
 
 export type CarouselProps = {
   slidesPerView: number;
@@ -16,8 +15,6 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
   });
-
-  const { selectedIndex } = useFrameCard(emblaApi);
 
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
@@ -30,13 +27,8 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
       />
       <div ref={emblaRef} className="overflow-hidden">
         <div className="flex gap-1">
-          {Children.map(children, (child, index) => (
-            <CarouselItem
-              slidesPerView={slidesPerView}
-              isActive={index === selectedIndex}
-            >
-              {child}
-            </CarouselItem>
+          {Children.map(children, (child) => (
+            <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
           ))}
         </div>
       </div>
