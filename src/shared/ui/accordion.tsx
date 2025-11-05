@@ -12,17 +12,19 @@ export function Accordion({ items }: AccordionProps) {
     <div className="flex flex-col gap-5">
       {items.map(({ question, answer }) => {
         return (
-          <details
-            name="faq"
+          <div
             key={question}
-            className="group cursor-pointer rounded-xl border border-accent-orange-light hover:border-accent-orange"
+            className="group mb-2 cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light p-6 text-sm hover:border-accent-orange xl:text-lg"
           >
-            <summary className="mb-2 flex list-none items-center justify-between p-6 text-sm font-semibold select-none xl:text-lg">
+            <div className="flex items-center justify-between font-semibold select-none">
               {question}
-              <AccordionArrowIcon className="group-open:rotate-180 [&>:first-child]:fill-accent-orange-light [&>:first-child]:hover:fill-accent-orange" />
-            </summary>
-            <div className="px-6 py-3">{answer}</div>
-          </details>
+              <AccordionArrowIcon className="transition-transform group-hover:rotate-180 [&>:first-child]:fill-accent-orange-light [&>:first-child]:group-hover:fill-accent-orange" />
+            </div>
+
+            <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-400 group-hover:grid-rows-[1fr]">
+              <div className="overflow-hidden">{answer}</div>
+            </div>
+          </div>
         );
       })}
     </div>
