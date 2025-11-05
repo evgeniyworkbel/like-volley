@@ -35,5 +35,3 @@ export function CarouselItem({
     </div>
   );
 }
-// "border-[oklch(83.27%_0.002_247.32deg)]": !isActive,
-// "border-accent-orange": isActive,
