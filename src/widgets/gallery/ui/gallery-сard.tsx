@@ -11,7 +11,7 @@ export function GalleryCard({ src, alt }: GalleryCardProps) {
       className="relative flex h-[366px] w-80 gap-5 overflow-hidden rounded-[18px] xl:w-[366px]"
       href={contactsLinks.gallery.href}
     >
-      <Image src={src} alt={alt} fill />
+      <Image src={src} alt={alt} sizes="320px" fill />
     </Link>
   );
 }

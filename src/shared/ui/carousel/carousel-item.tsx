@@ -1,5 +1,3 @@
-import { cn } from "@/shared/lib";
-
 export type CarouselItemProps = {
   slidesPerView: number;
   children: React.ReactElement;
@@ -8,7 +6,7 @@ export type CarouselItemProps = {
 export function CarouselItem({ children, slidesPerView }: CarouselItemProps) {
   return (
     <div
-      className={cn("mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0")}
+      className="mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0"
       style={
         {
           "--width": `${100 / slidesPerView}%`,
