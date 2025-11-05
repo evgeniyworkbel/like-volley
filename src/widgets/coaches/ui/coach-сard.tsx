@@ -6,8 +6,8 @@ type CoachCardProps = Coach;
 export function CoachCard({ name, description, src, alt }: CoachCardProps) {
   return (
     <div className="flex flex-col items-center gap-5">
-      <div className="rounded-[18px] border-2 border-[oklch(83.27%_0.002_247.32deg)]">
-        <div className="relative h-70 w-80 overflow-hidden rounded-t-[18px]">
+      <div className="flex flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)]">
+        <div className="relative h-70 w-80">
           <Image src={src} alt={alt} sizes="320px" fill />
         </div>
         <hgroup className="flex max-w-[268px] flex-col items-center gap-3">
