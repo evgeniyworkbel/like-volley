@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Advantages() {
   return (
-    <section className="flex flex-col gap-12 px-10 py-[74px] text-center text-sm xl:flex-row xl:justify-between xl:gap-0 xl:px-20 xl:text-base">
+    <section className="flex flex-col items-center gap-12 px-10 py-[74px] text-center text-sm xl:flex-row xl:justify-between xl:gap-0 xl:px-20 xl:text-base">
       {advantagesData.map(({ title, imageSrc, description, alt }) => {
         return (
           <div
