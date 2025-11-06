@@ -19,8 +19,8 @@ export function Banner() {
           alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
         />
         <Image
-          className="absolute top-0 left-0 xl:hidden"
-          src="/banner/promo-mobile.png"
+          className="absolute top-0 left-0 object-contain xl:hidden"
+          src="/banner/promo-mobile.webp"
           fill
           quality={100}
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
