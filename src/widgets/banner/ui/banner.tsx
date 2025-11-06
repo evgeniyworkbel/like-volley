@@ -20,7 +20,7 @@ export function Banner() {
         />
         <Image
           className="absolute top-0 left-0 object-contain xl:hidden"
-          src="/banner/promo-mobile.png"
+          src="/banner/promo-mobile.webp"
           fill
           quality={100}
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
