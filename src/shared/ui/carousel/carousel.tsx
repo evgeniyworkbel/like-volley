@@ -19,7 +19,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="grid gap-4 xl:grid-cols-[auto_1fr_auto]">
+    <div className="grid gap-[22px] xl:grid-cols-[auto_1fr_auto]">
       <CarouselButton
         className="hidden xl:inline"
         position="left"
@@ -33,7 +33,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
         </div>
       </div>
 
-      <div className="flex justify-between xl:hidden">
+      <div className="flex justify-between px-18 xl:hidden">
         <CarouselButton position="left" onClick={onPrevButtonClick} />
         <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>
