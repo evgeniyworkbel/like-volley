@@ -28,6 +28,12 @@ export function Footer() {
           Волейбол для всех возрастов с индивидуальным подходом и современными
           методиками обучения.
         </p>
+        <ul className="flex flex-col items-center gap-0.5 text-lg xl:items-start">
+          <li>ООО «Лайк Воллей»</li>
+          <li>УНП 291855284</li>
+          <li>г. Брест ул. Дзержинского, 46</li>
+          <li>224030</li>
+        </ul>
       </div>
       <div className="flex flex-wrap justify-center gap-15 xl:justify-between">
         <div className="flex flex-col items-center gap-10 xl:items-start">
@@ -48,17 +54,20 @@ export function Footer() {
           </div>
           <Contacts />
         </div>
-        <div className="flex flex-col gap-20 xl:justify-between">
+        <div className="flex flex-col items-center gap-20 xl:items-start xl:justify-between">
           <Button
             className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground"
             onClick={handleClick}
           >
             Записаться
           </Button>
-          <ul className="flex flex-col gap-2 text-sm">
-            <li>ИП Бла бла бла</li>
-            <li>НИП 0002920192381984720928573-4901</li>
-            <li className="mb-5">ИНН 2039847948</li>
+          <ul className="flex max-w-72 flex-col gap-1 text-sm">
+            <li>Р/с BY29BAPB30128106300100000000</li>
+            <li>
+              ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»
+            </li>
+            <li> г. Брест ул. Воровского, 11</li>
+            <li className="mb-5">БИК BAPBBY2X</li>
             <li>© 2024 LikeVolley Все права защищены.</li>
           </ul>
         </div>
