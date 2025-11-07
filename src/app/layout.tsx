@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Shantell_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import { YandexMetrikaNoscript, YandexMetrikaScript } from "@/shared/analytics";
+import { YandexMetrika } from "@/shared/analytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description: "Belarusian volleyball school",
 };
 
-// @todo: подключить новый счетчик под продакшн вебсайт
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,13 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <YandexMetrikaScript />
-      </head>
       <body
         className={`${inter.variable} ${shantellSans.variable} antialiased`}
       >
-        <YandexMetrikaNoscript />
+        <YandexMetrika />
         {children}
       </body>
     </html>

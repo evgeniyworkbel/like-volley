@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { YM_COUNTER_ID } from "./config";
 
-export const YandexMetrikaScript = () => {
+export function YandexMetrikaScript() {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -23,10 +23,10 @@ export const YandexMetrikaScript = () => {
           m[i].l=1*new Date();
           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.webvisor.org/metrika/tag_ww.js?id=${YM_COUNTER_ID}', 'ym');
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=${YM_COUNTER_ID}', 'ym');
 
         ym(${YM_COUNTER_ID}, 'init', {ssr:true, webvisor:true, trackHash:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});`,
       }}
     />
   );
-};
+}
