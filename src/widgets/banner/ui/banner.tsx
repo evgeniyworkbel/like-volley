@@ -13,7 +13,7 @@ export function Banner() {
           </h3>
         </div>
         <Image
-          className="hidden xl:block"
+          className="hidden object-contain xl:block"
           src="/banner/promo-desktop.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
