@@ -1,1 +1,1 @@
-export const YM_COUNTER_ID = 104800380;
+export const YM_COUNTER_ID = 105188018;
