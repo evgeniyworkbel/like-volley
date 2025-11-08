@@ -44,6 +44,7 @@ export function Footer() {
             <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
             <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
           </nav>
+          <Contacts />
           <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
             <Link className="flex" href={navLinks.policy.href}>
               {navLinks.policy.title}
@@ -52,7 +53,6 @@ export function Footer() {
               {navLinks.offerAgreement.title}
             </Link>
           </div>
-          <Contacts />
         </div>
         <div className="flex flex-col items-center gap-20 xl:items-start xl:justify-between">
           <Button
