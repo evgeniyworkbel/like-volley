@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Belarusian volleyball school",
 };
 
+// @todo: подключить новый счетчик под продакшн вебсайт
 export default function RootLayout({
   children,
 }: Readonly<{
