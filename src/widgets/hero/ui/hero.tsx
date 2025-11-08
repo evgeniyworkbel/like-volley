@@ -68,7 +68,7 @@ export function Hero() {
           <Image
             className="xl:absolute xl:right-0 xl:bottom-0"
             src="/hero/adults.webp"
-            width={543}
+            width={570}
             height={446}
             priority
             alt="Фото взрослых учеников школы волейбола Like Volley"
