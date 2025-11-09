@@ -4,8 +4,8 @@ import Image from "next/image";
 export function Banner() {
   return (
     <section className="flex justify-center px-5 py-[50px] xl:px-20">
-      <div className="relative flex h-121 w-full justify-center pt-4 xl:h-[297px] xl:items-center xl:justify-start">
-        <div className="z-10 flex flex-col items-center gap-6 font-extrabold text-white xl:items-start xl:pl-10">
+      <div className="relative aspect-[320/484] w-full rounded-2xl border-4 border-[oklch(0.6559_0.1604_257.81)] bg-accent-blue xl:aspect-[1280/297] xl:h-[297px]">
+        <div className="z-10 flex flex-col items-center gap-6 pt-4 font-extrabold text-white xl:absolute xl:top-1/2 xl:left-10 xl:translate-y-[-50%] xl:items-start">
           <Title className="text-4xl text-inherit">Приведи друга</Title>
           <h3 className="text-[15px] xl:text-2xl">
             Вы оба получите скидку в&nbsp;
@@ -13,13 +13,13 @@ export function Banner() {
           </h3>
         </div>
         <Image
-          className="hidden xl:block"
+          className="hidden object-cover xl:block"
           src="/banner/promo-desktop.webp"
           fill
-          alt="Баннер синего цвета с декоративными иконками и слева надпись 'приведи друга'"
+          alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
         <Image
-          className="absolute top-0 left-0 object-contain xl:hidden"
+          className="object-cover xl:hidden"
           src="/banner/promo-mobile.webp"
           fill
           quality={100}
