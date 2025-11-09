@@ -5,24 +5,24 @@ export function Banner() {
   return (
     <section className="flex justify-center px-5 py-[50px] xl:px-20">
       <div className="relative aspect-[320/484] w-full rounded-2xl border-4 border-[oklch(0.6559_0.1604_257.81)] bg-accent-blue xl:aspect-[1280/297] xl:h-[297px]">
-        <div className="z-10 flex flex-col items-center gap-6 pt-4 font-extrabold text-white xl:absolute xl:top-1/2 xl:left-10 xl:translate-y-[-50%] xl:items-start">
+        <hgroup className="z-10 flex flex-col items-center gap-6 pt-4 font-extrabold text-white xl:absolute xl:top-1/2 xl:left-10 xl:translate-y-[-50%] xl:items-start">
           <Title className="text-4xl text-inherit">Приведи друга</Title>
-          <h3 className="text-[15px] xl:text-2xl">
+          <p className="text-[15px] xl:text-2xl">
             Вы оба получите скидку в&nbsp;
             <span className="font-shantell text-accent-green">20 р.</span>
-          </h3>
-        </div>
-        <Image
-          className="hidden object-cover xl:block"
-          src="/banner/promo-desktop.webp"
-          fill
-          alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
-        />
+          </p>
+        </hgroup>
         <Image
           className="object-cover xl:hidden"
           src="/banner/promo-mobile.webp"
           fill
           quality={100}
+          alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
+        />
+        <Image
+          className="hidden object-cover xl:block"
+          src="/banner/promo-desktop.webp"
+          fill
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
       </div>
