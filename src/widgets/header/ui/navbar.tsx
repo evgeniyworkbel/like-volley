@@ -12,10 +12,9 @@ export function Navbar({ className, onLinkClick }: NavbarProps) {
         className,
       )}
     >
-      <Link href={navLinks.home.href} onClick={onLinkClick}>
-        {navLinks.home.title}
-      </Link>
-      <Link href={navLinks.locations.href} onClick={onLinkClick}>
+      {/* todo: отключил временно до особых распоряжений */}
+
+      {/* <Link href={navLinks.locations.href} onClick={onLinkClick}>
         {navLinks.locations.title}
       </Link>
       <Link href={navLinks.about.href} onClick={onLinkClick}>
@@ -23,7 +22,7 @@ export function Navbar({ className, onLinkClick }: NavbarProps) {
       </Link>
       <Link href={navLinks.gallery.href} onClick={onLinkClick}>
         {navLinks.gallery.title}
-      </Link>
+      </Link> */}
       <Link href={navLinks.phone.href} onClick={onLinkClick}>
         {navLinks.phone.title}
       </Link>

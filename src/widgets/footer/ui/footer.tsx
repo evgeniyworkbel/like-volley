@@ -18,12 +18,14 @@ export function Footer() {
   return (
     <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
-        <Image
-          src="/logo-footer.svg"
-          width={122}
-          height={76}
-          alt="Логотип школы волейбола Like Volley"
-        />
+        <Link href={navLinks.home.href}>
+          <Image
+            src="/logo-footer.svg"
+            width={122}
+            height={76}
+            alt="Логотип школы волейбола Like Volley"
+          />
+        </Link>
         <p className="flex max-w-[270px] flex-col gap-2 text-center text-lg xl:max-w-[350px] xl:text-left">
           Волейбол для всех возрастов с индивидуальным подходом и современными
           методиками обучения.
@@ -38,12 +40,14 @@ export function Footer() {
       <div className="flex flex-wrap justify-center gap-15 xl:justify-between">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <p className="font-shantell text-[38px] uppercase">меню</p>
-          <nav className="flex flex-wrap justify-center gap-7 text-2xl">
-            <Link href={navLinks.home.href}>{navLinks.home.title}</Link>
+
+          {/* todo: отключил временно до особых распоряжений */}
+
+          {/* <nav className="flex flex-wrap justify-center gap-7 text-2xl">
             <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
             <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
             <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
-          </nav>
+          </nav> */}
           <Contacts />
           <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
             <Link className="flex" href={navLinks.policy.href}>
