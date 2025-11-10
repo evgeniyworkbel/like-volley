@@ -72,7 +72,7 @@ export function Footer() {
             </li>
             <li>г. Брест ул. Воровского, 11</li>
             <li className="mb-5">БИК BAPBBY2X</li>
-            <li>© 2024 LikeVolley Все права защищены.</li>
+            <li className="text-xs">© 2024 LikeVolley Все права защищены.</li>
           </ul>
         </div>
       </div>
