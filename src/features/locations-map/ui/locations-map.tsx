@@ -18,7 +18,6 @@ export function LocationsMap() {
   const [city, setCity] = useState<CompanyCities>("minsk");
   const location: YMapLocationRequest = { bounds: locationsBounds[city] };
 
-  console.log(location);
   return (
     <div className="relative h-[522px] w-full overflow-hidden rounded-[20px] xl:h-[712px]">
       <select
