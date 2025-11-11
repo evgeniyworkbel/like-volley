@@ -8,7 +8,7 @@ type GalleryCardProps = GalleryItem;
 export function GalleryCard({ src, alt }: GalleryCardProps) {
   return (
     <Link
-      className="group relative flex h-[366px] w-80 overflow-hidden rounded-[18px] xl:w-[366px]"
+      className="group relative mx-auto flex h-[366px] w-80 overflow-hidden rounded-[18px] xl:w-[366px]"
       href={contactsLinks.gallery.href}
     >
       <Image src={src} alt={alt} sizes="320px" fill />
