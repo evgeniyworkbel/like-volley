@@ -3,7 +3,7 @@ import { faqData } from "../model/meta";
 
 export function Faq() {
   return (
-    <div className="flex flex-col gap-5 px-5 py-10 xl:gap-32 xl:px-20">
+    <div className="flex max-w-360 flex-col gap-5 px-5 py-10 xl:gap-32 xl:px-20">
       <hgroup className="flex flex-col items-center gap-4 text-base xl:text-lg">
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>
