@@ -26,7 +26,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
         onClick={onPrevButtonClick}
       />
       <div ref={emblaRef} className="overflow-hidden">
-        <div className="flex gap-1">
+        <div className="flex">
           {Children.map(children, (child) => (
             <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
           ))}
