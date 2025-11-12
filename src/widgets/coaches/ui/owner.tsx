@@ -5,7 +5,7 @@ export function Owner() {
   return (
     <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:gap-14">
       <Image src={ownerData.src} width={314} height={407} alt={ownerData.alt} />
-      <div className="flex flex-col items-center gap-5 xl:justify-center">
+      <div className="flex flex-col items-center gap-5 xl:items-start xl:justify-center">
         <hgroup className="flex flex-col items-center gap-2.5 xl:items-start">
           {/* помню про заголвки в 32px, но он ломает верстку */}
           <h3 className="font-shantell text-[28px] font-bold text-foreground xl:text-[44px]">
