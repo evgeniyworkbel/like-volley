@@ -16,7 +16,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="grid max-w-360 justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
+    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Link href={navLinks.home.href}>
           <Image

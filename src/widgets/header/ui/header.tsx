@@ -6,7 +6,7 @@ import { navLinks } from "@/shared/constants";
 
 export function Header() {
   return (
-    <header className="flex w-full max-w-360 items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
+    <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
       <Link href={navLinks.home.href}>
         <Image
           className="z-20"
