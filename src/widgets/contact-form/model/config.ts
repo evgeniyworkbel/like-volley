@@ -2,7 +2,7 @@ import * as z from "zod";
 import { ContactFormModel } from "./types";
 
 export const formSchema = z.object({
-  city: z.string().refine((city) => city !== "", "Укажите город!"),
+  city: z.string().min(1, "Укажите город"),
   name: z.string().min(2, "Поле должно быть заполнено"),
   phone: z
     .string()
@@ -13,7 +13,7 @@ export const formSchema = z.object({
   message: z.string().max(2000).optional(),
   agreement: z
     .boolean()
-    .refine((val) => val === true, "Требуется подтверждение!"),
+    .refine((val) => val === true, "Требуется подтверждение"),
 });
 
 export const formDefaultValues: ContactFormModel = {
