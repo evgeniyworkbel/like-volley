@@ -1,9 +1,9 @@
 import { Title } from "@/shared/ui";
 import { contactFormId } from "@/shared/constants";
 import { Contact } from "./contact";
-// import { Form } from "./form";
+import { Form } from "./form";
 import { contactsData } from "../model/data";
-import { Form2 } from "./form2";
+// import { Form2 } from "./form2";
 
 export function ContactForm() {
   return (
@@ -33,8 +33,8 @@ export function ContactForm() {
         ))}
       </div>
       {/** @todo: удалить Form2 когда будет готова интеграция нашей формы с amoCRM */}
-      <Form2 />
-      {/* <Form /> */}
+      {/* <Form2 /> */}
+      <Form />
     </section>
   );
 }

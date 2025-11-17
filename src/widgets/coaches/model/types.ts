@@ -3,6 +3,5 @@ import { ImageProps } from "next/image";
 export type Coach = Pick<ImageProps, "alt" | "src"> & {
   name: string;
   description: string;
-  city?: "Город: Брест" | "Город: Минск";
-  quote?: string;
+  city?: "Брест" | "Минск";
 };
