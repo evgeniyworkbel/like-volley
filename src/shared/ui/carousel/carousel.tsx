@@ -14,6 +14,7 @@ export type CarouselProps = {
 export function Carousel({ slidesPerView, children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
+    align: "center",
   });
 
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
@@ -33,7 +34,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
         </div>
       </div>
 
-      <div className="flex justify-between xl:hidden">
+      <div className="flex justify-between px-18 xl:hidden">
         <CarouselButton position="left" onClick={onPrevButtonClick} />
         <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>
