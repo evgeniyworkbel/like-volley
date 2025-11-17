@@ -12,7 +12,7 @@ export function CoachCard({
 }: CoachCardProps) {
   return (
     <div className="flex w-80 flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)]">
-      <div className="relative h-70 w-80">
+      <div className="relative h-70 w-full">
         <Image src={src} alt={alt} sizes="320px" fill />
       </div>
       <div className="flex min-h-54 flex-col items-center justify-between gap-6 pt-5 pb-[22px]">
