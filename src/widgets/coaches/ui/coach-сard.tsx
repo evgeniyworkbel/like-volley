@@ -15,12 +15,12 @@ export function CoachCard({
       <div className="relative h-70 w-full">
         <Image src={src} alt={alt} sizes="320px" fill />
       </div>
-      <div className="flex min-h-54 flex-col items-center justify-between gap-6 pt-5 pb-[22px]">
+      <div className="flex min-h-54 flex-col items-center justify-between gap-6 pt-5 pb-[22px] text-sm">
         <hgroup className="flex flex-col gap-3 text-center whitespace-pre-line">
           <h4 className="text-xl font-bold text-accent-orange">{name}</h4>
-          <p className="text-sm text-foreground-secondary">{description}</p>
+          <p className="text-foreground-secondary">{description}</p>
         </hgroup>
-        <p className="flex text-center text-sm text-foreground">
+        <p className="flex text-center text-foreground">
           Город:&nbsp;<span className="text-accent-orange">{city}</span>
         </p>
       </div>
