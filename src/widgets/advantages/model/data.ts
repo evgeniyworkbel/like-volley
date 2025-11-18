@@ -2,9 +2,9 @@ import { Advantage } from "./types";
 
 export const advantagesData: Advantage[] = [
   {
-    title: "Школа волейбола №1 в Бресте",
+    title: "Оценка учеников 5.0",
     imageSrc: "/advantages/award.svg",
-    description: "Мы гордимся репутацией лидеров в регионе",
+    description: "Оценка наших учеников в Яндекс отзывах",
     alt: "Декоративная картинка медали школы",
   },
   {
