@@ -11,7 +11,7 @@ export function CoachCard({
   alt,
 }: CoachCardProps) {
   return (
-    <div className="flex w-80 flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)]">
+    <div className="mx-auto flex w-80 flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)]">
       <div className="relative h-70 w-full">
         <Image src={src} alt={alt} sizes="320px" fill />
       </div>
@@ -20,7 +20,7 @@ export function CoachCard({
           <h4 className="text-xl font-bold text-accent-orange">{name}</h4>
           <p className="text-foreground-secondary">{description}</p>
         </hgroup>
-        <p className="flex text-center text-foreground">
+        <p className="text-center text-foreground">
           Город:&nbsp;<span className="text-accent-orange">{city}</span>
         </p>
       </div>
