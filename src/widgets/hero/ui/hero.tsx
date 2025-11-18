@@ -49,7 +49,7 @@ export function Hero() {
         )}
       >
         <div className="flex flex-col">
-          <Title className="leading-[0.85] text-inherit xl:max-w-[678px] xl:text-left xl:leading-none">
+          <Title className="leading-[0.85] text-inherit md:max-w-164 md:text-left md:text-[58px] xl:max-w-[678px] xl:leading-none">
             Волейбольная школа для&nbsp;
             <span className="text-accent-green">всех возрастов</span>
           </Title>
