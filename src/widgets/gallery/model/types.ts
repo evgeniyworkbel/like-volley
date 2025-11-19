@@ -1,3 +1,3 @@
 import { ImageProps } from "next/image";
 
-export type GalleryItem = Pick<ImageProps, "alt" | "src">;
+export type GalleryItemModel = Pick<ImageProps, "src" | "alt">;

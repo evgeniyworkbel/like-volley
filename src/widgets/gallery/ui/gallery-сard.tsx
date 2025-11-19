@@ -1,9 +1,9 @@
-import { contactsLinks } from "@/shared/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { GalleryItem } from "../model/types";
+import { contactsLinks } from "@/shared/constants";
+import { GalleryItemModel } from "../model/types";
 
-type GalleryCardProps = GalleryItem;
+type GalleryCardProps = GalleryItemModel;
 
 export function GalleryCard({ src, alt }: GalleryCardProps) {
   return (
