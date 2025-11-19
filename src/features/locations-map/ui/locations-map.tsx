@@ -1,7 +1,7 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { MapProvider } from "@/shared/providers";
-import { Map } from "@/shared/ui";
 import type { YMapLocationRequest } from "@/shared/lib";
 
 import {
@@ -13,6 +13,10 @@ import {
 } from "../model/data";
 import { useState } from "react";
 import { CompanyCities } from "../model/types";
+
+const Map = dynamic(() =>
+  import("@/shared/ui/map").then((module) => module.Map),
+);
 
 export function LocationsMap() {
   const [city, setCity] = useState<CompanyCities>("minsk");

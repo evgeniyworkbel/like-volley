@@ -1,4 +1,4 @@
-export type Advantage = {
+export type AdvantageModel = {
   title: string;
   imageSrc: string;
   description: string;

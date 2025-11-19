@@ -1,7 +1,7 @@
 import {
   Hero,
   Advantages,
-  ContactForm,
+  SignUpForWorkout,
   Faq,
   Banner,
   Gallery,
@@ -9,14 +9,13 @@ import {
   Locations,
 } from "@/widgets";
 
-// @todo: add lazy loading for all widgets
 export default function Home() {
   return (
     <div>
       <Hero />
       <Advantages />
       <Locations />
-      <ContactForm />
+      <SignUpForWorkout />
       <Coaches />
       <Faq />
       <Banner />

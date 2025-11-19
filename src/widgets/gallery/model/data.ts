@@ -1,6 +1,6 @@
-import { GalleryItem } from "./types";
+import { GalleryItemModel } from "./types";
 
-export const galleryData: GalleryItem[] = [
+export const galleryData: GalleryItemModel[] = [
   {
     src: "/gallery/photo1.webp",
     alt: "Фото тренировки детской группы",

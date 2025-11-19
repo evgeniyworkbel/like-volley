@@ -1,11 +1,8 @@
 import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
+import { ButtonProps } from "@/shared/ui/button";
 
-type HeroTabProps = {
-  className: string;
-  onClick: () => void;
-  children: React.ReactNode;
-};
+type HeroTabProps = Pick<ButtonProps, "className" | "onClick" | "children">;
 
 export function HeroTab({ className, onClick, children }: HeroTabProps) {
   return (
