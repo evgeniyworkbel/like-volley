@@ -7,7 +7,7 @@ export function Owner() {
       <Image src={ownerData.src} width={314} height={407} alt={ownerData.alt} />
       <div className="flex flex-col items-center gap-5 xl:items-start xl:justify-center">
         <hgroup className="flex flex-col items-center gap-2.5 xl:items-start">
-          <h3 className="font-shantell text-[27px] font-bold text-foreground xl:text-[44px]">
+          <h3 className="font-shantell text-[26px] font-bold text-foreground xl:text-[44px]">
             {ownerData.name}
           </h3>
           <p className="text-center text-foreground-secondary">
