@@ -16,7 +16,7 @@ import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
 
-export function Form() {
+export function ContactForm() {
   const {
     handleSubmit,
     reset,

@@ -1,7 +1,7 @@
 import {
   Hero,
   Advantages,
-  ContactForm,
+  SignUpForWorkout,
   Faq,
   Banner,
   Gallery,
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <Advantages />
       <Locations />
-      <ContactForm />
+      <SignUpForWorkout />
       <Coaches />
       <Faq />
       <Banner />
