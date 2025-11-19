@@ -25,12 +25,7 @@ export function Carousel({
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   return (
-    <div
-      className={cn(
-        "grid w-full gap-4 min-[1440px]:px-12 xl:grid-cols-[auto_1fr_auto]",
-        className,
-      )}
-    >
+    <div className={cn("flex w-full flex-col xl:flex-row", className)}>
       <CarouselButton
         className="hidden xl:inline"
         position="left"
@@ -44,7 +39,7 @@ export function Carousel({
         </div>
       </div>
 
-      <div className="flex justify-between px-18 xl:hidden">
+      <div className="flex justify-between px-18 pt-[22px] xl:hidden">
         <CarouselButton position="left" onClick={onPrevButtonClick} />
         <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>

@@ -5,9 +5,9 @@ import { Carousel } from "@/shared/ui";
 
 export function Coaches() {
   return (
-    <section className="flex flex-col gap-6 py-10 xl:px-20">
+    <section className="flex flex-col items-center gap-6 py-10 xl:px-20">
       <Owner />
-      <Carousel slidesPerView={3}>
+      <Carousel className="max-w-284" slidesPerView={3}>
         {coachesData.map((coach) => (
           <CoachCard
             key={coach.name}

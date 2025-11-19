@@ -8,10 +8,10 @@ type GalleryCardProps = GalleryItem;
 export function GalleryCard({ src, alt }: GalleryCardProps) {
   return (
     <Link
-      className="group relative mx-auto flex h-[366px] w-80 overflow-hidden rounded-[18px] xl:w-[366px]"
+      className="group relative flex aspect-square h-[366px] w-80 overflow-hidden rounded-[18px] xl:mx-3"
       href={contactsLinks.gallery.href}
     >
-      <Image src={src} alt={alt} sizes="320px" fill />
+      <Image src={src} alt={alt} sizes="365px" fill />
       <div className="absolute inset-0 transition-colors duration-400 group-hover:bg-black/50" />
       <div className="z-10 font-semibold text-white opacity-0 transition-opacity duration-400 group-hover:opacity-100">
         <span className="absolute top-1/2 left-1/2 -translate-1/2">
