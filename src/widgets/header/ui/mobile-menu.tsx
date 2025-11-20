@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Button } from "@/shared/ui";
+import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
 import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
-import { Button } from "@/shared/ui";
-import { cn } from "@/shared/lib";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState<boolean>(false);

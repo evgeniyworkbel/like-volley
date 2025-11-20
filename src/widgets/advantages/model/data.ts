@@ -1,6 +1,6 @@
-import { Advantage } from "./types";
+import { AdvantageModel } from "./types";
 
-export const advantagesData: Advantage[] = [
+export const advantagesData: AdvantageModel[] = [
   {
     title: "Оценка учеников 5.0",
     imageSrc: "/advantages/award.svg",
