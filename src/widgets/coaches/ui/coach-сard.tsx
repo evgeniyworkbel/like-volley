@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Coach } from "../model/types";
+import { CoachModel } from "../model/types";
 
-type CoachCardProps = Coach;
+type CoachCardProps = CoachModel;
 
 export function CoachCard({
   name,

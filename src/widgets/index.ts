@@ -1,6 +1,6 @@
 export { Banner } from "./banner";
 export { Advantages } from "./advantages";
-export { ContactForm } from "./contact-form";
+export { SignUpForWorkout } from "./sign-up-for-workout";
 export { Faq } from "./faq";
 export { Hero } from "./hero";
 export { Footer } from "./footer";

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { navLinks } from "@/shared/constants";
 import { MobileMenu } from "./mobile-menu";
 import { Navbar } from "./navbar";
-import { navLinks } from "@/shared/constants";
 
 export function Header() {
   return (
