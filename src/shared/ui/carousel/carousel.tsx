@@ -32,8 +32,8 @@ export function Carousel({
         onClick={onPrevButtonClick}
       />
       <div
-        ref={emblaRef}
         className={cn("overflow-hidden", innerWrapperClassName)}
+        ref={emblaRef}
       >
         <div className="flex">
           {Children.map(children, (child) => (
