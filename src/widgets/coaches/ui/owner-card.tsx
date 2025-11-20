@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ownerData } from "../model/data";
 
-export function Owner() {
+export function OwnerCard() {
   return (
     <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:gap-14">
       <Image src={ownerData.src} width={314} height={407} alt={ownerData.alt} />

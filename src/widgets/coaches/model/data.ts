@@ -1,4 +1,4 @@
-import { CoachModel } from "./types";
+import { CoachModel, OwnerModel } from "./types";
 
 export const coachesData: CoachModel[] = [
   {
@@ -61,7 +61,7 @@ export const coachesData: CoachModel[] = [
   },
 ] as const;
 
-export const ownerData: CoachModel = {
+export const ownerData: OwnerModel = {
   name: "Владислав Голодухин",
   description:
     "Мы смотрим на наших учеников не с позиции: “Каких высот он может или не может достичь в волейболе”, а с позиции: “Как мы можем помочь стать лучше через волейбол. ”Если вы разделяете наши ценности и ищете не просто занятие волейболом, а также поддержку ребенка в развитии, мы будем рады видеть вас в нашей дружной команде.",
