@@ -7,8 +7,4 @@ export type CoachModel = Pick<ImageProps, "alt" | "src"> & {
   city: string;
 };
 
-export type OwnerModel = Except<CoachModel, "city"> & {
-  name: string;
-  description: string;
-  city?: string;
-};
+export type OwnerModel = Except<CoachModel, "city">;
