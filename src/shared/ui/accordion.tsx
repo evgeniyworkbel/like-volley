@@ -47,7 +47,7 @@ export function Accordion({ items }: AccordionProps) {
                 },
               )}
             >
-              <div className="overflow-hidden">{answer}</div>
+              <div className="overflow-hidden pt-11">{answer}</div>
             </div>
           </div>
         );
