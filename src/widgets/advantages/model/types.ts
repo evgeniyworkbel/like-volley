@@ -1,6 +1,7 @@
-export type AdvantageModel = {
+import { ImageProps } from "next/image";
+
+export type AdvantageModel = Required<Pick<ImageProps, "src" | "alt">> & {
+  id: number;
   title: string;
-  imageSrc: string;
   description: string;
-  alt: string;
 };
