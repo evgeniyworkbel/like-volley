@@ -98,7 +98,7 @@ export const faqData: FaqItemModel[] = [
     id: 4,
     question: "Что взять с собой на тренировку?",
     answer: (
-      <div className="text-sm">
+      <div>
         <p className="mb-3 font-medium">
           С собой на тренировку необходимо взять:
         </p>
