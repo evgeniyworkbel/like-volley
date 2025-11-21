@@ -1,7 +1,7 @@
+import { Carousel } from "@/shared/ui";
 import { coachesData } from "../model/data";
 import { CoachCard } from "./coach-сard";
 import { OwnerCard } from "./owner-card";
-import { Carousel } from "@/shared/ui";
 
 export function Coaches() {
   return (
@@ -10,8 +10,10 @@ export function Coaches() {
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
         {coachesData.map((coach) => (
           <CoachCard
-            key={coach.name}
-            name={coach.name}
+            key={coach.lastName}
+            firstName={coach.firstName}
+            lastName={coach.lastName}
+            patronymicName={coach.patronymicName}
             description={coach.description}
             city={coach.city}
             src={coach.src}

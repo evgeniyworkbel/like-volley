@@ -2,9 +2,11 @@ import { ImageProps } from "next/image";
 import { Except } from "type-fest";
 
 export type CoachModel = Pick<ImageProps, "alt" | "src"> & {
-  name: string;
+  firstName: string;
+  lastName: string;
+  patronymicName: string;
   description: string;
   city: string;
 };
 
-export type OwnerModel = Except<CoachModel, "city">;
+export type OwnerModel = Except<CoachModel, "patronymicName" | "city">;
