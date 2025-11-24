@@ -41,7 +41,7 @@ export function Accordion({ items }: AccordionProps) {
             </div>
             <div
               className={cn(
-                "grid grid-rows-[0fr] transition-[grid-template-rows] duration-400",
+                "grid grid-rows-[0fr] transition-[grid-template-rows] duration-600",
                 {
                   "mb-6 grid-rows-[1fr]": isOpen,
                 },
