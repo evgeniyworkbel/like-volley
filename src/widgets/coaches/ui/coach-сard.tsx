@@ -13,7 +13,7 @@ export function CoachCard({
   alt,
 }: CoachCardProps) {
   return (
-    <div className="flex flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)] text-center xl:mx-3">
+    <div className="flex flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)] text-center">
       <div className="relative aspect-[1.1] h-70 w-full">
         <Image src={src} alt={alt} sizes="320px" fill />
       </div>

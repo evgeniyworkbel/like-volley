@@ -6,11 +6,11 @@ export type CarouselItemProps = {
 export function CarouselItem({ children, slidesPerView }: CarouselItemProps) {
   return (
     <div
-      className="mr-[var(--mr)] w-full flex-[0_0_var(--width))] xl:mr-0"
+      // todo посмотрел дизайн table и пока поставил на мобильном px-10 потом под дизайн поставлю величину
+      className="flex-[0_0_var(--width))] px-10 xl:px-3"
       style={
         {
           "--width": `${100 / slidesPerView}%`,
-          "--mr": `${(100 - 8 * (slidesPerView - 1)) / slidesPerView}%`,
         } as React.CSSProperties
       }
     >
