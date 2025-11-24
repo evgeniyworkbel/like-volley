@@ -24,14 +24,14 @@ export function Accordion({ items }: AccordionProps) {
           <div
             key={question}
             className={cn(
-              "mb-2 cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light p-6 text-sm xl:text-lg",
+              "cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light px-6 text-sm xl:text-lg",
               {
                 "border-accent-orange": isOpen,
               },
             )}
             onClick={() => setOpenedItem(isOpen ? undefined : id)}
           >
-            <div className="flex items-center justify-between font-semibold select-none [&>:first-child]:fill-accent-orange-light">
+            <div className="my-6 flex items-center justify-between font-semibold select-none [&>:first-child]:fill-accent-orange-light">
               {question}
               <AccordionArrowIcon
                 className={cn("transition-transform", {
@@ -43,11 +43,11 @@ export function Accordion({ items }: AccordionProps) {
               className={cn(
                 "grid grid-rows-[0fr] transition-[grid-template-rows] duration-400",
                 {
-                  "grid-rows-[1fr]": isOpen,
+                  "mb-6 grid-rows-[1fr]": isOpen,
                 },
               )}
             >
-              <div className="overflow-hidden pt-11 text-base">{answer}</div>
+              <div className="overflow-hidden text-base">{answer}</div>
             </div>
           </div>
         );
