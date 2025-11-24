@@ -29,7 +29,6 @@ export function Accordion({ items }: AccordionProps) {
                 "border-accent-orange": isOpen,
               },
             )}
-            role="button"
             onClick={() => setOpenedItem(isOpen ? undefined : id)}
           >
             <div className="my-6 flex items-center justify-between font-semibold select-none [&>:first-child]:fill-accent-orange-light">
@@ -42,7 +41,7 @@ export function Accordion({ items }: AccordionProps) {
             </div>
             <div
               className={cn(
-                "grid grid-rows-[0fr] transition-[grid-template-rows] duration-500",
+                "grid grid-rows-[0fr] transition-[grid-template-rows] duration-600",
                 {
                   "grid-rows-[1fr]": isOpen,
                 },
