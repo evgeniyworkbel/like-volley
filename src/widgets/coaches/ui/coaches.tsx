@@ -10,9 +10,9 @@ export function Coaches() {
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
         {coachesData.map((coach) => (
           <CoachCard
-            key={coach.lastName}
-            firstName={coach.firstName}
+            key={coach.id}
             lastName={coach.lastName}
+            firstName={coach.firstName}
             patronymicName={coach.patronymicName}
             description={coach.description}
             city={coach.city}

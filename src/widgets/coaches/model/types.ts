@@ -2,7 +2,7 @@ import { ImageProps } from "next/image";
 import { Except } from "type-fest";
 
 export type CoachModel = Pick<ImageProps, "alt" | "src"> & {
-  id: number;
+  id?: number;
   lastName: string;
   firstName: string;
   patronymicName: string;
