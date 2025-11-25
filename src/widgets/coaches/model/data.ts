@@ -2,8 +2,9 @@ import { CoachModel, OwnerModel } from "./types";
 
 export const coachesData: CoachModel[] = [
   {
-    firstName: "Евгений",
+    id: 1,
     lastName: "Быков",
+    firstName: "Евгений",
     patronymicName: "Валерьевич",
     description:
       "Ведущий тренер. «Не могу и дня без волейбола». Ведёт детские и взрослые группы",
@@ -12,8 +13,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Евгения Быкова",
   },
   {
-    firstName: "Александр",
+    id: 2,
     lastName: "Рыбко",
+    firstName: "Александр",
     patronymicName: "Александрович",
     description: "Тренер детских и взрослых групп",
     city: "Минск",
@@ -21,8 +23,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Александра Рыбко",
   },
   {
-    firstName: "Игорь",
+    id: 3,
     lastName: "Гурский",
+    firstName: "Игорь",
     patronymicName: "Александрович",
     description: "Тренер детских и взрослых групп",
     city: "Минск",
@@ -30,8 +33,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Игоря Гурского",
   },
   {
-    firstName: "Ангелина",
+    id: 4,
     lastName: "Горбачева",
+    firstName: "Ангелина",
     patronymicName: "Александровна",
     description: "Тренер детских и взрослых групп",
     city: "Минск",
@@ -39,8 +43,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Ангелины Горбачевой",
   },
   {
-    firstName: "Егор",
+    id: 5,
     lastName: "Киселев",
+    firstName: "Егор",
     patronymicName: "Игоревич",
     description: "Тренер детских и взрослых групп",
     city: "Минск",
@@ -48,8 +53,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Ангелины Горбачевой",
   },
   {
-    firstName: "Виктория",
+    id: 6,
     lastName: "Крупко",
+    firstName: "Виктория",
     patronymicName: "Анатольевна",
     description: "Ведущий детский тренер.  Опыт работы с детьми - более 10 лет",
     city: "Брест",
@@ -57,8 +63,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Виктории Крупко",
   },
   {
-    firstName: "Наталья",
+    id: 7,
     lastName: "Андриевич",
+    firstName: "Наталья",
     patronymicName: "Павловна",
     description: "Детский тренер",
     city: "Брест",
@@ -66,8 +73,9 @@ export const coachesData: CoachModel[] = [
     alt: "Фото тренера Натальи Андриевич",
   },
   {
-    firstName: "Владислав",
+    id: 8,
     lastName: "Сабиров",
+    firstName: "Владислав",
     patronymicName: "Денисович",
     description: "Детский тренер",
     city: "Брест",
@@ -77,8 +85,8 @@ export const coachesData: CoachModel[] = [
 ] as const;
 
 export const ownerData: OwnerModel = {
-  firstName: "Владислав",
   lastName: "Голодухин",
+  firstName: "Владислав",
   description:
     "Мы смотрим на наших учеников не с позиции: “Каких высот он может или не может достичь в волейболе”, а с позиции: “Как мы можем помочь стать лучше через волейбол. ”Если вы разделяете наши ценности и ищете не просто занятие волейболом, а также поддержку ребенка в развитии, мы будем рады видеть вас в нашей дружной команде.",
   src: "/coaches/golodukhin.webp",
