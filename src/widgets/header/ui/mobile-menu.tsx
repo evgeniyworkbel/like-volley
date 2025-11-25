@@ -35,7 +35,7 @@ export function MobileMenu() {
       )}
       <Navbar
         className={cn(
-          "fixed top-5 left-0 z-10 w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
+          "fixed top-0 left-0 z-10 w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
           {
             "translate-y-30": isOpen,
             "-translate-y-full": !isOpen,
