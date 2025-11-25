@@ -1,18 +1,21 @@
+import { Carousel } from "@/shared/ui";
 import { coachesData } from "../model/data";
 import { CoachCard } from "./coach-сard";
-import { Owner } from "./owner";
-import { Carousel } from "@/shared/ui";
+import { OwnerCard } from "./owner-card";
 
 export function Coaches() {
   return (
-    <section className="flex flex-col gap-6 px-5 py-10">
-      <Owner />
-      <Carousel slidesPerView={3}>
+    <section className="flex flex-col items-center gap-6 py-10 xl:px-20">
+      <OwnerCard />
+      <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
         {coachesData.map((coach) => (
           <CoachCard
-            key={coach.name}
-            name={coach.name}
+            key={coach.id}
+            lastName={coach.lastName}
+            firstName={coach.firstName}
+            patronymicName={coach.patronymicName}
             description={coach.description}
+            city={coach.city}
             src={coach.src}
             alt={coach.alt}
           />
