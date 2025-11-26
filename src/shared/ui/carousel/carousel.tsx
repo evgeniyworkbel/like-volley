@@ -5,13 +5,19 @@ import { Children } from "react";
 import { CarouselItem } from "./carousel-item";
 import { usePrevNextButtons } from "./use-prev-next-buttons";
 import { CarouselButton } from "./carousel-button";
+import { cn } from "@/shared/lib";
 
 export type CarouselProps = {
+  innerWrapperClassName?: string;
   slidesPerView: number;
   children: React.ReactElement[];
 };
 
-export function Carousel({ slidesPerView, children }: CarouselProps) {
+export function Carousel({
+  innerWrapperClassName,
+  slidesPerView,
+  children,
+}: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
   });
@@ -19,13 +25,16 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="grid w-full gap-4 xl:grid-cols-[auto_1fr_auto]">
+    <div className="flex w-full flex-col xl:w-auto xl:flex-row">
       <CarouselButton
         className="hidden xl:inline"
         position="left"
         onClick={onPrevButtonClick}
       />
-      <div ref={emblaRef} className="overflow-hidden">
+      <div
+        className={cn("overflow-hidden", innerWrapperClassName)}
+        ref={emblaRef}
+      >
         <div className="flex">
           {Children.map(children, (child) => (
             <CarouselItem slidesPerView={slidesPerView}>{child}</CarouselItem>
@@ -33,7 +42,7 @@ export function Carousel({ slidesPerView, children }: CarouselProps) {
         </div>
       </div>
 
-      <div className="flex justify-between xl:hidden">
+      <div className="flex justify-between px-18 pt-[22px] xl:hidden">
         <CarouselButton position="left" onClick={onPrevButtonClick} />
         <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>

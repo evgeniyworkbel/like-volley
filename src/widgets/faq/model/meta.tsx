@@ -1,11 +1,14 @@
-export const faqData = [
+import { FaqItemModel } from "./types";
+
+export const faqData: FaqItemModel[] = [
   {
+    id: 1,
     question: "Кто может посещать тренировки?",
     answer:
       "Тренировки может посещать любой желающий, вне зависимости от пола, возраста и уровня подготовки. Ограничение - медицинские противопоказания. В школе есть группы для детей и взрослых разного уровня подготовки",
-    id: 1,
   },
   {
+    id: 2,
     question: "Продолжительность и план тренировок?",
     answer: (
       <div>
@@ -68,9 +71,9 @@ export const faqData = [
         </p>
       </div>
     ),
-    id: 2,
   },
   {
+    id: 3,
     question: "Как записаться на пробную тренировку?",
     answer: (
       <ol>
@@ -90,12 +93,12 @@ export const faqData = [
         </li>
       </ol>
     ),
-    id: 3,
   },
   {
+    id: 4,
     question: "Что взять с собой на тренировку?",
     answer: (
-      <div className="text-sm">
+      <div>
         <p className="mb-3 font-medium">
           С собой на тренировку необходимо взять:
         </p>
@@ -106,6 +109,5 @@ export const faqData = [
         </ol>
       </div>
     ),
-    id: 4,
   },
 ];
