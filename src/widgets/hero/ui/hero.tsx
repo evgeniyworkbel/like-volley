@@ -41,7 +41,7 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] px-5 pt-16 pb-5 xl:relative xl:items-start xl:gap-6 xl:pb-[78px]",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:gap-6 md:pt-9 md:pb-0 xl:relative xl:items-start xl:pt-16 xl:pb-[78px]",
           {
             "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
@@ -49,14 +49,14 @@ export function Hero() {
         )}
       >
         <div className="flex flex-col">
-          <Title className="leading-[0.85] text-inherit md:max-w-164 md:text-left md:text-[58px] xl:max-w-[678px] xl:leading-none">
+          <Title className="z-10 leading-[0.85] text-inherit md:order-2 md:max-w-164 md:text-center md:text-[58px] xl:max-w-[678px] xl:text-left xl:leading-none">
             Волейбольная школа для&nbsp;
             <span className="text-accent-green">всех возрастов</span>
           </Title>
         </div>
         {ageGroup === "children" && (
           <Image
-            className="xl:absolute xl:right-0 xl:bottom-0"
+            className="md:order-1 xl:absolute xl:right-0 xl:bottom-0"
             src="/hero/children.webp"
             width={543}
             height={446}
@@ -74,13 +74,13 @@ export function Hero() {
             alt="Фото взрослых учеников школы волейбола Like Volley"
           />
         )}
-        <p className="flex max-w-2xs flex-col text-sm xl:max-w-[678px] xl:text-start xl:text-lg">
+        <p className="z-10 flex max-w-2xs flex-col text-sm md:max-w-164 md:pb-6 md:text-lg xl:max-w-[678px] xl:p-0 xl:text-start">
           Качественное обучение для детей и взрослых с индивидуальным подходом и
           современными методиками.
         </p>
         <Button
           className={cn(
-            "rounded-3xl px-15 py-3 text-xs xl:rounded-[40px] xl:px-25 xl:py-4 xl:text-xl",
+            "rounded-3xl px-18 py-2 text-xs md:rounded-[40px] md:px-28 md:py-4 md:text-xl",
             {
               "bg-accent-blue": ageGroup === "children",
               "bg-accent-orange": ageGroup === "adults",
