@@ -6,7 +6,7 @@ import { Navbar } from "./navbar";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange xl:px-20">
+    <header className="flex items-center justify-between py-6 pr-12 pl-6 text-accent-orange shadow-[0_2px_8px_-2px_oklch(0.92_0_0)] xl:px-20">
       <Link href={navLinks.home.href}>
         <Image
           className="z-20"
