@@ -16,7 +16,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
+    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white md:grid-cols-1 xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Link href={navLinks.home.href}>
           <Image
@@ -37,18 +37,9 @@ export function Footer() {
           <li>224030</li>
         </ul>
       </div>
-      <div className="flex flex-wrap justify-center gap-15 xl:justify-between">
+      <div className="flex flex-col justify-center gap-15 xl:flex-row xl:justify-between">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <p className="font-shantell text-[38px] uppercase">меню</p>
-
-          {/* todo: отключил временно до особых распоряжений */}
-
-          {/* <nav className="flex flex-wrap justify-center gap-7 text-2xl">
-            <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
-            <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
-            <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
-          </nav> */}
-          <Contacts />
           <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
             <Link className="flex" href={navLinks.policy.href}>
               {navLinks.policy.title}
@@ -57,6 +48,14 @@ export function Footer() {
               {navLinks.offerAgreement.title}
             </Link>
           </div>
+          {/* todo: отключил временно до особых распоряжений */}
+
+          {/* <nav className="flex flex-wrap justify-center gap-7 text-2xl">
+            <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
+            <Link href={navLinks.about.href}>{navLinks.about.title}</Link>
+            <Link href={navLinks.reviews.href}>{navLinks.reviews.title}</Link>
+          </nav> */}
+          <Contacts />
         </div>
         <div className="flex flex-col items-center gap-20 xl:items-start xl:justify-between">
           <Button
@@ -65,7 +64,7 @@ export function Footer() {
           >
             Записаться
           </Button>
-          <ul className="flex max-w-72 flex-col gap-1 text-sm">
+          <ul className="flex max-w-72 flex-col gap-1 text-sm md:text-center xl:text-start">
             <li>Р/с BY29BAPB30128106300100000000</li>
             <li>
               ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»
