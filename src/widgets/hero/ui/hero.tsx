@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section className="flex flex-col px-5 pt-[26px] pb-[50px] text-center text-white xl:px-20">
+    <section className="flex flex-col px-5 pt-5 pb-[50px] text-center text-white md:pt-12.5 xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
         <HeroTab
           className={cn({
