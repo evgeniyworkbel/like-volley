@@ -37,4 +37,3 @@ export function Banner() {
     </section>
   );
 }
-//  Что делать с лфтом tablet image ?
