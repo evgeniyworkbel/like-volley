@@ -25,9 +25,7 @@ export function CoachCard({
             <span>{lastName}</span>
             <span>{name}</span>
           </h4>
-          <p className="text-balance text-foreground-secondary">
-            {description}
-          </p>
+          <p className="text-balance text-foreground-secondary">{description}</p>
         </hgroup>
         <p className="text-foreground">
           Город:&nbsp;<span className="text-accent-orange">{city}</span>
