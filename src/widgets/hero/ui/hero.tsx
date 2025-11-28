@@ -56,7 +56,7 @@ export function Hero() {
         </div>
         {ageGroup === "children" && (
           <Image
-            className="md:bottom-0 xl:absolute xl:right-5 xl:bottom-0"
+            className="xl:absolute xl:right-5 xl:bottom-0"
             src="/hero/children.webp"
             width={543}
             height={446}
