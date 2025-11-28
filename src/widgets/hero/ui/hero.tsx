@@ -41,7 +41,7 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-auto xl:items-start xl:pt-16 xl:pb-[78px]",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-[466px] xl:items-start xl:justify-center",
           {
             "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
