@@ -15,20 +15,20 @@ export function Banner() {
           </p>
         </hgroup>
         <Image
-          className="object-bottom-right md:hidden"
+          className="md:hidden"
           src="/banner/promo-mobile.webp"
           fill
           quality={100}
           alt="Баннер синего цвета с декоратoивными иконками и сверху надпись 'приведи друга'"
         />
         <Image
-          className="hidden rounded-2xl object-cover object-right md:block xl:hidden"
+          className="hidden rounded-2xl object-cover md:block xl:hidden"
           src="/banner/promo-tablet.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
         />
         <Image
-          className="hidden rounded-2xl object-cover xl:block xl:object-right"
+          className="hidden rounded-2xl object-contain object-right xl:block"
           src="/banner/promo-desktop.webp"
           fill
           alt="Баннер синего цвета с декоративными иконками и сверху надпись 'приведи друга'"
