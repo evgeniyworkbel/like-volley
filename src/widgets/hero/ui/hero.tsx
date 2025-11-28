@@ -41,7 +41,7 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:gap-6 md:pt-9 md:pb-0 xl:relative xl:items-start xl:pt-16 xl:pb-[78px]",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:gap-6 md:pt-9 md:pb-0 xl:items-start xl:pt-16 xl:pb-[78px]",
           {
             "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
@@ -49,14 +49,14 @@ export function Hero() {
         )}
       >
         <div className="flex flex-col">
-          <Title className="z-10 leading-[0.85] text-inherit md:order-2 md:max-w-164 md:text-center md:text-[58px] xl:max-w-[678px] xl:text-left xl:leading-none">
+          <Title className="z-10 leading-[0.85] text-inherit md:order-2 md:max-w-164 md:text-center md:text-[58px] xl:max-w-170 xl:text-left xl:leading-none">
             Волейбольная школа для&nbsp;
             <span className="text-accent-green">всех возрастов</span>
           </Title>
         </div>
         {ageGroup === "children" && (
           <Image
-            className="md:order-1 xl:absolute xl:right-0 xl:bottom-0"
+            className="md:bottom-0 xl:absolute xl:right-5 xl:bottom-0"
             src="/hero/children.webp"
             width={543}
             height={446}
@@ -66,7 +66,7 @@ export function Hero() {
         )}
         {ageGroup === "adults" && (
           <Image
-            className="md:order-1 xl:absolute xl:right-0 xl:bottom-0"
+            className="md:order-1 xl:absolute xl:right-5 xl:bottom-0"
             src="/hero/adults.webp"
             width={570}
             height={446}
@@ -74,7 +74,7 @@ export function Hero() {
             alt="Фото взрослых учеников школы волейбола Like Volley"
           />
         )}
-        <p className="z-10 flex max-w-2xs flex-col text-sm md:max-w-164 md:pb-6 md:text-lg xl:max-w-[678px] xl:p-0 xl:text-start">
+        <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-164 md:text-lg xl:m-0 xl:max-w-170 xl:text-start">
           Качественное обучение для детей и взрослых с индивидуальным подходом и
           современными методиками.
         </p>
