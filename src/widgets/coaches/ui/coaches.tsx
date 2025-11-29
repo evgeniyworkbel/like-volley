@@ -1,6 +1,6 @@
 import { Carousel } from "@/shared/ui";
 import { coachesData } from "../model/data";
-import { CoachCard } from "./coach-сard";
+import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
 
 export function Coaches() {

@@ -14,9 +14,7 @@ export function GalleryCard({ src, alt }: GalleryCardProps) {
       <Image src={src} alt={alt} sizes="365px" fill />
       <div className="absolute inset-0 transition-colors duration-400 group-hover:bg-black/50" />
       <div className="z-10 font-semibold text-white opacity-0 transition-opacity duration-400 group-hover:opacity-100">
-        <span className="absolute top-1/2 left-1/2 -translate-1/2">
-          Смотреть все
-        </span>
+        <span className="absolute top-1/2 left-1/2 -translate-1/2">Смотреть все</span>
         {/** @todo: поменять на актуальные данные потом*/}
         {/* <p className="absolute bottom-2 left-4 flex flex-col ">
           <span>Тренировка перед матчем</span>
