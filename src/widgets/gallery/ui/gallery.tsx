@@ -1,6 +1,6 @@
 import { Carousel, Title } from "@/shared/ui";
 import { galleryData } from "../model/data";
-import { GalleryCard } from "./gallery-сard";
+import { GalleryCard } from "./gallery-card";
 
 export function Gallery() {
   return (
