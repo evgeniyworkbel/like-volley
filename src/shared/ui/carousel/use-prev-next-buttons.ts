@@ -1,4 +1,4 @@
-import { EmblaCarouselType } from "embla-carousel";
+import { UseEmblaCarouselType } from "embla-carousel-react";
 
 type UsePrevNextButtonsReturn = {
   onPrevButtonClick: VoidFunction;
@@ -6,7 +6,7 @@ type UsePrevNextButtonsReturn = {
 };
 
 export const usePrevNextButtons = (
-  emblaApi?: EmblaCarouselType,
+  emblaApi?: UseEmblaCarouselType[1],
 ): UsePrevNextButtonsReturn => {
   const onPrevButtonClick = () => {
     if (emblaApi) {
