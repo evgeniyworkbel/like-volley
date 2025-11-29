@@ -31,21 +31,18 @@ export function Accordion({ items }: AccordionProps) {
             )}
             onClick={() => setOpenedItem(isOpen ? undefined : id)}
           >
-            <div className="my-6 flex items-center justify-between font-semibold select-none [&>:first-child]:fill-accent-orange-light">
+            <div className="my-6 flex items-center justify-between font-semibold select-none *:first:fill-accent-orange-light">
               {question}
               <AccordionArrowIcon
                 className={cn("transition-transform", {
-                  "rotate-180 [&>:first-child]:fill-accent-orange": isOpen,
+                  "rotate-180 *:first:fill-accent-orange": isOpen,
                 })}
               />
             </div>
             <div
-              className={cn(
-                "grid grid-rows-[0fr] transition-[grid-template-rows] duration-600",
-                {
-                  "grid-rows-[1fr]": isOpen,
-                },
-              )}
+              className={cn("grid grid-rows-[0fr] transition-[grid-template-rows] duration-600", {
+                "grid-rows-[1fr]": isOpen,
+              })}
             >
               <div className="overflow-hidden text-sm xl:text-base">
                 <div className="mb-6">{answer}</div>
