@@ -1,10 +1,6 @@
 import { IconProps } from "../types";
 
-export function CarouselArrowIcon({
-  className,
-  width = 48,
-  height = 48,
-}: IconProps) {
+export function CarouselArrowIcon({ className, width = 48, height = 48 }: IconProps) {
   return (
     <svg
       className={className}
@@ -43,10 +39,7 @@ export function CarouselArrowIcon({
         />
       </g>
       <defs>
-        <clipPath
-          id="bgblur_0_895_568_clip_path"
-          transform="translate(2.5 2.5)"
-        >
+        <clipPath id="bgblur_0_895_568_clip_path" transform="translate(2.5 2.5)">
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -75,11 +68,7 @@ export function CarouselArrowIcon({
             type="matrix"
             values="0 0 0 0 0.176471 0 0 0 0 0.556863 0 0 0 0 0.678431 0 0 0 0.5 0"
           />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_895_568"
-          />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_895_568" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

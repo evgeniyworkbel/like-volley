@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${shantellSans.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
         {children}
       </body>

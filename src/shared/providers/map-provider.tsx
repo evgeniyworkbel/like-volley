@@ -4,12 +4,7 @@ import Script from "next/script";
 import React, { PropsWithChildren, useState } from "react";
 import ReactDOM from "react-dom";
 import { MapContext } from "@/shared/lib";
-import type {
-  MapContextModel,
-  ReactifiedApiModel,
-  Reactify,
-  UiThemeModel,
-} from "@/shared/lib";
+import type { MapContextModel, ReactifiedApiModel, Reactify, UiThemeModel } from "@/shared/lib";
 
 const YANDEX_MAP_PUBLIC_API_KEY = "be56edf7-c1a9-49b9-887d-5797062fcd1b";
 const apiUrl = `https://api-maps.yandex.ru/v3/?apikey=${YANDEX_MAP_PUBLIC_API_KEY}&lang=ru_RU`;
