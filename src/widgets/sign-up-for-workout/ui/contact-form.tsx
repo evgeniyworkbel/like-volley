@@ -7,11 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
-import {
-  formDefaultValues,
-  formSchema,
-  RESET_TIMEOUT_MS,
-} from "../model/config";
+import { formDefaultValues, formSchema, RESET_TIMEOUT_MS } from "../model/config";
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
@@ -161,10 +157,7 @@ export function ContactForm() {
                   />
                   <span className="flex flex-col xl:flex-row">
                     Я согласен на обработку моих&nbsp;
-                    <Link
-                      className="items-start hover:underline"
-                      href={navLinks.policy.href}
-                    >
+                    <Link className="items-start hover:underline" href={navLinks.policy.href}>
                       персональных данных
                     </Link>
                   </span>

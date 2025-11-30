@@ -4,16 +4,9 @@ import { ContactFormModel } from "./types";
 export const formSchema = z.object({
   city: z.string().min(1, "Укажите город"),
   name: z.string().min(2, "Поле должно быть заполнено"),
-  phone: z
-    .string()
-    .regex(
-      /^\+375 \(\d{2,3}\) \d{3}-\d{2}-\d{2}$/,
-      "Поле должно быть заполнено",
-    ),
+  phone: z.string().regex(/^\+375 \(\d{2,3}\) \d{3}-\d{2}-\d{2}$/, "Поле должно быть заполнено"),
   message: z.string().max(2000).optional(),
-  agreement: z
-    .boolean()
-    .refine((val) => val === true, "Требуется подтверждение"),
+  agreement: z.boolean().refine((val) => val === true, "Требуется подтверждение"),
 });
 
 export const formDefaultValues: ContactFormModel = {

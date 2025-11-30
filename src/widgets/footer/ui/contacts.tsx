@@ -5,11 +5,7 @@ import Image from "next/image";
 export function Contacts() {
   return (
     <div className="flex gap-6">
-      <Link
-        href={contactsLinks.phone.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
         <Image
           src="/phone.svg"
           width={68}
@@ -17,11 +13,7 @@ export function Contacts() {
           alt="Декоративная иконка телефона школы волейбола Like Volley"
         />
       </Link>
-      <Link
-        href={contactsLinks.locations.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href={contactsLinks.locations.href} target="_blank" rel="noopener noreferrer">
         <Image
           src="/location.svg"
           width={68}
@@ -29,11 +21,7 @@ export function Contacts() {
           alt="Декоративная иконка локации школы волейбола Like Volley"
         />
       </Link>
-      <Link
-        href={contactsLinks.instagram.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href={contactsLinks.instagram.href} target="_blank" rel="noopener noreferrer">
         <Image
           src="/instagram.svg"
           width={68}
@@ -41,11 +29,7 @@ export function Contacts() {
           alt="Декоративная иконка Instagram школы волейбола Like Volley"
         />
       </Link>
-      <Link
-        href={contactsLinks.telegram.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
         <Image
           src="/telegram.svg"
           width={68}

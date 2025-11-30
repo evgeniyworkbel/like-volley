@@ -31,19 +31,13 @@ export const locationsCenters: Record<CompanyCities, YMapLocationRequest> = {
   brest: { center: [23.733261, 52.097418], zoom: 13 },
 };
 
-const initialMarkerProps: Pick<
-  DefaultMarkerProps,
-  "size" | "color" | "iconName"
-> = {
+const initialMarkerProps: Pick<DefaultMarkerProps, "size" | "color" | "iconName"> = {
   size: "normal",
   color: "darkblue",
   iconName: "fallback",
 };
 
-export const locationsMarkers: Record<
-  CompanyCities,
-  Array<DefaultMarkerProps>
-> = {
+export const locationsMarkers: Record<CompanyCities, Array<DefaultMarkerProps>> = {
   minsk: [
     {
       ...initialMarkerProps,
@@ -106,10 +100,7 @@ export const locationsMarkers: Record<
   ],
 };
 
-const locationsCoordinates: Record<
-  CompanyCities,
-  Array<DefaultMarkerProps["coordinates"]>
-> = {
+const locationsCoordinates: Record<CompanyCities, Array<DefaultMarkerProps["coordinates"]>> = {
   minsk: locationsMarkers.minsk.map((item) => item.coordinates),
   brest: locationsMarkers.brest.map((item) => item.coordinates),
 };

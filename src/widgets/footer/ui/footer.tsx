@@ -27,8 +27,7 @@ export function Footer() {
           />
         </Link>
         <p className="flex max-w-[270px] flex-col gap-2 text-center text-lg xl:max-w-[350px] xl:text-left">
-          Волейбол для всех возрастов с индивидуальным подходом и современными
-          методиками обучения.
+          Волейбол для всех возрастов с индивидуальным подходом и современными методиками обучения.
         </p>
         <ul className="flex flex-col items-center gap-0.5 text-lg xl:items-start">
           <li>ООО «Лайк Воллей»</li>
@@ -66,9 +65,7 @@ export function Footer() {
           </Button>
           <ul className="flex max-w-72 flex-col gap-1 text-center text-sm xl:text-start">
             <li>Р/с BY29BAPB30128106300100000000</li>
-            <li>
-              ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»
-            </li>
+            <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
             <li>г. Брест ул. Воровского, 11</li>
             <li className="mb-5">БИК BAPBBY2X</li>
             <li className="text-xs">© 2024 LikeVolley Все права защищены.</li>
