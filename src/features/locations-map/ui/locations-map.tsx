@@ -14,9 +14,7 @@ import {
 import { useState } from "react";
 import { CompanyCities } from "../model/types";
 
-const Map = dynamic(() =>
-  import("@/shared/ui/map").then((module) => module.Map),
-);
+const Map = dynamic(() => import("@/shared/ui/map").then((module) => module.Map));
 
 export function LocationsMap() {
   const [city, setCity] = useState<CompanyCities>("minsk");

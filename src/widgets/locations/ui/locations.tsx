@@ -8,9 +8,7 @@ export function Locations() {
         <Title>
           Наши<span className="text-accent-orange">&nbsp;локации</span>
         </Title>
-        <p className="text-foreground-secondary">
-          Найдите ближайший к вам центр обучения
-        </p>
+        <p className="text-foreground-secondary">Найдите ближайший к вам центр обучения</p>
       </hgroup>
       <LocationsMap />
     </div>

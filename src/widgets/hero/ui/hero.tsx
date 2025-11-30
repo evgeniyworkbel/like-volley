@@ -75,8 +75,8 @@ export function Hero() {
           />
         )}
         <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-170 md:text-lg xl:m-0 xl:text-start">
-          Качественное обучение для детей и взрослых с индивидуальным подходом и
-          современными методиками.
+          Качественное обучение для детей и взрослых с индивидуальным подходом и современными
+          методиками.
         </p>
         <Button
           className={cn(

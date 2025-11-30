@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,17 +18,10 @@
         "name": "next"
       }
     ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/@yandex/ymaps3-types"
-    ],
+    "typeRoots": ["./node_modules/@types", "./node_modules/@yandex/ymaps3-types"],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "ymaps3": [
-        "./node_modules/@yandex/ymaps3-types"
-      ]
+      "@/*": ["./src/*"],
+      "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
     }
   },
   "include": [
@@ -43,7 +32,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

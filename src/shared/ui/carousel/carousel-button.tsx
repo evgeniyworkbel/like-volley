@@ -6,11 +6,7 @@ type CarouselButtonProps = Pick<ButtonProps, "className" | "onClick"> & {
   position: "left" | "right";
 };
 
-export function CarouselButton({
-  className,
-  position = "right",
-  onClick,
-}: CarouselButtonProps) {
+export function CarouselButton({ className, position = "right", onClick }: CarouselButtonProps) {
   return (
     <Button className={className} onClick={onClick}>
       <CarouselArrowIcon

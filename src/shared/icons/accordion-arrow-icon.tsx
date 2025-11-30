@@ -1,10 +1,6 @@
 import { IconProps } from "../types";
 
-export function AccordionArrowIcon({
-  className,
-  width = 20,
-  height = 20,
-}: IconProps) {
+export function AccordionArrowIcon({ className, width = 20, height = 20 }: IconProps) {
   return (
     <svg
       className={className}

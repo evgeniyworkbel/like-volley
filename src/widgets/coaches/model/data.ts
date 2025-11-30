@@ -6,8 +6,7 @@ export const coachesData: CoachModel[] = [
     lastName: "Быков",
     firstName: "Евгений",
     patronymicName: "Валерьевич",
-    description:
-      "Ведущий тренер. «Не могу и дня без волейбола». Ведёт детские и взрослые группы",
+    description: "Ведущий тренер. «Не могу и дня без волейбола». Ведёт детские и взрослые группы",
     city: "Минск",
     src: "/coaches/bykov.webp",
     alt: "Фото тренера Евгения Быкова",
