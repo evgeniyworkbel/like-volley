@@ -11,7 +11,7 @@ type ContactProps = Pick<LinkProps<Route>, "href"> &
 
 export function Contact({ title, imageSrc, alt, href, label }: ContactProps) {
   return (
-    <div className="flex gap-6 xl:gap-7">
+    <div className="flex gap-6 md:mx-auto md:w-86 md:justify-center xl:mx-0 xl:h-12 xl:items-center xl:justify-start xl:gap-7">
       <Image src={imageSrc} width={48} height={48} alt={alt} />
       <div className="flex flex-col">
         <h3 className="font-bold">{title}</h3>
