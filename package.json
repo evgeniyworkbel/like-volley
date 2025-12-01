@@ -1,0 +1,62 @@
+{
+  "name": "like-volley",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsc && next build",
+    "start": "next start",
+    "lint:lang": "eslint .",
+    "lint:style": "stylelint \"**/*.css\"",
+    "lint": "npm run lint:lang && npm run lint:style",
+    "lint:fix": "eslint --fix . && stylelint \"**/*.css\" --fix",
+    "format:check": "prettier -c .",
+    "format": "prettier -w .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier -w --ignore-unknown"
+    ],
+    "**/*.{css}": [
+      "stylelint \"**/*.css\" --fix"
+    ]
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@react-input/mask": "^2.0.4",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "next": "16.0.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.63.0",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@evgeniyworkbel/prettier-config": "^1.0.2",
+    "@evgeniyworkbel/stylelint-config": "^1.0.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@yandex/ymaps3-types": "^1.0.17880203",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-useeffect": "^1.0.12",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "stylelint": "^16.23.1",
+    "tailwindcss": "^4",
+    "type-fest": "^5.2.0",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
+}

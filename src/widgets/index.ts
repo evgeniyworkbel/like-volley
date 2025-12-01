@@ -1,0 +1,10 @@
+export { Banner } from "./banner";
+export { Advantages } from "./advantages";
+export { SignUpForWorkout } from "./sign-up-for-workout";
+export { Faq } from "./faq";
+export { Hero } from "./hero";
+export { Footer } from "./footer";
+export { Header } from "./header";
+export { Coaches } from "./coaches";
+export { Gallery } from "./gallery";
+export { Locations } from "./locations";
