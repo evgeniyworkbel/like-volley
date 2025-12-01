@@ -12,13 +12,13 @@ export const bannerImagesData: BannerImageModel[] = [
   },
   {
     id: 2,
-    className: "hidden object-right md:block xl:hidden",
+    className: "hidden  md:block xl:hidden",
     src: "/banner/promo-tablet.webp",
     alt: defaultAlt,
   },
   {
     id: 3,
-    className: "hidden object-right xl:block",
+    className: "hidden  xl:block",
     src: "/banner/promo-desktop.webp",
     alt: defaultAlt,
   },
