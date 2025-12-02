@@ -9,7 +9,7 @@ export default function NotFound() {
         <h1 className="font-shantell text-[74px] text-foreground xl:text-9xl">
           4<span className="text-accent-orange">0</span>4
         </h1>
-        <Title className="text-2xl text-foreground xl:text-[40px]">Страница не найдена :(</Title>
+        <Title className="text-2xl xl:text-[40px]">Страница не найдена :(</Title>
         <video autoPlay muted playsInline>
           <source src="/not-found/animated-ball.webm" />
           <source src="/not-found/animated-ball.mp4" />
