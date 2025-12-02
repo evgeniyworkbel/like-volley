@@ -86,7 +86,7 @@ export function Hero() {
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
-          onClick={handlseeClick}
+          onClick={handleClick}
         >
           Записаться
         </Button>
