@@ -18,4 +18,5 @@
 - работать не через форк, а склонировать репозиторий, отводить фиче-ветку от main ветки и открывать пулл-реквест с этой ветки
 
 ### Деплой
-- конфигурация вдохновлена https://github.com/vercel/next.js/tree/canary/examples/with-docker и https://github.com/leerob/next-self-host
+- конфигурация вдохновлена https://github.com/vercel/next.js/tree/canary/examples/with-docker, https://github.com/leerob/next-self-host и https://www.youtube.com/watch?v=_uZQtRyF6Eg&t=3234s
+- для запуска контейнеров набери `docker-compose up --build -d`
