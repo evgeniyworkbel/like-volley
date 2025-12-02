@@ -12,7 +12,6 @@ export default function Error() {
         </Title>
         <div className="relative flex aspect-[1.20] w-1/2">
           <Image
-            className="flex w-1/2"
             src="/error/error.webp"
             quality={100}
             alt="Декоративная картинка спущенного мяча"
