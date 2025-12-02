@@ -15,6 +15,8 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# TODO: удалить, это было только ради теста
+RUN npx tsc;
 RUN corepack enable pnpm && pnpm run build;
 
 # Stage 3: Production server
