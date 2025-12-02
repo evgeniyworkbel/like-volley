@@ -16,3 +16,6 @@
 
 ### Процессы:
 - работать не через форк, а склонировать репозиторий, отводить фиче-ветку от main ветки и открывать пулл-реквест с этой ветки
+
+### Деплой
+- конфигурация вдохновлена https://github.com/vercel/next.js/tree/canary/examples/with-docker и https://github.com/leerob/next-self-host
