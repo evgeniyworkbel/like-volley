@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - '3000:3000'
+      - '127.0.0.1:80:3000'
     environment:
       - NODE_ENV=production
     # depends_on:
@@ -20,18 +20,6 @@ services:
   #     - '5432:5432'
   #   volumes:
   #     - postgres_data:/var/lib/postgresql/data
-  #   networks:
-  #     - my_network
-
-  # cron:
-  #   image: alpine/curl
-  #   command: >
-  #     sh -c "
-  #       echo '*/10 * * * * curl -X POST http://web:3000/db/clear' > /etc/crontabs/root && \
-  #       crond -f -l 2
-  #     "
-  #   depends_on:
-  #     - web
   #   networks:
   #     - my_network
 
