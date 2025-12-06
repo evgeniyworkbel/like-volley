@@ -24,7 +24,7 @@ export function Accordion({ items }: AccordionProps) {
           <div
             key={question}
             className={cn(
-              "cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light px-6 text-sm xl:text-lg",
+              "cursor-pointer items-center justify-between rounded-xl border border-accent-orange-light px-6 text-sm transition-colors duration-600 xl:text-lg",
               {
                 "border-accent-orange": isOpen,
               },
