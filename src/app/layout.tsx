@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
       </head>
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
