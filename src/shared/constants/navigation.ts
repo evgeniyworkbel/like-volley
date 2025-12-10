@@ -29,7 +29,7 @@ export const navLinks = {
   },
   offerAgreement: {
     title: "Договор оферты",
-    href: "/offer-agreement",
+    href: "/offer-agreement.pdf",
   },
   policy: {
     title: "Политика приватности",
