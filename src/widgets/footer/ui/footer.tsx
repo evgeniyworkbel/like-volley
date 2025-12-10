@@ -45,7 +45,7 @@ export function Footer() {
             </Link>
             <a
               className="flex"
-              href="/offer-agreement.pdf"
+              href={navLinks.offerAgreement.href}
               target="_blank"
               rel="noopener noreferrer"
             >
