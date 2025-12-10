@@ -24,7 +24,7 @@ export const navLinks = {
     href: "/reviews",
   },
   phone: {
-    title: "+375 25 663 33 22",
+    title: "+375 29 802 07 48",
     href: "tel:+375256633322",
   },
   offerAgreement: {
