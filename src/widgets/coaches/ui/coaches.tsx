@@ -1,11 +1,12 @@
 import { Carousel } from "@/shared/ui";
+import { coaches } from "@/shared/constants";
 import { coachesData } from "../model/data";
 import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
 
 export function Coaches() {
   return (
-    <section className="flex flex-col items-center gap-11 py-10 xl:gap-10 xl:px-20">
+    <section id={coaches} className="flex flex-col items-center gap-11 py-10 xl:gap-10 xl:px-20">
       <OwnerCard />
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
         {coachesData.map((coach) => (

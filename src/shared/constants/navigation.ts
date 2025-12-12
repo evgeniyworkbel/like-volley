@@ -35,4 +35,10 @@ export const navLinks = {
     title: "Политика приватности",
     href: "/policy",
   },
+  faq: {
+    title: "FAQ",
+  },
+  coaches: {
+    title: "Тренеры",
+  },
 } as const;
