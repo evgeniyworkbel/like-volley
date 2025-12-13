@@ -1,9 +1,10 @@
 import { Accordion, Title } from "@/shared/ui";
+import { faqSectionId } from "@/shared/constants";
 import { faqData } from "../model/meta";
 
 export function Faq() {
   return (
-    <div className="flex flex-col gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
+    <div id={faqSectionId} className="flex flex-col gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
       <hgroup className="flex flex-col items-center gap-4 text-base md:text-lg">
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>

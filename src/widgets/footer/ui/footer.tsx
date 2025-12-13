@@ -3,13 +3,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { contactFormId, navLinks } from "@/shared/constants";
+import { signUpForWorkoutSectionId, navLinks } from "@/shared/constants";
 import { Button } from "@/shared/ui";
 import { Contacts } from "./contacts";
 
 export function Footer() {
   const handleClick = () => {
-    const contactForm = document.getElementById(contactFormId);
+    const contactForm = document.getElementById(signUpForWorkoutSectionId);
     if (contactForm) {
       contactForm.scrollIntoView();
     }
