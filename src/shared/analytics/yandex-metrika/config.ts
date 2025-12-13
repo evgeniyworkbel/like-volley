@@ -1,1 +1,1 @@
-export const YM_COUNTER_ID = 105188018;
+export const YM_COUNTER_ID = process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID;
