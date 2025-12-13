@@ -1,5 +1,5 @@
-export const contactFormId = "contact-form";
-export const gallery = "gallery";
-export const faq = "faq";
-export const coaches = "coaches";
-export const locations = "locations";
+export const signUpForWorkoutSectionId = "sign-up-for-workout-section";
+export const gallerySectionId = "gallery-section";
+export const faqSectionId = "faq-section";
+export const coachesSectionId = "coaches-section";
+export const locationsSectionId = "locations-section";

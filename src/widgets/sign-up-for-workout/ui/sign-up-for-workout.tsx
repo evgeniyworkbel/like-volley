@@ -1,5 +1,5 @@
 import { Title } from "@/shared/ui";
-import { contactFormId } from "@/shared/constants";
+import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { Contact } from "./contact";
 // import { ContactForm } from "./contact-form";
 import { contactsData } from "../model/data";
@@ -8,7 +8,7 @@ import { Form2 } from "./contact-form2";
 export function SignUpForWorkout() {
   return (
     <section
-      id={contactFormId}
+      id={signUpForWorkoutSectionId}
       className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 xl:flex-row xl:justify-between xl:px-20 xl:py-[90px]"
     >
       <div className="flex flex-col gap-10 xl:max-w-[494px] xl:gap-12">

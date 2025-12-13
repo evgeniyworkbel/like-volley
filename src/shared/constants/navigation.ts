@@ -1,3 +1,5 @@
+import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+
 export const navLinks = {
   home: {
     title: "Главная",
@@ -6,6 +8,7 @@ export const navLinks = {
   locations: {
     title: "Локации",
     href: "/location",
+    locationsSection: `#${locationsSectionId}`,
   },
   about: {
     title: "О школе",
@@ -18,6 +21,7 @@ export const navLinks = {
   gallery: {
     title: "Галерея",
     href: "/gallery",
+    locationsSection: `#${gallerySectionId}`,
   },
   reviews: {
     title: "Отзывы",
@@ -37,8 +41,12 @@ export const navLinks = {
   },
   faq: {
     title: "FAQ",
+    href: { faqSectionId },
+    locationsSection: `#${faqSectionId}`,
   },
   coaches: {
     title: "Тренеры",
+    href: { coachesSectionId },
+    locationsSection: `#${coachesSectionId}`,
   },
 } as const;
