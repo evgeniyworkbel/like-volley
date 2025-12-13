@@ -5,11 +5,29 @@ export const navLinks = {
     title: "Главная",
     href: "/",
   },
+  locationsSection: {
+    title: "Локации",
+    href: `#${locationsSectionId}`,
+  },
+  gallerySection: {
+    title: "Галерея",
+    href: `#${gallerySectionId}`,
+  },
+  faqSection: {
+    title: "FAQ",
+    href: `#${faqSectionId}`,
+  },
+  coachesSection: {
+    title: "Тренеры",
+    href: `#${coachesSectionId}`,
+  },
+
   locations: {
     title: "Локации",
     href: "/location",
-    locationsSection: `#${locationsSectionId}`,
   },
+
+  // Links for pages
   about: {
     title: "О школе",
     href: "/about",
@@ -21,7 +39,6 @@ export const navLinks = {
   gallery: {
     title: "Галерея",
     href: "/gallery",
-    locationsSection: `#${gallerySectionId}`,
   },
   reviews: {
     title: "Отзывы",
@@ -38,15 +55,5 @@ export const navLinks = {
   policy: {
     title: "Политика приватности",
     href: "/policy",
-  },
-  faq: {
-    title: "FAQ",
-    href: { faqSectionId },
-    locationsSection: `#${faqSectionId}`,
-  },
-  coaches: {
-    title: "Тренеры",
-    href: { coachesSectionId },
-    locationsSection: `#${coachesSectionId}`,
   },
 } as const;

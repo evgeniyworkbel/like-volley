@@ -24,17 +24,17 @@ export function Navbar({ className, onLinkClick }: NavbarProps) {
         {navLinks.gallery.title}
       </Link> */}
 
-      <Link href={navLinks.locations.locationsSection} onClick={onLinkClick}>
-        {navLinks.locations.title}
+      <Link href={navLinks.locationsSection.href} onClick={onLinkClick}>
+        {navLinks.locationsSection.title}
       </Link>
-      <Link href={navLinks.coaches.locationsSection} onClick={onLinkClick}>
-        {navLinks.coaches.title}
+      <Link href={navLinks.coachesSection.href} onClick={onLinkClick}>
+        {navLinks.coachesSection.title}
       </Link>
-      <Link href={navLinks.faq.locationsSection} onClick={onLinkClick}>
-        {navLinks.faq.title}
+      <Link href={navLinks.faqSection.href} onClick={onLinkClick}>
+        {navLinks.faqSection.title}
       </Link>
-      <Link href={navLinks.gallery.locationsSection} onClick={onLinkClick}>
-        {navLinks.gallery.title}
+      <Link href={navLinks.gallerySection.href} onClick={onLinkClick}>
+        {navLinks.gallerySection.title}
       </Link>
       <Link href={navLinks.phone.href} onClick={onLinkClick}>
         {navLinks.phone.title}
