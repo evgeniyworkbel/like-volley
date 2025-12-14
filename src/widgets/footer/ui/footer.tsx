@@ -43,9 +43,14 @@ export function Footer() {
             <Link className="flex" href={navLinks.policy.href}>
               {navLinks.policy.title}
             </Link>
-            <Link className="flex" href={navLinks.offerAgreement.href}>
+            <a
+              className="flex"
+              href={navLinks.offerAgreement.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {navLinks.offerAgreement.title}
-            </Link>
+            </a>
           </div>
           {/* todo: отключил временно до особых распоряжений */}
 
