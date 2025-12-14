@@ -13,7 +13,10 @@
     "lint:fix": "eslint --fix . && stylelint \"**/*.css\" --fix",
     "format:check": "prettier -c .",
     "format": "prettier -w .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "generate:importmap": "payload generate:importmap",
+    "generate:types": "payload generate:types",
+    "payload": "payload"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
