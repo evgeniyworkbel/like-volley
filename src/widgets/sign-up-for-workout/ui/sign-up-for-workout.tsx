@@ -12,8 +12,8 @@ export function SignUpForWorkout() {
       className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 md:items-center xl:flex-row xl:justify-between xl:px-20 xl:py-[90px]"
     >
       <div className="flex flex-col gap-10 md:items-center md:gap-20 xl:max-w-[494px] xl:items-start xl:gap-12">
-        <div className="flex max-w-182 flex-col gap-4 text-center xl:pt-28">
-          <Title className="xl:text-left">
+        <div className="flex max-w-182 flex-col gap-4 text-center xl:pt-28 xl:text-left">
+          <Title>
             <span className="text-accent-orange">Запишись&nbsp;</span>
             на первую тренировку
           </Title>
