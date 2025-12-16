@@ -21,7 +21,6 @@ export const navLinks = {
     title: "Тренеры",
     href: `#${coachesSectionId}`,
   },
-
   locations: {
     title: "Локации",
     href: "/location",
