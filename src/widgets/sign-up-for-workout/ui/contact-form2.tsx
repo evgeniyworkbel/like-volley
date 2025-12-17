@@ -18,8 +18,8 @@ export function Form2() {
         alt="Фото игроков в волейбол (взрослые и дети)"
       />
       <div className="relative flex h-full flex-col items-center justify-between">
-        <Title className="text-center text-[28px] text-accent-green md:text-[44px]">
-          Приходи на первую тренировку бесплатно!
+        <Title className="text-center text-[28px] text-accent-green xl:text-[44px]">
+          Приходи на свою первую тренировку!
         </Title>
         <Button
           className="w-full rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground"
