@@ -16,7 +16,7 @@ export function Contact({ title, imageSrc, alt, href, label }: ContactProps) {
       <div className="flex flex-col gap-1">
         <h3 className="font-bold">{title}</h3>
         <Link
-          className="flex text-accent-orange underline underline-offset-2 xl:text-foreground-secondary xl:no-underline xl:hover:text-accent-orange xl:hover:underline xl:hover:underline-offset-2"
+          className="text-accent-orange underline underline-offset-2 xl:text-foreground-secondary xl:no-underline xl:hover:text-accent-orange xl:hover:underline xl:hover:underline-offset-2"
           href={href}
           target="_blank"
           rel="noopener noreferrer"
