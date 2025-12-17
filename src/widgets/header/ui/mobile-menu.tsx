@@ -22,7 +22,7 @@ export function MobileMenu() {
   }, [isOpen]);
 
   return (
-    <div className="flex xl:hidden">
+    <div className="z-20 flex xl:hidden">
       {!isOpen && (
         <Button onClick={openMenu}>
           <BurgerMenuIcon />
