@@ -9,7 +9,7 @@ export function Form2() {
   };
 
   return (
-    <div className="relative h-[700px] max-w-[700px] overflow-hidden rounded-3xl bg-accent-blue p-6 xl:h-[775px]">
+    <div className="relative h-175 max-w-175 overflow-hidden rounded-3xl bg-accent-blue p-6 md:mx-auto md:h-[774px] xl:mx-0">
       <Image
         className="absolute bottom-0 left-1/2 w-[460px] -translate-x-1/2 -translate-y-20 scale-[1.6] xl:w-full xl:translate-y-0 xl:scale-100"
         width={700}
