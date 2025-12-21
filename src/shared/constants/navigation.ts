@@ -1,12 +1,32 @@
+import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+
 export const navLinks = {
   home: {
     title: "Главная",
     href: "/",
   },
+  locationsSection: {
+    title: "Локации",
+    href: `#${locationsSectionId}`,
+  },
+  gallerySection: {
+    title: "Галерея",
+    href: `#${gallerySectionId}`,
+  },
+  faqSection: {
+    title: "FAQ",
+    href: `#${faqSectionId}`,
+  },
+  coachesSection: {
+    title: "Тренеры",
+    href: `#${coachesSectionId}`,
+  },
   locations: {
     title: "Локации",
     href: "/location",
   },
+
+  // Links for pages
   about: {
     title: "О школе",
     href: "/about",

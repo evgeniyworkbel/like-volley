@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Button, Title } from "@/shared/ui";
-import { contactFormId } from "@/shared/constants";
+import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
 
   const handleClick = () => {
-    const contactForm = document.getElementById(contactFormId);
+    const contactForm = document.getElementById(signUpForWorkoutSectionId);
     if (contactForm) {
       contactForm.scrollIntoView();
     }
