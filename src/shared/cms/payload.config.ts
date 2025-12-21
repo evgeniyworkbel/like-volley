@@ -1,8 +1,10 @@
+import path from "path";
+import { fileURLToPath } from "url";
+import { buildConfig } from "payload";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import path from "path";
-import { buildConfig } from "payload";
-import { fileURLToPath } from "url";
+import { en } from "@payloadcms/translations/languages/en";
+import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
 
 import { Users } from "./collections/Users";
@@ -29,6 +31,9 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || "",
     },
   }),
+  i18n: {
+    supportedLanguages: { en, ru },
+  },
   sharp,
   plugins: [],
 });
