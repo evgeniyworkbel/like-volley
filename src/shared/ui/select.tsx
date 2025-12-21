@@ -1,18 +1,13 @@
 import * as React from "react";
 import { Select } from "@base-ui/react/select";
 
-type CityOption = {
-  label: string;
-  value: string | null;
-};
-
-type ExampleSelectProps = {
-  citys: CityOption[];
+type ExampleSelectModel = {
+  citys: { label: string; value: string | null }[];
   value?: string;
   onChange?: VoidFunction;
 };
 
-export default function ExampleSelect({ citys, value, onChange }: ExampleSelectProps) {
+export default function ExampleSelect({ citys, value, onChange }: ExampleSelectModel) {
   return (
     <Select.Root items={citys} value={value} onValueChange={onChange}>
       <Select.Trigger className="border-gray-200 text-gray-900 hover:bg-gray-100 focus-visible:outline-blue-800 data-popup-open:bg-gray-100 flex h-10 min-w-36 items-center justify-between gap-3 rounded-md border bg-[canvas] pr-3 pl-3.5 text-base select-none focus-visible:outline-2 focus-visible:-outline-offset-1">
