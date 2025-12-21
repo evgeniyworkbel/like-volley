@@ -61,7 +61,7 @@ export function ContactForm() {
                     <option value="brest">Брест</option>
                     <option value="minsk">Минск</option>
                   </select> */}
-                  <ExampleSelect citys={citys} {...field} />
+                  <ExampleSelect citys={citys} value={field.value} onChange={field.onChange} />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
