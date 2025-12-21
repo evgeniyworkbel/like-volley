@@ -36,4 +36,5 @@ export default buildConfig({
   },
   sharp,
   plugins: [],
+  telemetry: false,
 });
