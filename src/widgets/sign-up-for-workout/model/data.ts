@@ -23,3 +23,9 @@ export const contactsData = [
     label: contactsLinks.instagram.label,
   },
 ] as const;
+
+export const citys = [
+  { label: "Выберите город", value: null },
+  { label: "Брест", value: "brest" },
+  { label: "Минск", value: "minsk" },
+];

@@ -24,6 +24,7 @@
     ]
   },
   "dependencies": {
+    "@base-ui/react": "^1.0.0",
     "@hookform/resolvers": "^5.2.2",
     "@react-input/mask": "^2.0.4",
     "clsx": "^2.1.1",
