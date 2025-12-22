@@ -11,7 +11,7 @@ import { formDefaultValues, formSchema, RESET_TIMEOUT_MS } from "../model/config
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
-import ExampleSelect from "@/shared/ui/select";
+// import ExampleSelect from "@/shared/ui/select";
 
 export function ContactForm() {
   const {
@@ -52,15 +52,15 @@ export function ContactForm() {
               return (
                 <label className="text-xl">
                   Группа:
-                  {/* <select
+                  <select
                     {...field}
                     className="mt-1.5 h-10 w-full appearance-none rounded-lg bg-white pl-3 text-base text-foreground focus:outline-none"
                   >
                     <option value="">Выберите город</option>
                     <option value="brest">Брест</option>
                     <option value="minsk">Минск</option>
-                  </select> */}
-                  <ExampleSelect />
+                  </select>
+                  {/* <ExampleSelect /> */}
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
