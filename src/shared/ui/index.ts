@@ -3,3 +3,4 @@ export { Button } from "./button";
 export { Title } from "./title";
 export { Accordion } from "./accordion";
 export { Map } from "./map";
+export { Select } from "./select";
