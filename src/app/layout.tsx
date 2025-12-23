@@ -31,7 +31,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
-        {children}
+        <div className="isolate">{children}</div>
       </body>
     </html>
   );
