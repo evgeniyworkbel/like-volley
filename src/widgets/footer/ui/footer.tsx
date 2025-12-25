@@ -49,6 +49,7 @@ export function Footer() {
               // target="_blank"
               // rel="noopener noreferrer"
               rel="terms-of-service"
+              type="application/pdf"
             >
               {navLinks.offerAgreement.title}
             </a>
