@@ -50,6 +50,7 @@ export function Footer() {
               href={navLinks.offerAgreement.href}
             >
               {navLinks.offerAgreement.title}
+              {navigator.pdfViewerEnabled ? "yes" : "no"}
             </a>
           </div>
           {/* todo: отключил временно до особых распоряжений */}
