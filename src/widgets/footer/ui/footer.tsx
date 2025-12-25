@@ -46,8 +46,8 @@ export function Footer() {
             <a
               className="flex"
               href={navLinks.offerAgreement.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              // target="_blank"
+              // rel="noopener noreferrer"
             >
               {navLinks.offerAgreement.title}
             </a>
