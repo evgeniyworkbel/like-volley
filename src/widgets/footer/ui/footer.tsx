@@ -47,7 +47,7 @@ export function Footer() {
               className="flex"
               type="application/pdf"
               rel="alternate"
-              href={navLinks.offerAgreement.href + "#toolbar=0&navpanes=0"}
+              href={navLinks.offerAgreement.href}
             >
               {navLinks.offerAgreement.title}
             </a>
