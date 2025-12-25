@@ -47,7 +47,7 @@ export function Footer() {
               className="flex"
               type="application/pdf"
               rel="alternate"
-              href={navLinks.offerAgreement.href + "?t=" + new Date().toISOString()}
+              href={navLinks.offerAgreement.href}
             >
               {navLinks.offerAgreement.title}
             </a>
