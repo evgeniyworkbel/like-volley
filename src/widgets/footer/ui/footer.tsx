@@ -48,6 +48,7 @@ export function Footer() {
               href={navLinks.offerAgreement.href}
               // target="_blank"
               // rel="noopener noreferrer"
+              rel="terms-of-service"
             >
               {navLinks.offerAgreement.title}
             </a>
