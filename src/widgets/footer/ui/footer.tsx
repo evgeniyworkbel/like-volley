@@ -47,7 +47,7 @@ export function Footer() {
               className="flex"
               type="application/pdf"
               rel="alternate"
-              href={"https://limewire.com/d/rFc1G#W6xozL4z3x"}
+              href={navLinks.offerAgreement.href}
             >
               {navLinks.offerAgreement.title}
             </a>
