@@ -6,6 +6,7 @@ import Image from "next/image";
 import { signUpForWorkoutSectionId, navLinks } from "@/shared/constants";
 import { Button } from "@/shared/ui";
 import { Contacts } from "./contacts";
+import { UrlObject } from "url";
 
 export function Footer() {
   const handleClick = () => {
@@ -45,7 +46,7 @@ export function Footer() {
             </Link>
             <Link
               className="flex"
-              href={navLinks.offerAgreement.href}
+              href={navLinks.offerAgreement.href as unknown as UrlObject}
               rel="terms-of-service"
               type="application/pdf"
             >
