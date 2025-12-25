@@ -12,6 +12,27 @@ const nextConfig: NextConfig = {
   // streaming responses
   // https://github.com/leerob/next-self-host/blob/main/next.config.ts
   compress: false,
+  headers: () => {
+    return [
+      {
+        source: "/offer-agreement.pdf",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/pdf",
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline",
+          },
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate", // Без кэширования
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
