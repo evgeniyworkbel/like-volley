@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { contactsLinks, navLinks } from "@/shared/constants";
 import { FaqItemModel } from "./types";
 
 export const faqData: FaqItemModel[] = [
@@ -74,8 +76,14 @@ export const faqData: FaqItemModel[] = [
         </li>
         <li>
           <span className="font-weight">
-            3. Написать нам в директ (Viber, Telegram) или позвонить по телефону +375 29 802 0748
+            {/* 3. Написать нам в директ (Viber, Telegram) или позвонить по телефону&nbsp; */}
+            3. Написать нам в директ,
+            <Link href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
+              {contactsLinks.telegram.name}
+            </Link>
+            &nbsp;или позвонить по телефону&nbsp;
           </span>
+          <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
         </li>
       </ol>
     ),

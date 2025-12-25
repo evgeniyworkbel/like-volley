@@ -19,6 +19,7 @@ export const contactsLinks = {
     label: formatPhone(contacts.phone),
   },
   telegram: {
+    name: "Telegram",
     href: `https://t.me/s/${contacts.telegram}`,
     label: `@${contacts.telegram}`,
   },
