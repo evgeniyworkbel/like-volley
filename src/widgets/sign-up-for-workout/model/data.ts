@@ -25,7 +25,7 @@ export const contactsData = [
 ] as const;
 
 export const citys = [
-  { label: "Выберите город", value: null },
-  { label: "Брест", value: "brest" },
-  { label: "Минск", value: "minsk" },
+  { id: 1, label: "Выберите город", value: "" },
+  { id: 2, label: "Брест", value: "brest" },
+  { id: 3, label: "Минск", value: "minsk" },
 ];

@@ -51,7 +51,7 @@ export function ContactForm() {
               const { error } = fieldState;
               const errorMessage = error?.message;
               return (
-                <label className="text-xl">
+                <label className="flex flex-col gap-1.5 text-xl">
                   Группа:
                   <Select items={citys} value={field.value} onChange={field.onChange} />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
