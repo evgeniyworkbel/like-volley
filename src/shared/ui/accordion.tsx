@@ -13,7 +13,8 @@ type AccordionProps = {
 };
 
 export function Accordion({ items }: AccordionProps) {
-  const [openedItem, setOpenedItem] = useState<number | undefined>(1);
+  const defaultOpenedId = 1;
+  const [openedItem, setOpenedItem] = useState<number | null>(defaultOpenedId);
 
   return (
     <div className="flex flex-col gap-5">
@@ -29,7 +30,7 @@ export function Accordion({ items }: AccordionProps) {
                 "border-accent-orange": isOpen,
               },
             )}
-            onClick={() => setOpenedItem(isOpen ? undefined : id)}
+            onClick={() => setOpenedItem(isOpen ? null : id)}
           >
             <div className="my-6 flex items-center justify-between font-semibold select-none *:first:fill-accent-orange-light">
               {question}
