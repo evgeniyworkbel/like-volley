@@ -13,7 +13,7 @@ type AccordionProps = {
 };
 
 export function Accordion({ items }: AccordionProps) {
-  const [openedItem, setOpenedItem] = useState<number>();
+  const [openedItem, setOpenedItem] = useState<number | undefined>(1);
 
   return (
     <div className="flex flex-col gap-5">

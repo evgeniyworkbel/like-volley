@@ -4,7 +4,10 @@ import { faqData } from "../model/meta";
 
 export function Faq() {
   return (
-    <div id={faqSectionId} className="flex flex-col gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
+    <section
+      id={faqSectionId}
+      className="flex flex-col gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20"
+    >
       <hgroup className="flex flex-col items-center gap-4 text-base md:text-lg">
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>
@@ -16,6 +19,6 @@ export function Faq() {
         </p>
       </hgroup>
       <Accordion items={faqData} />
-    </div>
+    </section>
   );
 }

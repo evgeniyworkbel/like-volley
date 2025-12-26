@@ -23,6 +23,10 @@ export const contactsLinks = {
     href: `https://t.me/s/${contacts.telegram}`,
     label: `@${contacts.telegram}`,
   },
+  viber: {
+    name: "Viber",
+    href: `viber://add?number=${contacts.phone.slice(1)}`,
+  },
   gallery: {
     href: "https://zaviflash.wfolio.pro/disk/29-11-2024-like-volley-2-8zmnl7",
   },
