@@ -38,7 +38,7 @@ export function MobileMenu({ isOpen, setIsOpenAction }: MobileMenuModel) {
       )}
       <Navbar
         className={cn(
-          "fixed -top-7 left-0 isolate w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
+          "fixed -top-7 left-0 w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
           {
             "translate-y-30": isOpen,
             "-translate-y-full": !isOpen,

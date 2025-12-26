@@ -14,7 +14,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 isolate z-40 flex items-center justify-between rounded-b-[14px] bg-background/60 py-2 pr-12 pl-6 text-accent-orange shadow-[1px_2px_6px_0_oklch(0_0_0/0.12)] backdrop-blur-sm xl:px-20",
+        "sticky top-0 z-40 flex items-center justify-between rounded-b-[14px] bg-background/60 py-2 pr-12 pl-6 text-accent-orange shadow-[1px_2px_6px_0_oklch(0_0_0/0.12)] backdrop-blur-sm xl:px-20",
         { "bg-background backdrop-blur-none": isOpen },
       )}
     >
