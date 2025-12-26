@@ -1,17 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@/shared/ui";
 import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
 import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
-export function MobileMenu() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+type MobileMenuModel = {
+  isOpen: boolean;
+  setIsOpenAction: (open: boolean) => void;
+};
 
-  const openMenu = () => setIsOpen(true);
-  const closeMenu = () => setIsOpen(false);
+export function MobileMenu({ isOpen, setIsOpenAction }: MobileMenuModel) {
+  const openMenu = () => setIsOpenAction(true);
+  const closeMenu = () => setIsOpenAction(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -22,7 +25,7 @@ export function MobileMenu() {
   }, [isOpen]);
 
   return (
-    <div className="z-20 flex xl:hidden">
+    <div className="flex xl:hidden">
       {!isOpen && (
         <Button onClick={openMenu}>
           <BurgerMenuIcon />
@@ -35,7 +38,7 @@ export function MobileMenu() {
       )}
       <Navbar
         className={cn(
-          "fixed -top-7 left-0 z-10 w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
+          "fixed -top-7 left-0 isolate w-full flex-col rounded-b-2xl bg-background/60 pb-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
           {
             "translate-y-30": isOpen,
             "-translate-y-full": !isOpen,
