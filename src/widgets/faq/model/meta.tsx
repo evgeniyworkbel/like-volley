@@ -77,17 +77,32 @@ export const faqData: FaqItemModel[] = [
         <li>
           <span className="font-weight">
             3. Написать нам в директ (
-            <Link href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
+            <Link
+              className="hover:text-accent-orange hover:underline hover:underline-offset-1"
+              href={contactsLinks.telegram.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {contactsLinks.telegram.name}
             </Link>
             <span>,</span>
             &nbsp;
-            <Link href={contactsLinks.viber.href} target="_blank" rel="noopener noreferrer">
+            <Link
+              className="hover:text-accent-orange hover:underline hover:underline-offset-1"
+              href={contactsLinks.viber.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {contactsLinks.viber.name}
             </Link>
             ) или позвонить по телефону&nbsp;
           </span>
-          <Link href={navLinks.phone.href}>{navLinks.phone.title}</Link>
+          <Link
+            className="hover:text-accent-orange hover:underline hover:underline-offset-1"
+            href={navLinks.phone.href}
+          >
+            {navLinks.phone.title}
+          </Link>
         </li>
       </ol>
     ),
