@@ -1,6 +1,8 @@
+import { LinkProps } from "next/link";
+import { Route } from "next";
 import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
 
-export const navLinks = {
+export const navLinks: Record<string, { title: string; href: LinkProps<Route>["href"] }> = {
   home: {
     title: "Главная",
     href: "/",
@@ -25,7 +27,6 @@ export const navLinks = {
     title: "Локации",
     href: "/location",
   },
-
   // Links for pages
   about: {
     title: "О школе",
@@ -49,7 +50,7 @@ export const navLinks = {
   },
   offerAgreement: {
     title: "Договор оферты",
-    href: "https://drive.google.com/file/d/1ZdlR_LDV34NT8yXPjZya7Bhw6H5zmHIB/view?usp=sharing",
+    href: "/offer-agreement",
   },
   policy: {
     title: "Политика приватности",
