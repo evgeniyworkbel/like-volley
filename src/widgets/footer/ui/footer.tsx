@@ -40,17 +40,10 @@ export function Footer() {
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <p className="font-shantell text-[38px] uppercase">меню</p>
           <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
-            <Link className="flex" href={navLinks.policy.href}>
-              {navLinks.policy.title}
-            </Link>
-            <a
-              className="flex"
-              type="application/pdf"
-              rel="alternate"
-              href={navLinks.offerAgreement.href}
-            >
+            <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
+            <Link href={navLinks.offerAgreement.href} rel="nooper noreferrer">
               {navLinks.offerAgreement.title}
-            </a>
+            </Link>
           </div>
           {/* todo: отключил временно до особых распоряжений */}
 
