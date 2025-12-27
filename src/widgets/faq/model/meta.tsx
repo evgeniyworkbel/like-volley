@@ -1,3 +1,4 @@
+import { contactsLinks, navLinks } from "@/shared/constants";
 import { FaqItemModel } from "./types";
 
 export const faqData: FaqItemModel[] = [
@@ -73,8 +74,19 @@ export const faqData: FaqItemModel[] = [
           <span className="font-weight">2. Выбрать удобный для себя день и время занятий</span>
         </li>
         <li>
-          <span className="font-weight">
-            3. Написать нам в директ (Viber, Telegram) или позвонить по телефону +375 29 802 0748
+          <span className="font-medium [&>a:hover]:text-accent-orange [&>a:hover]:underline [&>a:hover]:underline-offset-1">
+            3. Написать нам в директ (
+            <a href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
+              Telegram
+            </a>
+            <span>,&nbsp;</span>
+            <a href={contactsLinks.viber.href} target="_blank" rel="noopener noreferrer">
+              Viber
+            </a>
+            <span>) или позвонить по телефону&nbsp;</span>
+            <a href={navLinks.phone.href} target="_blank" rel="noopener noreferrer">
+              {navLinks.phone.title}
+            </a>
           </span>
         </li>
       </ol>
