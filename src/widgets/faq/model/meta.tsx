@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { contactsLinks, navLinks } from "@/shared/constants";
 import { FaqItemModel } from "./types";
 
@@ -75,34 +74,20 @@ export const faqData: FaqItemModel[] = [
           <span className="font-weight">2. Выбрать удобный для себя день и время занятий</span>
         </li>
         <li>
-          <span className="font-weight">
+          <span className="font-medium [&>a:hover]:text-accent-orange [&>a:hover]:underline [&>a:hover]:underline-offset-1">
             3. Написать нам в директ (
-            <Link
-              className="hover:text-accent-orange hover:underline hover:underline-offset-1"
-              href={contactsLinks.telegram.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {contactsLinks.telegram.name}
-            </Link>
-            <span>,</span>
-            &nbsp;
-            <Link
-              className="hover:text-accent-orange hover:underline hover:underline-offset-1"
-              href={contactsLinks.viber.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {contactsLinks.viber.name}
-            </Link>
-            ) или позвонить по телефону&nbsp;
+            <a href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
+              Telegram
+            </a>
+            <span>,&nbsp;</span>
+            <a href={contactsLinks.viber.href} target="_blank" rel="noopener noreferrer">
+              Viber
+            </a>
+            <span>) или позвонить по телефону&nbsp;</span>
+            <a href={navLinks.phone.href} target="_blank" rel="noopener noreferrer">
+              {navLinks.phone.title}
+            </a>
           </span>
-          <Link
-            className="hover:text-accent-orange hover:underline hover:underline-offset-1"
-            href={navLinks.phone.href}
-          >
-            {navLinks.phone.title}
-          </Link>
         </li>
       </ol>
     ),
