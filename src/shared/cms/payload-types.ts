@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    coaches: Coach;
+    faq: Faq;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -78,6 +80,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    coaches: CoachesSelect<false> | CoachesSelect<true>;
+    faq: FaqSelect<false> | FaqSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -119,6 +123,8 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Администраторы cms системы
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -127,6 +133,7 @@ export interface User {
   canDeleteUsers?: boolean | null;
   updatedAt: string;
   createdAt: string;
+  deletedAt?: string | null;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -149,6 +156,9 @@ export interface User {
  */
 export interface Media {
   id: number;
+  /**
+   * Как правильно написать alt текст для картинки https://doka.guide/html/alt/#osnovnye-pravila-zapolneniya
+   */
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -161,6 +171,51 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * Секция тренеров
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "coaches".
+ */
+export interface Coach {
+  id: number;
+  _order?: string | null;
+  lastName: string;
+  firstName: string;
+  patronymicName: string;
+  description: string;
+  city: "brest" | "minsk";
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Секция вопросов и ответов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: number;
+  _order?: string | null;
+  question: string;
+  answer: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -193,6 +248,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "media";
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: "coaches";
+        value: number | Coach;
+      } | null)
+    | ({
+        relationTo: "faq";
+        value: number | Faq;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -244,6 +307,7 @@ export interface UsersSelect<T extends boolean = true> {
   canDeleteUsers?: T;
   updatedAt?: T;
   createdAt?: T;
+  deletedAt?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;
@@ -276,6 +340,31 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "coaches_select".
+ */
+export interface CoachesSelect<T extends boolean = true> {
+  _order?: T;
+  lastName?: T;
+  firstName?: T;
+  patronymicName?: T;
+  description?: T;
+  city?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq_select".
+ */
+export interface FaqSelect<T extends boolean = true> {
+  _order?: T;
+  question?: T;
+  answer?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
