@@ -1,8 +1,7 @@
-import { Route } from "next";
+import { NativeLinkProps } from "@/shared/types";
 import Image, { ImageProps } from "next/image";
-import Link, { LinkProps } from "next/link";
 
-type ContactProps = Pick<LinkProps<Route>, "href"> &
+type ContactProps = Pick<NativeLinkProps, "href"> &
   Pick<ImageProps, "alt"> & {
     title: string;
     imageSrc: string;
@@ -15,14 +14,14 @@ export function Contact({ title, imageSrc, alt, href, label }: ContactProps) {
       <Image src={imageSrc} width={48} height={48} alt={alt} />
       <div className="flex flex-col gap-1">
         <h3 className="font-bold">{title}</h3>
-        <Link
+        <a
           className="text-accent-orange underline underline-offset-2 xl:text-foreground-secondary xl:no-underline xl:hover:text-accent-orange xl:hover:underline xl:hover:underline-offset-2"
           href={href}
           target="_blank"
           rel="noopener noreferrer"
         >
           {label}
-        </Link>
+        </a>
       </div>
     </div>
   );
