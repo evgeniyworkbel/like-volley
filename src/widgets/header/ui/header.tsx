@@ -33,7 +33,7 @@ export function Header() {
         <Image src="/logo.svg" width={122} height={76} alt="Логотип школы волейбола Like Volley" />
       </Link>
       <Navbar className="hidden xl:flex" />
-      <MobileMenu isOpen={isOpen} openMenu={openMenu} closeMenu={closeMenu} />
+      <MobileMenu openMenu={openMenu} closeMenu={closeMenu} isOpen={isOpen} />
     </header>
   );
 }

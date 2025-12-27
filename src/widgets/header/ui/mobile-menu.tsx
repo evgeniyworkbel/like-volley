@@ -4,13 +4,13 @@ import { CloseMenuIcon } from "./close-menu-icon";
 import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
-type MobileMenuModel = {
-  isOpen: boolean;
+type MobileMenuProps = {
   openMenu: VoidFunction;
   closeMenu: VoidFunction;
+  isOpen: boolean;
 };
 
-export function MobileMenu({ isOpen, openMenu, closeMenu }: MobileMenuModel) {
+export function MobileMenu({ openMenu, closeMenu, isOpen }: MobileMenuProps) {
   return (
     <div className="flex xl:hidden">
       {!isOpen && (
@@ -25,9 +25,9 @@ export function MobileMenu({ isOpen, openMenu, closeMenu }: MobileMenuModel) {
       )}
       <Navbar
         className={cn(
-          "fixed -top-7 left-0 w-full flex-col rounded-b-2xl bg-background/60 py-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
+          "fixed top-0 left-0 w-full flex-col rounded-b-2xl bg-background/60 py-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
           {
-            "translate-y-30": isOpen,
+            "translate-y-23": isOpen,
             "-translate-y-full": !isOpen,
           },
         )}
