@@ -2,8 +2,12 @@ import type { CollectionConfig } from "payload";
 
 export const Users: CollectionConfig = {
   slug: "users",
+  labels: {
+    plural: { en: "Users", ru: "Пользователи" },
+  },
   admin: {
     useAsTitle: "email",
+    description: "Администраторы cms системы",
   },
   auth: true,
   access: {
@@ -19,17 +23,13 @@ export const Users: CollectionConfig = {
     },
   },
   fields: [
-    // Email added by default
-    // Add more fields as needed
     {
       name: "canDeleteUsers",
       type: "checkbox",
-      label: {
-        en: "Can delete users",
-        ru: "Разрешить удаление юзеров",
-      },
+      label: { en: "Can delete users", ru: "Разрешить удаление юзеров" },
       defaultValue: false,
     },
   ],
+  trash: true,
   disableBulkEdit: true,
 };
