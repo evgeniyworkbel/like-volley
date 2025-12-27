@@ -19,12 +19,10 @@ export const contactsLinks = {
     label: formatPhone(contacts.phone),
   },
   telegram: {
-    name: "Telegram",
     href: `https://t.me/s/${contacts.telegram}`,
     label: `@${contacts.telegram}`,
   },
   viber: {
-    name: "Viber",
     href: `viber://add?number=${contacts.phone.slice(1)}`,
   },
   gallery: {
