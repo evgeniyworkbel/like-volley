@@ -33,6 +33,12 @@ export const Coaches: CollectionConfig = {
       required: true,
     },
     {
+      name: "jobTitle",
+      type: "text",
+      label: { en: "School job title", ru: "Должность в школе" },
+      required: true,
+    },
+    {
       name: "description",
       type: "text",
       label: { en: "Description", ru: "Описание" },

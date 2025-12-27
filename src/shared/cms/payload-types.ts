@@ -93,8 +93,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    owner: Owner;
+  };
+  globalsSelect: {
+    owner: OwnerSelect<false> | OwnerSelect<true>;
+  };
   locale: null;
   user: User & {
     collection: "users";
@@ -184,6 +188,7 @@ export interface Coach {
   lastName: string;
   firstName: string;
   patronymicName: string;
+  jobTitle: string;
   description: string;
   city: "brest" | "minsk";
   updatedAt: string;
@@ -350,6 +355,7 @@ export interface CoachesSelect<T extends boolean = true> {
   lastName?: T;
   firstName?: T;
   patronymicName?: T;
+  jobTitle?: T;
   description?: T;
   city?: T;
   updatedAt?: T;
@@ -405,6 +411,34 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "owner".
+ */
+export interface Owner {
+  id: number;
+  lastName?: string | null;
+  firstName: string;
+  patronymicName: string;
+  jobTitle: string;
+  description: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "owner_select".
+ */
+export interface OwnerSelect<T extends boolean = true> {
+  lastName?: T;
+  firstName?: T;
+  patronymicName?: T;
+  jobTitle?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
