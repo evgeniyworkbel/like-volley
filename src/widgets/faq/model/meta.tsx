@@ -84,7 +84,7 @@ export const faqData: FaqItemModel[] = [
               Viber
             </a>
             <span>) или позвонить по телефону&nbsp;</span>
-            <a href={navLinks.phone.href} target="_blank" rel="noopener noreferrer">
+            <a href={`${navLinks.phone.href}`} target="_blank" rel="noopener noreferrer">
               {navLinks.phone.title}
             </a>
           </span>
