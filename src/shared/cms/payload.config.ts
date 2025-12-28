@@ -12,7 +12,7 @@ import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
 import { Faq } from "./collections/Faq";
 import { Owner } from "./globals/Owner";
-import { MobilePhone } from "./globals/MobilePhone";
+import { CompanyInfo } from "./globals/CompanyInfo";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -25,7 +25,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Coaches, Faq],
-  globals: [Owner, MobilePhone],
+  globals: [Owner, CompanyInfo],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

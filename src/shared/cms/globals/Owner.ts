@@ -2,7 +2,7 @@ import { GlobalConfig } from "payload";
 
 export const Owner: GlobalConfig = {
   slug: "owner",
-  label: { en: "School owner", ru: "Основатель школы" },
+  label: { en: "Owner", ru: "Основатель школы" },
   fields: [
     // todo
     // {

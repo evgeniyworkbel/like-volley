@@ -95,11 +95,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     owner: Owner;
-    "mobile-phone": MobilePhone;
+    "company-info": CompanyInfo;
   };
   globalsSelect: {
     owner: OwnerSelect<false> | OwnerSelect<true>;
-    "mobile-phone": MobilePhoneSelect<false> | MobilePhoneSelect<true>;
+    "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
   };
   locale: null;
   user: User & {
@@ -430,10 +430,14 @@ export interface Owner {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "mobile-phone".
+ * via the `definition` "company-info".
  */
-export interface MobilePhone {
+export interface CompanyInfo {
   id: number;
+  legalName: string;
+  unp: number;
+  legalAddress: string;
+  postcode: number;
   /**
    * Должен содержать код РБ (375), код оператора и сам номер (слитно, без любых спецсимволов и пробелов)
    */
@@ -457,9 +461,13 @@ export interface OwnerSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "mobile-phone_select".
+ * via the `definition` "company-info_select".
  */
-export interface MobilePhoneSelect<T extends boolean = true> {
+export interface CompanyInfoSelect<T extends boolean = true> {
+  legalName?: T;
+  unp?: T;
+  legalAddress?: T;
+  postcode?: T;
   mobilePhone?: T;
   updatedAt?: T;
   createdAt?: T;
