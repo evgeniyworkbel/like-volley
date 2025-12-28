@@ -18,7 +18,7 @@ export function Faq() {
           программу и подход к обучению.
         </p>
       </hgroup>
-      <Accordion items={faqData} defaultOpened={1} />
+      <Accordion items={faqData} defaultOpened={faqData[0].id} />
     </section>
   );
 }

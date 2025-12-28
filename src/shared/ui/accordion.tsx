@@ -10,11 +10,11 @@ type AccordionProps = {
     answer: React.ReactNode;
     id: number;
   }[];
-  defaultOpened: number;
+  defaultOpened?: number;
 };
 
 export function Accordion({ items, defaultOpened }: AccordionProps) {
-  const [openedItem, setOpenedItem] = useState<number | undefined>(defaultOpened);
+  const [openedItem, setOpenedItem] = useState(defaultOpened);
 
   return (
     <div className="flex flex-col gap-5">
