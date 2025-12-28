@@ -1,1 +1,1 @@
-export { default as payloadConfig } from "./payload.config";
+export { getPayloadClient } from "./util/get-payload-client";
