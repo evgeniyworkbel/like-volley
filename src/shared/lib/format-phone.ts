@@ -11,5 +11,5 @@ export const formatPhone = (phoneNumber: string): string => {
     restOfNumber.substring(3, 5),
     restOfNumber.substring(5),
   ].join("-");
-  return `${countryCode} (${operatorCode}) ${restOfNumberWithHyphens}`;
+  return `+${countryCode} (${operatorCode}) ${restOfNumberWithHyphens}`;
 };

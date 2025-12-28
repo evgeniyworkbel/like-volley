@@ -1,7 +1,7 @@
 import { formatPhone } from "../lib";
 
 const contacts = {
-  phone: "+375298020748",
+  phone: "375298020748",
   instagram: "like.volley.by",
   telegram: "LikeVolley_club",
 } as const;
@@ -15,7 +15,7 @@ export const contactsLinks = {
     label: `@${contacts.instagram}`,
   },
   phone: {
-    href: `tel:${contacts.phone}`,
+    href: `tel:+${contacts.phone}`,
     label: formatPhone(contacts.phone),
   },
   telegram: {
