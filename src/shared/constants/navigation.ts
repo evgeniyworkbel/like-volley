@@ -1,8 +1,7 @@
-import { LinkProps } from "next/link";
-import { Route } from "next";
 import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+import { LinkHref } from "../types";
 
-export const navLinks: Record<string, { title: string; href: LinkProps<Route>["href"] }> = {
+export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   home: {
     title: "Главная",
     href: "/",
