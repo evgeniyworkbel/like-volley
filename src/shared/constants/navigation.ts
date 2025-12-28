@@ -1,6 +1,7 @@
 import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+import { LinkHref } from "../types";
 
-export const navLinks = {
+export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   home: {
     title: "Главная",
     href: "/",
@@ -25,7 +26,6 @@ export const navLinks = {
     title: "Локации",
     href: "/location",
   },
-
   // Links for pages
   about: {
     title: "О школе",
@@ -49,7 +49,7 @@ export const navLinks = {
   },
   offerAgreement: {
     title: "Договор оферты",
-    href: "/offer-agreement.pdf",
+    href: "/offer-agreement",
   },
   policy: {
     title: "Политика приватности",

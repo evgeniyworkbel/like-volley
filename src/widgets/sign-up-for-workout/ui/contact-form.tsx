@@ -11,6 +11,7 @@ import { formDefaultValues, formSchema, RESET_TIMEOUT_MS } from "../model/config
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
+// import ExampleSelect from "@/shared/ui/select";
 
 export function ContactForm() {
   const {
@@ -59,6 +60,7 @@ export function ContactForm() {
                     <option value="brest">Брест</option>
                     <option value="minsk">Минск</option>
                   </select>
+                  {/* <ExampleSelect /> */}
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
@@ -170,10 +172,10 @@ export function ContactForm() {
 
         <Button
           className={cn(
-            "rounded-[40px] bg-white px-9 py-4 text-lg text-foreground hover:bg-gradient-to-br hover:text-white xl:px-52",
+            "rounded-[40px] bg-white px-9 py-4 text-lg text-foreground hover:bg-linear-to-br hover:text-white xl:px-52",
             {
               "bg-[oklch(0.6559_0.1604_257.81)] text-white": isSubmitted,
-              "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-gradient-to-br":
+              "from-[oklch(0.438_0.268_270.5)] to-[oklch(0.312_0.222_270.3)] hover:bg-linear-to-br":
                 !isSubmitted,
               "bg-[oklch(0.7818_0.062_256.94)] opacity-25": isDisabled,
             },

@@ -1,3 +1,4 @@
+import { offerAgreementFileStorageUrl } from "@/shared/constants";
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 
@@ -13,6 +14,15 @@ const nextConfig: NextConfig = {
   // streaming responses
   // https://github.com/leerob/next-self-host/blob/main/next.config.ts
   compress: false,
+  async redirects() {
+    return [
+      {
+        source: "/offer-agreement",
+        destination: offerAgreementFileStorageUrl,
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withPayload(nextConfig);

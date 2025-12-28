@@ -16,7 +16,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="grid justify-items-center gap-15 rounded-t-[20px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
+    <footer className="grid justify-items-center gap-15 bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
         <Link href={navLinks.home.href}>
           <Image
@@ -32,7 +32,7 @@ export function Footer() {
         <ul className="flex flex-col items-center gap-0.5 text-lg xl:items-start">
           <li>ООО «Лайк Воллей»</li>
           <li>УНП 291855284</li>
-          <li>г. Брест ул. Дзержинского, 46</li>
+          <li>г. Брест ул. Высокая, 14Б</li>
           <li>224030</li>
         </ul>
       </div>
@@ -40,17 +40,10 @@ export function Footer() {
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <p className="font-shantell text-[38px] uppercase">меню</p>
           <div className="flex justify-between gap-x-12 text-sm xl:text-xs [&>a:hover]:underline">
-            <Link className="flex" href={navLinks.policy.href}>
-              {navLinks.policy.title}
-            </Link>
-            <a
-              className="flex"
-              href={navLinks.offerAgreement.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
+            <Link href={navLinks.offerAgreement.href} rel="nooper noreferrer">
               {navLinks.offerAgreement.title}
-            </a>
+            </Link>
           </div>
           {/* todo: отключил временно до особых распоряжений */}
 

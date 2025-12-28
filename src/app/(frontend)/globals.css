@@ -44,6 +44,7 @@ html {
 }
 
 body {
+  position: relative;
   margin-inline: auto;
   max-width: 1440px;
   background: var(--background);
