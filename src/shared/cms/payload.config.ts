@@ -25,7 +25,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Coaches, Faq],
-  globals: [Owner, CompanyInfo],
+  globals: [CompanyInfo, Owner],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

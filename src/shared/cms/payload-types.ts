@@ -94,12 +94,12 @@ export interface Config {
   };
   fallbackLocale: null;
   globals: {
-    owner: Owner;
     "company-info": CompanyInfo;
+    owner: Owner;
   };
   globalsSelect: {
-    owner: OwnerSelect<false> | OwnerSelect<true>;
     "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
+    owner: OwnerSelect<false> | OwnerSelect<true>;
   };
   locale: null;
   user: User & {
@@ -416,20 +416,6 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "owner".
- */
-export interface Owner {
-  id: number;
-  lastName?: string | null;
-  firstName: string;
-  patronymicName: string;
-  jobTitle: string;
-  description: string;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "company-info".
  */
 export interface CompanyInfo {
@@ -447,17 +433,17 @@ export interface CompanyInfo {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "owner_select".
+ * via the `definition` "owner".
  */
-export interface OwnerSelect<T extends boolean = true> {
-  lastName?: T;
-  firstName?: T;
-  patronymicName?: T;
-  jobTitle?: T;
-  description?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
+export interface Owner {
+  id: number;
+  lastName?: string | null;
+  firstName: string;
+  patronymicName: string;
+  jobTitle: string;
+  description: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -469,6 +455,20 @@ export interface CompanyInfoSelect<T extends boolean = true> {
   legalAddress?: T;
   postcode?: T;
   mobilePhone?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "owner_select".
+ */
+export interface OwnerSelect<T extends boolean = true> {
+  lastName?: T;
+  firstName?: T;
+  patronymicName?: T;
+  jobTitle?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
