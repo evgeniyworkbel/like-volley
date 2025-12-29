@@ -6,6 +6,7 @@ import Image from "next/image";
 import { signUpForWorkoutSectionId, navLinks } from "@/shared/constants";
 import { Button } from "@/shared/ui";
 import { Contacts } from "./contacts";
+import { UpArrowBox } from "./up-arrow-box";
 
 export function Footer() {
   const handleClick = () => {
@@ -56,10 +57,17 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-center gap-20 xl:items-start xl:justify-between">
           <Button
-            className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground"
+            className="rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-accent-orange"
             onClick={handleClick}
           >
             Записаться
+          </Button>
+          <Button
+            className="flex items-center gap-2 rounded-[40px] border px-20 py-4 text-2xl font-medium text-white"
+            onClick={() => window.scrollTo({ top: 0 })}
+          >
+            Наверх
+            <UpArrowBox />
           </Button>
           <ul className="flex max-w-72 flex-col gap-1 text-center text-sm xl:text-start">
             <li>Р/с BY29BAPB30128106300100000000</li>
