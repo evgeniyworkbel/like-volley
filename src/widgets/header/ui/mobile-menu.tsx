@@ -1,7 +1,7 @@
 import { Button } from "@/shared/ui";
 import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
-import { Navbar } from "./navbar";
+import { Navbar } from "../../../shared/ui/navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
 type MobileMenuProps = {

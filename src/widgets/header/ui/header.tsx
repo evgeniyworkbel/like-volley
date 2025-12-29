@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
+import { Navbar } from "@/shared/ui";
 import { MobileMenu } from "./mobile-menu";
-import { Navbar } from "./navbar";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
