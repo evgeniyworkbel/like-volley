@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { Chips } from "@/widgets/locations/ui/сhips ";
 import { MapProvider } from "@/shared/providers";
 import type { YMapLocationRequest } from "@/shared/lib";
 
@@ -13,7 +14,6 @@ import {
 } from "../model/data";
 import { useState } from "react";
 import { CompanyCities } from "../model/types";
-import { Chips } from "@/widgets/locations/ui/сhips ";
 
 const Map = dynamic(() => import("@/shared/ui/map").then((module) => module.Map));
 
