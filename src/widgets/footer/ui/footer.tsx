@@ -1,23 +1,17 @@
-"use client";
-//  todo: избавиться от рендера футера на клиенте путем замены кнопки с хендлером на ссылку
-
 import Link from "next/link";
 import Image from "next/image";
-import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
-import { Button } from "@/shared/ui";
+import {
+  signUpForWorkoutSectionId,
+  navLinks,
+  contactsLinks,
+  headerSectionId,
+} from "@/shared/constants";
 import { Navbar } from "@/shared/ui";
 import { Contacts } from "./contacts";
 import { UpArrow } from "./up-arrow";
 import { Documents } from "./documents";
 
 export function Footer() {
-  const handleClick = () => {
-    const contactForm = document.getElementById(signUpForWorkoutSectionId);
-    if (contactForm) {
-      contactForm.scrollIntoView();
-    }
-  };
-
   return (
     <footer className="grid justify-items-center gap-[50px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
       <div className="flex flex-col items-center gap-8 xl:items-start">
@@ -48,15 +42,19 @@ export function Footer() {
             <p className="text-sm">Контакты</p>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold">
               <li>г. Брест ул. Высокая, 14Б</li>
-              <li>{contactsLinks.phone.label}</li>
+              <li>
+                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer ">
+                  {contactsLinks.phone.label}
+                </a>
+              </li>
             </ul>
           </div>
-          <Button
+          <Link
+            href={`#${signUpForWorkoutSectionId}`}
             className="rounded-[40px] bg-white px-25 py-4 text-base font-medium text-accent-orange uppercase"
-            onClick={handleClick}
           >
             Записаться
-          </Button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-col items-center gap-6">
@@ -68,13 +66,13 @@ export function Footer() {
           <li>224020</li>
         </ul>
         <div className="flex flex-col items-center gap-12">
-          <Button
+          <Link
+            href={`#${headerSectionId}`}
             className="flex items-center gap-2 rounded-[40px] border px-4 py-2.5 text-sm font-medium text-white"
-            onClick={() => window.scrollTo({ top: 0 })}
           >
             Наверх
             <UpArrow />
-          </Button>
+          </Link>
           <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
         </div>
       </div>

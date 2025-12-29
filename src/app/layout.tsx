@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Shantell_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
+import { headerSectionId } from "@/shared/constants";
 
 const inter = Inter({
   variable: "--font-inter",
