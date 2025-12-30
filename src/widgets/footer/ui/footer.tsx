@@ -13,34 +13,36 @@ import { Documents } from "./documents";
 
 export function Footer() {
   return (
-    <footer className="grid justify-items-center gap-[50px] bg-accent-orange py-[50px] text-white xl:grid-cols-[auto_1fr] xl:grid-rows-1 xl:p-20">
-      <div className="flex flex-col items-center gap-8 xl:items-start">
-        <Link href={navLinks.home.href}>
-          <Image
-            src="/logo-footer.svg"
-            width={122}
-            height={76}
-            alt="Логотип школы волейбола Like Volley"
-          />
-        </Link>
-        <p className="flex max-w-[282px] flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-[350px] xl:text-left">
-          Волейбол для всех возрастов с индивидуальным подходом и современными методиками обучения.
-        </p>
-        <Contacts />
-      </div>
-
-      <div className="flex flex-col justify-center gap-[50px] text-sm xl:flex-row xl:justify-between">
-        <div className="flex flex-col items-center gap-[50px] xl:items-start">
-          <div className="flex flex-col gap-[18px]">
-            <p className="">Навигация сайта</p>
-            <Navbar className="flex-col gap-[18px] text-lg uppercase [&>a:last-child]:hidden" />
+    <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
+      <div className="flex w-full flex-col gap-[50px] xl:flex-row xl:justify-between xl:border-b-2 xl:pb-10">
+        <div className="flex flex-col items-center gap-8 xl:items-start">
+          <Link href={navLinks.home.href}>
+            <Image
+              src="/logo-footer.svg"
+              width={122}
+              height={76}
+              alt="Логотип школы волейбола Like Volley"
+            />
+          </Link>
+          <p className="flex max-w-[282px] flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-[350px] xl:text-left">
+            Волейбол для всех возрастов с индивидуальным подходом и современными методиками
+            обучения.
+          </p>
+          <Contacts />
+        </div>
+        <div className="flex flex-col justify-center gap-[50px] text-sm xl:flex-row xl:justify-between">
+          <div className="flex flex-col items-center gap-[50px] xl:flex-row xl:items-start">
+            <div className="flex flex-col gap-[18px] xl:items-start">
+              <p className="">Навигация сайта</p>
+              <Navbar className="flex-col gap-[18px] text-lg uppercase xl:items-start [&>a:last-child]:hidden" />
+            </div>
+            <Documents className="xl:items-start" />
           </div>
-          <Documents />
         </div>
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
-          <div className="flex flex-col items-center gap-[18px]">
+          <div className="flex flex-col items-center gap-[18px] xl:items-start">
             <p>Контакты</p>
-            <ul className="flex flex-col items-center gap-[18px] text-lg font-bold">
+            <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
               <li>г. Брест ул. Высокая, 14Б</li>
               <li>
                 <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer ">
@@ -57,7 +59,8 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-6 text-sm">
+
+      <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
         <ul className="flex flex-col items-center gap-0.5 xl:items-start">
           <li>ООО «Лайк Воллей»</li>
           <li>УНП 291855284</li>
