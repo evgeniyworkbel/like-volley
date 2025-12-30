@@ -29,17 +29,17 @@ export function Footer() {
         <Contacts />
       </div>
 
-      <div className="flex flex-col justify-center gap-[50px] xl:flex-row xl:justify-between">
+      <div className="flex flex-col justify-center gap-[50px] text-sm xl:flex-row xl:justify-between">
         <div className="flex flex-col items-center gap-[50px] xl:items-start">
           <div className="flex flex-col gap-[18px]">
-            <p className="text-sm">Навигация сайта</p>
+            <p className="">Навигация сайта</p>
             <Navbar className="flex-col gap-[18px] text-lg uppercase [&>a:last-child]:hidden" />
           </div>
           <Documents />
         </div>
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px]">
-            <p className="text-sm">Контакты</p>
+            <p>Контакты</p>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold">
               <li>г. Брест ул. Высокая, 14Б</li>
               <li>
@@ -57,8 +57,12 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-6">
-        <ul className="flex max-w-72 flex-col gap-1 text-center text-sm xl:text-start">
+      <div className="flex flex-col items-center gap-6 text-sm">
+        <ul className="flex flex-col items-center gap-0.5 xl:items-start">
+          <li>ООО «Лайк Воллей»</li>
+          <li>УНП 291855284</li>
+        </ul>
+        <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
           <li>Р/с BY29BAPB30128106300100000000</li>
           <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
           <li>г. Брест ул. Воровского, 11</li>
@@ -68,7 +72,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-12">
           <Link
             href={`#${headerSectionId}`}
-            className="flex items-center gap-2 rounded-[40px] border px-4 py-2.5 text-sm font-medium text-white"
+            className="flex items-center gap-2 rounded-[40px] border px-4 py-2.5 font-medium text-white"
           >
             Наверх
             <UpArrow />
