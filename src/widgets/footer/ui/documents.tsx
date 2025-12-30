@@ -8,7 +8,7 @@ export function Documents({ className }: DocumentsProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-between gap-[18px] gap-x-12 text-sm text-[18px] [&>:not(:first-child)]:font-bold [&>:not(:first-child)]:uppercase [&>a:hover]:underline",
+        "flex flex-col items-center justify-between gap-[18px] gap-x-12 text-sm text-[18px] md:gap-7 [&>:not(:first-child)]:font-bold [&>:not(:first-child)]:uppercase [&>a:hover]:underline",
         className,
       )}
     >
