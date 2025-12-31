@@ -61,7 +61,7 @@ export function Hero() {
             width={543}
             height={446}
             alt="Фото учеников школы волейбола Like Volley"
-            preload
+            loading="eager"
           />
         )}
         {ageGroup === "adults" && (
@@ -71,7 +71,7 @@ export function Hero() {
             width={570}
             height={446}
             alt="Фото взрослых учеников школы волейбола Like Volley"
-            preload
+            loading="eager"
           />
         )}
         <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-170 md:text-lg xl:m-0 xl:text-start">
