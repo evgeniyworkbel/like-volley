@@ -30,7 +30,7 @@ export function Footer() {
           </p>
           <Contacts />
         </div>
-        <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:justify-center md:gap-33 xl:flex-row xl:justify-between xl:gap-[50px]">
+        <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:justify-center md:gap-33 xl:justify-between xl:gap-[50px]">
           <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
             <p>Навигация сайта</p>
             <Navbar className="flex-col gap-[18px] text-lg uppercase md:items-start [&>a:last-child]:hidden" />
