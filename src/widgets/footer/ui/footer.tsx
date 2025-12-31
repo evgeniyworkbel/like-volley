@@ -30,14 +30,12 @@ export function Footer() {
           </p>
           <Contacts />
         </div>
-        <div className="flex flex-col justify-center gap-[50px] text-sm xl:flex-row xl:justify-between">
-          <div className="flex flex-col items-center gap-[50px] md:flex-row md:items-start md:justify-center md:gap-33 xl:gap-[50px]">
-            <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
-              <p>Навигация сайта</p>
-              <Navbar className="flex-col gap-[18px] text-lg uppercase md:items-start [&>a:last-child]:hidden" />
-            </div>
-            <Documents className="md:items-start" />
+        <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:justify-center md:gap-33 xl:flex-row xl:justify-between xl:gap-[50px]">
+          <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
+            <p>Навигация сайта</p>
+            <Navbar className="flex-col gap-[18px] text-lg uppercase md:items-start [&>a:last-child]:hidden" />
           </div>
+          <Documents className="md:items-start" />
         </div>
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
@@ -45,7 +43,7 @@ export function Footer() {
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
               <li>г. Брест ул. Высокая, 14Б</li>
               <li>
-                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer ">
+                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
                   {contactsLinks.phone.label}
                 </a>
               </li>
