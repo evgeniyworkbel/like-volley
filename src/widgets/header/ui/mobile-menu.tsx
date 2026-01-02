@@ -1,18 +1,26 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/shared/ui";
 import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
 import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
-type MobileMenuProps = {
-  openMenu: VoidFunction;
-  closeMenu: VoidFunction;
-  isOpen: boolean;
-};
+export function MobileMenu() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-export function MobileMenu({ openMenu, closeMenu, isOpen }: MobileMenuProps) {
+  const openMenu = () => setIsOpen(true);
+  const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
   return (
-    <div className="flex xl:hidden">
+    <div className="flex xl:hidden" data-menu-open={isOpen}>
       {!isOpen && (
         <Button onClick={openMenu}>
           <BurgerMenuIcon />
