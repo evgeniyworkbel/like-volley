@@ -33,7 +33,7 @@ export function Footer() {
           <li>ООО «Лайк Воллей»</li>
           <li>УНП 291855284</li>
           <li>г. Брест ул. Высокая, 14Б</li>
-          <li>224030</li>
+          <li>224020</li>
         </ul>
       </div>
       <div className="flex flex-col justify-center gap-15 xl:flex-row xl:justify-between">

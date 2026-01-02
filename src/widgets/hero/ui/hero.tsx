@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section className="flex flex-col px-5 pt-5 pb-[50px] text-center text-white md:pt-12.5 xl:px-20">
+    <section className="flex flex-col px-5 pt-5 pb-12.5 text-center text-white md:pt-12.5 xl:px-20">
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
         <HeroTab
           className={cn({
@@ -41,7 +41,7 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-[466px] xl:items-start xl:justify-center",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-116.5 xl:items-start xl:justify-center",
           {
             "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
@@ -60,8 +60,8 @@ export function Hero() {
             src="/hero/children.webp"
             width={543}
             height={446}
-            priority
             alt="Фото учеников школы волейбола Like Volley"
+            loading="eager"
           />
         )}
         {ageGroup === "adults" && (
@@ -70,8 +70,8 @@ export function Hero() {
             src="/hero/adults.webp"
             width={570}
             height={446}
-            priority
             alt="Фото взрослых учеников школы волейбола Like Volley"
+            loading="eager"
           />
         )}
         <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-170 md:text-lg xl:m-0 xl:text-start">
