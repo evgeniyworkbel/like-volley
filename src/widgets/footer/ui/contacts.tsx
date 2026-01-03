@@ -1,10 +1,18 @@
+import { CompanyInfo } from "@/shared/cms/payload-types";
 import { contactsLinks } from "@/shared/constants";
+import { getPhoneHref } from "@/shared/lib";
 import Image from "next/image";
 
-export function Contacts() {
+type ContactsProps = {
+  data: CompanyInfo;
+};
+
+export function Contacts({ data }: ContactsProps) {
+  const { mobilePhone } = data;
+
   return (
     <div className="flex gap-6">
-      <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
+      <a href={getPhoneHref(mobilePhone)} target="_blank" rel="noopener noreferrer">
         <Image
           src="/phone.svg"
           width={68}
