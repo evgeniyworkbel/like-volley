@@ -1,4 +1,5 @@
-export const formatPhone = (phoneNumber: string): string => {
+export const formatPhone = (value: string | number): string => {
+  const phoneNumber = String(value);
   if (!phoneNumber.startsWith("375") || phoneNumber.length !== 12) {
     throw new Error("Invalid phone number format. Expected 375 followed by 9 digits.");
   }
