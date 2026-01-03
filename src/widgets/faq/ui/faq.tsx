@@ -1,8 +1,21 @@
+import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
+import { getPayloadClient } from "@/shared/cms";
 import { Accordion, Title } from "@/shared/ui";
 import { faqSectionId } from "@/shared/constants";
-import { faqData } from "../model/meta";
 
-export function Faq() {
+export async function Faq() {
+  const payload = await getPayloadClient();
+  const faq = await payload.find({
+    collection: "faq",
+    pagination: false,
+  });
+  const faqData = faq.docs.map((item) => ({
+    ...item,
+    answer: (
+      <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: item.answer }) }} />
+    ),
+  }));
+
   return (
     <section
       id={faqSectionId}
@@ -12,7 +25,7 @@ export function Faq() {
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>
         </Title>
-        <p className="text-center text-foreground-secondary md:max-w-258 md:leading-[18px]">
+        <p className="text-center text-foreground-secondary md:max-w-258 md:leading-4.5">
           Выберите формат обучения, который лучше всего соответствует вашим предпочтениям,
           расписанию и бюджету. Все форматы включают одну и ту же высококачественную учебную
           программу и подход к обучению.
