@@ -13,6 +13,7 @@ export const Owner: GlobalConfig = {
       name: "lastName",
       type: "text",
       label: { en: "Last name", ru: "Фамилия" },
+      required: true,
     },
     {
       name: "firstName",
@@ -24,7 +25,6 @@ export const Owner: GlobalConfig = {
       name: "patronymicName",
       type: "text",
       label: { en: "Patronymic name", ru: "Отчество" },
-      required: true,
     },
     {
       name: "jobTitle",
@@ -34,7 +34,7 @@ export const Owner: GlobalConfig = {
     },
     {
       name: "description",
-      type: "text",
+      type: "textarea",
       label: { en: "Description", ru: "Описание" },
       required: true,
     },

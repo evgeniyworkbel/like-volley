@@ -437,9 +437,9 @@ export interface CompanyInfo {
  */
 export interface Owner {
   id: number;
-  lastName?: string | null;
+  lastName: string;
   firstName: string;
-  patronymicName: string;
+  patronymicName?: string | null;
   jobTitle: string;
   description: string;
   updatedAt?: string | null;
