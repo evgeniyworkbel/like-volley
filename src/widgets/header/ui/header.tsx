@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { headerSectionId, navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 import { Navbar } from "@/shared/ui";
