@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/shared/ui";
 import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
-import { Navbar } from "@/shared/ui";
+import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
 
 export function MobileMenu() {

@@ -3,4 +3,3 @@ export { Button } from "./button";
 export { Title } from "./title";
 export { Accordion } from "./accordion";
 export { Map } from "./map";
-export { Navbar } from "./navbar";

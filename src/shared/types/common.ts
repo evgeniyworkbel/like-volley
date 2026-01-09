@@ -8,3 +8,5 @@ export type IconProps = Pick<
   React.SVGAttributes<SVGElement>,
   "className" | "width" | "height" | "onClick"
 >;
+
+export type NavbarProps = { className?: string; onLinkClick?: VoidFunction };

@@ -17,10 +17,6 @@ export function Documents({ className }: DocumentsProps) {
       <Link href={navLinks.offerAgreement.href} rel="nooper noreferrer">
         {navLinks.offerAgreement.title}
       </Link>
-      {/* @todo нет еще такой страницы */}
-      {/* <Link href={navLinks.price.href} rel="nooper noreferrer">
-        {navLinks.price.title}
-      </Link> */}
     </div>
   );
 }

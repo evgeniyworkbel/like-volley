@@ -1,15 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  signUpForWorkoutSectionId,
-  navLinks,
-  contactsLinks,
-  headerSectionId,
-} from "@/shared/constants";
-import { Navbar } from "@/shared/ui";
+import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
+import { FooterNav } from "./footer-nav";
 import { Contacts } from "./contacts";
-import { UpArrow } from "./up-arrow";
 import { Documents } from "./documents";
+import { ScrollToTop } from "./scroll-to-top";
 
 export function Footer() {
   return (
@@ -33,7 +28,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-[50px]">
           <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
             <p>Навигация сайта</p>
-            <Navbar className="flex-col gap-[18px] text-lg uppercase md:items-start [&>a:last-child]:hidden" />
+            <FooterNav />
           </div>
           <Documents className="md:items-start" />
         </div>
@@ -57,7 +52,6 @@ export function Footer() {
           </Link>
         </div>
       </div>
-
       <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
         <ul className="flex flex-col items-center gap-0.5 xl:items-start">
           <li>ООО «Лайк Воллей»</li>
@@ -71,13 +65,7 @@ export function Footer() {
           <li>224020</li>
         </ul>
         <div className="flex flex-col items-center gap-12">
-          <Link
-            href={`#${headerSectionId}`}
-            className="flex items-center gap-2 rounded-[40px] border px-4 py-2.5 font-medium text-white"
-          >
-            Наверх
-            <UpArrow />
-          </Link>
+          <ScrollToTop />
           <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
         </div>
       </div>

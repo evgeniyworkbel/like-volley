@@ -55,8 +55,8 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     title: "Политика приватности",
     href: "/policy",
   },
-  price: {
-    title: "Цена",
-    href: "/policy",
-  },
+  // price: {
+  //   title: "Цена",
+  //   href: "/policy",
+  // },
 } as const;
