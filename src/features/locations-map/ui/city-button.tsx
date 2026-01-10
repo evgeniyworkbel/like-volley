@@ -5,7 +5,7 @@ export type CityButtonProps = Pick<ButtonProps, "children" | "onClick"> & {
   isActive: boolean;
 };
 
-export function CityButton({ isActive, children, onClick }: CityButtonProps) {
+export function CityButton({ children, onClick, isActive }: CityButtonProps) {
   return (
     <button
       className={cn(
