@@ -23,16 +23,16 @@ export function LocationsMap() {
   const location: YMapLocationRequest = { bounds: locationsBounds[city] };
 
   return (
-    <div className="flex w-full flex-col items-center gap-5">
+    <div className="flex flex-col items-center gap-5">
       <div className="flex gap-6">
-        <CityButton newCity="minsk" selectedCity={city} onClick={() => setCity("minsk")}>
+        <CityButton isActive={city === "minsk"} onClick={() => setCity("minsk")}>
           Минск
         </CityButton>
-        <CityButton newCity="brest" selectedCity={city} onClick={() => setCity("brest")}>
+        <CityButton isActive={city === "brest"} onClick={() => setCity("brest")}>
           Брест
         </CityButton>
       </div>
-      <div className="flex h-[522px] w-full flex-col gap-5 overflow-hidden rounded-[20px] xl:h-178">
+      <div className="flex h-[522px] w-full overflow-hidden rounded-[20px] xl:h-178">
         <MapProvider>
           <Map
             location={location}
