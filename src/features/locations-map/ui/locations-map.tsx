@@ -23,7 +23,7 @@ export function LocationsMap() {
   const location: YMapLocationRequest = { bounds: locationsBounds[city] };
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div className="flex w-full flex-col items-center gap-5">
       <div className="flex gap-6">
         <CityButton isActive={city === "minsk"} onClick={() => setCity("minsk")}>
           Минск
