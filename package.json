@@ -9,14 +9,17 @@
     "start": "next start",
     "lint:lang": "eslint .",
     "lint:style": "stylelint \"**/*.css\"",
-    "lint": "npm run lint:lang && npm run lint:style",
+    "lint": "pnpm run lint:lang && pnpm run lint:style",
     "lint:fix": "eslint --fix . && stylelint \"**/*.css\" --fix",
     "format:check": "prettier -c .",
     "format": "prettier -w .",
     "prepare": "husky",
+    "payload": "payload",
     "generate:importmap": "payload generate:importmap",
     "generate:types": "payload generate:types",
-    "payload": "payload"
+    "migrate:create": "payload migrate:create --skip-empty",
+    "migrate:status": "payload migrate:status",
+    "ci": "payload migrate && pnpm build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
