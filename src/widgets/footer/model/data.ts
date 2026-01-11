@@ -1,7 +1,7 @@
 import { contactsLinks } from "@/shared/constants";
 import { SocialLinkModel } from "./types";
 
-export const socialLinkData: SocialLinkModel[] = [
+export const SocialLinksData: SocialLinkModel[] = [
   {
     src: "/phone.svg",
     href: contactsLinks.phone.href,

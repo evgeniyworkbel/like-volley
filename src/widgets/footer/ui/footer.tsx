@@ -3,7 +3,7 @@ import Image from "next/image";
 import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
 import { FooterNav } from "./footer-nav";
 import { Contacts } from "./contacts";
-import { Documents } from "./documents";
+import { DocsNav } from "./docs-nav";
 import { ScrollToTop } from "./scroll-to-top";
 
 export function Footer() {
@@ -30,11 +30,10 @@ export function Footer() {
             <p>Навигация сайта</p>
             <FooterNav />
           </div>
-          <Documents className="md:items-start" />
+          <DocsNav />
         </div>
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
-            <p>Контакты</p>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
               <li>г. Брест ул. Высокая, 14Б</li>
               <li>

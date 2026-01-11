@@ -1,2 +1,3 @@
-export type SocialLinkModel = Pick<HTMLImageElement, "src" | "alt"> &
-  Pick<HTMLAnchorElement, "href">;
+import { ImageProps } from "next/image";
+
+export type SocialLinkModel = Pick<ImageProps, "src" | "alt"> & Pick<HTMLAnchorElement, "href">;

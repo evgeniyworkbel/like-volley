@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
-import { NavbarProps } from "@/shared/types";
+
+type NavbarProps = { className: string; onLinkClick?: VoidFunction };
 
 export function Navbar({ className, onLinkClick }: NavbarProps) {
   return (
