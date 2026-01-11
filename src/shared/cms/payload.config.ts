@@ -23,6 +23,9 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    components: {
+      logout: { Button: "./ui/logout-btn" },
+    },
   },
   collections: [Users, Media, Coaches, Faq],
   globals: [CompanyInfo, Owner],
