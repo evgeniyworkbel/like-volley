@@ -27,7 +27,7 @@ export function Footer() {
         <FooterNav />
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
-            <p className="text-sm">Контакты</p>
+            <h2 className="text-sm">Контакты</h2>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
               <li>г. Брест ул. Высокая, 14Б</li>
               <li>
