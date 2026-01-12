@@ -3,7 +3,6 @@ import Image from "next/image";
 import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
 import { FooterNav } from "./footer-nav";
 import { Contacts } from "./contacts";
-import { DocsNav } from "./docs-nav";
 import { ScrollToTop } from "./scroll-to-top";
 
 export function Footer() {
@@ -25,13 +24,7 @@ export function Footer() {
           </p>
           <Contacts />
         </div>
-        <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-[50px]">
-          <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
-            <p>Навигация сайта</p>
-            <FooterNav />
-          </div>
-          <DocsNav />
-        </div>
+        <FooterNav />
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
