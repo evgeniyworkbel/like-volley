@@ -6,7 +6,7 @@ export function FooterNav() {
   return (
     <div className="flex flex-col items-center justify-center gap-[50px] text-sm md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-[50px]">
       <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
-        <Title className="font-inter text-sm font-medium text-background md:text-sm">
+        <Title className="font-inter text-sm font-light text-background md:text-sm">
           Навигация сайта
         </Title>
         <ul className="flex flex-col items-center gap-[18px] text-lg font-bold uppercase md:items-start xl:text-lg [&>a:hover]:underline">
