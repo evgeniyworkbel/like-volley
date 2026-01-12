@@ -19,8 +19,7 @@ const dirname = path.dirname(filename);
 
 export default buildConfig({
   admin: {
-    // todo: установить фавикон
-    // meta: { icons: { icon: "/logo.svg" } },
+    meta: { icons: { icon: "/cms-icon.png" } },
     user: Users.slug,
     importMap: {
       baseDir: path.resolve(dirname),
