@@ -3,7 +3,7 @@ import { navLinks } from "@/shared/constants";
 
 export function FooterNav() {
   return (
-    <div className="flex flex-col items-center justify-center gap-[50px] md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-[50px] [&_li:hover]:underline [&_li:hover]:underline-offset-2">
+    <div className="flex flex-col items-center justify-center gap-[50px] md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-[50px] [&_a:hover]:underline [&_a:hover]:underline-offset-2">
       <div className="flex flex-col gap-[18px] md:gap-7 xl:items-start">
         <h2 className="text-sm">Навигация сайта</h2>
         <ul className="flex flex-col items-center gap-[18px] text-lg font-bold uppercase md:items-start xl:text-lg">
