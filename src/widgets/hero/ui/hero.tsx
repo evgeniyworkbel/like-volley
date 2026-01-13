@@ -1,21 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
-import { Button, Title } from "@/shared/ui";
+import { Title } from "@/shared/ui";
 import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { HeroTab } from "./hero-tab";
+import { heroData } from "../model/meta";
 
 export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"children" | "adults">("children");
-
-  const handleClick = () => {
-    const contactForm = document.getElementById(signUpForWorkoutSectionId);
-    if (contactForm) {
-      contactForm.scrollIntoView();
-    }
-  };
 
   return (
     <section className="flex flex-col px-5 pt-5 pb-12.5 text-center text-white md:pt-12.5 xl:px-20">
@@ -41,55 +36,54 @@ export function Hero() {
       </div>
       <div
         className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-116.5 xl:items-start xl:justify-center",
+          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] bg-accent-orange p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-116.5 xl:items-start xl:justify-center",
           {
-            "bg-accent-orange": ageGroup === "children",
             "bg-accent-blue": ageGroup === "adults",
           },
         )}
       >
         <div className="flex flex-col">
           <Title className="z-10 leading-[0.85] text-inherit md:max-w-170 md:text-center md:text-[58px] xl:text-left xl:leading-none">
-            Волейбольная школа для&nbsp;
-            <span className="text-accent-green">всех возрастов</span>
+            {heroData[ageGroup].title}
           </Title>
         </div>
         {ageGroup === "children" && (
-          <Image
-            className="md:absolute md:bottom-0 xl:right-5"
-            src="/hero/children.webp"
-            width={543}
-            height={446}
-            alt="Фото учеников школы волейбола Like Volley"
-            loading="eager"
-          />
+          <div className="flex flex-col items-center">
+            {heroData.children.subtitle}
+            <Image
+              className="md:absolute md:bottom-0 xl:right-5"
+              src="/hero/children.webp"
+              width={543}
+              height={446}
+              alt="Фото учеников школы волейбола Like Volley"
+              loading="eager"
+            />
+          </div>
         )}
         {ageGroup === "adults" && (
-          <Image
-            className="md:absolute md:bottom-0 xl:right-5"
-            src="/hero/adults.webp"
-            width={570}
-            height={446}
-            alt="Фото взрослых учеников школы волейбола Like Volley"
-            loading="eager"
-          />
+          <div className="flex flex-col items-center">
+            {heroData.adults.subtitle}
+            <Image
+              className="md:absolute md:bottom-0 xl:right-5"
+              src="/hero/adults.webp"
+              width={570}
+              height={446}
+              alt="Фото взрослых учеников школы волейбола Like Volley"
+              loading="eager"
+            />
+          </div>
         )}
-        <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-170 md:text-lg xl:m-0 xl:text-start">
-          Качественное обучение для детей и взрослых с индивидуальным подходом и современными
-          методиками.
-        </p>
-        <Button
+        <Link
+          href={`#${signUpForWorkoutSectionId}`}
           className={cn(
-            "rounded-3xl px-18 py-2 text-xs md:rounded-[40px] md:px-28 md:py-4 md:text-xl",
+            "rounded-3xl bg-accent-blue px-19 py-2.5 text-[16px] font-semibold md:rounded-[40px] md:px-28 md:py-4 md:text-xl md:font-medium",
             {
-              "bg-accent-blue": ageGroup === "children",
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
-          onClick={handleClick}
         >
           Записаться
-        </Button>
+        </Link>
       </div>
     </section>
   );
