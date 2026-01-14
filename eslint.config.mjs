@@ -18,6 +18,12 @@ const eslintConfig = defineConfig([
       "react-useeffect/no-non-function-return": "error",
     },
   },
+  {
+    files: ["./src/shared/cms/migrations/*.ts"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     "node_modules/**",

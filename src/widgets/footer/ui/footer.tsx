@@ -1,11 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
-import { FooterNav } from "./footer-nav";
-import { Contacts } from "./contacts";
-import { ScrollToTop } from "./scroll-to-top";
 
-export function Footer() {
+import { getPayloadClient } from "@/shared/cms";
+import { navLinks, signUpForWorkoutSectionId } from "@/shared/constants";
+import { Contacts } from "./contacts";
+import { FooterNav } from "./footer-nav";
+import { ScrollToTop } from "./scroll-to-top";
+import { formatPhone, getPhoneHref } from "@/shared/lib";
+
+export async function Footer() {
+  const payload = await getPayloadClient();
+  const companyInfo = await payload.findGlobal({ slug: "company-info" });
+  const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
+
   return (
     <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
       <div className="flex w-full flex-col gap-[50px] border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
@@ -22,17 +29,17 @@ export function Footer() {
             Волейбол для всех возрастов с индивидуальным подходом и современными методиками
             обучения.
           </p>
-          <Contacts />
+          <Contacts data={companyInfo} />
         </div>
         <FooterNav />
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
             <h2 className="text-sm">Контакты</h2>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
-              <li className="uppercase">г. Брест ул. Высокая, 14Б</li>
+              <li className="uppercase">{legalAddress}</li>
               <li>
-                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
-                  {contactsLinks.phone.label}
+                <a href={getPhoneHref(mobilePhone)} target="_blank" rel="noopener noreferrer">
+                  {formatPhone(mobilePhone)}
                 </a>
               </li>
             </ul>
@@ -47,15 +54,15 @@ export function Footer() {
       </div>
       <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
         <ul className="flex flex-col items-center gap-0.5 xl:items-start">
-          <li>ООО «Лайк Воллей»</li>
-          <li>УНП 291855284</li>
+          <li>{legalName}</li>
+          <li>УНП {unp}</li>
         </ul>
         <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
           <li>Р/с BY29BAPB30128106300100000000</li>
           <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
-          <li>г. Брест ул. Воровского, 11</li>
+          <li>{legalAddress}</li>
           <li>БИК BAPBBY2X</li>
-          <li>224020</li>
+          <li>{postcode}</li>
         </ul>
         <div className="flex flex-col items-center gap-12">
           <ScrollToTop />

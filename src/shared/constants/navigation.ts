@@ -43,10 +43,6 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     title: "Отзывы",
     href: "/reviews",
   },
-  phone: {
-    title: "+375 29 802 07 48",
-    href: "tel:+375298020748",
-  },
   offerAgreement: {
     title: "Договор оферты",
     href: "/offer-agreement",

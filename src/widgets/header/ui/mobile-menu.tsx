@@ -6,8 +6,13 @@ import { cn } from "@/shared/lib";
 import { CloseMenuIcon } from "./close-menu-icon";
 import { Navbar } from "./navbar";
 import { BurgerMenuIcon } from "./burger-menu-icon";
+import { CompanyInfo } from "@/shared/cms/payload-types";
 
-export function MobileMenu() {
+type MobileMenuProps = {
+  data: CompanyInfo;
+};
+
+export function MobileMenu({ data }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openMenu = () => setIsOpen(true);
@@ -41,6 +46,7 @@ export function MobileMenu() {
             "-translate-y-full": !isOpen,
           },
         )}
+        data={data}
         onLinkClick={closeMenu}
       />
     </div>

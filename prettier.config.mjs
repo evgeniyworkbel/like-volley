@@ -5,5 +5,5 @@ export default {
   plugins: ["prettier-plugin-tailwindcss"],
 
   // Settings provided for prettier-plugin-tailwindcss
-  tailwindStylesheet: "./src/app/globals.css",
+  tailwindStylesheet: "./src/app/(frontend)/globals.css",
 };

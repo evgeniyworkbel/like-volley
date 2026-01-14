@@ -21,6 +21,7 @@
     "typeRoots": ["./node_modules/@types", "./node_modules/@yandex/ymaps3-types"],
     "paths": {
       "@/*": ["./src/*"],
+      "@payload-config": ["./src/shared/cms/payload.config.ts"],
       "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
     }
   },
