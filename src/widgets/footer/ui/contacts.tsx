@@ -14,6 +14,7 @@ export function Contacts({ data }: ContactsProps) {
     <div className="flex gap-4">
       <SocialLink
         href={getPhoneHref(mobilePhone)}
+        target="_self"
         src="/phone.svg"
         alt="Декоративная иконка телефона школы волейбола Like Volley"
       />
