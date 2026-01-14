@@ -10,7 +10,7 @@ export async function Faq() {
     collection: "faq",
     pagination: false,
   });
-  console.log("1111111111", { faq: faq });
+
   const faqData = faq.docs.reduce<Array<AccordionItemModel>>((acc, item) => {
     if (!item.id) return acc;
     return acc.concat({
@@ -37,7 +37,7 @@ export async function Faq() {
           программу и подход к обучению.
         </p>
       </hgroup>
-      <Accordion items={faqData} defaultOpened={faqData[0].id} />
+      <Accordion items={faqData} defaultOpened={faqData.at(0)?.id} />
     </section>
   );
 }
