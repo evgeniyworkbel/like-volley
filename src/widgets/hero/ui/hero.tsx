@@ -16,7 +16,7 @@ export function Hero() {
       <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
         <HeroTab
           className={cn({
-            "bg-none text-accent-blue": ageGroup === "childs",
+            "text-accent-blue": ageGroup === "childs",
             "bg-accent-blue": ageGroup === "adults",
           })}
           onClick={() => setAgeGroup("adults")}
@@ -26,7 +26,7 @@ export function Hero() {
         <HeroTab
           className={cn({
             "bg-accent-orange": ageGroup === "childs",
-            "bg-none text-accent-orange": ageGroup === "adults",
+            "text-accent-orange": ageGroup === "adults",
           })}
           onClick={() => setAgeGroup("childs")}
         >
