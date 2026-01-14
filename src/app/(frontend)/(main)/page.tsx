@@ -2,7 +2,7 @@ import {
   Hero,
   Advantages,
   SignUpForWorkout,
-  Faq,
+  // Faq,
   Banner,
   Gallery,
   Coaches,
@@ -17,7 +17,7 @@ export default function Home() {
       <Locations />
       <SignUpForWorkout />
       <Coaches />
-      <Faq />
+      {/* <Faq /> */}
       <Banner />
       <Gallery />
     </div>
