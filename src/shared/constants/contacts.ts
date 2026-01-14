@@ -8,7 +8,7 @@ const contacts = {
 
 export const contactsLinks = {
   locations: {
-    href: "/",
+    href: "https://yandex.by/maps/-/CLdpBNK4",
   },
   instagram: {
     href: `https://www.instagram.com/${contacts.instagram}`,
