@@ -8,3 +8,5 @@ export type IconProps = Pick<
   React.SVGAttributes<SVGElement>,
   "className" | "width" | "height" | "onClick"
 >;
+
+export type CitiesModel = { id: number; label: string; value: string };

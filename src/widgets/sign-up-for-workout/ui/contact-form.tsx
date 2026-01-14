@@ -5,14 +5,13 @@ import { Controller, useForm } from "react-hook-form";
 import { useMask } from "@react-input/mask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { navLinks } from "@/shared/constants";
-import { Select } from "@/shared/ui";
 import { cn } from "@/shared/lib";
-import { Button } from "@/shared/ui";
+import { Button, Select } from "@/shared/ui";
 import { formDefaultValues, formSchema, RESET_TIMEOUT_MS } from "../model/config";
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
-import { citys } from "../model/data";
+import { cities } from "../model/data";
 
 export function ContactForm() {
   const {
@@ -53,7 +52,7 @@ export function ContactForm() {
               return (
                 <label className="flex flex-col gap-1.5 text-xl">
                   Группа:
-                  <Select items={citys} value={field.value} onChange={field.onChange} />
+                  <Select items={cities} value={field.value} onChange={field.onChange} />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
