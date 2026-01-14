@@ -2,15 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { getPayloadClient } from "@/shared/cms";
-import { contactsLinks, navLinks, signUpForWorkoutSectionId } from "@/shared/constants";
+import { navLinks, signUpForWorkoutSectionId } from "@/shared/constants";
 import { Contacts } from "./contacts";
 import { FooterNav } from "./footer-nav";
 import { ScrollToTop } from "./scroll-to-top";
+import { formatPhone, getPhoneHref } from "@/shared/lib";
 
 export async function Footer() {
   const payload = await getPayloadClient();
   const companyInfo = await payload.findGlobal({ slug: "company-info" });
-  const { legalAddress, legalName, postcode, unp } = companyInfo;
+  const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
 
   return (
     <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
@@ -37,8 +38,8 @@ export async function Footer() {
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
               <li className="uppercase">{legalAddress}</li>
               <li>
-                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
-                  {contactsLinks.phone.label}
+                <a href={getPhoneHref(mobilePhone)} target="_blank" rel="noopener noreferrer">
+                  {formatPhone(mobilePhone)}
                 </a>
               </li>
             </ul>
