@@ -2,7 +2,7 @@ import Link from "next/link";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 
-type NavbarProps = { className?: string; onLinkClick?: VoidFunction };
+type NavbarProps = { className: string; onLinkClick?: VoidFunction };
 
 export function Navbar({ className, onLinkClick }: NavbarProps) {
   return (
@@ -36,9 +36,9 @@ export function Navbar({ className, onLinkClick }: NavbarProps) {
       <Link href={navLinks.gallerySection.href} onClick={onLinkClick}>
         {navLinks.gallerySection.title}
       </Link>
-      <Link href={navLinks.phone.href} onClick={onLinkClick}>
+      <a href={navLinks.phone.href} onClick={onLinkClick}>
         {navLinks.phone.title}
-      </Link>
+      </a>
     </nav>
   );
 }

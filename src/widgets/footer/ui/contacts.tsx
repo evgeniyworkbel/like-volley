@@ -1,42 +1,12 @@
-import { contactsLinks } from "@/shared/constants";
-import Link from "next/link";
-import Image from "next/image";
+import { socialLinksData } from "../model/data";
+import { SocialLink } from "./social-link";
 
 export function Contacts() {
   return (
-    <div className="flex gap-6">
-      <Link href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
-        <Image
-          src="/phone.svg"
-          width={68}
-          height={68}
-          alt="Декоративная иконка телефона школы волейбола Like Volley"
-        />
-      </Link>
-      <Link href={contactsLinks.locations.href} target="_blank" rel="noopener noreferrer">
-        <Image
-          src="/location.svg"
-          width={68}
-          height={68}
-          alt="Декоративная иконка локации школы волейбола Like Volley"
-        />
-      </Link>
-      <Link href={contactsLinks.instagram.href} target="_blank" rel="noopener noreferrer">
-        <Image
-          src="/instagram.svg"
-          width={68}
-          height={68}
-          alt="Декоративная иконка Instagram школы волейбола Like Volley"
-        />
-      </Link>
-      <Link href={contactsLinks.telegram.href} target="_blank" rel="noopener noreferrer">
-        <Image
-          src="/telegram.svg"
-          width={68}
-          height={68}
-          alt="Декоративная иконка telegram школы волейбола Like Volley"
-        />
-      </Link>
+    <div className="flex gap-4">
+      {socialLinksData.map(({ src, href, alt }) => (
+        <SocialLink key={href} src={src} alt={alt} href={href} />
+      ))}
     </div>
   );
 }

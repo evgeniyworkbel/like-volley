@@ -3,6 +3,14 @@
 - В проекте используем `FSD` методологию ([ссылка](https://feature-sliced.github.io/documentation/ru/docs/get-started/tutorial))
 - Все git ветки, папки и файлы должны именоваться с маленькой буквы и в `kebab-case`
 
+### Next.js
+- Для внутренних ссылок внутри приложения используем `<Link />` компонент из next.js, для внешних - нативный `<a />` тег c указанием семантического `rel` аттрибута
+Источники:
+https://github.com/vercel/next.js/discussions/54095
+https://github.com/vercel/next.js/discussions/46511
+https://github.com/vercel/next.js/discussions/37597
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
+
 ### React:
 - Для написания реакт-компонентов используем слово `function`
 - Типы пропсов выносим выше компонента в этот же файле и именуем как "название компонента" + props. Например, компонент называется `NavMenu`, тогда тип пропсов должен называться `NavMenuProps`
