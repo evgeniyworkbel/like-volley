@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getPayloadClient } from "@/shared/cms";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
-import { MobileMenu } from "./mobile-menu";
 import { Navbar } from "./navbar";
-import { getPayloadClient } from "@/shared/cms";
+import { MobileMenu } from "./mobile-menu";
 
 export async function Header() {
   const payload = await getPayloadClient();

@@ -19,18 +19,6 @@ export function Navbar({ className, data, onLinkClick }: NavbarProps) {
         className,
       )}
     >
-      {/* todo: отключил временно до особых распоряжений */}
-
-      {/* <Link href={navLinks.locations.href} onClick={onLinkClick}>
-        {navLinks.locations.title}
-      </Link>
-      <Link href={navLinks.about.href} onClick={onLinkClick}>
-        {navLinks.about.title}
-      </Link>
-      <Link href={navLinks.gallery.href} onClick={onLinkClick}>
-        {navLinks.gallery.title}
-      </Link> */}
-
       <Link href={navLinks.locationsSection.href} onClick={onLinkClick}>
         {navLinks.locationsSection.title}
       </Link>
