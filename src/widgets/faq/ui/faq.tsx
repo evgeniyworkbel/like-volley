@@ -2,6 +2,7 @@ import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { getPayloadClient } from "@/shared/cms";
 import { Accordion, Title } from "@/shared/ui";
 import { faqSectionId } from "@/shared/constants";
+import { AccordionItemModel } from "@/shared/ui/accordion";
 
 export async function Faq() {
   const payload = await getPayloadClient();
@@ -9,12 +10,16 @@ export async function Faq() {
     collection: "faq",
     pagination: false,
   });
-  const faqData = faq.docs.map((item) => ({
-    ...item,
-    answer: (
-      <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: item.answer }) }} />
-    ),
-  }));
+  const faqData = faq.docs.reduce<Array<AccordionItemModel>>((acc, item) => {
+    if (!item.id) return acc;
+    return acc.concat({
+      id: item.id,
+      question: item.question,
+      answer: (
+        <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: item.answer }) }} />
+      ),
+    });
+  }, []);
 
   return (
     <section
