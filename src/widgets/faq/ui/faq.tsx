@@ -10,6 +10,7 @@ export async function Faq() {
     collection: "faq",
     pagination: false,
   });
+  console.log("1111111111", { faq: faq });
   const faqData = faq.docs.reduce<Array<AccordionItemModel>>((acc, item) => {
     if (!item.id) return acc;
     return acc.concat({
