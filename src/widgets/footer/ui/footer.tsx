@@ -8,7 +8,7 @@ import { ScrollToTop } from "./scroll-to-top";
 export function Footer() {
   return (
     <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
-      <div className="flex w-full flex-col gap-[50px] xl:flex-row xl:justify-between xl:border-b-2 xl:pb-10">
+      <div className="flex w-full flex-col gap-[50px] border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
         <div className="flex flex-col items-center gap-8 xl:items-start">
           <Link href={navLinks.home.href}>
             <Image
@@ -29,7 +29,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
             <h2 className="text-sm">Контакты</h2>
             <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
-              <li>г. Брест ул. Высокая, 14Б</li>
+              <li className="uppercase">г. Брест ул. Высокая, 14Б</li>
               <li>
                 <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
                   {contactsLinks.phone.label}
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
           <Link
             href={`#${signUpForWorkoutSectionId}`}
-            className="rounded-[40px] bg-white px-25 py-4 text-base font-medium text-accent-orange uppercase"
+            className="rounded-[40px] bg-white px-25 py-4 text-base font-bold text-accent-orange uppercase"
           >
             Записаться
           </Link>
