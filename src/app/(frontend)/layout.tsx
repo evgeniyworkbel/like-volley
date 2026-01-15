@@ -16,6 +16,7 @@ const shantellSans = Shantell_Sans({
 export const metadata: Metadata = {
   title: "like-volley",
   description: "Belarusian volleyball school",
+  formatDetection: { telephone: false, date: false, email: false, address: false },
 };
 
 // @todo: подключить новый счетчик под продакшн вебсайт
@@ -26,9 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
-      </head>
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
         <div className="isolate">{children}</div>
