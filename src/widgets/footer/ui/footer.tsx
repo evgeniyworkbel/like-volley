@@ -14,8 +14,8 @@ export async function Footer() {
   const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
 
   return (
-    <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
-      <div className="flex w-full flex-col gap-[50px] border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
+    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:p-20">
+      <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
         <div className="flex flex-col items-center gap-8 xl:items-start">
           <Link href={navLinks.home.href}>
             <Image
@@ -25,7 +25,7 @@ export async function Footer() {
               alt="Логотип школы волейбола Like Volley"
             />
           </Link>
-          <p className="flex max-w-[282px] flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-[350px] xl:text-left">
+          <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-87.5 xl:text-left">
             Волейбол для всех возрастов с индивидуальным подходом и современными методиками
             обучения.
           </p>
@@ -33,12 +33,17 @@ export async function Footer() {
         </div>
         <FooterNav />
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
-          <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
+          <div className="flex flex-col items-center gap-4.5 md:gap-7 xl:items-start">
             <h2 className="text-sm">Контакты</h2>
-            <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
+            <ul className="flex flex-col items-center gap-4.5 text-lg font-bold xl:items-start">
               <li className="uppercase">{legalAddress}</li>
               <li>
-                <a href={getPhoneHref(mobilePhone)} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href={getPhoneHref(mobilePhone)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {formatPhone(mobilePhone)}
                 </a>
               </li>
