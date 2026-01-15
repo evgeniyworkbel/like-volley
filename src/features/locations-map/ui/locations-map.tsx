@@ -32,7 +32,7 @@ export function LocationsMap() {
           Брест
         </CityButton>
       </div>
-      <div className="flex h-[522px] w-full overflow-hidden rounded-[20px] xl:h-178">
+      <div className="flex h-130.5 w-full overflow-hidden rounded-[20px] xl:h-178">
         <MapProvider>
           <Map
             location={location}
