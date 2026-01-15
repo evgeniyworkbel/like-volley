@@ -14,7 +14,7 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Волейбол для взрослых и детей",
+  title: "Школа LikeVolley",
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
     { name: "Ivan", url: "https://t.me/Ivann8234" },
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   ],
   formatDetection: { telephone: false, date: false, email: false, address: false },
   keywords: ["Волейбол", "Школа", "Взрослые", "Дети", "Минск", "Брест"],
+  openGraph: {
+    title: "Волейбол для взрослых и детей",
+    type: "website",
+    images: ["/logo.svg"],
+    url: "https://likevolley.by",
+  },
 };
 
 // @todo: подключить новый счетчик под продакшн вебсайт
