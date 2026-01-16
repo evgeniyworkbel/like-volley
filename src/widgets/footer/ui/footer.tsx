@@ -14,9 +14,9 @@ export async function Footer() {
   const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
 
   return (
-    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:p-20">
+    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:gap-10 xl:p-20">
       <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
-        <div className="flex flex-col items-center gap-8 xl:items-start">
+        <div className="flex flex-col items-center gap-5 xl:items-start">
           <Link href={navLinks.home.href}>
             <Image
               src="/logo-footer.svg"
@@ -25,7 +25,7 @@ export async function Footer() {
               alt="Логотип школы волейбола Like Volley"
             />
           </Link>
-          <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-87.5 xl:text-left">
+          <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] xl:max-w-66 xl:text-left">
             Волейбол для всех возрастов с индивидуальным подходом и современными методиками
             обучения.
           </p>
@@ -58,7 +58,7 @@ export async function Footer() {
         </div>
       </div>
       <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
-        <ul className="flex flex-col items-center gap-0.5 xl:items-start">
+        <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
           <li>{legalName}</li>
           <li>УНП {unp}</li>
         </ul>
@@ -69,7 +69,7 @@ export async function Footer() {
           <li>БИК BAPBBY2X</li>
           <li>{postcode}</li>
         </ul>
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-14">
           <ScrollToTop />
           <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
         </div>
