@@ -14,7 +14,7 @@ export async function Footer() {
   const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
 
   return (
-    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:p-20">
+    <footer className="flex flex-col justify-center gap-12.5 bg-accent-orange py-12.5 text-white *:max-w-360 md:flex-wrap xl:flex-row xl:p-20">
       <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
         <div className="flex flex-col items-center gap-8 xl:items-start">
           <Link href={navLinks.home.href}>
