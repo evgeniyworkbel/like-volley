@@ -6,7 +6,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <main className="mx-auto max-w-360">{children}</main>
       <Footer />
     </div>
   );
