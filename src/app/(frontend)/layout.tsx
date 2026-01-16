@@ -14,8 +14,20 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "like-volley",
-  description: "Belarusian volleyball school",
+  title: "Школа LikeVolley",
+  authors: [
+    { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
+    { name: "Ivan", url: "https://t.me/Ivann8234" },
+    { name: "Stanislaw Olszewski", url: "https://www.linkedin.com/in/staols13" },
+  ],
+  formatDetection: { telephone: false, date: false, email: false, address: false },
+  keywords: ["Волейбол", "Школа", "Взрослые", "Дети", "Минск", "Брест"],
+  openGraph: {
+    title: "Волейбол для взрослых и детей",
+    type: "website",
+    images: ["/logo.svg"],
+    url: "https://likevolley.by",
+  },
 };
 
 // @todo: подключить новый счетчик под продакшн вебсайт
@@ -26,9 +38,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
-      </head>
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
         <div className="isolate">{children}</div>

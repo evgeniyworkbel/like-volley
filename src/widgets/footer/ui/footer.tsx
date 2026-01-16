@@ -38,7 +38,12 @@ export async function Footer() {
             <ul className="flex flex-col items-center gap-4.5 text-lg font-bold xl:items-start">
               <li className="uppercase">{legalAddress}</li>
               <li>
-                <a href={getPhoneHref(mobilePhone)} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href={getPhoneHref(mobilePhone)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {formatPhone(mobilePhone)}
                 </a>
               </li>
