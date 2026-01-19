@@ -59,22 +59,22 @@ export async function Footer() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
-        <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
-          <li>{legalName}</li>
-          <li>УНП {unp}</li>
-        </ul>
-        <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
-          <li>Р/с BY29BAPB30128106300100000000</li>
-          <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
-          <li>{legalAddress}</li>
-          <li>БИК BAPBBY2X</li>
-          <li>{postcode}</li>
-        </ul>
-        <div className="flex flex-col items-center gap-14">
-          <ScrollToTop />
-          <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
+        <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
+          <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
+            <li>{legalName}</li>
+            <li>УНП {unp}</li>
+          </ul>
+          <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
+            <li>Р/с BY29BAPB30128106300100000000</li>
+            <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
+            <li>{legalAddress}</li>
+            <li>БИК BAPBBY2X</li>
+            <li>{postcode}</li>
+          </ul>
+          <div className="flex flex-col items-center gap-14">
+            <ScrollToTop />
+            <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
+          </div>
         </div>
       </Container>
     </footer>
