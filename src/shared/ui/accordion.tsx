@@ -4,12 +4,14 @@ import { useState } from "react";
 import { AccordionArrowIcon } from "../icons";
 import { cn } from "../lib";
 
+export type AccordionItemModel = {
+  id: number;
+  question: string;
+  answer: React.ReactNode;
+};
+
 type AccordionProps = {
-  items: {
-    question: string;
-    answer: React.ReactNode;
-    id: number;
-  }[];
+  items: Array<AccordionItemModel>;
   defaultOpened?: number;
 };
 

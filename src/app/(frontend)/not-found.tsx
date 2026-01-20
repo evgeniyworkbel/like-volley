@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <div>
       <Header />
-      <main className="flex flex-col items-center gap-12 py-[102px] font-bold xl:gap-21 xl:py-10">
+      <main className="flex flex-col items-center gap-12 py-25.5 font-bold xl:gap-21 xl:py-10">
         <h1 className="font-shantell text-[74px] text-foreground md:text-9xl">
           4<span className="text-accent-orange">0</span>4
         </h1>

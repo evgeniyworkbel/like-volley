@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getPayloadClient } from "@/shared/cms";
 import { navLinks } from "@/shared/constants";
 import { cn } from "@/shared/lib";
 import { Navbar } from "./navbar";
 import { MobileMenu } from "./mobile-menu";
 
-export function Header() {
+export async function Header() {
+  const payload = await getPayloadClient();
+  const companyInfo = await payload.findGlobal({ slug: "company-info" });
+
   return (
     <header
       className={cn(
@@ -15,8 +19,8 @@ export function Header() {
       <Link href={navLinks.home.href}>
         <Image src="/logo.svg" width={122} height={76} alt="Логотип школы волейбола Like Volley" />
       </Link>
-      <Navbar className="hidden xl:flex" />
-      <MobileMenu />
+      <Navbar className="hidden xl:flex" data={companyInfo} />
+      <MobileMenu data={companyInfo} />
     </header>
   );
 }

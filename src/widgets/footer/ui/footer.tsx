@@ -1,15 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-import { signUpForWorkoutSectionId, navLinks, contactsLinks } from "@/shared/constants";
-import { FooterNav } from "./footer-nav";
-import { Contacts } from "./contacts";
-import { ScrollToTop } from "./scroll-to-top";
 
-export function Footer() {
+import { getPayloadClient } from "@/shared/cms";
+import { navLinks, signUpForWorkoutSectionId } from "@/shared/constants";
+import { Contacts } from "./contacts";
+import { FooterNav } from "./footer-nav";
+import { ScrollToTop } from "./scroll-to-top";
+import { formatPhone, getPhoneHref } from "@/shared/lib";
+
+export async function Footer() {
+  const payload = await getPayloadClient();
+  const companyInfo = await payload.findGlobal({ slug: "company-info" });
+  const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
+
   return (
-    <footer className="flex flex-col gap-[50px] bg-accent-orange py-[50px] text-white md:flex-wrap xl:flex-row xl:p-20">
-      <div className="flex w-full flex-col gap-[50px] xl:flex-row xl:justify-between xl:border-b-2 xl:pb-10">
-        <div className="flex flex-col items-center gap-8 xl:items-start">
+    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:gap-10 xl:p-20">
+      <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
+        <div className="flex flex-col items-center gap-5 xl:items-start">
           <Link href={navLinks.home.href}>
             <Image
               src="/logo-footer.svg"
@@ -18,46 +25,51 @@ export function Footer() {
               alt="Логотип школы волейбола Like Volley"
             />
           </Link>
-          <p className="flex max-w-[282px] flex-col gap-2 text-center text-lg leading-[1.2] text-balance xl:max-w-[350px] xl:text-left">
+          <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] xl:max-w-66 xl:text-left">
             Волейбол для всех возрастов с индивидуальным подходом и современными методиками
             обучения.
           </p>
-          <Contacts />
+          <Contacts data={companyInfo} />
         </div>
         <FooterNav />
         <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
-          <div className="flex flex-col items-center gap-[18px] md:gap-7 xl:items-start">
+          <div className="flex flex-col items-center gap-4.5 md:gap-7 xl:items-start">
             <h2 className="text-sm">Контакты</h2>
-            <ul className="flex flex-col items-center gap-[18px] text-lg font-bold xl:items-start">
-              <li>г. Брест ул. Высокая, 14Б</li>
+            <ul className="flex flex-col items-center gap-4.5 text-lg font-bold xl:items-start">
+              <li className="uppercase">{legalAddress}</li>
               <li>
-                <a href={contactsLinks.phone.href} target="_blank" rel="noopener noreferrer">
-                  {contactsLinks.phone.label}
+                <a
+                  className="hover:underline hover:underline-offset-4"
+                  href={getPhoneHref(mobilePhone)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {formatPhone(mobilePhone)}
                 </a>
               </li>
             </ul>
           </div>
           <Link
             href={`#${signUpForWorkoutSectionId}`}
-            className="rounded-[40px] bg-white px-25 py-4 text-base font-medium text-accent-orange uppercase"
+            className="rounded-[40px] bg-white px-25 py-4 text-base font-bold text-accent-orange uppercase"
           >
             Записаться
           </Link>
         </div>
       </div>
       <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
-        <ul className="flex flex-col items-center gap-0.5 xl:items-start">
-          <li>ООО «Лайк Воллей»</li>
-          <li>УНП 291855284</li>
+        <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
+          <li>{legalName}</li>
+          <li>УНП {unp}</li>
         </ul>
         <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
           <li>Р/с BY29BAPB30128106300100000000</li>
           <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
-          <li>г. Брест ул. Воровского, 11</li>
+          <li>{legalAddress}</li>
           <li>БИК BAPBBY2X</li>
-          <li>224020</li>
+          <li>{postcode}</li>
         </ul>
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-14">
           <ScrollToTop />
           <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
         </div>

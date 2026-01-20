@@ -1,24 +1,34 @@
 import Image from "next/image";
-import { ownerData } from "../model/data";
+import { getPayloadClient } from "@/shared/cms";
 
-export function OwnerCard() {
-  const name = `${ownerData.firstName} ${ownerData.lastName}`;
+export async function OwnerCard() {
+  const payload = await getPayloadClient();
+  const { lastName, firstName, jobTitle, description } = await payload.findGlobal({
+    slug: "owner",
+  });
+  const title = `${firstName} ${lastName}`;
 
   return (
     <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:gap-14">
-      <Image src={ownerData.src} width={314} height={407} alt={ownerData.alt} />
+      <Image
+        // @todo: брать фото из s3 storage (удалить старое фото из /public)
+        src={"/coaches/golodukhin.webp"}
+        width={314}
+        height={407}
+        alt="Фото основателя школы LikeVolley"
+      />
       <div className="flex flex-col items-center gap-5 xl:items-start xl:justify-center">
         <hgroup className="flex flex-col items-center gap-2.5 xl:items-start">
           <h3 className="font-shantell text-[26px] font-bold text-foreground xl:text-[44px]">
-            {name}
+            {title}
           </h3>
           <p className="text-center text-foreground-secondary">
-            Основатель волейбольной школы&nbsp;
+            {jobTitle}&nbsp;
             <span className="text-accent-orange">LikeVolley</span>
           </p>
         </hgroup>
         <p className="flex max-w-76 items-center text-center text-sm xl:max-w-151 xl:text-left xl:text-lg">
-          {ownerData.description}
+          {description}
         </p>
       </div>
     </div>

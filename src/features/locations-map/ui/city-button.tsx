@@ -1,5 +1,5 @@
 import { cn } from "@/shared/lib";
-import { ButtonProps } from "@/shared/ui/button";
+import { Button, ButtonProps } from "@/shared/ui/button";
 
 export type CityButtonProps = Pick<ButtonProps, "children" | "onClick"> & {
   isActive: boolean;
@@ -7,7 +7,7 @@ export type CityButtonProps = Pick<ButtonProps, "children" | "onClick"> & {
 
 export function CityButton({ children, onClick, isActive }: CityButtonProps) {
   return (
-    <button
+    <Button
       className={cn(
         "rounded-[40px] border border-accent-orange bg-background px-9.5 py-4 text-accent-orange",
         {
@@ -17,6 +17,6 @@ export function CityButton({ children, onClick, isActive }: CityButtonProps) {
       onClick={onClick}
     >
       {children}
-    </button>
+    </Button>
   );
 }
