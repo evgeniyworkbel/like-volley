@@ -26,3 +26,9 @@ export const getContactsData = (mobilePhone: number) => {
     },
   ] as const;
 };
+
+export const cities = [
+  { id: 1, label: "Выберите город", value: "" },
+  { id: 2, label: "Брест", value: "brest" },
+  { id: 3, label: "Минск", value: "minsk" },
+];
