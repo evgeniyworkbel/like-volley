@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/shared/ui";
-import { ScrollToTopArrowIcon } from "@/shared/icons";
+import { ArrowIcon } from "@/shared/icons";
 
 export function ScrollToTop() {
   return (
@@ -10,7 +10,7 @@ export function ScrollToTop() {
       onClick={() => window.scrollTo(0, 0)}
     >
       Наверх
-      <ScrollToTopArrowIcon />
+      <ArrowIcon />
     </Button>
   );
 }
