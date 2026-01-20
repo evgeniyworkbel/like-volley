@@ -2,9 +2,6 @@ import { getPayloadClient } from "@/shared/cms";
 import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { Title } from "@/shared/ui";
 import { Contact } from "./contact";
-import { ContactForm } from "./contact-form";
-import { contactsData } from "../model/data";
-// import { Form2 } from "./contact-form2";
 // import { ContactForm } from "./contact-form";
 import { getContactsData } from "../model/data";
 import { Form2 } from "./contact-form2";
@@ -43,8 +40,8 @@ export async function SignUpForWorkout() {
         </div>
       </div>
       {/** @todo: удалить Form2 когда будет готова интеграция нашей формы с amoCRM */}
-      {/* <Form2 /> */}
-      <ContactForm />
+      <Form2 />
+      {/* <ContactForm /> */}
     </section>
   );
 }
