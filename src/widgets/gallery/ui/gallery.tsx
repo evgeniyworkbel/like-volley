@@ -11,7 +11,7 @@ export function Gallery() {
       className="flex flex-col flex-wrap justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
     >
       <div className="flex w-full flex-col items-center justify-between xl:flex-row">
-        <Title className="flex">
+        <Title>
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
         </Title>
         <div className="flex items-center gap-2">
@@ -19,7 +19,7 @@ export function Gallery() {
           <AllFotosButton />
         </div>
       </div>
-      <div className="flex w-full flex-col justify-between gap-5 xl:flex-row xl:px-18.5">
+      <div className="flex flex-col gap-5 xl:flex-row xl:px-18.5">
         {galleryData.map((item) => (
           <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
         ))}
