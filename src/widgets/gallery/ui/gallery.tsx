@@ -19,12 +19,10 @@ export function Gallery() {
           <AllFotosButton />
         </div>
       </div>
-      <div className="flex max-w-301.5 flex-wrap items-center justify-between gap-14 xl:px-18.5">
-        <div className="flex w-full flex-col justify-between gap-5 xl:flex-row">
-          {galleryData.map((item) => (
-            <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
-          ))}
-        </div>
+      <div className="flex w-full flex-col justify-between gap-5 xl:flex-row xl:px-18.5">
+        {galleryData.map((item) => (
+          <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
+        ))}
       </div>
     </section>
   );
