@@ -1,16 +1,21 @@
 import { Select as BaseSelect } from "@base-ui/react/select";
 import { SelectArrow } from "./select-arrow";
-import { CitiesModel } from "@/shared/types";
+import { SelectItemModel } from "@/shared/types";
 
-type SelectProps = {
-  items: CitiesModel[];
-  value?: string;
-  onChange: VoidFunction;
+type SelectProps<Value, Multiple extends boolean | undefined = false> = Pick<
+  BaseSelect.Root.Props<Value, Multiple>,
+  "value" | "onValueChange"
+> & {
+  items: SelectItemModel<Value>[];
 };
 
-export function Select({ items, value, onChange }: SelectProps) {
+export function Select<Value, Multiple extends boolean | undefined = false>({
+  items,
+  value,
+  onValueChange,
+}: SelectProps<Value, Multiple>) {
   return (
-    <BaseSelect.Root items={items} value={value} onValueChange={onChange}>
+    <BaseSelect.Root items={items} value={value} onValueChange={onValueChange}>
       <BaseSelect.Trigger className="flex h-10 w-full items-center justify-between gap-3 rounded-xl bg-white px-3 text-base text-foreground focus:outline-none">
         <BaseSelect.Value />
         <BaseSelect.Icon>

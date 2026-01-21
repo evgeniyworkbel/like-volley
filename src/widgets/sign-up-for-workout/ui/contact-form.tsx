@@ -52,7 +52,7 @@ export function ContactForm() {
               return (
                 <label className="text-xl">
                   Группа:
-                  <Select items={cities} value={field.value} onChange={field.onChange} />
+                  <Select items={cities} value={field.value} onValueChange={field.onChange} />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );

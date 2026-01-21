@@ -9,4 +9,4 @@ export type IconProps = Pick<
   "className" | "width" | "height" | "onClick"
 >;
 
-export type CitiesModel = { id: number; label: string; value: string };
+export type SelectItemModel<Value> = { id: number; label: string; value: Value };
