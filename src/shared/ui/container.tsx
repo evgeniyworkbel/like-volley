@@ -1,10 +1,7 @@
 import { cn } from "@/shared/lib";
 
-type ContainerProps = Pick<
-  React.PropsWithChildren<React.HTMLAttributes<HTMLDivElement>>,
-  "className" | "children"
->;
+type NativeDivProps = Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children">;
 
-export function Container({ className, children }: ContainerProps) {
+export function Container({ className, children }: NativeDivProps) {
   return <div className={cn("mx-auto max-w-360", className)}>{children}</div>;
 }
