@@ -8,7 +8,7 @@ export function Gallery() {
   return (
     <section
       id={gallerySectionId}
-      className="flex flex-col flex-wrap justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
+      className="flex flex-col flex-wrap items-center justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
     >
       <div className="flex w-full flex-col items-center justify-between xl:flex-row">
         <Title>
