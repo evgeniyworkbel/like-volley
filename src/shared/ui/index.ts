@@ -4,3 +4,4 @@ export { Title } from "./title";
 export { Accordion } from "./accordion";
 export { Map } from "./map";
 export { Select } from "./select";
+export { Container } from "./container";
