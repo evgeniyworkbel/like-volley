@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { GalleryItemModel } from "../model/types";
-import { DescriptionsFoto } from "./descriptions-foto";
+// import { DescriptionsFoto } from "./descriptions-foto";
 
 type GalleryCardProps = GalleryItemModel;
 
 export function GalleryCard({ src, alt }: GalleryCardProps) {
   return (
-    <div className="relative flex aspect-[0.938] w-91 items-end justify-center overflow-hidden">
+    <div className="group relative flex aspect-[0.874] h-91.5 overflow-hidden rounded-[18px] xl:aspect-square">
       <Image src={src} alt={alt} sizes="364px" fill />
-      <DescriptionsFoto />
+      {/* <DescriptionsFoto /> */}
     </div>
   );
 }

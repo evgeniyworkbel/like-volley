@@ -8,15 +8,18 @@ export function Gallery() {
   return (
     <section
       id={gallerySectionId}
-      className="flex flex-col flex-wrap justify-center gap-14 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-38.5"
+      className="flex flex-col flex-wrap justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
     >
       <div className="flex w-full flex-col items-center justify-between xl:flex-row">
         <Title className="flex">
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
         </Title>
-        <AllFotosButton />
+        <div className="flex items-center gap-2">
+          <p className="text-sm font-bold uppercase">все фотоальбомы</p>
+          <AllFotosButton />
+        </div>
       </div>
-      <div className="flex max-w-301.5 flex-wrap items-center justify-between gap-14">
+      <div className="flex max-w-301.5 flex-wrap items-center justify-between gap-14 xl:px-18.5">
         <div className="flex w-full flex-col justify-between gap-5 xl:flex-row">
           {galleryData.map((item) => (
             <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
