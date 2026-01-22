@@ -1,6 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react/select";
 import { SelectArrow } from "./select-arrow";
-import { SelectItemModel } from "@/shared/types";
+
+type SelectItemModel<Value> = { id: number; label: string; value: Value };
 
 type SelectProps<Value, Multiple extends boolean | undefined = false> = Pick<
   BaseSelect.Root.Props<Value, Multiple>,

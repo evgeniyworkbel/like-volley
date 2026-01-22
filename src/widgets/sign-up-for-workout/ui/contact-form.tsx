@@ -11,7 +11,7 @@ import { formDefaultValues, formSchema, RESET_TIMEOUT_MS } from "../model/config
 import { ErrorMessage } from "./error-message";
 import { SentMessage } from "./sent-message";
 import { ContactFormModel } from "../model/types";
-import { cities } from "../model/data";
+import { citiesOptions } from "../model/data";
 
 export function ContactForm() {
   const {
@@ -52,7 +52,11 @@ export function ContactForm() {
               return (
                 <label className="text-xl">
                   Группа:
-                  <Select items={cities} value={field.value} onValueChange={field.onChange} />
+                  <Select
+                    items={citiesOptions}
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  />
                   {errorMessage && <ErrorMessage message={errorMessage} />}
                 </label>
               );
