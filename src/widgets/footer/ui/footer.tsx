@@ -7,6 +7,7 @@ import { Contacts } from "./contacts";
 import { FooterNav } from "./footer-nav";
 import { ScrollToTop } from "./scroll-to-top";
 import { formatPhone, getPhoneHref } from "@/shared/lib";
+import { Container } from "@/shared/ui";
 
 export async function Footer() {
   const payload = await getPayloadClient();
@@ -14,66 +15,68 @@ export async function Footer() {
   const { legalAddress, legalName, postcode, unp, mobilePhone } = companyInfo;
 
   return (
-    <footer className="flex flex-col gap-12.5 bg-accent-orange py-12.5 text-white md:flex-wrap xl:flex-row xl:gap-10 xl:p-20">
-      <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
-        <div className="flex flex-col items-center gap-5 xl:items-start">
-          <Link href={navLinks.home.href}>
-            <Image
-              src="/logo-footer.svg"
-              width={122}
-              height={76}
-              alt="Логотип школы волейбола Like Volley"
-            />
-          </Link>
-          <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] xl:max-w-66 xl:text-left">
-            Волейбол для всех возрастов с индивидуальным подходом и современными методиками
-            обучения.
-          </p>
-          <Contacts data={companyInfo} />
-        </div>
-        <FooterNav />
-        <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
-          <div className="flex flex-col items-center gap-4.5 md:gap-7 xl:items-start">
-            <h2 className="text-sm">Контакты</h2>
-            <ul className="flex flex-col items-center gap-4.5 text-lg font-bold xl:items-start">
-              <li className="uppercase">{legalAddress}</li>
-              <li>
-                <a
-                  className="hover:underline hover:underline-offset-4"
-                  href={getPhoneHref(mobilePhone)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {formatPhone(mobilePhone)}
-                </a>
-              </li>
-            </ul>
+    <footer className="bg-accent-orange text-white">
+      <Container className="flex flex-col gap-12.5 py-12.5 md:flex-wrap xl:flex-row xl:gap-10 xl:p-20">
+        <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
+          <div className="flex flex-col items-center gap-5 xl:items-start">
+            <Link href={navLinks.home.href}>
+              <Image
+                src="/logo-footer.svg"
+                width={122}
+                height={76}
+                alt="Логотип школы волейбола Like Volley"
+              />
+            </Link>
+            <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] xl:max-w-66 xl:text-left">
+              Волейбол для всех возрастов с индивидуальным подходом и современными методиками
+              обучения.
+            </p>
+            <Contacts data={companyInfo} />
           </div>
-          <Link
-            href={`#${signUpForWorkoutSectionId}`}
-            className="rounded-[40px] bg-white px-25 py-4 text-base font-bold text-accent-orange uppercase"
-          >
-            Записаться
-          </Link>
+          <FooterNav />
+          <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
+            <div className="flex flex-col items-center gap-4.5 md:gap-7 xl:items-start">
+              <h2 className="text-sm">Контакты</h2>
+              <ul className="flex flex-col items-center gap-4.5 text-lg font-bold xl:items-start">
+                <li className="uppercase">{legalAddress}</li>
+                <li>
+                  <a
+                    className="hover:underline hover:underline-offset-4"
+                    href={getPhoneHref(mobilePhone)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {formatPhone(mobilePhone)}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <Link
+              href={`#${signUpForWorkoutSectionId}`}
+              className="rounded-[40px] bg-white px-25 py-4 text-base font-bold text-accent-orange uppercase"
+            >
+              Записаться
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
-        <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
-          <li>{legalName}</li>
-          <li>УНП {unp}</li>
-        </ul>
-        <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
-          <li>Р/с BY29BAPB30128106300100000000</li>
-          <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
-          <li>{legalAddress}</li>
-          <li>БИК BAPBBY2X</li>
-          <li>{postcode}</li>
-        </ul>
-        <div className="flex flex-col items-center gap-14">
-          <ScrollToTop />
-          <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
+        <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">
+          <ul className="flex flex-col items-center gap-0.5 xl:min-w-74 xl:items-start">
+            <li>{legalName}</li>
+            <li>УНП {unp}</li>
+          </ul>
+          <ul className="flex max-w-72 flex-col gap-1 text-center xl:text-start">
+            <li>Р/с BY29BAPB30128106300100000000</li>
+            <li>ЦБУ №116 в г. Бресте РД по Брестской области ОАО «Белагропромбанк»</li>
+            <li>{legalAddress}</li>
+            <li>БИК BAPBBY2X</li>
+            <li>{postcode}</li>
+          </ul>
+          <div className="flex flex-col items-center gap-14">
+            <ScrollToTop />
+            <p className="text-xs">© 2024 LikeVolley Все права защищены.</p>
+          </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
