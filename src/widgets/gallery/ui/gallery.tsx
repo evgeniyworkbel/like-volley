@@ -1,8 +1,8 @@
 import { Title } from "@/shared/ui";
-import { gallerySectionId } from "@/shared/constants";
+import { contactsLinks, gallerySectionId } from "@/shared/constants";
+import { RightIcon } from "@/shared/icons";
 import { galleryData } from "../model/data";
 import { GalleryCard } from "./gallery-card";
-import { AllFotosButton } from "./all-fotos-button";
 
 export function Gallery() {
   return (
@@ -14,10 +14,17 @@ export function Gallery() {
         <Title>
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
         </Title>
-        <div className="flex items-center gap-2">
-          <p className="text-sm font-bold uppercase">все фотоальбомы</p>
-          <AllFotosButton />
-        </div>
+        <a
+          className="flex items-center gap-2"
+          href={contactsLinks.gallery.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="text-sm font-bold uppercase">все фотоальбомы</span>
+          <div className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
+            <RightIcon />
+          </div>
+        </a>
       </div>
       <div className="flex flex-col gap-5 xl:flex-row xl:px-18.5">
         {galleryData.map((item) => (
