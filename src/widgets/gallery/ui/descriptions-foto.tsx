@@ -1,4 +1,4 @@
-import { ArrowIcon } from "@/shared/icons";
+import { DiagonallyIcon } from "@/shared/icons";
 
 export function DescriptionsFoto() {
   return (
@@ -8,7 +8,7 @@ export function DescriptionsFoto() {
         <span className="text-xs font-normal">23.08.20024</span>
       </p>
       <div className="flex size-14.5 items-center justify-center rounded-full bg-accent-orange">
-        <ArrowIcon className="rotate-45 text-white" width={45} height={45} />
+        <DiagonallyIcon />
       </div>
     </div>
   );
