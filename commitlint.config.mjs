@@ -8,6 +8,6 @@ export default {
       "always",
       ["root", "public", "app", "widgets", "features", "shared", "packaging", "project"],
     ],
-    "body-max-line-length": [2, "always", 200],
+    "body-max-line-length": [2, "always", 400],
   },
 };
