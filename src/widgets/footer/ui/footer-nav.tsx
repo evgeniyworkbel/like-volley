@@ -28,7 +28,7 @@ export function FooterNav() {
             <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
           </li>
           <li>
-            <Link href={navLinks.offerAgreement.href} rel="noopener noreferrer">
+            <Link href={navLinks.offerAgreement.href} rel="noopener noreferrer" prefetch={false}>
               {navLinks.offerAgreement.title}
             </Link>
           </li>
