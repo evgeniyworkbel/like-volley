@@ -8,12 +8,13 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 100],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: "/offer-agreement",
         destination: offerAgreementFileStorageUrl,
         basePath: false,
+        permanent: true,
       },
     ];
   },
