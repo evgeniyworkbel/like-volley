@@ -16,6 +16,7 @@ export type CarouselProps = {
 export function Carousel({ innerWrapperClassName, slidesPerView, children }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
+    watchDrag: false,
   });
 
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
@@ -31,7 +32,7 @@ export function Carousel({ innerWrapperClassName, slidesPerView, children }: Car
         </div>
       </div>
 
-      <div className="flex justify-between px-18 pt-[22px] xl:hidden">
+      <div className="flex justify-between px-18 pt-5.5 xl:hidden">
         <CarouselButton position="left" onClick={onPrevButtonClick} />
         <CarouselButton position="right" onClick={onNextButtonClick} />
       </div>
