@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       {
         source: "/offer-agreement",
         destination: offerAgreementFileStorageUrl,
+        basePath: false,
         permanent: true,
       },
     ];
