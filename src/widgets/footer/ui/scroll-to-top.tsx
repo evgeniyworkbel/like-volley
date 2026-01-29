@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/shared/ui";
 import { ScrollToTopArrowIcon } from "@/shared/icons";
+import { Button } from "@/shared/ui";
 
 export function ScrollToTop() {
   return (
