@@ -21,9 +21,9 @@ export function Gallery() {
           rel="noopener noreferrer"
         >
           <span className="text-sm font-bold uppercase">все фотоальбомы</span>
-          <div className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
+          <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
             <RightIcon />
-          </div>
+          </span>
         </a>
       </div>
       <div className="flex flex-col gap-5 xl:flex-row xl:px-18.5">
