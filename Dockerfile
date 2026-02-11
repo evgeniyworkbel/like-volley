@@ -15,7 +15,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN corepack enable pnpm && pnpm run build;
+RUN corepack enable pnpm && pnpm run build:compile;
 
 # Stage 3: Production server
 FROM base AS runner
@@ -34,4 +34,7 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/config/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
+
+# Entrypoint sets up the container.
+ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 CMD ["node", "server.js"]
