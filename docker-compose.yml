@@ -1,6 +1,7 @@
 services:
   web:
-    image: evgeniyworkbel/like-volley
+    build: .
+    # image: evgeniyworkbel/like-volley
     restart: unless-stopped
     # read_only: true (проверить потом)
     ports:
