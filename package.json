@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build:compile": "next build --experimental-build-mode compile",
+    "build:generateEnv": "next build --experimental-build-mode generate-env",
     "build:generate": "next build --experimental-build-mode generate",
     "build": "next build",
     "start": "next start",
