@@ -18,6 +18,10 @@ import { CompanyInfo } from "./globals/CompanyInfo";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+if (process.env.IS_CUSTOM_VPS === "true") {
+  console.log("--------envs-------------", process.env);
+}
+
 export default buildConfig({
   admin: {
     meta: { icons: { icon: "/cms-icon.png" } },
