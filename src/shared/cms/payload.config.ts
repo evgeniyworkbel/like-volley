@@ -17,7 +17,8 @@ import { CompanyInfo } from "./globals/CompanyInfo";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
-console.log("hello weold");
+
+console.log("----envs---", process.env);
 
 export default buildConfig({
   admin: {
