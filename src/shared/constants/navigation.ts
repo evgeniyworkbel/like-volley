@@ -22,33 +22,13 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     title: "Тренеры",
     href: `#${coachesSectionId}`,
   },
-  locations: {
-    title: "Локации",
-    href: "/location",
-  },
   // Links for pages
-  about: {
-    title: "О школе",
-    href: "/about",
-  },
-  blog: {
-    title: "Блог",
-    href: "/blog",
-  },
-  gallery: {
-    title: "Галерея",
-    href: "/gallery",
-  },
-  reviews: {
-    title: "Отзывы",
-    href: "/reviews",
+  policy: {
+    title: "Политика приватности",
+    href: "/policy",
   },
   offerAgreement: {
     title: "Договор оферты",
     href: "/offer-agreement",
-  },
-  policy: {
-    title: "Политика приватности",
-    href: "/policy",
   },
 } as const;
