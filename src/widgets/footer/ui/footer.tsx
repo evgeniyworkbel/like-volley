@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { getPayloadClient } from "@/shared/cms";
-import { navLinks, signUpForWorkoutSectionId } from "@/shared/constants";
+import { navLinks } from "@/shared/constants";
 import { Contacts } from "./contacts";
 import { FooterNav } from "./footer-nav";
 import { ScrollToTop } from "./scroll-to-top";
 import { formatPhone, getPhoneHref } from "@/shared/lib";
 import { Container } from "@/shared/ui";
+import { SignUpForWorkoutBtn } from "@/features";
 
 export async function Footer() {
   const payload = await getPayloadClient();
@@ -51,12 +52,7 @@ export async function Footer() {
                 </li>
               </ul>
             </div>
-            <Link
-              href={`#${signUpForWorkoutSectionId}`}
-              className="rounded-[40px] bg-white px-25 py-4 text-base font-bold text-accent-orange uppercase"
-            >
-              Записаться
-            </Link>
+            <SignUpForWorkoutBtn className="w-80 px-25 text-base font-bold text-accent-orange uppercase md:w-76" />
           </div>
         </div>
         <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">

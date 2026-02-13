@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/shared/lib";
 import { Title } from "@/shared/ui";
-import { signUpForWorkoutSectionId } from "@/shared/constants";
+import { SignUpForWorkoutBtn } from "@/features";
 import { HeroTab } from "./hero-tab";
 
 export function Hero() {
@@ -89,18 +88,15 @@ export function Hero() {
             />
           </div>
         )}
-        <Link
-          href={`#${signUpForWorkoutSectionId}`}
+        <SignUpForWorkoutBtn
           className={cn(
-            "rounded-3xl px-19 py-2.5 text-[16px] font-medium md:rounded-[40px] md:px-28 md:py-4 md:text-xl",
+            "rounded-3xl px-19 py-2.5 text-[16px] text-white md:w-86 md:rounded-[40px] md:px-28 md:py-4 md:text-xl",
             {
               "bg-accent-blue": ageGroup === "childs",
               "bg-accent-orange": ageGroup === "adults",
             },
           )}
-        >
-          Записаться
-        </Link>
+        />
       </div>
     </section>
   );
