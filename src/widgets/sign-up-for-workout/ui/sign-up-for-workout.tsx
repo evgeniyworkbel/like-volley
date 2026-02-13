@@ -1,5 +1,4 @@
 import { getPayloadClient } from "@/shared/cms";
-import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { Title } from "@/shared/ui";
 import { Contact } from "./contact";
 // import { ContactForm } from "./contact-form";
@@ -12,10 +11,7 @@ export async function SignUpForWorkout() {
   const { mobilePhone } = companyInfo;
 
   return (
-    <section
-      id={signUpForWorkoutSectionId}
-      className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 xl:flex-row xl:justify-between xl:px-20 xl:py-22.5"
-    >
+    <section className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 xl:flex-row xl:justify-between xl:px-20 xl:py-22.5">
       <div className="flex flex-col gap-10 md:items-center md:gap-27 xl:max-w-123.5 xl:items-start xl:justify-center xl:gap-12">
         <div className="flex max-w-182 flex-col gap-4 text-center xl:text-left">
           <Title>
