@@ -9,6 +9,7 @@ services:
       - NODE_ENV=production
       - POSTGRES_URL=${POSTGRES_URL}
       - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - IS_CUSTOM_VPS=${IS_CUSTOM_VPS}
       - NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID}
     depends_on:
       db:
