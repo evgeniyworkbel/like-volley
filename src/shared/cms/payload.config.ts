@@ -7,7 +7,7 @@ import { en } from "@payloadcms/translations/languages/en";
 import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
 
-// import { migrations } from "./migrations";
+import { migrations } from "./migrations";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
@@ -43,7 +43,7 @@ export default buildConfig({
       connectionString: process.env.POSTGRES_URL || "",
     },
     migrationDir: path.resolve(dirname, "migrations"),
-    // prodMigrations: process.env.IS_CUSTOM_VPS === "true" ? migrations : undefined,
+    prodMigrations: process.env.IS_CUSTOM_VPS === "true" ? migrations : undefined,
   }),
   i18n: {
     supportedLanguages: { en, ru },
