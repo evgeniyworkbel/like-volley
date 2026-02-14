@@ -15,7 +15,7 @@ services:
       db:
         condition: service_healthy
     networks:
-      - my_network2
+      - my_network
 
   db:
     image: postgres:18.1-alpine3.23
@@ -34,12 +34,12 @@ services:
       timeout: 20s
       retries: 10
     networks:
-      - my_network2
+      - my_network
 
 volumes:
   pgdata:
 
 networks:
-  my_network2:
-    name: my_network2
+  my_network:
+    name: my_network
     driver: bridge
