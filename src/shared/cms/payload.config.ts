@@ -18,8 +18,6 @@ import { CompanyInfo } from "./globals/CompanyInfo";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-console.log("----envs---", process.env);
-
 export default buildConfig({
   admin: {
     meta: { icons: { icon: "/cms-icon.png" } },
