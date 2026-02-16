@@ -10,10 +10,13 @@ export const Coaches: CollectionConfig = {
   },
   fields: [
     // todo
-    // {
-    //   name: "photo",
-    //   type: "upload",
-    // },
+    {
+      name: "photo",
+      type: "upload",
+      relationTo: "media",
+      label: { en: "Photo", ru: "Фото" },
+      required: true,
+    },
     {
       name: "lastName",
       type: "text",

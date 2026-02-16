@@ -1,10 +1,16 @@
 import { Carousel } from "@/shared/ui";
 import { coachesSectionId } from "@/shared/constants";
-import { coachesData } from "../model/data";
 import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
+import { getPayloadClient } from "@/shared/cms";
+import { CoachModel } from "../model/types";
 
-export function Coaches() {
+export async function Coaches() {
+  const payload = await getPayloadClient();
+  const { docs: coaches } = (await payload.find({
+    collection: "coaches",
+  })) as { docs: CoachModel[] };
+
   return (
     <section
       id={coachesSectionId}
@@ -12,7 +18,7 @@ export function Coaches() {
     >
       <OwnerCard />
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
-        {coachesData.map((coach) => (
+        {coaches.map((coach) => (
           <CoachCard
             key={coach.id}
             lastName={coach.lastName}
@@ -20,8 +26,7 @@ export function Coaches() {
             patronymicName={coach.patronymicName}
             description={coach.description}
             city={coach.city}
-            src={coach.src}
-            alt={coach.alt}
+            photo={coach.photo}
           />
         ))}
       </Carousel>
