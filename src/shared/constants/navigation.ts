@@ -24,7 +24,7 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   },
   // Links for pages
   policy: {
-    title: "Политика приватности",
+    title: "Политика обработки персональных данных",
     href: "/policy",
   },
   offerAgreement: {
