@@ -14,7 +14,7 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Школа LikeVolley",
+  title: "Школа волейбола LikeVolley",
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
     { name: "Ivan", url: "https://t.me/Ivann8234" },

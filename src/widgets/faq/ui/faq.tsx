@@ -31,7 +31,7 @@ export async function Faq() {
         <Title>
           Вопросы<span className="text-accent-orange"> и ответы</span>
         </Title>
-        <p className="text-center text-foreground-secondary md:max-w-258 md:leading-4.5">
+        <p className="text-center text-foreground-secondary md:max-w-258 md:leading-6.5">
           Выберите формат обучения, который лучше всего соответствует вашим предпочтениям,
           расписанию и бюджету. Все форматы включают одну и ту же высококачественную учебную
           программу и подход к обучению.
