@@ -11,7 +11,7 @@ export default async function Policy() {
     <article className="container mx-auto max-w-4xl">
       <h1 className="pt-5 text-center text-2xl font-extrabold">{title}</h1>
       <section className="flex flex-col items-center p-5 text-sm leading-6">
-        {description && <RichText data={description} className="flex w-full flex-col indent-6" />}
+        {description && <RichText data={description} className="flex flex-col indent-6" />}
       </section>
     </article>
   );
