@@ -1,18 +1,24 @@
 import { getPayloadClient } from "@/shared/cms";
-import { RichText } from "@payloadcms/richtext-lexical/react";
+import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 
 export default async function Policy() {
   const payload = await getPayloadClient();
-  const { title, description } = await payload.findGlobal({
+  const policyData = await payload.findGlobal({
     slug: "policy",
   });
 
+  const title = policyData?.title || "Политика конфиденциальности";
+  const description = policyData?.description;
+
+  const htmlContent = description ? convertLexicalToHTML({ data: description }) : "";
+
   return (
-    <article className="container mx-auto max-w-4xl">
-      <h1 className="pt-5 text-center text-2xl font-extrabold">{title}</h1>
-      <section className="flex flex-col items-center p-5 text-sm leading-6">
-        {description && <RichText data={description} className="flex flex-col indent-6" />}
-      </section>
+    <article className="container mx-auto max-w-4xl py-10">
+      <h1 className="mb-8 pt-5 text-center text-2xl font-extrabold">{title}</h1>
+      <section
+        className="policy-content text-gray-700 p-5 text-sm leading-6"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
     </article>
   );
 }
