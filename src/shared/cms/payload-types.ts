@@ -96,10 +96,12 @@ export interface Config {
   globals: {
     "company-info": CompanyInfo;
     owner: Owner;
+    policy: Policy;
   };
   globalsSelect: {
     "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
     owner: OwnerSelect<false> | OwnerSelect<true>;
+    policy: PolicySelect<false> | PolicySelect<true>;
   };
   locale: null;
   user: User & {
@@ -447,6 +449,31 @@ export interface Owner {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "policy".
+ */
+export interface Policy {
+  id: number;
+  title: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "company-info_select".
  */
 export interface CompanyInfoSelect<T extends boolean = true> {
@@ -468,6 +495,17 @@ export interface OwnerSelect<T extends boolean = true> {
   firstName?: T;
   patronymicName?: T;
   jobTitle?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "policy_select".
+ */
+export interface PolicySelect<T extends boolean = true> {
+  title?: T;
   description?: T;
   updatedAt?: T;
   createdAt?: T;

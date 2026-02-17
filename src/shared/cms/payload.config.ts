@@ -13,6 +13,7 @@ import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
 import { Faq } from "./collections/Faq";
 import { Owner } from "./globals/Owner";
+import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
 
 const filename = fileURLToPath(import.meta.url);
@@ -30,7 +31,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Coaches, Faq],
-  globals: [CompanyInfo, Owner],
+  globals: [CompanyInfo, Owner, PolicyPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
