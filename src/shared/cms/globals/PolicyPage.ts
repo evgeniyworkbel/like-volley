@@ -7,12 +7,12 @@ export const PolicyPage: GlobalConfig = {
     {
       name: "title",
       type: "text",
-      label: { en: "title", ru: "Заголовок" },
+      label: { en: "Title", ru: "Заголовок" },
       required: true,
     },
     {
       name: "description",
-      type: "textarea",
+      type: "richText",
       label: { en: "Description", ru: "Описание" },
       required: true,
     },
