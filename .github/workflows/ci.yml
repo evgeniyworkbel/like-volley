@@ -26,4 +26,8 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           password: ${{ secrets.VPS_PASSWORD }}
-          script: mkdir test1
+          script: | 
+            cd /root/like-volley
+            git pull
+            docker compose up --build -d
+            docker image prune -a -f
