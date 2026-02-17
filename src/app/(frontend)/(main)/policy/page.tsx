@@ -1,5 +1,5 @@
+import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { getPayloadClient } from "@/shared/cms";
-import { RichText } from "@payloadcms/richtext-lexical/react";
 
 export default async function Policy() {
   const payload = await getPayloadClient();
@@ -10,9 +10,10 @@ export default async function Policy() {
   return (
     <article className="container mx-auto max-w-4xl">
       <h1 className="pt-5 text-center text-2xl font-extrabold">{title}</h1>
-      <section className="flex flex-col items-center p-5 text-sm leading-6">
-        {description && <RichText data={description} className="flex flex-col indent-6" />}
-      </section>
+      <section
+        className="flex flex-col items-center p-5 indent-6 text-sm leading-6"
+        dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: description }) }}
+      ></section>
     </article>
   );
 }
