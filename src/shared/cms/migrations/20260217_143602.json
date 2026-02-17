@@ -1401,7 +1401,7 @@
         },
         "description": {
           "name": "description",
-          "type": "varchar",
+          "type": "jsonb",
           "primaryKey": false,
           "notNull": true
         },
@@ -1447,6 +1447,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "3c1bea74-2dc2-457a-b861-77c5dd62ebde",
+  "id": "80674bc0-ee9e-4c76-af52-aceaef282871",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

@@ -2,10 +2,17 @@ import { MigrateUpArgs, MigrateDownArgs, sql } from "@payloadcms/db-postgres";
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
-   ALTER TABLE "policy" ALTER COLUMN "description" SET DATA TYPE jsonb;`);
+   CREATE TABLE "policy" (
+  	"id" serial PRIMARY KEY NOT NULL,
+  	"title" varchar NOT NULL,
+  	"description" jsonb NOT NULL,
+  	"updated_at" timestamp(3) with time zone,
+  	"created_at" timestamp(3) with time zone
+  );
+  `);
 }
 
 export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
   await db.execute(sql`
-   ALTER TABLE "policy" ALTER COLUMN "description" SET DATA TYPE varchar;`);
+   DROP TABLE "policy" CASCADE;`);
 }
