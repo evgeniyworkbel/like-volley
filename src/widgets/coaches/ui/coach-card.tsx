@@ -13,7 +13,7 @@ export function CoachCard({
 }: CoachCardProps) {
   const name = `${firstName} ${patronymicName}`;
 
-  if (!photo?.url) return null;
+  if (!photo.url) return null;
 
   return (
     <div className="flex flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)] text-center">

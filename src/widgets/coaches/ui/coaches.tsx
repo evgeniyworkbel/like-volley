@@ -13,11 +13,7 @@ export async function Coaches() {
 
   const { docs: coaches } = coachesData;
 
-  if (!coaches.length) {
-    return null;
-  }
-
-  console.log(coaches);
+  if (!coaches.length) return null;
 
   return (
     <section
