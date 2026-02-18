@@ -4,7 +4,8 @@ export type CoachModel = {
   firstName: string;
   patronymicName: string;
   description: string;
-  city: string;
+  city?: string;
+  cityLabel?: string;
   photo: {
     url: string;
     alt: string;

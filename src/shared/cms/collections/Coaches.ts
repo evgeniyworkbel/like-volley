@@ -1,5 +1,10 @@
 import { CollectionConfig } from "payload";
 
+const CITY_OPTIONS = [
+  { label: "Брест", value: "brest" },
+  { label: "Минск", value: "minsk" },
+];
+
 export const Coaches: CollectionConfig = {
   slug: "coaches",
   labels: {
@@ -9,7 +14,6 @@ export const Coaches: CollectionConfig = {
     description: "Секция тренеров",
   },
   fields: [
-    // todo
     {
       name: "photo",
       type: "upload",
@@ -50,14 +54,22 @@ export const Coaches: CollectionConfig = {
     {
       name: "city",
       type: "select",
-      options: [
-        { label: "Брест", value: "brest" },
-        { label: "Минск", value: "minsk" },
-      ],
+      options: CITY_OPTIONS,
       label: { en: "City", ru: "Город" },
       required: true,
     },
   ],
+  hooks: {
+    afterRead: [
+      async ({ doc }) => {
+        if (!doc?.city) return doc;
+        const option = CITY_OPTIONS.find((opt) => opt.value === doc.city);
+        doc.cityLabel = option?.label;
+
+        return doc;
+      },
+    ],
+  },
   orderable: true,
   disableBulkEdit: true,
 };
