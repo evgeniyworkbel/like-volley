@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload";
+import { COMPANY_CITIES_OPTIONS } from "../util/options";
 
 export const Coaches: CollectionConfig = {
   slug: "coaches",
@@ -48,10 +49,7 @@ export const Coaches: CollectionConfig = {
       name: "city",
       type: "select",
       label: { en: "City", ru: "Город" },
-      options: [
-        { label: "Брест", value: "brest" },
-        { label: "Минск", value: "minsk" },
-      ],
+      options: COMPANY_CITIES_OPTIONS,
       unique: true,
       required: true,
     },
