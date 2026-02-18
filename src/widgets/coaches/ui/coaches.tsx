@@ -19,20 +19,18 @@ export async function Coaches() {
     >
       <OwnerCard />
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
-        {coaches.map((coach) => {
-          console.log(coach);
-          return (
+        {coaches &&
+          coaches.map(({ id, firstName, lastName, patronymicName, city, description, photo }) => (
             <CoachCard
-              key={coach.id}
-              lastName={coach.lastName}
-              firstName={coach.firstName}
-              patronymicName={coach.patronymicName}
-              description={coach.description}
-              city={CITY_LABELS[coach.city]}
-              photo={coach.photo}
+              key={id}
+              lastName={lastName}
+              firstName={firstName}
+              patronymicName={patronymicName}
+              description={description}
+              city={CITY_LABELS[city]}
+              photo={photo}
             />
-          );
-        })}
+          ))}
       </Carousel>
     </section>
   );
