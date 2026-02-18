@@ -395,6 +395,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "photo_id": {
+          "name": "photo_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
         "last_name": {
           "name": "last_name",
           "type": "varchar",
@@ -463,6 +469,21 @@
           "method": "btree",
           "with": {}
         },
+        "coaches_photo_idx": {
+          "name": "coaches_photo_idx",
+          "columns": [
+            {
+              "expression": "photo_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
         "coaches_updated_at_idx": {
           "name": "coaches_updated_at_idx",
           "columns": [
@@ -494,7 +515,21 @@
           "with": {}
         }
       },
-      "foreignKeys": {},
+      "foreignKeys": {
+        "coaches_photo_id_media_id_fk": {
+          "name": "coaches_photo_id_media_id_fk",
+          "tableFrom": "coaches",
+          "tableTo": "media",
+          "columnsFrom": [
+            "photo_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},
@@ -1382,6 +1417,49 @@
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
+    },
+    "public.policy": {
+      "name": "policy",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "name": "description",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp(3) with time zone",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     }
   },
   "enums": {
@@ -1404,6 +1482,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "395a2c2f-dd65-4f70-bf65-9b4b1edfb971",
+  "id": "8ae6376f-b223-4d63-a96e-53b306433072",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }

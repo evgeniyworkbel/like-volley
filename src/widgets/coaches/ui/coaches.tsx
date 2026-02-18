@@ -4,6 +4,7 @@ import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
 import { getPayloadClient } from "@/shared/cms";
 import { CoachModel } from "../model/types";
+import { CITY_LABELS } from "../model/data";
 
 export async function Coaches() {
   const payload = await getPayloadClient();
@@ -18,17 +19,20 @@ export async function Coaches() {
     >
       <OwnerCard />
       <Carousel innerWrapperClassName="max-w-252" slidesPerView={3}>
-        {coaches.map((coach) => (
-          <CoachCard
-            key={coach.id}
-            lastName={coach.lastName}
-            firstName={coach.firstName}
-            patronymicName={coach.patronymicName}
-            description={coach.description}
-            city={coach.city}
-            photo={coach.photo}
-          />
-        ))}
+        {coaches.map((coach) => {
+          console.log(coach);
+          return (
+            <CoachCard
+              key={coach.id}
+              lastName={coach.lastName}
+              firstName={coach.firstName}
+              patronymicName={coach.patronymicName}
+              description={coach.description}
+              city={CITY_LABELS[coach.city]}
+              photo={coach.photo}
+            />
+          );
+        })}
       </Carousel>
     </section>
   );
