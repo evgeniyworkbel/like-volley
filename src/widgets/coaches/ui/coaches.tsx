@@ -17,6 +17,8 @@ export async function Coaches() {
     return null;
   }
 
+  console.log(coaches);
+
   return (
     <section
       id={coachesSectionId}
