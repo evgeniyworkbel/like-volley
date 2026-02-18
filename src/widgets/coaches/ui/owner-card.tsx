@@ -3,10 +3,10 @@ import { getPayloadClient } from "@/shared/cms";
 
 export async function OwnerCard() {
   const payload = await getPayloadClient();
-  const { lastName, firstName, jobTitle, description } = await payload.findGlobal({
+  const owner = await payload.findGlobal({
     slug: "owner",
   });
-  const title = `${firstName} ${lastName}`;
+  const title = `${owner.firstName} ${owner.lastName}`;
 
   return (
     <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:gap-14">
@@ -23,12 +23,12 @@ export async function OwnerCard() {
             {title}
           </h3>
           <p className="text-center text-foreground-secondary">
-            {jobTitle}&nbsp;
+            {owner.jobTitle}&nbsp;
             <span className="text-accent-orange">LikeVolley</span>
           </p>
         </hgroup>
         <p className="flex max-w-76 items-center text-center text-sm xl:max-w-151 xl:text-left xl:text-lg">
-          {description}
+          {owner.description}
         </p>
       </div>
     </div>

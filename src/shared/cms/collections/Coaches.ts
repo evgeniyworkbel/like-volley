@@ -47,11 +47,12 @@ export const Coaches: CollectionConfig = {
     {
       name: "city",
       type: "select",
+      label: { en: "City", ru: "Город" },
       options: [
         { label: "Брест", value: "brest" },
         { label: "Минск", value: "minsk" },
       ],
-      label: { en: "City", ru: "Город" },
+      unique: true,
       required: true,
     },
   ],
