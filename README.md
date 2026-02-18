@@ -27,7 +27,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
 - работать не через форк, а склонировать репозиторий, отводить фиче-ветку от main ветки и открывать пулл-реквест с этой ветки
 
 ### До деплоя
-- если был изменен конфиг cms или связанные с ним файлы, то следует периодически перезапускать скрипт `generate:importmap`. Также в конце работы над фичей следует запустить скрипт `migrate:create` (чтобы создать миграции)
+- если был изменен конфиг cms или связанные с ним файлы, то следует периодически перезапускать скрипт `generate:importmap`. Также в конце работы над фичей следует запустить скрипт `migrate:create` (чтобы создать миграции) и закоммитить
 
 ### Деплой:
 - конфигурация вдохновлена https://github.com/vercel/next.js/tree/canary/examples/with-docker, https://github.com/leerob/next-self-host и https://www.youtube.com/watch?v=_uZQtRyF6Eg&t=3234s

@@ -17,7 +17,7 @@ export async function Header() {
         "sticky top-0 z-20 bg-background/60 text-accent-orange shadow-[1px_2px_6px_0_oklch(0_0_0/0.12)] backdrop-blur-sm has-data-[menu-open='true']:bg-background has-data-[menu-open='true']:backdrop-blur-none",
       )}
     >
-      <Container className="flex items-center justify-between py-2 pr-12 pl-6 xl:px-20">
+      <Container className="flex items-center justify-between py-0.5 pr-12 pl-6 xl:px-20">
         <Link href={navLinks.home.href}>
           <Image
             src="/logo.svg"
