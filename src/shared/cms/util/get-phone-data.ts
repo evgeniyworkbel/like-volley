@@ -1,9 +1,8 @@
 import { Media } from "../payload-types";
 
 export const getPhotoData = (photo: number | Media, firstName: string, lastName: string) => {
-  const isMedia = (photo: number | Media): photo is Media => {
-    return typeof photo === "object" && "url" in photo;
-  };
+  const isMedia = (photo: number | Media): photo is Media =>
+    typeof photo === "object" && "url" in photo;
 
   return isMedia(photo)
     ? {
