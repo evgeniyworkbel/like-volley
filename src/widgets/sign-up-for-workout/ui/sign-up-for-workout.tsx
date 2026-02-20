@@ -1,5 +1,6 @@
 import { getPayloadClient } from "@/shared/cms";
 import { Title } from "@/shared/ui";
+import { signUpForWorkoutSectionId } from "@/shared/constants";
 import { Contact } from "./contact";
 // import { ContactForm } from "./contact-form";
 import { getContactsData } from "../model/data";
@@ -11,7 +12,10 @@ export async function SignUpForWorkout() {
   const { mobilePhone } = companyInfo;
 
   return (
-    <section className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 xl:flex-row xl:justify-between xl:px-20 xl:py-22.5">
+    <section
+      id={signUpForWorkoutSectionId}
+      className="flex flex-col gap-12 rounded-[20px] bg-accent-orange-muted px-5 py-10 xl:flex-row xl:justify-between xl:px-20 xl:py-22.5"
+    >
       <div className="flex flex-col gap-10 md:items-center md:gap-27 xl:max-w-123.5 xl:items-start xl:justify-center xl:gap-12">
         <div className="flex max-w-182 flex-col gap-4 text-center xl:text-left">
           <Title>
