@@ -47,7 +47,7 @@ export function Accordion({ items, defaultOpened }: AccordionProps) {
                 "grid-rows-[1fr]": isOpen,
               })}
             >
-              <div className="overflow-hidden text-sm xl:text-base">
+              <div className="overflow-hidden text-sm xl:text-base [&_a]:text-accent-orange [&_a]:underline [&_a]:underline-offset-3">
                 <div className="mb-6">{answer}</div>
               </div>
             </div>
