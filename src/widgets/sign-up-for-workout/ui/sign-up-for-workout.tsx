@@ -23,15 +23,8 @@ export async function SignUpForWorkout() {
           </p>
         </div>
         <div className="flex flex-col gap-6 md:max-w-154 md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-7 xl:flex-col xl:items-start">
-          {getContactsData(mobilePhone).map(({ title, imageSrc, alt, href, label }) => (
-            <Contact
-              key={title}
-              title={title}
-              imageSrc={imageSrc}
-              href={href}
-              alt={alt}
-              label={label}
-            />
+          {getContactsData(mobilePhone).map(({ title, imageSrc, alt, label }) => (
+            <Contact key={title} title={title} imageSrc={imageSrc} alt={alt} label={label} />
           ))}
         </div>
       </div>
