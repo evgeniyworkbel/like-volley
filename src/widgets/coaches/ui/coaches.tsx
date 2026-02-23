@@ -9,14 +9,12 @@ export async function Coaches() {
   const coaches = await payload.find({ collection: "coaches", pagination: false });
 
   const coachesData = coaches.docs.map(({ photo, city, ...rest }) => {
-    const photoData = getMediaAttrs(photo);
-
     const cityOption = COMPANY_CITIES_OPTIONS.find((option) => option.value === city);
     const cityLabel = cityOption ? String(cityOption.label) : "";
 
     return {
       ...rest,
-      photoData,
+      photo: getMediaAttrs(photo),
       cityLabel,
     };
   });
@@ -36,8 +34,8 @@ export async function Coaches() {
             patronymicName={item.patronymicName}
             description={item.description}
             city={item.cityLabel}
-            src={item.photoData.url}
-            alt={item.photoData.alt}
+            src={item.photo.url}
+            alt={item.photo.alt}
           />
         ))}
       </Carousel>

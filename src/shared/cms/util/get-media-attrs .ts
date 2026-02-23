@@ -6,7 +6,7 @@ export const getMediaAttrs = (
   url: string;
   alt: string;
 } => {
-  if (typeof media === "number" || !media) {
+  if (typeof media === "number") {
     return { url: "", alt: "" };
   }
   return {
