@@ -8,13 +8,12 @@ export async function Coaches() {
   const payload = await getPayloadClient();
   const coaches = await payload.find({ collection: "coaches", pagination: false });
 
-  const coachesData = coaches.docs.map(({ ...item }) => {
-    const cityOption = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
-
+  const coachesData = coaches.docs.map((item) => {
+    const foundCity = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
     return {
       ...item,
       ...getMediaAttrs(item.photo),
-      city: cityOption ? String(cityOption.label) : item.city,
+      city: foundCity ? (foundCity.label as string) : "",
     };
   });
 
