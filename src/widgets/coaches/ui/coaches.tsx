@@ -8,14 +8,13 @@ export async function Coaches() {
   const payload = await getPayloadClient();
   const coaches = await payload.find({ collection: "coaches", pagination: false });
 
-  const coachesData = coaches.docs.map(({ photo, city, ...rest }) => {
-    const cityOption = COMPANY_CITIES_OPTIONS.find((option) => option.value === city);
-    const cityLabel = cityOption ? String(cityOption.label) : "";
+  const coachesData = coaches.docs.map(({ ...item }) => {
+    const cityOption = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
 
     return {
-      ...rest,
-      photo: getMediaAttrs(photo),
-      cityLabel,
+      ...item,
+      ...getMediaAttrs(item.photo),
+      city: cityOption ? String(cityOption.label) : item.city,
     };
   });
 
@@ -33,9 +32,9 @@ export async function Coaches() {
             firstName={item.firstName}
             patronymicName={item.patronymicName}
             description={item.description}
-            city={item.cityLabel}
-            src={item.photo.url}
-            alt={item.photo.alt}
+            city={item.city}
+            src={item.url}
+            alt={item.alt}
           />
         ))}
       </Carousel>

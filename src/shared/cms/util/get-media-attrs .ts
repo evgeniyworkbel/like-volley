@@ -11,6 +11,6 @@ export const getMediaAttrs = (
   }
   return {
     url: media.url || "",
-    alt: media.alt || "",
+    alt: media.alt,
   };
 };
