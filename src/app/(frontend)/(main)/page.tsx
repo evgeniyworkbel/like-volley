@@ -23,7 +23,8 @@ export default function Home() {
   console.groupEnd();
 
   //todo: удалить
-  fs.writeFileSync(`/tmp/${new Date()}/debugenv.json`, JSON.stringify(process.env, null, 2));
+  // eslint-disable-next-line
+  fs.writeFileSync(`/tmp/${Date.now().toString()}.json`, JSON.stringify(process.env, null, 2));
   return (
     <div>
       <Hero />
