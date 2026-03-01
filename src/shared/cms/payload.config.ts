@@ -15,9 +15,13 @@ import { Faq } from "./collections/Faq";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
+import fs from "fs";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+//todo: удалить
+fs.writeFileSync("debugenv.json", JSON.stringify(process.env, null, 2));
 
 export default buildConfig({
   admin: {
