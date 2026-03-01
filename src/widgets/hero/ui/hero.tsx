@@ -16,7 +16,6 @@ export function Hero({ yid }: { yid?: string }) {
   );
   console.log("yid", yid);
   console.groupEnd();
-
   const [ageGroup, setAgeGroup] = useState<"childs" | "adults">("adults");
 
   return (
