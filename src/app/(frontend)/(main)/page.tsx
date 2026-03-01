@@ -23,8 +23,11 @@ export default function Home() {
   console.groupEnd();
 
   //todo: удалить
-  // eslint-disable-next-line
-  fs.writeFileSync(`/tmp/${Date.now().toString()}.json`, JSON.stringify(process.env, null, 2));
+  fs.writeFileSync(
+    // eslint-disable-next-line
+    `/tmp/${Date.now().toString()}.json`,
+    JSON.stringify(process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID, null, 2),
+  );
   return (
     <div>
       <Hero />
