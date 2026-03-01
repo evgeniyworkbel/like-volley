@@ -8,29 +8,15 @@ import {
   Coaches,
   Locations,
 } from "@/widgets";
-import fs from "fs";
+
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
 // изменения сразу отображались без запуска нового билда)
 export const dynamic = "force-dynamic";
 
 export default function Home() {
-  console.group("envs at server");
-  console.log("process.env.IS_CUSTOM_VPS=", process.env.IS_CUSTOM_VPS);
-  console.log(
-    "process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=",
-    process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
-  );
-  console.groupEnd();
-
-  //todo: удалить
-  fs.writeFileSync(
-    // eslint-disable-next-line
-    `/tmp/${Date.now().toString()}.json`,
-    JSON.stringify(process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID, null, 2),
-  );
   return (
     <div>
-      <Hero />
+      <Hero yid={process.env.NEXT_NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID} />
       <Advantages />
       <Locations />
       <SignUpForWorkout />
