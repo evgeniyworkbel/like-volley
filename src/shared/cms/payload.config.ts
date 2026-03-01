@@ -21,7 +21,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 //todo: удалить
-fs.writeFileSync("debugenv.json", JSON.stringify(process.env, null, 2));
+fs.writeFileSync("/tmp/debugenv.json", JSON.stringify(process.env, null, 2));
 
 export default buildConfig({
   admin: {
