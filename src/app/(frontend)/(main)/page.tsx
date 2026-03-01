@@ -14,6 +14,13 @@ import {
 export const dynamic = "force-dynamic";
 
 export default function Home() {
+  console.group("envs at server");
+  console.log("process.env.IS_CUSTOM_VPS=", process.env.IS_CUSTOM_VPS);
+  console.log(
+    "process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=",
+    process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
+  );
+  console.groupEnd();
   return (
     <div>
       <Hero />
