@@ -15,8 +15,8 @@ export function Hero({ yid }: { yid?: string }) {
     process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
   );
   console.log("yid", yid);
-
   console.groupEnd();
+
   const [ageGroup, setAgeGroup] = useState<"childs" | "adults">("adults");
 
   return (
