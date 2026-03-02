@@ -20,7 +20,7 @@ COPY . .
 # https://github.com/vercel/next.js/blob/canary/examples/with-docker-compose/next-app/prod.Dockerfile
 ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID
 ENV ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID}
-RUN corepack enable pnpm && pnpm run build:compile && pnpm run build:generateEnv;
+RUN corepack enable pnpm && pnpm run build:compile;
 
 # Stage 3: Production server
 FROM base AS runner
