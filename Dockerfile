@@ -15,6 +15,11 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# Environment variables must be present at build time
+# https://github.com/vercel/next.js/discussions/14030
+# https://github.com/vercel/next.js/blob/canary/examples/with-docker-compose/next-app/prod.Dockerfile
+ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID
+ENV ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID}
 RUN corepack enable pnpm && pnpm run build:compile && pnpm run build:generateEnv;
 
 # Stage 3: Production server
@@ -34,5 +39,9 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/config/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
+# Environment variables must be redefined at run time
+# https://github.com/vercel/next.js/blob/canary/examples/with-docker-compose/next-app/prod.Dockerfile
+ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID
+ENV ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID}
 
 CMD ["node", "server.js"]
