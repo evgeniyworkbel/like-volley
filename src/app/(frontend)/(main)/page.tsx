@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <div>
-      <Hero yid={process.env.NEXT_NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID} />
+      <Hero />
       <Advantages />
       <Locations />
       <SignUpForWorkout />

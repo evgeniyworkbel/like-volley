@@ -7,15 +7,7 @@ import { Title } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { HeroTab } from "./hero-tab";
 
-export function Hero({ yid }: { yid?: string }) {
-  console.group("envs at client");
-  console.log("process.env.IS_CUSTOM_VPS=", process.env.IS_CUSTOM_VPS);
-  console.log(
-    "process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=",
-    process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
-  );
-  console.log("yid", yid);
-  console.groupEnd();
+export function Hero() {
   const [ageGroup, setAgeGroup] = useState<"childs" | "adults">("adults");
 
   return (
