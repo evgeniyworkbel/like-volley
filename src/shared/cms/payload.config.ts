@@ -47,6 +47,12 @@ export default buildConfig({
   i18n: {
     supportedLanguages: { en, ru },
   },
+  upload: {
+    abortOnLimit: true,
+    limits: {
+      fileSize: 5000000, // 5MB, written in bytes
+    },
+  },
   sharp,
   plugins: [],
   telemetry: false,

@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 
 export const Media: CollectionConfig = {
   slug: "media",
+  upload: { bulkUpload: false },
   labels: {
     plural: { en: "Media", ru: "Медиа" },
   },
@@ -20,5 +21,4 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
 };
