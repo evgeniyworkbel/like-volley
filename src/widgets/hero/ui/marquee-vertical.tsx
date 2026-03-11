@@ -38,7 +38,7 @@ export function MarqueeVertical({ className, direction, children }: MarqueeVerti
   }, []);
 
   return (
-    <div className={cn("overflow-hidden", className)} ref={trackRef}>
+    <div className={cn("flex flex-col gap-4 overflow-hidden", className)} ref={trackRef}>
       <div
         ref={innerRef}
         className={cn(
