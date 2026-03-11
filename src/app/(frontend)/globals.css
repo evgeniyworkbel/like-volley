@@ -15,26 +15,26 @@
 
 @theme {
   --color-*: initial;
-  --animate-to-down: down 10s linear infinite;
-  --animate-to-top: top 10s linear infinite;
+  --animate-to-down: scroll-down 10s linear infinite;
+  --animate-to-top: scroll-top 10s linear infinite;
 
-  @keyframes down {
+  @keyframes scroll-top {
     0% {
-      transform: translateY(-350%);
+      transform: translateY(0);
     }
 
     100% {
-      transform: translateY(100%);
+      transform: translateY(-20%);
     }
   }
 
-  @keyframes top {
+  @keyframes scroll-down {
     0% {
-      transform: translateY(100%);
+      transform: translateY(-20%);
     }
 
     100% {
-      transform: translateY(-350%);
+      transform: translateY(0);
     }
   }
 }
