@@ -15,6 +15,28 @@
 
 @theme {
   --color-*: initial;
+  --animate-to-down: down 10s linear infinite;
+  --animate-to-top: top 10s linear infinite;
+
+  @keyframes down {
+    0% {
+      transform: translateY(-350%);
+    }
+
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes top {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(-350%);
+    }
+  }
 }
 
 @theme inline {
