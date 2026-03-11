@@ -26,7 +26,6 @@ export function Hero() {
       <div className="absolute top-0 right-0 flex origin-top-right rotate-[16.8deg] xl:h-175 xl:w-98">
         <MarqueeVertical direction="up">
           <Image
-            className="object-cover"
             src="/hero/adults_new.webp"
             width={193}
             height={294}
@@ -38,7 +37,6 @@ export function Hero() {
         <MarqueeVertical direction="down">
           <Image
             src="/hero/adults_new.webp"
-            className="object-cover"
             width={193}
             height={294}
             loading="eager"
