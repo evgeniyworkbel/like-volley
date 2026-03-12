@@ -5,8 +5,8 @@ import { cn } from "@/shared/lib";
 
 type MarqueeVerticalProps = {
   className?: string;
-  children: React.ReactElement;
   direction: "up" | "down";
+  children: React.ReactElement;
 };
 
 export function MarqueeVertical({ className, direction, children }: MarqueeVerticalProps) {
