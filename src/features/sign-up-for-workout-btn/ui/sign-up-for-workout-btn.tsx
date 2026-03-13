@@ -1,5 +1,6 @@
 "use client";
 
+import { SignUpForWorkoutArrow } from "@/shared/icons";
 import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
 import { ButtonProps } from "@/shared/ui/button";
@@ -14,12 +15,13 @@ export function SignUpForWorkoutBtn({ className }: SignUpForWorkoutBtnProps) {
   return (
     <Button
       className={cn(
-        "w-full rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground",
+        "flex w-full items-center justify-center gap-4 rounded-[40px] bg-white px-20 py-4 text-[20px] font-medium text-foreground",
         className,
       )}
       onClick={handleClick}
     >
       Записаться
+      <SignUpForWorkoutArrow className="z-50 rotate-90 text-background" />
     </Button>
   );
 }

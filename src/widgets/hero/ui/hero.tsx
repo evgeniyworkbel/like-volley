@@ -12,15 +12,15 @@ export function Hero() {
         <div className="flex flex-col gap-12 md:max-w-180">
           <Title className="font-inter leading-[84/60] md:text-center xl:text-left">
             Школа волейбола для&nbsp;<span className="text-accent-orange">детей</span>&nbsp;и
-            взрослыx
+            <span className="text-accent-blue">&nbsp;взрослыx</span>
           </Title>
           <p className="text-left text-[20px]">
-            Профессиональные тренировки в Минске и Бресте.
+            Профессиональные тренировки в Минске и Бресте
             <br />
-            Тренируем юных чемпионов и прокачиваем любителей любого уровня.
+            Тренируем юных чемпионов и прокачиваем любителей любого уровня
           </p>
         </div>
-        <SignUpForWorkoutBtn className="rounded-3xl bg-accent-orange px-19 py-2.5 text-[16px] text-white md:w-86 md:rounded-[40px] md:px-28 md:py-4 md:text-xl" />
+        <SignUpForWorkoutBtn className="rounded-3xl bg-accent-orange px-19 py-2.5 text-[16px] text-white md:w-86 md:rounded-[40px] md:p-4 md:text-xl" />
       </div>
 
       <div className="absolute top-0 right-0 flex origin-top-right rotate-[16.8deg] xl:h-185 xl:w-98">
