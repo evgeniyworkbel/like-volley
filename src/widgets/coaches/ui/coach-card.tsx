@@ -19,7 +19,7 @@ export function CoachCard({
       <div className="relative aspect-[1.1] h-70 w-full">
         <Image src={src} alt={alt} sizes="320px" fill />
       </div>
-      <div className="flex min-h-54 flex-col items-center justify-between gap-6 pt-5 pb-[22px] text-sm">
+      <div className="flex min-h-54 flex-col items-center justify-between gap-6 pt-5 pb-5.5 text-sm">
         <hgroup className="flex flex-col items-center gap-3">
           <h4 className="flex flex-col text-center text-xl font-bold text-accent-orange">
             <span>{lastName}</span>
