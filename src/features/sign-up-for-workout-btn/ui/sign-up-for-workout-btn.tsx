@@ -21,7 +21,7 @@ export function SignUpForWorkoutBtn({ className }: SignUpForWorkoutBtnProps) {
       onClick={handleClick}
     >
       Записаться
-      <SignUpForWorkoutArrow className="z-50 rotate-90 text-background" />
+      <SignUpForWorkoutArrow className="rotate-90" />
     </Button>
   );
 }
