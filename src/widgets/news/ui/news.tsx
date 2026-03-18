@@ -13,15 +13,15 @@ export function News() {
           «Лайк Воллей» выходит на международную арену: едем на «Кубок Дружбы» в Новосибирск!
         </p>
       </hgroup>
-
       <div className="relative flex h-121 w-full items-end justify-center overflow-hidden px-5 md:justify-start xl:h-213.25 xl:px-10">
-        <div className="z-10 flex max-w-73.75 flex-col gap-2 pt-6 pb-5 font-extrabold text-white md:gap-4 xl:max-w-129 xl:gap-6">
-          <Link href={navLinks.news.href} className="text-xl backdrop-blur-sm xl:text-3xl">
-            Подробнее...
-          </Link>
-        </div>
+        <Link
+          href={navLinks.news.href}
+          className="pb-5 text-xl font-extrabold text-white backdrop-blur-sm xl:text-3xl"
+        >
+          Подробнее...
+        </Link>
         <Image
-          className="rounded-[20px] object-cover xl:object-contain"
+          className="-z-10 rounded-[20px] object-cover xl:object-contain"
           src="/news/news_2.webp"
           quality={85}
           alt="Фото учеников школы"
