@@ -4,7 +4,7 @@ export default async function News() {
       <h1 className="pt-5 text-center text-2xl font-extrabold">
         «Лайк Воллей» выходит на международную арену: едем на «Кубок Дружбы» в Новосибирск!
       </h1>
-      <section className="flex flex-col items-center p-5 indent-6 text-sm leading-6 [&_a]:text-accent-orange [&>a]:cursor-pointer">
+      <section className="flex flex-col items-center p-5 indent-6 text-sm leading-6 [&_a]:text-accent-orange">
         <p>
           Исторический момент для нашей школы! С 20 по 27 апреля 2026 года команда «Лайк Воллей»
           примет участие в престижных Международных соревнованиях по волейболу «Кубок Дружбы U14»
