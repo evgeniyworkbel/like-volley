@@ -1,34 +1,36 @@
 import Image from "next/image";
-import { Title } from "@/shared/ui";
 import Link from "next/link";
-import { navLinks } from "@/shared/constants";
 
 export function News() {
   // @todo реализовать получение через cms
+  const newsId = "2";
   return (
-    <section className="flex flex-col items-center justify-center gap-3 px-5 py-12.5 xl:px-20">
-      <hgroup className="flex flex-col items-center gap-3 text-center">
-        <Title className="text-4xl text-accent-orange md:text-[44px]">Новости</Title>
-        <p className="text-base font-bold xl:text-2xl">
-          «Лайк Воллей» выходит на международную арену: едем на «Кубок Дружбы» в Новосибирск!
-        </p>
-      </hgroup>
-      <div className="relative flex h-121 w-full items-end justify-center overflow-hidden px-5 md:justify-start xl:h-213.25 xl:px-10">
-        <Link
-          href={navLinks.news.href}
-          className="pb-5 text-xl font-extrabold text-white backdrop-blur-sm xl:text-3xl"
-        >
-          Подробнее...
-        </Link>
+    <section className="flex flex-col items-center gap-4 px-5 py-12.5 xl:gap-6 xl:px-20">
+      <h1 className="font-shantell text-4xl font-bold text-accent-orange md:text-6xl">Новости</h1>
+      <div className="relative flex h-121 w-full items-end justify-center overflow-hidden rounded-[20px] xl:h-213.25">
         <Image
-          className="-z-10 rounded-[20px] object-cover xl:object-contain"
+          className="-z-10 object-cover xl:object-contain"
+          // @todo удалить из public
           src="/news/news_2.webp"
           quality={85}
           alt="Фото учеников школы"
-          loading="eager"
           fill
         />
       </div>
+      <div className="flex flex-col gap-2 self-start text-left">
+        <p className="text-base font-bold xl:text-2xl">
+          «Лайк Воллей» выходит на международную арену.
+        </p>
+        <p className="text-base text-foreground-secondary xl:text-2xl">
+          Едем на «Кубок Дружбы» в Новосибирск!
+        </p>
+      </div>
+      <Link
+        href={`/news/${newsId}` as string}
+        className="self-start text-xl font-medium text-accent-orange underline underline-offset-4 xl:text-3xl"
+      >
+        Читать
+      </Link>
     </section>
   );
 }

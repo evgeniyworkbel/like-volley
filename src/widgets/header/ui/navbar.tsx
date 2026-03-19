@@ -31,6 +31,7 @@ export function Navbar({ className, data, onLinkClick }: NavbarProps) {
       <Link href={navLinks.gallerySection.href} onClick={onLinkClick}>
         {navLinks.gallerySection.title}
       </Link>
+      <Link href={navLinks.news.href}>{navLinks.news.title}</Link>
       <a href={getPhoneHref(mobilePhone)} rel="noopener noreferrer" onClick={onLinkClick}>
         {formatPhone(mobilePhone)}
       </a>

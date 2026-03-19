@@ -1,6 +1,5 @@
 import {
   Hero,
-  News,
   Advantages,
   SignUpForWorkout,
   Faq,
@@ -18,7 +17,6 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <News />
       <Advantages />
       <Locations />
       <SignUpForWorkout />
