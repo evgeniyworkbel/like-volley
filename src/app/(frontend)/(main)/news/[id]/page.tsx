@@ -9,10 +9,10 @@ export default function Pages({ params }: PageProps) {
 
   return (
     <article className="container mx-auto max-w-4xl">
-      <h1 className="pt-5 text-center text-2xl font-extrabold">
+      <h1 className="pt-5 text-center text-2xl xl:text-[32px]">
         «Лайк Воллей» выходит на международную арену: едем на «Кубок Дружбы» в Новосибирск!
       </h1>
-      <section className="flex flex-col items-center p-5 indent-6 text-sm leading-6 [&_a]:text-accent-orange">
+      <section className="flex flex-col items-center p-5 indent-5 text-sm leading-6 **:pb-3 xl:text-[18px] [&_a]:text-accent-orange">
         <p>
           Исторический момент для нашей школы! С 20 по 27 апреля 2026 года команда «Лайк Воллей»
           примет участие в престижных Международных соревнованиях по волейболу «Кубок Дружбы U14»
@@ -28,7 +28,7 @@ export default function Pages({ params }: PageProps) {
         </p>
         <h2 className="font-extrabold">Лидеры команды</h2>
         <p>Мы отправляемся на турнир в сильном составе под надежным руководством:</p>
-        <ul className="list-disc px-3 pb-4 indent-1">
+        <ul className="list-disc px-3 indent-1">
           <li>
             <strong>Голодухин Владислав</strong> — основатель школы Like Volley, лично сопровождает
             команду, чтобы поддержать ребят в их дебютном международном выезде.
