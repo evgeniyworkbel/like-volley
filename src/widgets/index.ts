@@ -8,3 +8,4 @@ export { Header } from "./header";
 export { Coaches } from "./coaches";
 export { Gallery } from "./gallery";
 export { Locations } from "./locations";
+export { News } from "./news";
