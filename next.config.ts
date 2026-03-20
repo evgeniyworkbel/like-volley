@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   images: {
     qualities: [75, 100],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "storage.yandexcloud.net",
+        port: "",
+        pathname: "/global1/**",
+        search: "",
+      },
+    ],
   },
   async redirects() {
     return [
