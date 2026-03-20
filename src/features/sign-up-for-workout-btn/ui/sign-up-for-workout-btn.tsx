@@ -5,9 +5,11 @@ import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
 import { ButtonProps } from "@/shared/ui/button";
 
-type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className">;
+type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className"> & {
+  label?: "long";
+};
 
-export function SignUpForWorkoutBtn({ className }: SignUpForWorkoutBtnProps) {
+export function SignUpForWorkoutBtn({ className, label }: SignUpForWorkoutBtnProps) {
   const handleClick = () => {
     window.open("https://forms.amocrm.ru/rrwvrmv", "_blank");
   };
@@ -20,7 +22,7 @@ export function SignUpForWorkoutBtn({ className }: SignUpForWorkoutBtnProps) {
       )}
       onClick={handleClick}
     >
-      Записаться
+      {label === "long" ? "Записаться на занятие" : "Записаться"}
       <SignUpForWorkoutArrow className="rotate-90" />
     </Button>
   );
