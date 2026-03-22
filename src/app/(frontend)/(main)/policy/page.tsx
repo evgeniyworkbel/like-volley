@@ -9,9 +9,9 @@ export default async function Policy() {
   const { title, description } = policy;
 
   return (
-    <article className="container mx-auto max-w-4xl">
-      <h1 className="pt-5 text-center text-2xl font-extrabold">{title}</h1>
-      <section className="flex flex-col items-center p-5 text-sm leading-6">
+    <article className="mx-auto flex max-w-4xl flex-col items-center gap-5 py-5">
+      <h1 className="text-2xl font-extrabold">{title}</h1>
+      <section className="flex flex-col text-sm leading-6">
         {description && (
           <p
             dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: description }) }}
