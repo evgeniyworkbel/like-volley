@@ -26,8 +26,8 @@ export function Hero() {
         />
       </div>
 
-      {/* <div className="absolute top-0 right-0 flex origin-top-right rotate-[16.8deg] xl:h-185 xl:w-98">
-        <MarqueeVertical direction="up">
+      <div className="absolute top-0 right-0 flex origin-top-right rotate-[16.8deg] xl:h-185 xl:w-96">
+        <MarqueeVertical className="hidden" direction="up">
           <Image
             src="/hero/adults_new.webp"
             width={193}
@@ -46,7 +46,7 @@ export function Hero() {
             alt="Фото учеников школы волейбола Like Volley"
           />
         </MarqueeVertical>
-      </div> */}
+      </div>
     </section>
   );
 }
