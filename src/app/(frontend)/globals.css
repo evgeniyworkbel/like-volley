@@ -15,22 +15,22 @@
 
 @theme {
   --color-*: initial;
-  --animate-to-down: scroll-down 10s linear infinite;
-  --animate-to-top: scroll-top 10s linear infinite;
+  --animate-to-top: scroll-vertical-up 40s linear infinite;
+  --animate-to-down: scroll-vertical-down 40s linear infinite;
 
-  @keyframes scroll-top {
+  @keyframes scroll-vertical-up {
     0% {
-      transform: translateY(0);
+      transform: translateY(var(0));
     }
 
     100% {
-      transform: translateY(-20%);
+      transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
     }
   }
 
-  @keyframes scroll-down {
+  @keyframes scroll-vertical-down {
     0% {
-      transform: translateY(-20%);
+      transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
     }
 
     100% {

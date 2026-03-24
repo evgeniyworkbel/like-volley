@@ -14,36 +14,33 @@ export function Hero() {
             Школа волейбола для&nbsp;<span className="text-accent-orange">детей</span>&nbsp;
             <br className="md:hidden" />и<span className="text-accent-blue">&nbsp;взрослыx</span>
           </Title>
-          <p className="text-[18px] font-medium xl:text-left">
+          <p className="z-10 text-[18px] font-medium xl:text-left">
             Профессиональные тренировки в Минске и Бресте
             <br />
             Тренируем юных чемпионов и прокачиваем любителей любого уровня
           </p>
         </div>
         <SignUpForWorkoutBtn
-          className="rounded-3xl bg-accent-orange px-3 py-2.5 text-[20px] text-white md:w-86 md:rounded-[40px] md:p-4 md:text-xl"
+          className="z-10 rounded-3xl bg-accent-orange px-3 py-2.5 text-[20px] text-white md:w-86 md:rounded-[40px] md:p-4 md:text-xl"
           label="long"
         />
       </div>
 
-      <div className="absolute top-0 right-0 flex origin-top-right rotate-[16.8deg] xl:h-185 xl:w-96">
-        <MarqueeVertical className="hidden" direction="up">
+      <div className="absolute top-[34%] -right-[33%] flex origin-top-left rotate-30 xl:top-0 xl:right-0 xl:h-185 xl:w-96 xl:origin-top-right xl:rotate-[16.8deg]">
+        <MarqueeVertical className="hidden">
           <Image
             src="/hero/adults_new.webp"
-            width={193}
-            height={294}
-            loading="eager"
             alt="Фото учеников школы волейбола Like Volley"
+            sizes="(max-width: 1279px) 120px, 193px"
+            fill
           />
         </MarqueeVertical>
-
         <MarqueeVertical direction="down">
           <Image
             src="/hero/adults_new.webp"
-            width={193}
-            height={294}
-            loading="eager"
             alt="Фото учеников школы волейбола Like Volley"
+            sizes="(max-width: 1279px) 120px, 193px"
+            fill
           />
         </MarqueeVertical>
       </div>
