@@ -1,11 +1,6 @@
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-export default function Pages({ params }: PageProps) {
+export default async function NewsById({ params }: PageProps<"/news/[slug]">) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { id } = params;
+  const { slug } = await params;
 
   return (
     <article className="container mx-auto max-w-4xl">
