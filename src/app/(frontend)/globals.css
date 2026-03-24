@@ -15,8 +15,8 @@
 
 @theme {
   --color-*: initial;
-  --animate-to-top: scroll-vertical-up 40s linear infinite;
-  --animate-to-down: scroll-vertical-down 40s linear infinite;
+  --animate-to-top: scroll-vertical-up 20s linear infinite;
+  --animate-to-down: scroll-vertical-down 20s linear infinite;
 
   @keyframes scroll-vertical-up {
     0% {
