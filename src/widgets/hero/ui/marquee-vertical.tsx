@@ -17,8 +17,6 @@ export function MarqueeVertical({
   itemsCount = 10,
   itemHeight = 284,
 }: MarqueeVerticalProps) {
-  const trackHeight = itemHeight * 2 * itemsCount;
-
   return (
     <div
       className={cn(
@@ -28,9 +26,9 @@ export function MarqueeVertical({
       )}
       style={
         {
-          height: `${trackHeight}px`,
           "--item-height": `${itemHeight}px`,
           "--items-count": itemsCount,
+          height: `calc(var(--item-height) * 2 * var(--items-count))`,
         } as React.CSSProperties
       }
     >
