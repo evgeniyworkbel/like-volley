@@ -6,7 +6,7 @@ import { Button } from "@/shared/ui";
 import { ButtonProps } from "@/shared/ui/button";
 
 type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className"> & {
-  text: string;
+  text?: string;
 };
 
 export function SignUpForWorkoutBtn({ className, text = "Записаться" }: SignUpForWorkoutBtnProps) {
