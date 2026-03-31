@@ -31,12 +31,7 @@ export function Hero() {
           <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
         </VerticalLooper>
         <VerticalLooper direction="down">
-          <Image
-            src="/hero/adults.webp"
-            alt="Фото учеников школы волейбола Like Volley"
-            sizes="(max-width: 1279px) 120px, 193px"
-            fill
-          />
+          <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
         </VerticalLooper>
       </div>
     </section>
