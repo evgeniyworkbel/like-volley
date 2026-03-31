@@ -1,6 +1,6 @@
 import { IconProps } from "../types";
 
-export function SignUpForWorkoutArrow({ className }: IconProps) {
+export function ArrowTopIcon({ className }: IconProps) {
   return (
     <svg
       className={className}

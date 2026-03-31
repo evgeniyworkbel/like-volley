@@ -1,0 +1,35 @@
+.scroll {
+  --item-height: 284px;
+  --items-count: 4;
+  --base-duration: 8s;
+
+  height: calc(var(--item-height) * 2 * var(--items-count));
+}
+
+.scroll-up {
+  animation: scroll-vertical-up calc(var(--items-count) * var(--base-duration)) linear infinite;
+}
+
+.scroll-down {
+  animation: scroll-vertical-down calc(var(--items-count) * var(--base-duration)) linear infinite;
+}
+
+@keyframes scroll-vertical-up {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
+  }
+}
+
+@keyframes scroll-vertical-down {
+  from {
+    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
