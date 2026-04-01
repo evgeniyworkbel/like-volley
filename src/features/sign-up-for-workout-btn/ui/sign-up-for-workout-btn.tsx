@@ -17,7 +17,7 @@ export function SignUpForWorkoutBtn({ className, text = "Записаться" }
   return (
     <Button
       className={cn(
-        "flex w-full items-center justify-center gap-4 rounded-[40px] bg-white px-20 py-4 text-[20px] font-medium text-foreground",
+        "flex w-full items-center justify-center gap-4 rounded-[40px] bg-white px-20 py-4 text-xl font-medium text-foreground",
         className,
       )}
       onClick={handleClick}
