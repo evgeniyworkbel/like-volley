@@ -1,3 +1,6 @@
 {
-  "extends": ["@evgeniyworkbel/stylelint-config"]
+  "extends": ["@evgeniyworkbel/stylelint-config"],
+  "rules": {
+    "selector-class-pattern": null
+  }
 }
