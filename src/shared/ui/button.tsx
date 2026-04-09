@@ -7,7 +7,10 @@ export type ButtonProps = Pick<
 
 export function Button({ className, children, ...props }: ButtonProps) {
   return (
-    <button {...props} className={cn("w-fit cursor-pointer", className)}>
+    <button
+      {...props}
+      className={cn("w-fit cursor-pointer items-center justify-center", className)}
+    >
       {children}
     </button>
   );

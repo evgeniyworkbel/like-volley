@@ -15,11 +15,16 @@ export function VerticalLooper({ className, direction, children }: VerticalLoope
   return (
     <div
       className={cn(
-        styles.scroll,
         "flex-col overflow-hidden xl:flex",
-        direction === "up" ? styles["scroll-up"] : styles["scroll-down"],
+        styles.scroll,
+        direction === "up" ? styles["scrollUp"] : styles["scrollDown"],
         className,
       )}
+      style={
+        {
+          "--items-count": itemsCount,
+        } as React.CSSProperties
+      }
     >
       {Array(itemsCount * 2)
         .fill(null)

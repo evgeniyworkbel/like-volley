@@ -1,16 +1,15 @@
 .scroll {
   --item-height: 284px;
-  --items-count: 4;
   --base-duration: 8s;
 
   height: calc(var(--item-height) * 2 * var(--items-count));
 }
 
-.scroll-up {
+.scrollUp {
   animation: scroll-vertical-up calc(var(--items-count) * var(--base-duration)) linear infinite;
 }
 
-.scroll-down {
+.scrollDown {
   animation: scroll-vertical-down calc(var(--items-count) * var(--base-duration)) linear infinite;
 }
 

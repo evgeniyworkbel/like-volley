@@ -23,6 +23,7 @@ export function Hero() {
         <SignUpForWorkoutBtn
           className="gap-4 bg-accent-orange px-1 py-3.25 text-white md:max-w-79"
           text="Записаться на занятие"
+          withArrow
         />
       </div>
 

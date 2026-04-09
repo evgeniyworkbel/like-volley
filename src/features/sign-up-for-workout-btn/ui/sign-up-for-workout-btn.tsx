@@ -7,9 +7,14 @@ import { ButtonProps } from "@/shared/ui/button";
 
 type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className"> & {
   text?: string;
+  withArrow?: boolean;
 };
 
-export function SignUpForWorkoutBtn({ className, text = "Записаться" }: SignUpForWorkoutBtnProps) {
+export function SignUpForWorkoutBtn({
+  className,
+  text = "Записаться",
+  withArrow,
+}: SignUpForWorkoutBtnProps) {
   const handleClick = () => {
     window.open("https://forms.amocrm.ru/rrwvrmv", "_blank");
   };
@@ -17,13 +22,13 @@ export function SignUpForWorkoutBtn({ className, text = "Записаться" }
   return (
     <Button
       className={cn(
-        "flex w-full items-center justify-center gap-4 rounded-[40px] bg-white px-20 py-4 text-xl font-medium text-foreground",
+        "flex w-full gap-4 rounded-[40px] bg-white px-20 py-4 text-xl font-medium text-foreground",
         className,
       )}
       onClick={handleClick}
     >
       {text}
-      <ArrowTopIcon className="rotate-90" />
+      {withArrow && <ArrowTopIcon className="rotate-90" />}
     </Button>
   );
 }
