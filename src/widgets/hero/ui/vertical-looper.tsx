@@ -10,12 +10,12 @@ type VerticalLooperProps = {
 };
 
 export function VerticalLooper({ className, direction, children }: VerticalLooperProps) {
-  const itemsCount = 4;
+  const itemsCount = 6;
 
   return (
     <div
       className={cn(
-        "flex-col overflow-hidden xl:flex",
+        "flex flex-col overflow-hidden",
         styles.scroll,
         direction === "up" ? styles["scrollUp"] : styles["scrollDown"],
         className,

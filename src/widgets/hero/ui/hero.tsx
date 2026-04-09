@@ -27,11 +27,11 @@ export function Hero() {
         />
       </div>
 
-      <div className="absolute top-0 left-0 flex origin-top-right translate-x-[215%] translate-y-[20%] rotate-30 gap-6 xl:h-185 xl:w-96 xl:translate-x-[275%] xl:translate-y-0 xl:rotate-17">
-        <VerticalLooper className="hidden" direction="up">
+      <div className="absolute top-0 left-0 flex h-185 origin-top-right translate-x-[180%] translate-y-[18%] rotate-30 gap-6 xl:translate-x-[275%] xl:translate-y-0 xl:rotate-17">
+        <VerticalLooper direction="up">
           <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
         </VerticalLooper>
-        <VerticalLooper direction="down">
+        <VerticalLooper className="translate-x-7 translate-y-0 xl:translate-x-0" direction="down">
           <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
         </VerticalLooper>
       </div>
