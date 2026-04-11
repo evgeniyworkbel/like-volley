@@ -22,7 +22,7 @@ export function SignUpForWorkoutBtn({
   return (
     <Button
       className={cn(
-        "flex w-full gap-4 rounded-[40px] bg-white px-20 py-4 text-xl font-medium text-foreground",
+        "w-full gap-4 rounded-[40px] bg-white px-20 py-4 text-xl font-medium text-foreground",
         className,
       )}
       onClick={handleClick}

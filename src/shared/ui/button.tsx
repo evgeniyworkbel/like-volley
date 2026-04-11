@@ -9,7 +9,7 @@ export function Button({ className, children, ...props }: ButtonProps) {
   return (
     <button
       {...props}
-      className={cn("w-fit cursor-pointer items-center justify-center", className)}
+      className={cn("inline-flex w-fit cursor-pointer items-center justify-center", className)}
     >
       {children}
     </button>
