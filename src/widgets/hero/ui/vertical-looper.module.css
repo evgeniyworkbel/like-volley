@@ -1,6 +1,6 @@
 .scroll {
   --item-height: 284px;
-  --base-duration: 4s;
+  --base-duration: 12s;
 
   height: calc(var(--item-height) * 2 * var(--items-count));
 }
@@ -19,13 +19,13 @@
   }
 
   to {
-    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)/2));
+    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
   }
 }
 
 @keyframes scroll-vertical-down {
   from {
-    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)/2));
+    transform: translateY(calc(-1 * var(--item-height) * var(--items-count)));
   }
 
   to {
