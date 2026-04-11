@@ -1,102 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import { cn } from "@/shared/lib";
 import { Title } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
-import { HeroTab } from "./hero-tab";
+import { VerticalLooper } from "./vertical-looper";
 
 export function Hero() {
-  const [ageGroup, setAgeGroup] = useState<"childs" | "adults">("adults");
-
   return (
-    <section className="flex flex-col px-5 pt-5 pb-12.5 text-center text-white md:pt-12.5 xl:px-20">
-      <div className="flex gap-4 px-4 xl:justify-start xl:gap-0 xl:px-0">
-        <HeroTab
-          className={cn({
-            "text-accent-blue": ageGroup === "childs",
-            "bg-accent-blue": ageGroup === "adults",
-          })}
-          onClick={() => setAgeGroup("adults")}
-        >
-          Для взрослых
-        </HeroTab>
-        <HeroTab
-          className={cn({
-            "bg-accent-orange": ageGroup === "childs",
-            "text-accent-orange": ageGroup === "adults",
-          })}
-          onClick={() => setAgeGroup("childs")}
-        >
-          Для детей
-        </HeroTab>
-      </div>
-      <div
-        className={cn(
-          "flex flex-col items-center gap-4 overflow-hidden rounded-[20px] p-5 md:relative md:h-199 md:gap-6 md:p-9 xl:h-116.5 xl:items-start xl:justify-center",
-          {
-            "bg-accent-orange": ageGroup === "childs",
-            "bg-accent-blue": ageGroup === "adults",
-          },
-        )}
-      >
-        <div className="flex flex-col">
-          {ageGroup === "childs" && (
-            <Title className="z-10 leading-[0.85] text-inherit md:max-w-170 md:text-center md:text-[58px] xl:text-left xl:leading-none">
-              Будущие чемпионы растут&nbsp;
-              <span className="text-accent-green">здесь</span>
-            </Title>
-          )}
-          {ageGroup === "adults" && (
-            <Title className="z-10 leading-[0.85] text-inherit md:text-center md:text-[58px] xl:text-left xl:leading-none">
-              Живи, играй,
-              <br />
-              <span className="text-accent-green">Побеждай!</span>
-            </Title>
-          )}
+    <section className="relative flex overflow-hidden px-5 py-10 text-black xl:py-25 xl:pt-17 xl:pl-24.5">
+      <div className="z-10 flex flex-col items-center gap-27.5 md:gap-29.5 xl:items-start">
+        <div className="flex flex-col gap-12 text-center md:max-w-180 xl:gap-5 xl:text-left">
+          <Title className="font-inter xl:text-6xl/21">
+            Школа волейбола для&nbsp;<span className="text-accent-orange">детей</span>&nbsp;
+            <br className="md:hidden" />и<span className="text-accent-blue">&nbsp;взрослыx</span>
+          </Title>
+          <p className="text-[18px] font-medium">
+            Профессиональные тренировки в Минске и Бресте
+            <br />
+            Тренируем юных чемпионов и прокачиваем любителей любого уровня
+          </p>
         </div>
-        {ageGroup === "childs" && (
-          <div className="flex flex-col items-center">
-            <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-170 md:text-lg xl:m-0 xl:text-start">
-              Профессиональная подготовка юных спортсменов. Развиваем координацию, характер и
-              командный дух в игровой форме.
-            </p>
-            <Image
-              className="md:absolute md:bottom-0 xl:right-5"
-              src="/hero/children.webp"
-              width={543}
-              height={446}
-              alt="Фото учеников школы волейбола Like Volley"
-              loading="eager"
-            />
-          </div>
-        )}
-        {ageGroup === "adults" && (
-          <div className="flex flex-col items-center">
-            <p className="z-10 flex max-w-2xs flex-col text-sm md:mb-6 md:max-w-149 md:text-lg xl:m-0 xl:text-start">
-              Тренировки для любого уровня: от новичков до профи.
-              <br /> Улучшаем технику, тактику и физическую форму в удобное время.
-            </p>
-            <Image
-              className="md:absolute md:bottom-0 xl:right-5"
-              src="/hero/adults.webp"
-              width={570}
-              height={446}
-              alt="Фото взрослых учеников школы волейбола Like Volley"
-              loading="eager"
-            />
-          </div>
-        )}
         <SignUpForWorkoutBtn
-          className={cn(
-            "rounded-3xl px-19 py-2.5 text-[16px] text-white md:w-86 md:rounded-[40px] md:px-28 md:py-4 md:text-xl",
-            {
-              "bg-accent-blue": ageGroup === "childs",
-              "bg-accent-orange": ageGroup === "adults",
-            },
-          )}
+          className="gap-4 bg-accent-orange px-1 py-3.25 text-white md:max-w-79"
+          text="Записаться на занятие"
+          withArrow
         />
+      </div>
+
+      <div className="absolute top-0 left-0 flex h-185 origin-top-right translate-x-[178%] translate-y-[18%] rotate-30 gap-6 xl:translate-x-[252%] xl:translate-y-0 xl:rotate-17">
+        <VerticalLooper direction="up">
+          <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+        </VerticalLooper>
+        <VerticalLooper className="translate-x-7 translate-y-0 xl:translate-x-0" direction="down">
+          <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+        </VerticalLooper>
       </div>
     </section>
   );
