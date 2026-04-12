@@ -10,11 +10,7 @@ type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className"> & {
   withArrow?: boolean;
 };
 
-export function SignUpForWorkoutBtn({
-  className,
-  text = "Записаться",
-  withArrow,
-}: SignUpForWorkoutBtnProps) {
+export function SignUpForWorkoutBtn({ className, text, withArrow }: SignUpForWorkoutBtnProps) {
   const handleClick = () => {
     window.open("https://forms.amocrm.ru/rrwvrmv", "_blank");
   };

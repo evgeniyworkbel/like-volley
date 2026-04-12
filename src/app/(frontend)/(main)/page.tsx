@@ -3,6 +3,7 @@ import {
   Advantages,
   SignUpForWorkout,
   Faq,
+  GiftCertificates,
   Banner,
   Gallery,
   Coaches,
@@ -22,6 +23,7 @@ export default function Home() {
       <SignUpForWorkout />
       <Coaches />
       <Faq />
+      <GiftCertificates />
       <Banner />
       <Gallery />
     </div>
