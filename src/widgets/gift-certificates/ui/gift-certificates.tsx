@@ -2,8 +2,11 @@ import { Title } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { GiftCertificate } from "./gift-certificate";
 import { certificates } from "../model/data";
+import styles from "./gift-certificates.module.css";
 
 export function GiftCertificates() {
+  const animationClasses = [styles.card1, styles.card2, styles.card3];
+
   return (
     <section className="flex flex-col items-center gap-8 px-5 py-10">
       <div className="flex flex-col items-center gap-2.75">
@@ -17,14 +20,15 @@ export function GiftCertificates() {
           подарите эмоции!
         </p>
       </div>
+
       <div className="relative flex flex-col pl-9.5">
-        {certificates.map(({ id, className, classNameBtn, cost, count }) => (
+        {certificates.map((certificate, index) => (
           <GiftCertificate
-            key={id}
-            className={className}
-            classNameBtn={classNameBtn}
-            cost={cost}
-            count={count}
+            key={certificate.id}
+            className={`${certificate.className} ${animationClasses[index]}`}
+            classNameBtn={certificate.classNameBtn}
+            cost={certificate.cost}
+            count={certificate.count}
           />
         ))}
       </div>

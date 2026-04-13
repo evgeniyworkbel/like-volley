@@ -14,7 +14,7 @@ export function GiftCertificate({
   return (
     <div
       className={cn(
-        "flex flex-col gap-3.5 rounded-lg border-[oklch(1_0_0/0.4)] bg-[oklch(0.5381_0.2545_270.46/69.8%)] px-4 py-3 text-white",
+        "flex flex-col gap-3.5 rounded-lg border-[oklch(1_0_0/0.4)] px-4 py-3 text-white backdrop-blur-xl",
         className,
       )}
     >
@@ -32,7 +32,7 @@ export function GiftCertificate({
       <div className="flex items-center justify-between">
         <p className="text-xl font-bold">{cost} руб</p>
         <SignUpForWorkoutBtn
-          className={cn("class size-8 rounded-full bg-[oklch(0_0_0/0.1)] px-0 py-0", classNameBtn)}
+          className={cn("class size-8 rounded-full px-0 py-0", classNameBtn)}
           withArrow
         />
       </div>

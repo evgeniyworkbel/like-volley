@@ -1,0 +1,124 @@
+.card1,
+.card2,
+.card3 {
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  will-change: transform;
+}
+
+.card1 {
+  animation: slideCard1 5s infinite ease-in-out;
+}
+
+.card2 {
+  animation: slideCard2 5s infinite ease-in-out;
+}
+
+.card3 {
+  animation: slideCard3 5s infinite ease-in-out;
+}
+
+@keyframes slideCard1 {
+  0%,
+  3% {
+    transform: translateY(36px) translateX(-36px);
+    z-index: 3;
+  }
+
+  30%,
+  33% {
+    transform: translateY(18px) translateX(-18px);
+  }
+
+  65%,
+  68% {
+    transform: translateY(0) translateX(0);
+    z-index: -1;
+  }
+
+  79% {
+    transform: translateY(-18px) translateX(0);
+  }
+
+  90% {
+    transform: translateY(18px) translateX(-36px);
+  }
+
+  97%,
+  100% {
+    transform: translateY(36px) translateX(-36px);
+    z-index: 3;
+  }
+}
+
+@keyframes slideCard2 {
+  0%,
+  3% {
+    transform: translateY(18px) translateX(-18px);
+  }
+
+  30%,
+  33% {
+    transform: translateY(0) translateX(0);
+    z-index: -1;
+  }
+
+  44% {
+    transform: translateY(-18px) translateX(0);
+  }
+
+  54% {
+    transform: translateY(18px) translateX(-36px);
+    z-index: 3;
+  }
+
+  65%,
+  68% {
+    transform: translateY(36px) translateX(-36px);
+    z-index: 3;
+  }
+
+  97%,
+  100% {
+    transform: translateY(18px) translateX(-18px);
+  }
+}
+
+@keyframes slideCard3 {
+  0%,
+  3% {
+    transform: translateY(0) translateX(0);
+    z-index: -1;
+  }
+
+  11% {
+    transform: translateY(-18px) translateX(0);
+  }
+
+  20% {
+    transform: translateY(18px) translateX(-36px);
+  }
+
+  30%,
+  33% {
+    transform: translateY(36px) translateX(-36px);
+    z-index: 3
+  }
+
+  65%,
+  68% {
+    transform: translateY(18px) translateX(-18px);
+  }
+
+  97%,
+  100% {
+    transform: translateY(0) translateX(0);
+    z-index: -1;
+  }
+}
+
+/* Пауза при наведении на контейнер */
+.parent:hover .card1,
+.parent:hover .card2,
+.parent:hover .card3 {
+  animation-play-state: paused;
+}
