@@ -6,18 +6,18 @@
 }
 
 .card1 {
-  animation: slideCard1 5s infinite ease-in-out;
+  animation: certificate1 5s infinite ease-in-out;
 }
 
 .card2 {
-  animation: slideCard2 5s infinite ease-in-out;
+  animation: certificate2 5s infinite ease-in-out;
 }
 
 .card3 {
-  animation: slideCard3 5s infinite ease-in-out;
+  animation: certificate3 5s infinite ease-in-out;
 }
 
-@keyframes slideCard1 {
+@keyframes certificate1 {
   0%,
   3% {
     transform: translateY(36px) translateX(-36px);
@@ -50,7 +50,7 @@
   }
 }
 
-@keyframes slideCard2 {
+@keyframes certificate2 {
   0%,
   3% {
     transform: translateY(18px) translateX(-18px);
@@ -83,7 +83,7 @@
   }
 }
 
-@keyframes slideCard3 {
+@keyframes certificate3 {
   0%,
   3% {
     transform: translateY(0) translateX(0);
