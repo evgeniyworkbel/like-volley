@@ -9,7 +9,7 @@ export function GiftCertificates() {
   const animationClasses = [styles.card1, styles.card2, styles.card3];
 
   return (
-    <section className="flex flex-col items-center gap-8 px-5 py-10 xl:flex-row xl:flex-wrap xl:justify-between xl:gap-0 xl:px-20 xl:py-15">
+    <section className="flex flex-col items-center gap-8 px-5 py-10 xl:flex-row xl:flex-wrap xl:items-start xl:justify-between xl:gap-0 xl:px-20 xl:py-15">
       <div className="flex flex-col items-center gap-2.75 xl:max-w-116.5 xl:items-start xl:gap-4">
         <Title className="font-inter text-[28px]/7.25">
           Подарочный
@@ -35,7 +35,7 @@ export function GiftCertificates() {
       </div>
 
       <SignUpForWorkoutBtn
-        className="mt-10 max-w-50 gap-4 bg-accent-orange px-0 py-2 text-sm text-white xl:mt-0 xl:max-w-69.5 xl:text-[20px]"
+        className="mt-10 max-w-50 gap-4 bg-accent-orange px-0 py-2 text-sm text-white xl:mt-0 xl:max-w-69.5 xl:-translate-y-full xl:p-4 xl:text-[20px]"
         text="Купить сертификат"
         withArrow
       />
