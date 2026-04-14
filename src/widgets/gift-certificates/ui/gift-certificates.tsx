@@ -26,7 +26,7 @@ export function GiftCertificates() {
         {certificates.map((certificate, index) => (
           <GiftCertificate
             key={certificate.id}
-            className={cn(`${certificate.className} ${animationClasses[index]}`)}
+            className={cn(certificate.className, animationClasses[index])}
             classNameBtn={certificate.classNameBtn}
             cost={certificate.cost}
             count={certificate.count}
