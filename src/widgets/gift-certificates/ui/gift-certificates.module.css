@@ -1,3 +1,17 @@
+:root {
+  --step-x: -36px;
+  --step-y: 36px;
+  --step-offset: 18px;
+}
+
+@media (width >= 1280px) {
+  :root {
+    --step-x: -100px;
+    --step-y: 100px;
+    --step-offset: 50px;
+  }
+}
+
 .card1,
 .card2,
 .card3 {
@@ -6,119 +20,100 @@
 }
 
 .card1 {
-  animation: certificate1 5s infinite ease-in-out;
+  animation: certificate1 5s infinite;
 }
 
 .card2 {
-  animation: certificate2 5s infinite ease-in-out;
+  animation: certificate2 5s infinite;
 }
 
 .card3 {
-  animation: certificate3 5s infinite ease-in-out;
+  animation: certificate3 5s infinite;
 }
 
 @keyframes certificate1 {
-  0%,
-  3% {
-    transform: translateY(36px) translateX(-36px);
+  0% {
+    transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  30%,
-  33% {
-    transform: translateY(18px) translateX(-18px);
+  32% {
+    transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
-  65%,
-  68% {
+  64% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
 
-  79% {
-    transform: translateY(-18px) translateX(0);
+  75% {
+    transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
   90% {
-    transform: translateY(18px) translateX(-36px);
+    transform: translateY(var(--step-offset)) translateX(var(--step-x));
   }
 
-  97%,
   100% {
-    transform: translateY(36px) translateX(-36px);
+    transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
 }
 
 @keyframes certificate2 {
-  0%,
-  3% {
-    transform: translateY(18px) translateX(-18px);
+  0% {
+    transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
-  30%,
-  33% {
+  32% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
 
-  44% {
-    transform: translateY(-18px) translateX(0);
+  42% {
+    transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
-  54% {
-    transform: translateY(18px) translateX(-36px);
+  57% {
+    transform: translateY(var(--step-offset)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  65%,
-  68% {
-    transform: translateY(36px) translateX(-36px);
+  67% {
+    transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  97%,
   100% {
-    transform: translateY(18px) translateX(-18px);
+    transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 }
 
 @keyframes certificate3 {
-  0%,
-  3% {
+  0% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
 
-  11% {
-    transform: translateY(-18px) translateX(0);
+  10% {
+    transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
-  20% {
-    transform: translateY(18px) translateX(-36px);
+  25% {
+    transform: translateY(var(--step-offset)) translateX(var(--step-x));
   }
 
-  30%,
-  33% {
-    transform: translateY(36px) translateX(-36px);
-    z-index: 3
+  30% {
+    transform: translateY(var(--step-y)) translateX(var(--step-x));
+    z-index: 3;
   }
 
-  65%,
-  68% {
-    transform: translateY(18px) translateX(-18px);
+  65% {
+    transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
-  97%,
   100% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
-}
-
-/* Пауза при наведении на контейнер */
-.parent:hover .card1,
-.parent:hover .card2,
-.parent:hover .card3 {
-  animation-play-state: paused;
 }
