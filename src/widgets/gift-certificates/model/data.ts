@@ -1,6 +1,6 @@
 import { CertificateModel } from "./types";
 
-export const certificates: CertificateModel[] = [
+export const certificatesData: CertificateModel[] = [
   {
     id: 1,
     className: "absolute bg-[oklch(0.5381_0.2545_270.46/69.8%)]",

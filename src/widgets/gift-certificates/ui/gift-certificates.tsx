@@ -1,7 +1,7 @@
 import { Title } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { GiftCertificate } from "./gift-certificate";
-import { certificates } from "../model/data";
+import { certificatesData } from "../model/data";
 import styles from "./gift-certificates.module.css";
 import { cn } from "@/shared/lib";
 
@@ -23,7 +23,7 @@ export function GiftCertificates() {
       </div>
 
       <div className="relative flex flex-col pl-9.5">
-        {certificates.map((certificate, index) => (
+        {certificatesData.map((certificate, index) => (
           <GiftCertificate
             key={certificate.id}
             className={cn(certificate.className, animationClasses[index])}
