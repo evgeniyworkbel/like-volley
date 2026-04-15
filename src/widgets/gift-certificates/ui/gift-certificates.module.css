@@ -20,15 +20,15 @@
 }
 
 .cert1 {
-  animation: certificate1 5s infinite;
+  animation: certificate1 10s infinite;
 }
 
 .cert2 {
-  animation: certificate2 5s infinite;
+  animation: certificate2 10s infinite;
 }
 
 .cert3 {
-  animation: certificate3 5s infinite;
+  animation: certificate3 10s infinite;
 }
 
 .certificateWrapper:hover .cert1,
