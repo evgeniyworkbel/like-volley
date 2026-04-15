@@ -12,34 +12,29 @@
   }
 }
 
-/* Базовые стили карточек */
-.card1,
-.card2,
-.card3 {
-  /* Плавность задаётся ЗДЕСЬ, а не через transition */
+.cert1,
+.cert2,
+.cert3 {
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
-/* Привязка анимаций к классам */
-.card1 {
+.cert1 {
   animation: certificate1 5s infinite;
 }
 
-.card2 {
+.cert2 {
   animation: certificate2 5s infinite;
 }
 
-.card3 {
+.cert3 {
   animation: certificate3 5s infinite;
 }
 
-.card1:hover,
-.card2:hover,
-.card3:hover {
+.certificateWrapper:hover .cert1,
+.certificateWrapper:hover .cert2,
+.certificateWrapper:hover .cert3 {
   animation-play-state: paused;
-  transform: scale(1.05);
-  cursor: pointer;
 }
 
 @keyframes certificate1 {
@@ -108,7 +103,7 @@
 
   35% {
     transform: translateY(var(--step-offset)) translateX(var(--step-x));
-  } 
+  }
 
   45% {
     transform: translateY(var(--step-y)) translateX(var(--step-x));

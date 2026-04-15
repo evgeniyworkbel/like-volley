@@ -1,17 +1,17 @@
 import { Title } from "@/shared/ui";
+import { cn } from "@/shared/lib";
 import { SignUpForWorkoutBtn } from "@/features";
 import { GiftCertificate } from "./gift-certificate";
 import { certificatesData } from "../model/data";
 import styles from "./gift-certificates.module.css";
-import { cn } from "@/shared/lib";
 
 export function GiftCertificates() {
-  const animationClasses = [styles.card1, styles.card2, styles.card3];
+  const animationClasses = [styles.cert1, styles.cert2, styles.cert3];
 
   return (
     <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
       <div className="flex w-full flex-col gap-8 xl:flex-row xl:gap-25">
-        <div className="flex flex-col gap-2.75 xl:max-w-116 xl:gap-4">
+        <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
           <Title className="font-inter text-[28px]/7.25">
             Подарочный
             <br />
@@ -22,7 +22,12 @@ export function GiftCertificates() {
             и подарите эмоции!
           </p>
         </div>
-        <div className="relative flex flex-col items-center pl-9.5 xl:w-full xl:items-start xl:pl-0">
+        <div
+          className={cn(
+            "relative flex flex-col items-center pl-9.5 xl:w-full xl:items-start xl:pl-0",
+            styles["certificateWrapper"],
+          )}
+        >
           {certificatesData.map((certificate, index) => (
             <GiftCertificate
               key={certificate.id}
