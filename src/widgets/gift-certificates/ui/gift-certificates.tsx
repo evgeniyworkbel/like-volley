@@ -25,7 +25,7 @@ export function GiftCertificates() {
         <div
           className={cn(
             "relative flex flex-col items-center pl-9.5 xl:w-full xl:items-start xl:pl-0",
-            styles["certificateWrapper"],
+            styles.certificateWrapper,
           )}
         >
           {certificatesData.map((certificate, index) => (
