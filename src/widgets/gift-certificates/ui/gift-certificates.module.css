@@ -12,13 +12,16 @@
   }
 }
 
+/* Базовые стили карточек */
 .card1,
 .card2,
 .card3 {
-  animation-timing-function: linear;
+  /* Плавность задаётся ЗДЕСЬ, а не через transition */
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
+/* Привязка анимаций к классам */
 .card1 {
   animation: certificate1 5s infinite;
 }
@@ -31,32 +34,36 @@
   animation: certificate3 5s infinite;
 }
 
+.card1:hover,
+.card2:hover,
+.card3:hover {
+  animation-play-state: paused;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 @keyframes certificate1 {
-  0% {
+  0%,
+  100% {
     transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  31% {
+  35% {
     transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
-  60% {
+  65% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
 
-  70% {
+  75% {
     transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
   90% {
     transform: translateY(var(--step-offset)) translateX(var(--step-x));
-  }
-
-  100% {
-    transform: translateY(var(--step-y)) translateX(var(--step-x));
-    z-index: 3;
   }
 }
 
@@ -65,21 +72,21 @@
     transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
-  31% {
+  30% {
     transform: translateY(0) translateX(0);
     z-index: -1;
   }
 
-  41% {
+  45% {
     transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
-  61% {
+  65% {
     transform: translateY(var(--step-offset)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  71% {
+  75% {
     transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
@@ -95,20 +102,20 @@
     z-index: -1;
   }
 
-  10% {
+  15% {
     transform: translateY(calc(var(--step-offset) * -1)) translateX(0);
   }
 
-  30% {
+  35% {
     transform: translateY(var(--step-offset)) translateX(var(--step-x));
-  }
+  } 
 
-  40% {
+  45% {
     transform: translateY(var(--step-y)) translateX(var(--step-x));
     z-index: 3;
   }
 
-  70% {
+  75% {
     transform: translateY(calc(var(--step-y) / 2)) translateX(calc(var(--step-x) / 2));
   }
 
