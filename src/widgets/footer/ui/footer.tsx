@@ -52,10 +52,7 @@ export async function Footer() {
                 </li>
               </ul>
             </div>
-            <SignUpForWorkoutBtn
-              className="w-80 px-25 text-base font-bold text-accent-orange uppercase md:w-76"
-              text="Записаться"
-            />
+            <SignUpForWorkoutBtn className="w-80 px-25 text-base font-bold text-accent-orange uppercase md:w-76" />
           </div>
         </div>
         <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">

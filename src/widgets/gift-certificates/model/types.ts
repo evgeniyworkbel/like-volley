@@ -1,7 +1,7 @@
 export type CertificateModel = {
   id?: number;
   className?: string;
-  classNameBtn?: string;
-  cost?: string;
-  count?: string;
+  btnColor: "blue" | "green" | "yellow" | "orange";
+  cost: string;
+  count: string;
 };

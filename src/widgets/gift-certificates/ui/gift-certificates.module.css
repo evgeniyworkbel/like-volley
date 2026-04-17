@@ -1,21 +1,16 @@
-:root {
+.cert1,
+.cert2,
+.cert3 {
   --step-x: -36px;
   --step-y: 36px;
   --step-offset: 18px;
-}
 
-@media (width >= 1280px) {
-  :root {
+  @media (width >= 1280px) {
     --step-x: -100px;
     --step-y: 100px;
     --step-offset: 50px;
   }
-}
 
-.cert1,
-.cert2,
-.cert3 {
-  /* Используем более мягкую кривую безье для естественности */
   animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   will-change: transform;
 }
@@ -32,9 +27,9 @@
   animation: certificate3 10s infinite;
 }
 
-.certificateWrapper:hover .cert1,
-.certificateWrapper:hover .cert2,
-.certificateWrapper:hover .cert3 {
+.certificates:hover .cert1,
+.certificates:hover .cert2,
+.certificates:hover .cert3 {
   animation-play-state: paused;
 }
 
