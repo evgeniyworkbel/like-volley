@@ -1,16 +1,6 @@
 .cert1,
 .cert2,
 .cert3 {
-  --step-x: -36px;
-  --step-y: 36px;
-  --step-offset: 18px;
-
-  @media (width >= 1280px) {
-    --step-x: -100px;
-    --step-y: 100px;
-    --step-offset: 50px;
-  }
-
   animation-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   will-change: transform;
 }
@@ -25,6 +15,18 @@
 
 .cert3 {
   animation: certificate3 10s infinite;
+}
+
+.certificates {
+  --step-x: -36px;
+  --step-y: 36px;
+  --step-offset: 18px;
+
+  @media (width >= 1280px) {
+    --step-x: -100px;
+    --step-y: 100px;
+    --step-offset: 50px;
+  }
 }
 
 .certificates:hover .cert1,
