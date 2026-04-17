@@ -44,11 +44,7 @@ export function GiftCertificate({
       </div>
       <div className="flex items-center justify-between">
         <p className="text-xl font-bold xl:text-[32px]">{cost} руб</p>
-        <GetCertificateBtn
-          className="size-8 rounded-full px-0 py-0 xl:size-14"
-          btnColor={btnColor}
-          withArrow
-        />
+        <GetCertificateBtn btnColor={btnColor} withArrow />
       </div>
     </div>
   );
