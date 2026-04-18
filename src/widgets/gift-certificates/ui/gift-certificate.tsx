@@ -1,16 +1,11 @@
 import Image from "next/image";
 import { cn } from "@/shared/lib";
 import { CertificateModel } from "../model/types";
-import { GetCertificateBtn } from "./get-certificate-btn";
+import { CertificateArrow } from "./certificate-arrow";
 
 type GiftCertificateProps = CertificateModel;
 
-export function GiftCertificate({
-  className,
-  btnColor,
-  cost = "60",
-  count = "1",
-}: GiftCertificateProps) {
+export function GiftCertificate({ className, btnColor, cost, count }: GiftCertificateProps) {
   return (
     <div
       className={cn(
@@ -44,7 +39,7 @@ export function GiftCertificate({
       </div>
       <div className="flex items-center justify-between">
         <p className="text-xl font-bold xl:text-[32px]">{cost} руб</p>
-        <GetCertificateBtn btnColor={btnColor} withArrow />
+        <CertificateArrow btnColor={btnColor} />
       </div>
     </div>
   );

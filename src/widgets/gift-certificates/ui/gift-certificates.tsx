@@ -3,14 +3,14 @@ import { cn } from "@/shared/lib";
 import { GiftCertificate } from "./gift-certificate";
 import { certificatesData } from "../model/data";
 import styles from "./gift-certificates.module.css";
-import { GetCertificateBtn } from "./get-certificate-btn";
+import { BuyCertificateBtn } from "./buy-certificate-btn";
 
 const animationClasses = [styles.cert1, styles.cert2, styles.cert3];
 
 export function GiftCertificates() {
   return (
     <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
-      <div className="flex w-full flex-col gap-8 **:text-center xl:max-h-fit xl:flex-row xl:gap-25 xl:**:text-left">
+      <div className="flex w-full flex-col gap-8 text-center xl:max-h-fit xl:flex-row xl:gap-25 xl:text-left">
         <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
           <Title className="font-inter text-[28px] leading-none">
             Подарочный
@@ -39,7 +39,7 @@ export function GiftCertificates() {
           ))}
         </div>
       </div>
-      <GetCertificateBtn text="Купить сертификат" withArrow />
+      <BuyCertificateBtn />
     </section>
   );
 }
