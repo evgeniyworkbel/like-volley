@@ -188,6 +188,7 @@ export interface Media {
 export interface Coach {
   id: number;
   _order?: string | null;
+  photo: number | Media;
   lastName: string;
   firstName: string;
   patronymicName: string;
@@ -355,6 +356,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface CoachesSelect<T extends boolean = true> {
   _order?: T;
+  photo?: T;
   lastName?: T;
   firstName?: T;
   patronymicName?: T;
