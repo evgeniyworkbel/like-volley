@@ -1,13 +1,16 @@
 import { Title } from "@/shared/ui";
 import { cn } from "@/shared/lib";
+import { getPayloadClient } from "@/shared/cms";
 import { GiftCertificate } from "./gift-certificate";
-import { certificatesData } from "../model/data";
 import styles from "./gift-certificates.module.css";
 import { BuyCertificateBtn } from "./buy-certificate-btn";
 
 const animationClasses = [styles.cert1, styles.cert2, styles.cert3];
 
-export function GiftCertificates() {
+export async function GiftCertificates() {
+  const payload = await getPayloadClient();
+  const certificates = await payload.find({ collection: "certificates", pagination: false });
+
   return (
     <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
       <div className="flex w-full flex-col gap-8 text-center xl:max-h-fit xl:flex-row xl:gap-25 xl:text-left">
@@ -28,11 +31,11 @@ export function GiftCertificates() {
             styles.certificates,
           )}
         >
-          {certificatesData.map((item, index) => (
+          {certificates.docs.map((item, index) => (
             <GiftCertificate
               key={item.id}
               className={animationClasses[index]}
-              btnColor={item.btnColor}
+              certColor={item.certColor}
               cost={item.cost}
               count={item.count}
             />

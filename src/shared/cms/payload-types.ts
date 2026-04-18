@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     coaches: Coach;
     faq: Faq;
+    certificates: Certificate;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -82,6 +83,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     coaches: CoachesSelect<false> | CoachesSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
+    certificates: CertificatesSelect<false> | CertificatesSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -226,6 +228,21 @@ export interface Faq {
   createdAt: string;
 }
 /**
+ * Секция сертификатов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "certificates".
+ */
+export interface Certificate {
+  id: number;
+  _order?: string | null;
+  cost: string;
+  count: string;
+  certColor: "blue" | "green" | "yellow";
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -264,6 +281,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "faq";
         value: number | Faq;
+      } | null)
+    | ({
+        relationTo: "certificates";
+        value: number | Certificate;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -372,6 +393,18 @@ export interface FaqSelect<T extends boolean = true> {
   _order?: T;
   question?: T;
   answer?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "certificates_select".
+ */
+export interface CertificatesSelect<T extends boolean = true> {
+  _order?: T;
+  cost?: T;
+  count?: T;
+  certColor?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -5,18 +5,18 @@ import { CertificateArrow } from "./certificate-arrow";
 
 type GiftCertificateProps = CertificateModel;
 
-export function GiftCertificate({ className, btnColor, cost, count }: GiftCertificateProps) {
+export function GiftCertificate({ className, certColor, cost, count }: GiftCertificateProps) {
   return (
     <div
       className={cn(
         "flex w-70 flex-col gap-3.5 rounded-lg border px-4 py-3 text-white backdrop-blur-xl xl:w-full xl:gap-10 xl:rounded-[14px] xl:p-6",
         {
           "absolute border-[oklch(0.5381_0.2545_270.46/0.698)] bg-[oklch(0.5381_0.2545_270.46/0.698)]":
-            btnColor === "blue",
+            certColor === "blue",
           "absolute border-[oklch(0.701_0.2122_145.88/0.698)] bg-[oklch(0.701_0.2122_145.88/0.8)]":
-            btnColor === "green",
+            certColor === "green",
           "border-[oklch(0.7724_0.1253_44.75)] bg-[oklch(0.7466_0.1572_43.66/0.8)]":
-            btnColor === "yellow",
+            certColor === "yellow",
         },
         className,
       )}
@@ -39,7 +39,7 @@ export function GiftCertificate({ className, btnColor, cost, count }: GiftCertif
       </div>
       <div className="flex items-center justify-between">
         <p className="text-xl font-bold xl:text-[32px]">{cost} руб</p>
-        <CertificateArrow btnColor={btnColor} />
+        <CertificateArrow certColor={certColor} />
       </div>
     </div>
   );
