@@ -1,5 +1,4 @@
 import { CollectionConfig } from "payload";
-import { COLOR_BUTTONS_OPTIONS } from "../util/options";
 
 export const Certificates: CollectionConfig = {
   slug: "certificates",
@@ -20,14 +19,6 @@ export const Certificates: CollectionConfig = {
       name: "count",
       type: "text",
       label: { en: "Сount", ru: "Количество" },
-      required: true,
-    },
-    {
-      name: "certColor",
-      type: "select",
-      label: { en: "Colors", ru: "Цвета" },
-      options: COLOR_BUTTONS_OPTIONS,
-      unique: true,
       required: true,
     },
   ],

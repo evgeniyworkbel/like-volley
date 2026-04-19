@@ -238,7 +238,6 @@ export interface Certificate {
   _order?: string | null;
   cost: string;
   count: string;
-  certColor: "blue" | "green" | "yellow";
   updatedAt: string;
   createdAt: string;
 }
@@ -404,7 +403,6 @@ export interface CertificatesSelect<T extends boolean = true> {
   _order?: T;
   cost?: T;
   count?: T;
-  certColor?: T;
   updatedAt?: T;
   createdAt?: T;
 }

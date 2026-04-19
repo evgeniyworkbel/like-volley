@@ -35,7 +35,7 @@ export async function GiftCertificates() {
             <GiftCertificate
               key={item.id}
               className={animationClasses[index]}
-              certColor={item.certColor}
+              certColor={index}
               cost={item.cost}
               count={item.count}
             />

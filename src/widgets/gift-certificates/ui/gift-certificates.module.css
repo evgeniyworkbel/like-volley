@@ -29,13 +29,6 @@
   animation: certificate3 10s infinite;
 }
 
-
-.certificates:hover .cert1,
-.certificates:hover .cert2,
-.certificates:hover .cert3 {
-  animation-play-state: paused;
-}
-
 @keyframes certificate1 {
   0%,
   100% {
