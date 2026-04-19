@@ -2,10 +2,11 @@
 
 import { ArrowTopIcon } from "@/shared/icons";
 import { Button } from "@/shared/ui";
+import { certificateFormLink } from "../model/constants";
 
 export function BuyCertificateBtn() {
   const handleClick = () => {
-    window.open("https://forms.amocrm.ru/rcxxtzm", "_blank");
+    window.open(certificateFormLink, "_blank");
   };
 
   return (
