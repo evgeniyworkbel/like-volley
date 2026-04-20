@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { Children } from "react";
 import { cn } from "@/shared/lib";
 import styles from "./vertical-looper.module.css";
 
@@ -11,8 +11,7 @@ type VerticalLooperProps = {
 };
 
 export function VerticalLooper({ className, direction, children }: VerticalLooperProps) {
-  const childrensData = React.Children.toArray(children);
-  const itemsCount = childrensData.length;
+  const childs = Children.toArray(children);
 
   return (
     <div
@@ -24,20 +23,18 @@ export function VerticalLooper({ className, direction, children }: VerticalLoope
       )}
       style={
         {
-          "--items-count": itemsCount,
+          "--items-count": childs.length,
         } as React.CSSProperties
       }
     >
-      {Array(itemsCount * 2)
-        .fill(null)
-        .map((_, i) => (
-          <div
-            key={i}
-            className="relative flex aspect-193/284 w-30 shrink-0 items-center xl:w-48.25"
-          >
-            {childrensData[i % itemsCount]}
-          </div>
-        ))}
+      {[...childs, ...childs].map((item, index) => (
+        <div
+          key={index}
+          className="relative flex aspect-193/284 w-30 shrink-0 items-center xl:w-48.25"
+        >
+          {item}
+        </div>
+      ))}
     </div>
   );
 }
