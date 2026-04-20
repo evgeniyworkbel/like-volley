@@ -9,7 +9,7 @@ import { photos } from "../model/constants";
 export function Hero() {
   return (
     <section className="relative flex overflow-hidden px-5 py-10 text-black xl:py-25 xl:pt-17 xl:pl-24.5">
-      <div className="z-10 flex flex-col items-center gap-27.5 md:gap-29.5 xl:items-start">
+      <div className="z-10 mx-auto flex flex-col items-center gap-27.5 md:gap-29.5 xl:mx-0 xl:items-start">
         <div className="flex flex-col gap-12 text-center md:max-w-180 xl:gap-5 xl:text-left">
           <Title className="font-inter xl:text-6xl/21">
             Школа волейбола для&nbsp;<span className="text-accent-orange">детей</span>&nbsp;
@@ -28,13 +28,13 @@ export function Hero() {
         />
       </div>
 
-      <div className="absolute top-0 left-0 flex h-185 origin-top-right translate-x-[178%] translate-y-[18%] rotate-30 gap-6 xl:translate-x-[252%] xl:translate-y-0 xl:rotate-17">
+      <div className="absolute top-0 right-0 flex h-185 translate-x-10 rotate-30 gap-3 xl:-translate-x-28 xl:rotate-17">
         <VerticalLooper direction="up">
           {photos.map((item) => (
             <Image key={item} src={item} alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
           ))}
         </VerticalLooper>
-        <VerticalLooper className="translate-x-13 translate-y-0 xl:translate-x-0" direction="down">
+        <VerticalLooper className="hidden md:flex" direction="down">
           {photos.map((item) => (
             <Image key={item} src={item} alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
           ))}
