@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Title } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { VerticalLooper } from "./vertical-looper";
+import { imagesSrs } from "../model/constants";
 
 export function Hero() {
   return (
@@ -29,10 +30,14 @@ export function Hero() {
 
       <div className="absolute top-0 left-0 flex h-185 origin-top-right translate-x-[178%] translate-y-[18%] rotate-30 gap-6 xl:translate-x-[252%] xl:translate-y-0 xl:rotate-17">
         <VerticalLooper direction="up">
-          <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+          {imagesSrs.map((item) => (
+            <Image key={item} src={item} alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+          ))}
         </VerticalLooper>
-        <VerticalLooper className="translate-x-7 translate-y-0 xl:translate-x-0" direction="down">
-          <Image src="/hero/adults.webp" alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+        <VerticalLooper className="translate-x-13 translate-y-0 xl:translate-x-0" direction="down">
+          {imagesSrs.map((item) => (
+            <Image key={item} src={item} alt="" sizes="(max-width: 1279px) 120px, 193px" fill />
+          ))}
         </VerticalLooper>
       </div>
     </section>
