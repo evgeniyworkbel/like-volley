@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowTopIcon } from "@/shared/icons";
 import { Button } from "@/shared/ui";
 import { certificateFormLink } from "../model/constants";
 
@@ -11,11 +10,12 @@ export function BuyCertificateBtn() {
 
   return (
     <Button
-      className="gap-2 rounded-[40px] bg-accent-orange px-5 py-3 text-sm font-medium text-white xl:-translate-y-full xl:py-4 xl:text-[20px]"
+      className="xl:-translate-y-full xl:text-[20px]"
       onClick={handleClick}
+      size="sm"
+      rightIcon
     >
       Купить сертификат
-      <ArrowTopIcon className="rotate-90" />
     </Button>
   );
 }

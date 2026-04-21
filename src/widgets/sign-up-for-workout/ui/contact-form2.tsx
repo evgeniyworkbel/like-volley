@@ -16,7 +16,7 @@ export function Form2() {
         <Title className="text-center text-[28px] text-accent-green xl:text-[44px]">
           Приходи на свою первую тренировку!
         </Title>
-        <SignUpForWorkoutBtn />
+        <SignUpForWorkoutBtn className="w-full text-foreground" color="secondary" />
       </div>
     </div>
   );

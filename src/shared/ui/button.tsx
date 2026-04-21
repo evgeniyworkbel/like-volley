@@ -1,81 +1,59 @@
 import { cn } from "@/shared/lib";
-
-// export type ButtonProps = Pick<
-//   React.ButtonHTMLAttributes<HTMLButtonElement>,
-//   "className" | "children" | "onClick" | "disabled"
-// >;
-
-// export function Button({ className, children, ...props }: ButtonProps) {
-//   return (
-//     <button
-//       {...props}
-//       className={cn("inline-flex w-fit cursor-pointer items-center justify-center", className)}
-//     >
-//       {children}
-//     </button>
-//   );
-// }
-import * as React from "react";
-import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { ArrowTopIcon } from "../icons";
 
 const buttonVariants = cva(
-  "group/button focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:ring-3 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:ring-3 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex w-fit cursor-pointer items-center justify-center gap-4.5 rounded-[40px] font-medium",
   {
     variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
-        outline:
-          "border-border hover:bg-muted aria-expanded:bg-muted dark:border-input dark:bg-input/30 dark:hover:bg-input/50 bg-background hover:text-foreground aria-expanded:text-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
-        ghost:
-          "hover:bg-muted aria-expanded:bg-muted dark:hover:bg-muted/50 hover:text-foreground aria-expanded:text-foreground",
-        destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+      color: {
+        primary: "bg-accent-orange text-white",
+        secondary: "bg-background text-accent-orange",
+        none: "",
       },
       size: {
-        default:
-          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        icon: "size-8",
-        "icon-xs":
-          "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm":
-          "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
-        "icon-lg": "size-9",
+        sm: "px-5 py-3 text-sm",
+        md: "border px-7.5 py-3 text-base",
+        lg: "px-6 py-4 text-xl",
+        icon: "size-8 rounded-full px-0 py-0 xl:size-14",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      color: "primary",
+      size: "lg",
     },
   },
 );
 
-function Button({
-  className,
-  variant = "default",
-  size = "default",
-  asChild = false,
-  ...props
-}: React.ComponentProps<"button"> &
+export type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
-  }) {
+    rightIcon?: React.ReactNode;
+  };
+
+function Button({
+  className,
+  color = "primary",
+  size = "lg",
+  asChild = false,
+  children,
+  rightIcon,
+  ...props
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
-      data-slot="button"
-      data-variant={variant}
+      className={cn(buttonVariants({ color, size, className }))}
+      data-color={color}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      data-slot="button"
       {...props}
-    />
+    >
+      {children}
+      {rightIcon && <ArrowTopIcon className="rotate-90" />}
+    </Comp>
   );
 }
 

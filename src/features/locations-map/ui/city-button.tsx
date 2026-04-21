@@ -8,12 +8,10 @@ export type CityButtonProps = Pick<ButtonProps, "children" | "onClick"> & {
 export function CityButton({ children, onClick, isActive }: CityButtonProps) {
   return (
     <Button
-      className={cn(
-        "rounded-[40px] border border-accent-orange bg-background px-9.5 py-4 text-accent-orange",
-        {
-          "bg-accent-orange text-white": isActive,
-        },
-      )}
+      className={cn("border-accent-orange bg-background text-accent-orange", {
+        "bg-accent-orange text-white": isActive,
+      })}
+      size="md"
       onClick={onClick}
     >
       {children}
