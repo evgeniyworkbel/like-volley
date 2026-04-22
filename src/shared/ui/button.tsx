@@ -36,7 +36,7 @@ export type ButtonProps = React.ComponentProps<"button"> &
 
 function Button({ className, color, size, children, iconType, ...restProps }: ButtonProps) {
   return (
-    <button className={cn(buttonVariants({ color, size, className }))} {...restProps}>
+    <button className={cn(buttonVariants({ color, size }), className)} {...restProps}>
       {children}
       {iconType && icons[iconType]}
     </button>

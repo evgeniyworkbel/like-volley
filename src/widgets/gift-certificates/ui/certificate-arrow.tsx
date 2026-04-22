@@ -19,8 +19,8 @@ export function CertificateArrow({ index }: CertificateArrowProps) {
         "bg-[oklch(0.9451_0.1243_101.54)]": index === 2,
       })}
       size="icon"
-      onClick={handleClick}
       iconType="arrow"
+      onClick={handleClick}
     />
   );
 }
