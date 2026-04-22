@@ -20,7 +20,7 @@ export function CertificateArrow({ index }: CertificateArrowProps) {
       })}
       size="icon"
       onClick={handleClick}
-      rightIcon
-    ></Button>
+      iconType="arrow"
+    />
   );
 }

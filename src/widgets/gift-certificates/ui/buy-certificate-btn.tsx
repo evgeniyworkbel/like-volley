@@ -9,12 +9,7 @@ export function BuyCertificateBtn() {
   };
 
   return (
-    <Button
-      className="xl:-translate-y-full xl:text-[20px]"
-      onClick={handleClick}
-      size="sm"
-      rightIcon
-    >
+    <Button className="xl:-translate-y-full" onClick={handleClick} iconType="arrow">
       Купить сертификат
     </Button>
   );

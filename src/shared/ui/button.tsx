@@ -1,7 +1,10 @@
 import { cn } from "@/shared/lib";
-import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ArrowTopIcon } from "../icons";
+
+const icons = {
+  arrow: <ArrowTopIcon className="shrink-0 rotate-90" />,
+};
 
 const buttonVariants = cva(
   "inline-flex w-fit cursor-pointer items-center justify-center gap-4.5 rounded-[40px] font-medium",
@@ -10,13 +13,13 @@ const buttonVariants = cva(
       color: {
         primary: "bg-accent-orange text-white",
         secondary: "bg-background text-accent-orange",
-        none: "",
+        transparent: "",
       },
       size: {
         sm: "px-5 py-3 text-sm",
-        md: "border px-7.5 py-3 text-base",
+        md: "px-7.5 py-3 text-base",
         lg: "px-6 py-4 text-xl",
-        icon: "size-8 rounded-full px-0 py-0 xl:size-14",
+        icon: "size-8 rounded-full xl:size-14",
       },
     },
     defaultVariants: {
@@ -28,32 +31,15 @@ const buttonVariants = cva(
 
 export type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-    rightIcon?: React.ReactNode;
+    iconType?: keyof typeof icons;
   };
 
-function Button({
-  className,
-  color = "primary",
-  size = "lg",
-  asChild = false,
-  children,
-  rightIcon,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : "button";
-
+function Button({ className, color, size, children, iconType, ...restProps }: ButtonProps) {
   return (
-    <Comp
-      className={cn(buttonVariants({ color, size, className }))}
-      data-color={color}
-      data-size={size}
-      data-slot="button"
-      {...props}
-    >
+    <button className={cn(buttonVariants({ color, size, className }))} {...restProps}>
       {children}
-      {rightIcon && <ArrowTopIcon className="rotate-90" />}
-    </Comp>
+      {iconType && icons[iconType]}
+    </button>
   );
 }
 

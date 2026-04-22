@@ -8,7 +8,7 @@ type CarouselButtonProps = Pick<ButtonProps, "className" | "onClick"> & {
 
 export function CarouselButton({ className, position = "right", onClick }: CarouselButtonProps) {
   return (
-    <Button className={className} color="none" onClick={onClick}>
+    <Button className={className} color="transparent" onClick={onClick}>
       <CarouselArrowIcon
         className={cn({
           "rotate-180": position === "left",
