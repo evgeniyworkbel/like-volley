@@ -21,11 +21,7 @@ export function Hero() {
             Тренируем юных чемпионов и прокачиваем любителей любого уровня
           </p>
         </div>
-        <SignUpForWorkoutBtn
-          className="gap-4 bg-accent-orange px-1 py-3.25 text-white md:max-w-79"
-          text="Записаться на занятие"
-          withArrow
-        />
+        <SignUpForWorkoutBtn text="Записаться на занятие" iconType="arrow" />
       </div>
 
       <div className="absolute top-0 right-0 flex h-185 translate-x-10 rotate-30 gap-3 xl:-translate-x-28 xl:rotate-17">
