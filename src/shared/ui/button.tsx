@@ -38,6 +38,7 @@ function Button({ className, color, size, children, iconType, ...restProps }: Bu
   return (
     <button className={cn(buttonVariants({ color, size }), className)} {...restProps}>
       {children}
+      {children}
       {iconType && icons[iconType]}
     </button>
   );
