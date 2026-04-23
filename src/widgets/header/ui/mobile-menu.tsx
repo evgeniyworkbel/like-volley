@@ -29,12 +29,12 @@ export function MobileMenu({ data }: MobileMenuProps) {
   return (
     <div className="flex xl:hidden" data-menu-open={isOpen}>
       {!isOpen && (
-        <Button onClick={openMenu}>
+        <Button color="transparent" onClick={openMenu}>
           <BurgerMenuIcon />
         </Button>
       )}
       {isOpen && (
-        <Button className="z-20" onClick={closeMenu}>
+        <Button className="z-20" color="transparent" onClick={closeMenu}>
           <CloseMenuIcon />
         </Button>
       )}

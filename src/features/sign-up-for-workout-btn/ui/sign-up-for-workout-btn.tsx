@@ -1,25 +1,25 @@
 "use client";
 
-import { cn } from "@/shared/lib";
 import { Button } from "@/shared/ui";
 import { ButtonProps } from "@/shared/ui/button";
 
-type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className">;
+type SignUpForWorkoutBtnProps = Pick<ButtonProps, "className" | "color" | "iconType"> & {
+  text?: string;
+};
 
-export function SignUpForWorkoutBtn({ className }: SignUpForWorkoutBtnProps) {
+export function SignUpForWorkoutBtn({
+  className,
+  color,
+  iconType,
+  text = "Записаться",
+}: SignUpForWorkoutBtnProps) {
   const handleClick = () => {
     window.open("https://forms.amocrm.ru/rrwvrmv", "_blank");
   };
 
   return (
-    <Button
-      className={cn(
-        "w-full rounded-[40px] bg-white px-20 py-4 text-2xl font-medium text-foreground",
-        className,
-      )}
-      onClick={handleClick}
-    >
-      Записаться
+    <Button className={className} color={color} iconType={iconType} onClick={handleClick}>
+      {text}
     </Button>
   );
 }

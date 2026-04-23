@@ -12,6 +12,7 @@ import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
 import { Faq } from "./collections/Faq";
+import { Certificates } from "./collections/Certificates";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
@@ -30,7 +31,7 @@ export default buildConfig({
       logout: { Button: "./ui/logout-btn" },
     },
   },
-  collections: [Users, Media, Coaches, Faq],
+  collections: [Users, Media, Coaches, Faq, Certificates],
   globals: [CompanyInfo, Owner, PolicyPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
@@ -46,6 +47,12 @@ export default buildConfig({
   }),
   i18n: {
     supportedLanguages: { en, ru },
+  },
+  upload: {
+    abortOnLimit: true,
+    limits: {
+      fileSize: 5000000, // 5MB, written in bytes
+    },
   },
   sharp,
   plugins: [],
