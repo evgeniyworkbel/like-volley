@@ -37,7 +37,7 @@ export async function Faq() {
         </p>
       </hgroup>
 
-      <div className="flex w-full flex-col gap-6 xl:flex-row xl:gap-5">
+      <div className="flex flex-col gap-6 xl:flex-row xl:gap-5">
         <div className="order-2 flex flex-col items-center xl:order-0">
           <div className="relative flex aspect-[1.01] w-80 xl:w-146.5">
             <Image
