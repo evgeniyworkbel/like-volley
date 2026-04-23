@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { getPayloadClient } from "@/shared/cms";
-import { Accordion, Title } from "@/shared/ui";
+import { Accordion, Button, Title } from "@/shared/ui";
 import { faqSectionId } from "@/shared/constants";
 import { AccordionItemModel } from "@/shared/ui/accordion";
 
@@ -25,19 +26,35 @@ export async function Faq() {
   return (
     <section
       id={faqSectionId}
-      className="flex flex-col gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20"
+      className="flex flex-col gap-6 px-5 py-10 xl:gap-0 xl:px-20 xl:py-15"
     >
-      <hgroup className="flex flex-col items-center gap-4 text-base md:text-lg">
-        <Title>
-          Вопросы<span className="text-accent-orange"> и ответы</span>
+      <hgroup className="flex flex-col text-center xl:max-w-1/2 xl:gap-4 xl:text-left xl:text-lg">
+        <Title className="font-inter">
+          Вопросы и <span className="text-accent-orange">ответы</span>
         </Title>
-        <p className="text-center text-foreground-secondary md:max-w-258 md:leading-6.5">
-          Выберите формат обучения, который лучше всего соответствует вашим предпочтениям,
-          расписанию и бюджету. Все форматы включают одну и ту же высококачественную учебную
-          программу и подход к обучению.
+        <p className="text-foreground-secondary md:leading-6.5">
+          Мы подобрали все часто-задаваемые вопросы от наших клиентов и ответили на них
         </p>
       </hgroup>
-      <Accordion items={faqData} defaultOpened={faqData.at(0)?.id} />
+
+      <div className="flex flex-col gap-6 xl:flex-row xl:gap-5">
+        <div className="order-2 flex flex-col items-center xl:order-0">
+          <div className="relative flex aspect-[1.01] w-80 xl:w-146.5">
+            <Image
+              src="/faq.webp"
+              alt="Фото ученика школы"
+              sizes="(max-width: 1279px) 320px, 585px"
+              fill
+            />
+          </div>
+
+          <div className="flex flex-col items-center gap-6">
+            <h3 className="text-[28px] font-bold xl:text-[40px]">Остались вопросы?</h3>
+            <Button iconType="arrow">Напиши нам</Button>
+          </div>
+        </div>
+        <Accordion items={faqData} defaultOpened={faqData.at(1)?.id} />
+      </div>
     </section>
   );
 }
