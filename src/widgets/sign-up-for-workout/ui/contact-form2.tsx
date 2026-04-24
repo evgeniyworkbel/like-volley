@@ -14,8 +14,8 @@ export function Form2() {
         fill
       />
       <Title className="text-[26px] text-white uppercase">готов зайти в игру?</Title>
-      <div className="flex flex-col items-center gap-40 text-center xl:gap-22">
-        <p className="max-w-80 text-sm font-bold text-white xl:max-w-138.5 xl:text-lg">
+      <div className="flex flex-col items-center gap-40 xl:gap-22">
+        <p className="max-w-80 text-center text-sm font-bold text-white xl:max-w-138.5 xl:text-lg">
           Почувствуй энергию волейбола в самом драйвовом клубе города. Профессиональный паркет,
           топовые тренеры и сообщество, в котором ты растешь
         </p>
