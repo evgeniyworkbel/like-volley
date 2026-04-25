@@ -7,7 +7,7 @@ export function Form2() {
   return (
     <div className="relative flex h-173 flex-col items-center justify-center gap-3 overflow-hidden rounded-[28px] shadow-[2px_8px_50px_-12px_oklch(0_0_0/0.25)] xl:h-137">
       <Image
-        className="scale -z-10 object-cover object-[37%_20%]"
+        className="-z-10 object-cover object-[37%_20%]"
         src="/contact-form/ball.webp"
         sizes="(max-width: 1279px) 320px, 1020px"
         alt="Фото волейбольного мяча"
