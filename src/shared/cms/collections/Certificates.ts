@@ -21,6 +21,12 @@ export const Certificates: CollectionConfig = {
       label: { en: "Сount", ru: "Количество" },
       required: true,
     },
+    {
+      name: "certificateType",
+      type: "text",
+      label: { en: "СertificateType", ru: "Тип сертификата" },
+      required: true,
+    },
   ],
   orderable: true,
   disableBulkEdit: true,

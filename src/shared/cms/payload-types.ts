@@ -238,6 +238,7 @@ export interface Certificate {
   _order?: string | null;
   cost: string;
   count: string;
+  certificateType: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -403,6 +404,7 @@ export interface CertificatesSelect<T extends boolean = true> {
   _order?: T;
   cost?: T;
   count?: T;
+  certificateType?: T;
   updatedAt?: T;
   createdAt?: T;
 }

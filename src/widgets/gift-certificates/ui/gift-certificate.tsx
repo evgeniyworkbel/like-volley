@@ -3,12 +3,18 @@ import { cn } from "@/shared/lib";
 import { CertificateArrow } from "./certificate-arrow";
 import { Certificate } from "@/shared/cms/payload-types";
 
-type GiftCertificateProps = Pick<Certificate, "cost" | "count"> & {
+type GiftCertificateProps = Pick<Certificate, "cost" | "count" | "certificateType"> & {
   className: string;
   index: number;
 };
 
-export function GiftCertificate({ className, index, cost, count }: GiftCertificateProps) {
+export async function GiftCertificate({
+  className,
+  index,
+  cost,
+  count,
+  certificateType,
+}: GiftCertificateProps) {
   return (
     <div
       className={cn(
@@ -36,7 +42,7 @@ export function GiftCertificate({ className, index, cost, count }: GiftCertifica
         </span>
       </div>
       <div className="flex flex-col gap-2 text-left text-lg font-bold">
-        <p className="xl:text-[40px]">Индивидуально</p>
+        <p className="xl:text-[40px]">{certificateType}</p>
         <p className="text-[12px] xl:text-lg">{count} персональная тренировка</p>
       </div>
       <div className="flex items-center justify-between">
