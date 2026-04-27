@@ -5,6 +5,7 @@ export async function SignUpForWorkout() {
   return (
     <section className="relative flex flex-col overflow-hidden px-5 py-7 xl:px-52.5 xl:py-15">
       {/** @todo: удалить Form2 когда будет готова интеграция нашей формы с amoCRM */}
+
       <Form2 />
       <Decor />
       {/* <ContactForm /> */}
