@@ -1,5 +1,5 @@
 import { Form2 } from "./contact-form2";
-import { Decor } from "./decor";
+import { BackgroundDecor } from "./background-decor";
 
 export async function SignUpForWorkout() {
   return (
@@ -7,7 +7,7 @@ export async function SignUpForWorkout() {
       {/** @todo: удалить Form2 когда будет готова интеграция нашей формы с amoCRM */}
 
       <Form2 />
-      <Decor />
+      <BackgroundDecor />
       {/* <ContactForm /> */}
     </section>
   );
