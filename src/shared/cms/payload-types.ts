@@ -236,9 +236,9 @@ export interface Faq {
 export interface Certificate {
   id: number;
   _order?: string | null;
-  cost: string;
-  count: string;
-  certificateType: string;
+  cost?: string | null;
+  count?: string | null;
+  certificateType?: string | null;
   updatedAt: string;
   createdAt: string;
 }

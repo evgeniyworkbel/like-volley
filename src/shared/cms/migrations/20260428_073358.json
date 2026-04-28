@@ -633,19 +633,19 @@
           "name": "cost",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "count": {
           "name": "count",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "certificate_type": {
           "name": "certificate_type",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "updated_at": {
           "name": "updated_at",
@@ -1599,6 +1599,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "e632895c-7fa4-40a2-9a5e-580a20a1631e",
+  "id": "14f1fdf2-0a24-4921-9252-1f218725cdc1",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }
