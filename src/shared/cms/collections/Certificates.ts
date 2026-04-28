@@ -24,7 +24,7 @@ export const Certificates: CollectionConfig = {
     {
       name: "certificateType",
       type: "text",
-      label: { en: "СertificateType", ru: "Тип сертификата" },
+      label: { en: "Certificate type", ru: "Тип сертификата" },
       required: true,
     },
   ],
