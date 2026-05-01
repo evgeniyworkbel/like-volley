@@ -74,6 +74,13 @@ export const locationsMarkers: Record<CompanyCities, Array<DefaultMarkerProps>> 
       coordinates: [27.605498, 53.876993],
       redirectLink: "https://yandex.by/maps/-/CLCYRU01",
     },
+    {
+      ...initialMarkerProps,
+      id: "m6",
+      title: "ул. Сурганова, 2А/4, Песчаная дюна",
+      coordinates: [27.609607, 53.918389],
+      redirectLink: "https://yandex.ru/maps/-/CPSDAKYI",
+    },
   ],
   brest: [
     {
