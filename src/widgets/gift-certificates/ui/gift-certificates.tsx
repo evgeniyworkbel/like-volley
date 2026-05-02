@@ -38,6 +38,7 @@ export async function GiftCertificates() {
               index={index}
               cost={item.cost}
               count={item.count}
+              certificateType={item.certificateType}
             />
           ))}
         </div>
