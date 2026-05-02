@@ -18,7 +18,7 @@ export async function GiftCertificate({
   return (
     <div
       className={cn(
-        "flex w-70 flex-col gap-3.5 rounded-lg border px-4 py-3 text-white backdrop-blur-xl xl:w-full xl:gap-10 xl:rounded-[14px] xl:p-6",
+        "flex w-70 flex-col gap-3 rounded-lg border px-4 py-3 text-white backdrop-blur-xl xl:h-86 xl:w-full xl:gap-10 xl:rounded-[14px] xl:p-6",
         {
           "absolute border-[oklch(0.5381_0.2545_270.46/0.698)] bg-[oklch(0.5381_0.2545_270.46/0.698)]":
             index === 0,
@@ -41,7 +41,7 @@ export async function GiftCertificate({
           Подарок
         </span>
       </div>
-      <div className="flex flex-col gap-2 text-left text-lg font-bold">
+      <div className="flex flex-col gap-1.5 text-left text-lg font-bold">
         <p className="xl:text-[40px]">{certificateType}</p>
         <p className="text-[12px] xl:text-lg">{count} персональная тренировка</p>
       </div>
