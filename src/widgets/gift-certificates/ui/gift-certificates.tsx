@@ -12,9 +12,16 @@ export async function GiftCertificates() {
   const certificates = await payload.find({ collection: "certificates", pagination: false });
 
   return (
-    <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
+    <section
+      className={cn(
+        "flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-25 xl:px-20 xl:py-15",
+        {
+          "xl:gap-0": certificates.docs.length,
+        },
+      )}
+    >
       <div className="flex w-full flex-col gap-8 text-center xl:flex-row xl:gap-25 xl:text-left">
-        <div className="flex flex-col items-center gap-2.75 xl:min-h-74.5 xl:max-w-116 xl:items-start xl:gap-4">
+        <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
           <Title className="font-inter text-[28px] leading-none">
             Подарочный
             <br />
