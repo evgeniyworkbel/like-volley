@@ -13,17 +13,20 @@ export async function GiftCertificates() {
 
   return (
     <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
-      <div className="flex w-full flex-col gap-8 text-center xl:flex-row xl:gap-25 xl:text-left">
-        <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
-          <Title className="font-inter text-[28px] leading-none">
-            Подарочный
-            <br />
-            <span className="text-accent-orange">сертификат</span>
-          </Title>
-          <p className="text-balance text-foreground-secondary xl:text-[18px]">
-            Идеальный подарок для тех, кто любит спорт и активный отдых. Выберите подходящий номинал
-            и подарите эмоции!
-          </p>
+      <div className="flex w-full flex-col items-center gap-14 text-center xl:flex-row xl:items-start xl:gap-25 xl:text-left">
+        <div className="flex flex-col items-center gap-10 xl:items-start">
+          <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
+            <Title className="font-inter text-[28px] leading-none">
+              Подарочный
+              <br />
+              <span className="text-accent-orange">сертификат</span>
+            </Title>
+            <p className="text-balance text-foreground-secondary xl:text-[18px]">
+              Идеальный подарок для тех, кто любит спорт и активный отдых. Выберите подходящий
+              номинал и подарите эмоции!
+            </p>
+          </div>
+          <BuyCertificateBtn className="hidden xl:flex" />
         </div>
         <div
           className={cn(
@@ -42,8 +45,8 @@ export async function GiftCertificates() {
             />
           ))}
         </div>
+        <BuyCertificateBtn className="flex xl:hidden" />
       </div>
-      <BuyCertificateBtn />
     </section>
   );
 }
