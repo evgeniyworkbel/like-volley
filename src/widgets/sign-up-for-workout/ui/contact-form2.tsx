@@ -1,22 +1,28 @@
-import { SignUpForWorkoutBtn } from "@/features";
-import { Title } from "@/shared/ui";
 import Image from "next/image";
+import { Title } from "@/shared/ui";
+import { SignUpForWorkoutBtn } from "@/features";
+import { InfiniteAdsLine } from "./infinite-ads-line";
 
 export function Form2() {
   return (
-    <div className="relative h-175 max-w-175 overflow-hidden rounded-3xl bg-accent-blue p-6 md:mx-auto md:h-193.5 xl:mx-0">
+    <div className="relative z-10 flex h-160 flex-col items-center justify-end gap-8 overflow-hidden rounded-[28px] shadow-[2px_8px_50px_-12px_oklch(0_0_0/0.25)] xl:h-137">
       <Image
-        className="absolute bottom-0 left-1/2 w-115 -translate-x-1/2 -translate-y-20 scale-[1.6] xl:w-full xl:translate-y-0 xl:scale-100"
-        width={700}
-        height={618}
-        src="/contact-form/players.webp"
-        alt="Фото игроков в волейбол (взрослые и дети)"
+        className="object-cover object-[44%_0%]"
+        src="/contact-form/background.webp"
+        sizes="(max-width: 1279px) 320px, 1020px"
+        alt="Фото волейбольного мяча на песке"
+        fill
       />
-      <div className="relative flex h-full flex-col items-center justify-between">
-        <Title className="text-center text-[28px] text-accent-green xl:text-[44px]">
-          Приходи на свою первую тренировку!
-        </Title>
-        <SignUpForWorkoutBtn className="w-full text-foreground" color="secondary" />
+      <div className="relative flex w-full flex-col items-center gap-8">
+        <Title className="text-[26px] text-white uppercase">готов зайти в игру?</Title>
+        <div className="flex flex-col items-center gap-45 xl:gap-25">
+          <p className="max-w-80 text-center text-sm font-bold text-white xl:max-w-138.5 xl:text-lg">
+            Почувствуй энергию волейбола в самом драйвовом клубе города. Профессиональный паркет,
+            топовые тренеры и сообщество, в котором ты растешь
+          </p>
+          <SignUpForWorkoutBtn iconType="arrow" />
+          <InfiniteAdsLine />
+        </div>
       </div>
     </div>
   );
