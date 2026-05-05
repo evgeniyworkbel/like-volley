@@ -106,6 +106,9 @@ export interface Config {
     policy: PolicySelect<false> | PolicySelect<true>;
   };
   locale: null;
+  widgets: {
+    collections: CollectionsWidget;
+  };
   user: User;
   jobs: {
     tasks: unknown;
@@ -236,8 +239,9 @@ export interface Faq {
 export interface Certificate {
   id: number;
   _order?: string | null;
-  cost: string;
-  count: string;
+  cost?: string | null;
+  count?: string | null;
+  certificateType?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -403,6 +407,7 @@ export interface CertificatesSelect<T extends boolean = true> {
   _order?: T;
   cost?: T;
   count?: T;
+  certificateType?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -540,6 +545,16 @@ export interface PolicySelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "collections_widget".
+ */
+export interface CollectionsWidget {
+  data?: {
+    [k: string]: unknown;
+  };
+  width: "full";
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
