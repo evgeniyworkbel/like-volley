@@ -9,7 +9,7 @@ export function Advantage({ title, subtitle, score, withPlus }: AdvantageProps) 
         {score}
         {withPlus && <p>+</p>}
       </h3>
-      <div className="flex flex-col items-center gap-0.5">
+      <div className="flex flex-col items-center gap-0.5 text-center">
         <h4 className="text-lg xl:text-[28px]">{title}</h4>
         <p className="text-sm text-foreground-secondary">{subtitle}</p>
       </div>
