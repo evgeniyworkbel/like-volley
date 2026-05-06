@@ -72,6 +72,7 @@ export interface Config {
     coaches: Coach;
     faq: Faq;
     certificates: Certificate;
+    advantages: Advantage;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -84,6 +85,7 @@ export interface Config {
     coaches: CoachesSelect<false> | CoachesSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
     certificates: CertificatesSelect<false> | CertificatesSelect<true>;
+    advantages: AdvantagesSelect<false> | AdvantagesSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -246,6 +248,22 @@ export interface Certificate {
   createdAt: string;
 }
 /**
+ * Секция преимуществ
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "advantages".
+ */
+export interface Advantage {
+  id: number;
+  _order?: string | null;
+  title: string;
+  subtitle: string;
+  score: number;
+  withPlus?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -288,6 +306,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "certificates";
         value: number | Certificate;
+      } | null)
+    | ({
+        relationTo: "advantages";
+        value: number | Advantage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -408,6 +430,19 @@ export interface CertificatesSelect<T extends boolean = true> {
   cost?: T;
   count?: T;
   certificateType?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "advantages_select".
+ */
+export interface AdvantagesSelect<T extends boolean = true> {
+  _order?: T;
+  title?: T;
+  subtitle?: T;
+  score?: T;
+  withPlus?: T;
   updatedAt?: T;
   createdAt?: T;
 }
