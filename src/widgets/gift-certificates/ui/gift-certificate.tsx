@@ -22,9 +22,9 @@ export async function GiftCertificate({
         {
           "absolute border-[oklch(0.5381_0.2545_270.46/0.698)] bg-[oklch(0.5381_0.2545_270.46/0.698)]":
             index === 0,
-          "absolute border-[oklch(0.6681_0.227_7.56/0.80)] bg-[oklch(0.6681_0.227_7.56/0.80)]":
+          "absolute border-[oklch(0.7724_0.1253_44.75)] bg-[oklch(0.7466_0.1572_43.66/0.8)]":
             index === 1,
-          "border-[oklch(0.7724_0.1253_44.75)] bg-[oklch(0.7466_0.1572_43.66/0.8)]": index === 2,
+          "border-[oklch(0.6681_0.227_7.56/0.80)] bg-[oklch(0.6681_0.227_7.56/0.80)]": index === 2,
         },
         className,
       )}
