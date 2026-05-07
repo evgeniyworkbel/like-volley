@@ -53,7 +53,7 @@ export async function Faq() {
             <Button iconType="arrow">Напиши нам</Button>
           </div>
         </div>
-        <Accordion items={faqData} defaultOpened={faqData.at(1)?.id} />
+        <Accordion items={faqData} defaultOpened={faqData.at(0)?.id} />
       </div>
     </section>
   );
