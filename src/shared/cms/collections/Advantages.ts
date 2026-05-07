@@ -24,13 +24,13 @@ export const Advantages: CollectionConfig = {
     {
       name: "score",
       type: "number",
-      label: { en: "Score", ru: "Оценка" },
+      label: { en: "Score", ru: "Числовая оценка" },
       required: true,
     },
     {
-      name: "withPlus",
+      name: "ShowPlus",
       type: "checkbox",
-      label: { en: "WithPlus", ru: "Показывать плюс" },
+      label: { en: "ShowPlus", ru: "Показывать плюс" },
       defaultValue: false,
     },
   ],

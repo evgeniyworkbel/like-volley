@@ -259,7 +259,7 @@ export interface Advantage {
   title: string;
   subtitle: string;
   score: number;
-  withPlus?: boolean | null;
+  ShowPlus?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -442,7 +442,7 @@ export interface AdvantagesSelect<T extends boolean = true> {
   title?: T;
   subtitle?: T;
   score?: T;
-  withPlus?: T;
+  ShowPlus?: T;
   updatedAt?: T;
   createdAt?: T;
 }
