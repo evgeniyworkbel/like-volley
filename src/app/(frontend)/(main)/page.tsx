@@ -1,3 +1,4 @@
+import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
 import {
   Hero,
   Advantages,
@@ -18,14 +19,16 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <Advantages />
-      <Locations />
-      <SignUpForWorkout />
-      <Coaches />
+      <ContainerWithShadow>
+        <Advantages />
+        <Coaches />
+        <Locations />
+        <SignUpForWorkout />
+        <Gallery />
+      </ContainerWithShadow>
       <Faq />
       <GiftCertificates />
       <Banner />
-      <Gallery />
     </div>
   );
 }
