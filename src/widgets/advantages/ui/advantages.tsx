@@ -15,7 +15,7 @@ export async function Advantages() {
           title={item.title}
           subtitle={item.subtitle}
           score={item.score}
-          ShowPlus={item.ShowPlus}
+          showPlus={item.showPlus}
         />
       ))}
     </section>

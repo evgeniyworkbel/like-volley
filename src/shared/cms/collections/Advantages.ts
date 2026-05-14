@@ -16,7 +16,7 @@ export const Advantages: CollectionConfig = {
       required: true,
     },
     {
-      name: "ShowPlus",
+      name: "showPlus",
       type: "checkbox",
       label: { en: "Show plus", ru: "Показывать плюс" },
       defaultValue: false,
