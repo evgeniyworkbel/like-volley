@@ -256,10 +256,10 @@ export interface Certificate {
 export interface Advantage {
   id: number;
   _order?: string | null;
-  title: string;
-  subtitle: string;
   score: number;
   ShowPlus?: boolean | null;
+  title: string;
+  subtitle: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -439,10 +439,10 @@ export interface CertificatesSelect<T extends boolean = true> {
  */
 export interface AdvantagesSelect<T extends boolean = true> {
   _order?: T;
-  title?: T;
-  subtitle?: T;
   score?: T;
   ShowPlus?: T;
+  title?: T;
+  subtitle?: T;
   updatedAt?: T;
   createdAt?: T;
 }
