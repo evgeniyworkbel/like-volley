@@ -1,4 +1,4 @@
-import { OverlapContainer } from "@/shared/ui/overlap-container";
+import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
 import {
   Hero,
   Advantages,
@@ -19,16 +19,16 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <OverlapContainer>
+      <ContainerWithShadow>
         <Advantages />
+        <Coaches />
         <Locations />
         <SignUpForWorkout />
-        <Coaches />
-      </OverlapContainer>
+        <Gallery />
+      </ContainerWithShadow>
       <Faq />
       <GiftCertificates />
       <Banner />
-      <Gallery />
     </div>
   );
 }
