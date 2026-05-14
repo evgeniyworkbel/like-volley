@@ -10,18 +10,6 @@ export const Advantages: CollectionConfig = {
   },
   fields: [
     {
-      name: "title",
-      type: "text",
-      label: { en: "Title", ru: "Заголовок" },
-      required: true,
-    },
-    {
-      name: "subtitle",
-      type: "text",
-      label: { en: "Subtitle", ru: "Подзаголовок" },
-      required: true,
-    },
-    {
       name: "score",
       type: "number",
       label: { en: "Score", ru: "Числовая оценка" },
@@ -32,6 +20,18 @@ export const Advantages: CollectionConfig = {
       type: "checkbox",
       label: { en: "Show plus", ru: "Показывать плюс" },
       defaultValue: false,
+    },
+    {
+      name: "title",
+      type: "text",
+      label: { en: "Title", ru: "Заголовок" },
+      required: true,
+    },
+    {
+      name: "subtitle",
+      type: "text",
+      label: { en: "Subtitle", ru: "Подзаголовок" },
+      required: true,
     },
   ],
   orderable: true,

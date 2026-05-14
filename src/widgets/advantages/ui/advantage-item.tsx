@@ -4,7 +4,7 @@ type AdvantageItemProps = Pick<Advantage, "title" | "subtitle" | "score" | "Show
 
 export function AdvantageItem({ title, subtitle, score, ShowPlus }: AdvantageItemProps) {
   return (
-    <div className="flex flex-col items-center gap-4.5 py-10 font-bold">
+    <div className="flex w-75 flex-col items-center gap-4.5 py-10 font-bold">
       <h3 className="flex text-8xl">
         {score}
         {ShowPlus && <span>+</span>}
