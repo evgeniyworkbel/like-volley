@@ -257,7 +257,7 @@ export interface Advantage {
   id: number;
   _order?: string | null;
   score: number;
-  ShowPlus?: boolean | null;
+  showPlus?: boolean | null;
   title: string;
   subtitle: string;
   updatedAt: string;
@@ -440,7 +440,7 @@ export interface CertificatesSelect<T extends boolean = true> {
 export interface AdvantagesSelect<T extends boolean = true> {
   _order?: T;
   score?: T;
-  ShowPlus?: T;
+  showPlus?: T;
   title?: T;
   subtitle?: T;
   updatedAt?: T;
