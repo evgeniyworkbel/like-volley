@@ -1,6 +1,10 @@
 import { getPayloadClient } from "@/shared/cms";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 
+// todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
+// изменения сразу отображались без запуска нового билда)
+export const dynamic = "force-dynamic";
+
 export default async function Policy() {
   const payload = await getPayloadClient();
   const policy = await payload.findGlobal({
