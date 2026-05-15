@@ -17,6 +17,7 @@ import { Certificates } from "./collections/Certificates";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
+import { AgreementPage } from "./globals/AgreementPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -33,7 +34,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Coaches, Faq, Certificates, Advantages],
-  globals: [CompanyInfo, Owner, PolicyPage],
+  globals: [CompanyInfo, Owner, PolicyPage, AgreementPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
