@@ -10,7 +10,7 @@ type customFieldNode = {
 
 type customRawHtmlTableBlock = SerializedBlockNode<customFieldNode>;
 
-export default async function Offer() {
+export default async function Agreement() {
   const payload = await getPayloadClient();
   const agreement = await payload.findGlobal({ slug: "agreement" });
 
