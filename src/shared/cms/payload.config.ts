@@ -14,6 +14,7 @@ import { Coaches } from "./collections/Coaches";
 import { Faq } from "./collections/Faq";
 import { Advantages } from "./collections/Advantages";
 import { Certificates } from "./collections/Certificates";
+import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
@@ -32,7 +33,7 @@ export default buildConfig({
       logout: { Button: "./ui/logout-btn" },
     },
   },
-  collections: [Users, Media, Coaches, Faq, Certificates, Advantages],
+  collections: [Users, Media, Coaches, Faq, Certificates, Advantages, Reviews],
   globals: [CompanyInfo, Owner, PolicyPage],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",

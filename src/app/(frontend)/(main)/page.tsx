@@ -9,6 +9,7 @@ import {
   Gallery,
   Coaches,
   Locations,
+  Reviews,
 } from "@/widgets";
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <ContainerWithShadow>
         <Advantages />
+        <Reviews />
         <Coaches />
         <Locations />
         <SignUpForWorkout />

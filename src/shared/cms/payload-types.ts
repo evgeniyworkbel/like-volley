@@ -73,6 +73,7 @@ export interface Config {
     faq: Faq;
     certificates: Certificate;
     advantages: Advantage;
+    reviews: Review;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -86,6 +87,7 @@ export interface Config {
     faq: FaqSelect<false> | FaqSelect<true>;
     certificates: CertificatesSelect<false> | CertificatesSelect<true>;
     advantages: AdvantagesSelect<false> | AdvantagesSelect<true>;
+    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -264,6 +266,22 @@ export interface Advantage {
   createdAt: string;
 }
 /**
+ * Секция отзывов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews".
+ */
+export interface Review {
+  id: number;
+  _order?: string | null;
+  text: string;
+  firstName: string;
+  lastName: string;
+  link: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -310,6 +328,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "advantages";
         value: number | Advantage;
+      } | null)
+    | ({
+        relationTo: "reviews";
+        value: number | Review;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -443,6 +465,19 @@ export interface AdvantagesSelect<T extends boolean = true> {
   showPlus?: T;
   title?: T;
   subtitle?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews_select".
+ */
+export interface ReviewsSelect<T extends boolean = true> {
+  _order?: T;
+  text?: T;
+  firstName?: T;
+  lastName?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }
