@@ -15,7 +15,7 @@ export async function Reviews() {
       <Title className="font-inter">
         Что о нас<span className="text-accent-orange">&nbsp;говорят</span>
       </Title>
-      <div className="flex w-full flex-col gap-10 xl:flex-row">
+      <div className="flex w-full flex-col items-center gap-10 xl:flex-row">
         {reviewsData.map((item) => (
           <ReviewItem
             key={item.id}
