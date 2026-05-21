@@ -1,7 +1,7 @@
 export function FooterDecor() {
   return (
     <svg
-      className="pointer-events-none absolute bottom-0 left-0 z-5 h-38 w-full select-none xl:h-36"
+      className="pointer-events-none absolute bottom-0 left-0 h-38 w-full select-none xl:h-36"
       viewBox="0 0 320 151"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
