@@ -1,10 +1,10 @@
-import { Route } from "next";
 import { Review } from "@/shared/cms/payload-types";
 import { FooterDecor } from "./footer-decor";
+import { ExternalLinkReview } from "./external-link-review";
 
 type ReviewItemProps = Pick<Review, "id" | "firstName" | "lastName" | "text" | "link">;
 
-export function ReviewItem({ id, firstName, lastName, text }: ReviewItemProps) {
+export function ReviewItem({ id, firstName, lastName, text, link }: ReviewItemProps) {
   return (
     <div className="relative flex w-80 flex-col gap-15 overflow-hidden rounded-[20px] bg-[oklch(0.9791_0_0)] px-4 py-6 text-lg xl:w-103 xl:gap-27 xl:px-7">
       <div className="line-clamp-9 text-left before:block before:font-serif before:text-[34px] before:leading-none before:font-bold before:text-accent-orange before:content-['“']">
@@ -22,13 +22,7 @@ export function ReviewItem({ id, firstName, lastName, text }: ReviewItemProps) {
             &nbsp;
             {lastName}
           </div>
-          <a
-            className="font-normal underline underline-offset-3"
-            href={`/reviews/${id}` as Route}
-            target="_blank"
-          >
-            Посмотреть отзыв
-          </a>
+          <ExternalLinkReview id={id} link={link} />
         </div>
       </div>
     </div>
