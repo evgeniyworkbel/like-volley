@@ -1,14 +1,4 @@
-import { CollectionConfig, TextFieldValidation } from "payload";
-
-const validateLink: TextFieldValidation = (val) => {
-  if (!val) return "Ссылка обязательна";
-  try {
-    new URL(val);
-    return true;
-  } catch {
-    return "Введите корректный URL-адрес";
-  }
-};
+import { CollectionConfig } from "payload";
 
 export const Reviews: CollectionConfig = {
   slug: "reviews",
@@ -42,7 +32,6 @@ export const Reviews: CollectionConfig = {
       type: "text",
       label: "Ссылка на отзыв",
       required: true,
-      validate: validateLink,
     },
   ],
   orderable: true,
