@@ -1,7 +1,7 @@
 import { Review } from "@/shared/cms/payload-types";
 import { FooterDecor } from "./footer-decor";
 
-type ReviewItemProps = Pick<Review, "firstName" | "lastName" | "text" | "link">;
+type ReviewItemProps = Pick<Review, "id" | "firstName" | "lastName" | "text" | "link">;
 
 export function ReviewItem({ firstName, lastName, text, link }: ReviewItemProps) {
   const fio = `${firstName} ${lastName}`;
