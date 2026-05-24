@@ -1,0 +1,28 @@
+.reviewFooter {
+  position: relative;
+}
+
+.reviewFooter::before,
+.reviewFooter::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  width: 50px;
+  height: 50px;
+}
+
+.reviewFooter::before {
+  top: 0;
+  left: 0;
+  border-top-left-radius: 50px;
+  box-shadow: -10px -10px 0 10px oklch(0.9791 0 0deg);
+}
+
+.reviewFooter::after {
+  top: -50px;
+  right: 0;
+  border-bottom-right-radius: 50px;
+  box-shadow: 10px 10px 0 10px var(--accent-orange);
+}

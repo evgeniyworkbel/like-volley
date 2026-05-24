@@ -10,7 +10,7 @@ export async function Reviews() {
   const reviewsData = reviews.docs;
 
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center gap-6 overflow-hidden px-7.5 py-5 [clip-path:inset(0)] xl:gap-10 xl:px-20 xl:py-15">
+    <section className="relative z-10 flex flex-col items-center justify-center gap-6 overflow-hidden px-7.5 py-5 xl:gap-10 xl:px-20 xl:py-15">
       <BackgroundDecor />
       <Title className="font-inter">
         Что о нас<span className="text-accent-orange">&nbsp;говорят</span>
