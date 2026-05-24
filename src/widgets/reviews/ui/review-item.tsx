@@ -31,7 +31,7 @@ export function ReviewItem({ firstName, lastName, text, link }: ReviewItemProps)
         </span>
         <hgroup className="flex flex-col items-start">
           <h4>{fio}</h4>
-          <p className="font-normal underline underline-offset-3">
+          <p className="font-normal">
             <a href={link} target="_blank">
               Посмотреть отзыв
             </a>
