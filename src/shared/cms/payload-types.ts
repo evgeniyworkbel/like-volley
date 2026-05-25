@@ -276,7 +276,7 @@ export interface Review {
   _order?: string | null;
   text: string;
   firstName: string;
-  lastName: string;
+  lastName?: string | null;
   link: string;
   updatedAt: string;
   createdAt: string;
