@@ -5,11 +5,11 @@ import styles from "./review-item.module.css";
 type ReviewItemProps = Pick<Review, "id" | "firstName" | "lastName" | "text" | "link">;
 
 export function ReviewItem({ firstName, lastName, text, link }: ReviewItemProps) {
-  const fio = strJoiner([firstName, lastName]);
+  const fio = strJoiner([firstName, lastName], " ");
   const initials = lastName ? firstName[0] + lastName[0] : firstName[0] + firstName[0];
 
   return (
-    <div className="relative flex w-80 flex-col gap-12 overflow-hidden rounded-[20px] bg-[oklch(0.9791_0_0)] text-lg xl:w-103 xl:gap-14">
+    <div className="relative flex w-80 flex-col justify-between gap-12 overflow-hidden rounded-[20px] bg-[oklch(0.9791_0_0)] text-lg xl:w-103 xl:gap-14">
       <div className="line-clamp-8 px-4 pt-6 text-left xl:px-7">
         <blockquote cite={link}>
           <p>
