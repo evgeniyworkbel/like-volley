@@ -25,7 +25,6 @@ export const Reviews: CollectionConfig = {
       name: "lastName",
       type: "text",
       label: { en: "Last name", ru: "Фамилия" },
-      required: true,
     },
     {
       name: "link",
