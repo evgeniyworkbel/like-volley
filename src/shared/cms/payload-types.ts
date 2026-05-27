@@ -103,11 +103,13 @@ export interface Config {
     "company-info": CompanyInfo;
     owner: Owner;
     policy: Policy;
+    agreement: Agreement;
   };
   globalsSelect: {
     "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
     owner: OwnerSelect<false> | OwnerSelect<true>;
     policy: PolicySelect<false> | PolicySelect<true>;
+    agreement: AgreementSelect<false> | AgreementSelect<true>;
   };
   locale: null;
   widgets: {
@@ -579,6 +581,46 @@ export interface Policy {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agreement".
+ */
+export interface Agreement {
+  id: number;
+  title: string;
+  description: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  appendices?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "company-info_select".
  */
 export interface CompanyInfoSelect<T extends boolean = true> {
@@ -612,6 +654,18 @@ export interface OwnerSelect<T extends boolean = true> {
 export interface PolicySelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "agreement_select".
+ */
+export interface AgreementSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  appendices?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

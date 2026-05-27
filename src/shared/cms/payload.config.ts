@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { buildConfig } from "payload";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { EXPERIMENTAL_TableFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import { en } from "@payloadcms/translations/languages/en";
 import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
@@ -18,6 +18,7 @@ import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
+import { OfferAgreementPage } from "./globals/Offer-agreement-page";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -34,8 +35,10 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Coaches, Faq, Certificates, Advantages, Reviews],
-  globals: [CompanyInfo, Owner, PolicyPage],
-  editor: lexicalEditor(),
+  globals: [CompanyInfo, Owner, PolicyPage, OfferAgreementPage],
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()],
+  }),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
