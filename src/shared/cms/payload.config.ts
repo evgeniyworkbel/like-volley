@@ -18,7 +18,7 @@ import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
-import { OfferAgreementPage } from "./globals/Offer-agreement-page";
+import { OfferAgreementPage } from "./globals/OfferAgreementPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
