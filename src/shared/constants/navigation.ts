@@ -29,7 +29,7 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   },
   offerAgreement: {
     title: "Договор оферты",
-    href: "/agreement",
+    href: "/offer-agreement",
   },
   news: {
     title: "Новости",

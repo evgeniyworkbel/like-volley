@@ -1,7 +1,7 @@
 import { GlobalConfig } from "payload";
 
 export const OfferAgreementPage: GlobalConfig = {
-  slug: "agreement",
+  slug: "offer-agreement",
   label: { en: "Offer agreement", ru: "Договор оферты" },
   fields: [
     {
@@ -11,15 +11,10 @@ export const OfferAgreementPage: GlobalConfig = {
       required: true,
     },
     {
-      name: "description",
+      name: "content",
       type: "richText",
-      label: { en: "Description", ru: "Описание" },
+      label: { en: "Content", ru: "Контент" },
       required: true,
-    },
-    {
-      name: "appendices",
-      type: "richText",
-      label: { en: "Appendices", ru: "Приложения" },
     },
   ],
 };
