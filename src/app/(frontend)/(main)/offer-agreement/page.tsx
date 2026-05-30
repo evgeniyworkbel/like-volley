@@ -13,7 +13,7 @@ export default async function OfferAgreement() {
 
   return (
     <article className="mx-auto flex max-w-4xl flex-col items-center gap-5 px-5 py-5 xl:px-20">
-      <h1 className="text-2xl font-extrabold">{title}</h1>
+      <h1 className="text-center text-2xl font-extrabold">{title}</h1>
       {content && (
         <div
           className="w-full [&_table]:overflow-x-auto"

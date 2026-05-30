@@ -14,7 +14,7 @@ export default async function Policy() {
 
   return (
     <article className="mx-auto flex max-w-4xl flex-col items-center gap-5 px-5 py-5 xl:px-20">
-      <h1 className="text-2xl font-extrabold">{title}</h1>
+      <h1 className="text-center text-2xl font-extrabold">{title}</h1>
       <section className="flex flex-col text-sm leading-6">
         {description && (
           <div
