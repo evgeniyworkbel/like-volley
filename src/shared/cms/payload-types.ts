@@ -103,11 +103,13 @@ export interface Config {
     "company-info": CompanyInfo;
     owner: Owner;
     policy: Policy;
+    "offer-agreement": OfferAgreement;
   };
   globalsSelect: {
     "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
     owner: OwnerSelect<false> | OwnerSelect<true>;
     policy: PolicySelect<false> | PolicySelect<true>;
+    "offer-agreement": OfferAgreementSelect<false> | OfferAgreementSelect<true>;
   };
   locale: null;
   widgets: {
@@ -579,6 +581,31 @@ export interface Policy {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "offer-agreement".
+ */
+export interface OfferAgreement {
+  id: number;
+  title: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "company-info_select".
  */
 export interface CompanyInfoSelect<T extends boolean = true> {
@@ -612,6 +639,17 @@ export interface OwnerSelect<T extends boolean = true> {
 export interface PolicySelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "offer-agreement_select".
+ */
+export interface OfferAgreementSelect<T extends boolean = true> {
+  title?: T;
+  content?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
