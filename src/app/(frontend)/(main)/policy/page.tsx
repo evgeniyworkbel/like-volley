@@ -17,7 +17,7 @@ export default async function Policy() {
       <h1 className="text-2xl font-extrabold">{title}</h1>
       <section className="flex flex-col text-sm leading-6">
         {description && (
-          <p
+          <div
             className="flex flex-col indent-6"
             dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: description }) }}
           />
