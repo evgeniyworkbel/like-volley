@@ -27,7 +27,7 @@ export function FooterNav() {
       <div className="flex flex-col items-center gap-4.5 text-[18px] md:items-start md:gap-7">
         <h2 className="text-sm">Документы</h2>
         <ul className="flex flex-col items-center gap-4.5 font-bold uppercase md:items-start">
-          <li className="text-center md:text-left">
+          <li className="max-w-80 text-center md:text-left">
             <Link href={navLinks.policy.href}>{navLinks.policy.title}</Link>
           </li>
           <li>
