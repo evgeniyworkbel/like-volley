@@ -1,4 +1,4 @@
-import { Title } from "@/shared/ui";
+import { SectionTitle } from "@/shared/ui";
 import { Header, Footer } from "@/widgets";
 
 export default function NotFound() {
@@ -9,7 +9,7 @@ export default function NotFound() {
         <h1 className="font-shantell text-[74px] text-foreground md:text-9xl">
           4<span className="text-accent-orange">0</span>4
         </h1>
-        <Title className="text-2xl md:text-[40px]">Страница не найдена :(</Title>
+        <SectionTitle className="text-2xl md:text-[40px]">Страница не найдена :(</SectionTitle>
         <video autoPlay muted playsInline>
           <source src="/not-found/animated-ball.webm" />
           <source src="/not-found/animated-ball.mp4" />

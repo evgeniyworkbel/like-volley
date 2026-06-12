@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Title } from "@/shared/ui";
+import { SectionTitle } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { InfiniteAdsLine } from "./infinite-ads-line";
 
@@ -15,7 +15,9 @@ export function Form2() {
       />
       <div className="relative flex w-full flex-col items-center gap-10.5 xl:gap-8">
         <div className="flex flex-col items-center gap-2 xl:gap-5.5">
-          <Title className="text-[26px] text-white uppercase">готов зайти в игру?</Title>
+          <SectionTitle className="text-[26px] text-white uppercase">
+            готов зайти в игру?
+          </SectionTitle>
           <p className="max-w-80 text-center text-sm font-bold text-white xl:max-w-138.5 xl:text-lg">
             Почувствуй энергию волейбола в самом драйвовом клубе города. Профессиональный паркет,
             топовые тренеры и сообщество, в котором ты растешь

@@ -1,4 +1,4 @@
-import { Title } from "@/shared/ui";
+import { SectionTitle } from "@/shared/ui";
 import { cn } from "@/shared/lib";
 import { getPayloadClient } from "@/shared/cms";
 import { GiftCertificate } from "./gift-certificate";
@@ -16,11 +16,11 @@ export async function GiftCertificates() {
       <div className="flex w-full flex-col items-center gap-14 text-center xl:flex-row xl:items-start xl:gap-44 xl:text-left">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
-            <Title className="font-inter text-[28px] leading-none">
+            <SectionTitle className="font-inter text-[28px] leading-none">
               Подарочный
               <br />
               <span className="text-accent-orange">сертификат</span>
-            </Title>
+            </SectionTitle>
             <p className="text-balance text-foreground-secondary xl:text-[18px]">
               Идеальный подарок для тех, кто любит спорт и активный отдых. Выберите подходящий
               номинал и подарите эмоции!
