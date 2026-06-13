@@ -46,7 +46,7 @@ export function MobileMenu({ data }: MobileMenuProps) {
             "-translate-y-full": !isOpen,
           },
         )}
-        phoneLinkClassName="rounded-[40px] bg-accent-blue px-12 py-4 text-white no-underline"
+        phoneLinkClassName="rounded-[40px] bg-accent-blue px-12 py-4 text-white no-underline tracking-tight"
         data={data}
         onLinkClick={closeMenu}
       />
