@@ -8,6 +8,7 @@ import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
 
 import { migrations } from "./migrations";
+import { yandexStorage } from "./storage";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
@@ -60,6 +61,15 @@ export default buildConfig({
     },
   },
   sharp,
-  plugins: [],
+  plugins: [
+    yandexStorage({
+      acl: "public-read",
+      bucket: process.env.YC_S3_BUCKET || "",
+      collections: {
+        media: true,
+      },
+      enabled: Boolean(process.env.YC_S3_BUCKET),
+    }),
+  ],
   telemetry: false,
 });
