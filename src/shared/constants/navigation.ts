@@ -11,7 +11,7 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     href: `/#${locationsSectionId}`,
   },
   gallerySection: {
-    title: "Галерея",
+    title: "Живые моменты",
     href: `/#${gallerySectionId}`,
   },
   faqSection: {
