@@ -5,11 +5,12 @@ import { CompanyInfo } from "@/shared/cms/payload-types";
 
 type NavbarProps = {
   className?: string;
+  phoneLinkClassName?: string;
   data: CompanyInfo;
   onLinkClick?: VoidFunction;
 };
 
-export function Navbar({ className, data, onLinkClick }: NavbarProps) {
+export function Navbar({ className, phoneLinkClassName, data, onLinkClick }: NavbarProps) {
   const { mobilePhone } = data;
 
   return (
@@ -34,7 +35,12 @@ export function Navbar({ className, data, onLinkClick }: NavbarProps) {
       <Link href={navLinks.news.href} onClick={onLinkClick}>
         {navLinks.news.title}
       </Link>
-      <a href={getPhoneHref(mobilePhone)} rel="noopener noreferrer" onClick={onLinkClick}>
+      <a
+        className={phoneLinkClassName}
+        href={getPhoneHref(mobilePhone)}
+        rel="noopener noreferrer"
+        onClick={onLinkClick}
+      >
         {formatPhone(mobilePhone)}
       </a>
     </nav>
