@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { getPayloadClient } from "@/shared/cms";
-import { Accordion, Button, Title } from "@/shared/ui";
+import { Accordion, Button, SectionTitle } from "@/shared/ui";
 import { faqSectionId } from "@/shared/constants";
 import { AccordionItemModel } from "@/shared/ui/accordion";
 
@@ -29,9 +29,9 @@ export async function Faq() {
       className="flex flex-col gap-6 px-5 py-10 xl:gap-0 xl:px-20 xl:py-15"
     >
       <hgroup className="flex flex-col text-center xl:max-w-1/2 xl:gap-4 xl:text-left xl:text-lg">
-        <Title className="font-inter">
+        <SectionTitle className="font-inter">
           Вопросы и <span className="text-accent-orange">ответы</span>
-        </Title>
+        </SectionTitle>
         <p className="text-foreground-secondary md:leading-6.5">
           Мы подобрали все часто-задаваемые вопросы от наших клиентов и ответили на них
         </p>

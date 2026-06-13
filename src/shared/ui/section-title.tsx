@@ -2,7 +2,7 @@ import { cn } from "../lib";
 
 type TitleProps = Pick<React.HTMLAttributes<HTMLHeadingElement>, "className" | "children">;
 
-export function Title({ className, children, ...props }: TitleProps) {
+export function SectionTitle({ className, children, ...props }: TitleProps) {
   return (
     <h2
       {...props}

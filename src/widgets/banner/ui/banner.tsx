@@ -1,31 +1,36 @@
 import Image from "next/image";
-import { Title } from "@/shared/ui";
-import { cn } from "@/shared/lib";
-import { bannerImagesData } from "../model/data";
+import { SignUpForWorkoutBtn } from "@/features";
 
 export function Banner() {
   return (
-    <section className="flex justify-center px-5 py-[50px] xl:px-20">
-      <div className="relative flex aspect-[0.66] w-full justify-center overflow-hidden rounded-2xl border-4 border-[oklch(0.6559_0.1604_257.81)] bg-accent-blue px-5 pt-4 md:aspect-[2.39] md:items-center md:justify-start md:py-0 xl:aspect-[4.19] xl:px-10">
-        <hgroup className="z-10 flex flex-col items-center gap-6 font-extrabold text-white md:items-start md:gap-4 xl:gap-6">
-          <Title className="text-4xl text-inherit md:text-[44px]">Приведи друга</Title>
-          <p className="text-[15px] md:text-base xl:text-2xl">
-            Вы оба получите скидку в&nbsp;
-            <span className="font-shantell text-accent-green">20 р.</span>
-          </p>
-        </hgroup>
-        {bannerImagesData.map(({ id, className, src, alt }) => {
-          return (
-            <Image
-              key={id}
-              className={cn("object-contain", className)}
-              src={src}
-              quality={100}
-              alt={alt}
-              fill
-            />
-          );
-        })}
+    <section className="flex px-5 py-12.5 xl:px-20 xl:py-15">
+      <div className="flex h-158 w-full flex-col items-center justify-end overflow-hidden rounded-[36px] bg-linear-to-r from-[oklch(0.4946_0.2461_276.82)] to-[oklch(0.6511_0.1919_33.16)] xl:h-138.5 xl:flex-row xl:justify-between xl:pl-15.5">
+        <div className="flex flex-col items-center gap-6 xl:items-start xl:gap-16">
+          <hgroup className="flex flex-col items-center gap-6 text-white xl:max-w-108 xl:items-start xl:gap-11.5">
+            <h2 className="text-center font-inter text-[52px] leading-14.5 font-light text-inherit uppercase italic md:text-[96px] xl:text-left xl:leading-24">
+              вместе
+              <br />
+              <span className="bg-linear-to-r from-[oklch(0.9052_0.1657_98.11)] to-[oklch(0.8366_0.1165_66.29)] bg-clip-text pr-3 font-bold text-transparent">
+                дешевле
+              </span>
+            </h2>
+            <p className="border-l-4 border-[oklch(0.8606_0.1731_91.94)] pl-6 leading-6 text-shadow-accent-green xl:text-lg">
+              Приводи друга на тренировку и получите <span className="font-bold">скидку 20p</span>
+              &nbsp; на абонемент для каждого. Играйте в одной команде!
+            </p>
+          </hgroup>
+          <SignUpForWorkoutBtn iconType="arrow" />
+        </div>
+
+        <div className="relative h-71 w-full xl:aspect-[1.29] xl:h-full">
+          <Image
+            className="object-cover object-[-14%_0%] xl:object-center"
+            src="/banner/promo.webp"
+            quality={100}
+            alt="Баннер, на котором изображены два спортсмена: женщина и мальчик."
+            fill
+          />
+        </div>
       </div>
     </section>
   );
