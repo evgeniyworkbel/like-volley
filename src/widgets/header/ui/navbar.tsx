@@ -25,18 +25,11 @@ export function Navbar({ className, data, onLinkClick }: NavbarProps) {
       <Link href={navLinks.coachesSection.href} onClick={onLinkClick}>
         {navLinks.coachesSection.title}
       </Link>
-      <Link
-        className="xl:hidden"
-        href={navLinks.giftCertificatesSection.href}
-        onClick={onLinkClick}
-      >
+      <Link href={navLinks.giftCertificatesSection.href} onClick={onLinkClick}>
         {navLinks.giftCertificatesSection.title}
       </Link>
       <Link href={navLinks.faqSection.href} onClick={onLinkClick}>
         {navLinks.faqSection.title}
-      </Link>
-      <Link href={navLinks.gallerySection.href} onClick={onLinkClick}>
-        {navLinks.gallerySection.title}
       </Link>
       <Link href={navLinks.news.href} onClick={onLinkClick}>
         {navLinks.news.title}
