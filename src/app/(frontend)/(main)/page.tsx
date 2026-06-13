@@ -26,10 +26,10 @@ export default function Home() {
         <Coaches />
         <Locations />
         <SignUpForWorkout />
-        <Gallery />
+        <GiftCertificates />
       </ContainerWithShadow>
+      <Gallery />
       <Faq />
-      <GiftCertificates />
       <Banner />
     </div>
   );
