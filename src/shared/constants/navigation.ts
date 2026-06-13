@@ -8,19 +8,19 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   },
   locationsSection: {
     title: "Локации",
-    href: `#${locationsSectionId}`,
+    href: `/#${locationsSectionId}`,
   },
   gallerySection: {
     title: "Галерея",
-    href: `#${gallerySectionId}`,
+    href: `/#${gallerySectionId}`,
   },
   faqSection: {
     title: "FAQ",
-    href: `#${faqSectionId}`,
+    href: `/#${faqSectionId}`,
   },
   coachesSection: {
     title: "Тренеры",
-    href: `#${coachesSectionId}`,
+    href: `/#${coachesSectionId}`,
   },
   // Links for pages
   policy: {
