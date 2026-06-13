@@ -4,6 +4,7 @@ import { getPayloadClient } from "@/shared/cms";
 import { GiftCertificate } from "./gift-certificate";
 import styles from "./gift-certificates.module.css";
 import { BuyCertificateBtn } from "./buy-certificate-btn";
+import { giftCertificatesSectionId } from "@/shared/constants";
 
 const animationClasses = [styles.cert1, styles.cert2, styles.cert3];
 
@@ -12,7 +13,10 @@ export async function GiftCertificates() {
   const certificates = await payload.find({ collection: "certificates", pagination: false });
 
   return (
-    <section className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15">
+    <section
+      id={giftCertificatesSectionId}
+      className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15"
+    >
       <div className="flex w-full flex-col items-center gap-14 text-center xl:flex-row xl:items-start xl:gap-44 xl:text-left">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">

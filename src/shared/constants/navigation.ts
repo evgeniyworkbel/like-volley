@@ -1,4 +1,10 @@
-import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+import {
+  coachesSectionId,
+  faqSectionId,
+  gallerySectionId,
+  giftCertificatesSectionId,
+  locationsSectionId,
+} from "./html-attrs";
 import { LinkHref } from "../types";
 
 export const navLinks: Record<string, { title: string; href: LinkHref }> = {
@@ -13,6 +19,10 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   gallerySection: {
     title: "Живые моменты",
     href: `/#${gallerySectionId}`,
+  },
+  giftCertificatesSection: {
+    title: "Подарочные сертификаты",
+    href: `/#${giftCertificatesSectionId}`,
   },
   faqSection: {
     title: "FAQ",
