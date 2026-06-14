@@ -24,9 +24,9 @@ export default function Home() {
         <Advantages />
         <Reviews />
         <Coaches />
-        <Locations />
         <SignUpForWorkout />
         <GiftCertificates />
+        <Locations />
       </ContainerWithShadow>
       <Gallery />
       <Faq />
