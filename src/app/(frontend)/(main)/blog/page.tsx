@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function News() {
+export default function Blog() {
   // @todo реализовать получение через cms
   // @todo при cms id далить
-  const newsId = "1";
+  const postId = "1";
 
   return (
     <section className="flex flex-col items-center gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
       <h1 className="font-shantell text-4xl font-bold text-accent-orange md:text-6xl">Новости</h1>
       <section className="grid gap-5 xl:grid-cols-3">
-        <Link className="flex flex-col gap-2 overflow-hidden" href={`/news/${newsId}`}>
+        <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
           <Image
             width={1280}
             height={853}

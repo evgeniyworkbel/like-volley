@@ -1,6 +1,6 @@
-export default async function NewsById({ params }: PageProps<"/news/[slug]">) {
+export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { slug } = await params;
+  const { postId } = await params;
 
   return (
     <article className="container mx-auto max-w-4xl">
