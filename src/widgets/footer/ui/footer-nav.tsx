@@ -14,10 +14,12 @@ export function FooterNav() {
             <Link href={navLinks.coachesSection.href}>{navLinks.coachesSection.title}</Link>
           </li>
           <li>
-            <Link href={navLinks.faqSection.href}>{navLinks.faqSection.title}</Link>
+            <Link href={navLinks.giftCertificatesSection.href}>
+              {navLinks.giftCertificatesSection.title}
+            </Link>
           </li>
           <li>
-            <Link href={navLinks.gallerySection.href}>{navLinks.gallerySection.title}</Link>
+            <Link href={navLinks.faqSection.href}>{navLinks.faqSection.title}</Link>
           </li>
           <li>
             <Link href={navLinks.news.href}>{navLinks.news.title}</Link>
