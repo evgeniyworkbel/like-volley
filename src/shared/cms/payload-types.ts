@@ -74,7 +74,8 @@ export interface Config {
     certificates: Certificate;
     advantages: Advantage;
     reviews: Review;
-    categories: Category;
+    "post-categories": PostCategory;
+    posts: Post;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -89,7 +90,8 @@ export interface Config {
     certificates: CertificatesSelect<false> | CertificatesSelect<true>;
     advantages: AdvantagesSelect<false> | AdvantagesSelect<true>;
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
-    categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    "post-categories": PostCategoriesSelect<false> | PostCategoriesSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -289,12 +291,43 @@ export interface Review {
  * Категории постов
  *
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories".
+ * via the `definition` "post-categories".
  */
-export interface Category {
+export interface PostCategory {
   id: number;
-  _order?: string | null;
   label: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Публикации
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  category: number | PostCategory;
+  title: string;
+  shortDescription: string;
+  readTime: number;
+  mainPhoto: string;
+  mainPhotoMadeBy?: string | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -351,8 +384,12 @@ export interface PayloadLockedDocument {
         value: number | Review;
       } | null)
     | ({
-        relationTo: "categories";
-        value: number | Category;
+        relationTo: "post-categories";
+        value: number | PostCategory;
+      } | null)
+    | ({
+        relationTo: "posts";
+        value: number | Post;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -504,11 +541,25 @@ export interface ReviewsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories_select".
+ * via the `definition` "post-categories_select".
  */
-export interface CategoriesSelect<T extends boolean = true> {
-  _order?: T;
+export interface PostCategoriesSelect<T extends boolean = true> {
   label?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  category?: T;
+  title?: T;
+  shortDescription?: T;
+  readTime?: T;
+  mainPhoto?: T;
+  mainPhotoMadeBy?: T;
+  content?: T;
   updatedAt?: T;
   createdAt?: T;
 }
