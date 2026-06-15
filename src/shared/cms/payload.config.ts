@@ -15,6 +15,7 @@ import { Faq } from "./collections/Faq";
 import { Advantages } from "./collections/Advantages";
 import { Certificates } from "./collections/Certificates";
 import { PostCategories } from "./collections/PostCategories";
+import { Posts } from "./collections/Posts";
 import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
@@ -35,7 +36,17 @@ export default buildConfig({
       logout: { Button: "./ui/logout-btn" },
     },
   },
-  collections: [Users, Media, Coaches, Faq, Certificates, Advantages, Reviews, PostCategories],
+  collections: [
+    Users,
+    Media,
+    Coaches,
+    Faq,
+    Certificates,
+    Advantages,
+    Reviews,
+    PostCategories,
+    Posts,
+  ],
   globals: [CompanyInfo, Owner, PolicyPage, OfferAgreementPage],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()],
