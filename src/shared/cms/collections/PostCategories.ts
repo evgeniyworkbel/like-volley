@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
 
 export const PostCategories: CollectionConfig = {
-  slug: "categories",
+  slug: "post-categories",
   labels: {
     plural: { en: "Posts categories", ru: "Категории постов" },
   },
@@ -18,6 +18,5 @@ export const PostCategories: CollectionConfig = {
       unique: true,
     },
   ],
-  orderable: true,
   disableBulkEdit: true,
 };
