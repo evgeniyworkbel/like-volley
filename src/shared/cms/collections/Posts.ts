@@ -20,23 +20,23 @@ export const Posts: CollectionConfig = {
       name: "title",
       type: "text",
       label: { en: "Title", ru: "Заголовок" },
-      required: true,
       maxLength: 80,
+      required: true,
     },
     {
       name: "shortDescription",
       type: "text",
       label: { en: "Short description", ru: "Краткое описание" },
-      required: true,
       maxLength: 300,
+      required: true,
     },
     {
       // todo: вычислять время динамически
       name: "readTime",
       type: "number",
       label: { en: "Read time", ru: "Время чтения" },
-      required: true,
       max: 10,
+      required: true,
     },
     {
       // todo: изменить на media upload
