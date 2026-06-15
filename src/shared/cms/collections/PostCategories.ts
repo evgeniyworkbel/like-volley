@@ -13,7 +13,7 @@ export const PostCategories: CollectionConfig = {
     {
       name: "label",
       type: "text",
-      label: { en: "Label post", ru: "Категория поста" },
+      label: { en: "Post category", ru: "Категория поста" },
       required: true,
       unique: true,
     },
