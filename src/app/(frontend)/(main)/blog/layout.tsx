@@ -1,18 +1,19 @@
 import { Suspense } from "react";
-import { BlogTabs } from "@/widgets";
-import { Container } from "@/shared/ui";
+import { BlogNavigation } from "@/features/blog-navigation";
+import { getPayloadClient } from "@/shared/cms";
 
-export default function BlogLayout({ children }: LayoutProps<"/blog">) {
+export default async function BlogLayout({ children }: LayoutProps<"/blog">) {
+  const payload = await getPayloadClient();
+  const categories = await payload.find({ collection: "post-categories", pagination: false });
+
+  const categoriesData = categories.docs;
+
   return (
     <div>
-      <main>
-        <Container>
-          <Suspense fallback={null}>
-            <BlogTabs />
-          </Suspense>
-          {children}
-        </Container>
-      </main>
+      <Suspense fallback={null}>
+        <BlogNavigation items={categoriesData} />
+      </Suspense>
+      {children}
     </div>
   );
 }

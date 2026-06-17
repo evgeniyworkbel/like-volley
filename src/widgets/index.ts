@@ -10,4 +10,3 @@ export { Gallery } from "./gallery";
 export { Locations } from "./locations";
 export { GiftCertificates } from "./gift-certificates";
 export { Reviews } from "./reviews";
-export { BlogTabs } from "./blog-tabs";
