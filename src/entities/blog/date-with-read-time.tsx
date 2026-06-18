@@ -11,7 +11,12 @@ export function DateWithReadTime({ date, readTime }: DateWithReadTimeProps) {
     <div className="flex gap-4 text-xs text-foreground-secondary">
       <span>{formattedDate}</span>
       <div className="flex gap-1">
-        <Image src="/eye.svg" width={16} height={16} alt="Символ глаза - колличество просмотров" />
+        <Image
+          src="/eye-icon.svg"
+          width={16}
+          height={16}
+          alt="Символ глаза - колличество просмотров"
+        />
         <span>{readTime} минут</span>
       </div>
     </div>
