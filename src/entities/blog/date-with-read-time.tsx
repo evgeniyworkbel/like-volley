@@ -1,5 +1,5 @@
-import { ReadTimeIcon } from "@/shared/icons/read-time-icon";
 import { getFormattedDate } from "@/shared/lib";
+import { ReadTimeIcon } from "@/../public/news";
 
 type DateWithReadTimeProps = { date: string; readTime: number };
 
