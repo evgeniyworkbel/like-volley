@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Blog() {
   // @todo реализовать получение через cms
   // @todo при cms id далить
-  const postId = "1";
+  const postId = "2";
 
   return (
     <section className="flex flex-col items-center gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">

@@ -1,54 +1,36 @@
+import Image from "next/image";
+import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
+import { DateWithReadTime } from "@/entities";
+import { getPayloadClient } from "@/shared/cms";
+
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { postId } = await params;
+  const payload = await getPayloadClient();
+
+  const post = await payload.findByID({
+    collection: "posts",
+    id: postId,
+  });
 
   return (
-    <article className="container mx-auto max-w-4xl">
-      <h1 className="pt-5 text-center text-2xl xl:text-[32px]">
-        «Лайк Воллей» выходит на международную арену: едем на «Кубок Дружбы» в Новосибирск!
-      </h1>
-      <section className="flex flex-col items-center p-5 indent-5 text-sm leading-6 **:pb-3 xl:text-[18px] [&_a]:text-accent-orange">
-        <p>
-          Исторический момент для нашей школы! С 20 по 27 апреля 2026 года команда «Лайк Воллей»
-          примет участие в престижных Международных соревнованиях по волейболу «Кубок Дружбы U14»
-          2026 среди юношей и девушек до 14 лет в г. Новосибирске.&nbsp;
-          <a href="https://myvolley.ru/tournament/?id=708#/">подробнее здесь..</a>
-        </p>
-        <p>
-          Турнир пройдет в одном из главных волейбольных центров России — городе Новосибирске. Это
-          событие станет для наших воспитанников первым опытом участия в соревнованиях
-          международного уровня. Для юных спортсменов (юношей и девушек до 14 лет) это уникальный
-          шанс заявить о себе, обменяться опытом со сверстниками из других стран и прочувствовать
-          атмосферу большого спорта.
-        </p>
-        <h2 className="font-extrabold">Лидеры команды</h2>
-        <p>Мы отправляемся на турнир в сильном составе под надежным руководством:</p>
-        <ul className="list-disc px-3 indent-1">
-          <li>
-            <strong>Голодухин Владислав</strong> — основатель школы Like Volley, лично сопровождает
-            команду, чтобы поддержать ребят в их дебютном международном выезде.
-          </li>
-          <li>
-            <strong>Крупко Виктория</strong> — главный тренер команды, чей профессионализм и вера в
-            воспитанников стали залогом подготовки к такому серьезному вызову.
-          </li>
-        </ul>
-        <p>
-          О турнире «Кубок Дружбы U14» — это не просто матчи, это площадка для укрепления спортивных
-          связей и дружбы между народами. Следить за ходом турнира, расписанием игр и результатами
-          можно на официальном портале Береговой Волейбольной Лиги.&nbsp;
-          <a href="https://myvolley.ru/tournament/?id=708">подробнее здесь..</a>
-        </p>
-        <p>
-          Мы верим в наших ребят! Для «Лайк Воллей» этот выезд — подтверждение того, что мы движемся
-          в правильном направлении. Мы ставим перед собой амбициозные цели и открываем перед нашими
-          детьми двери в большой международный волейбол.
-        </p>
-        <p>
-          Пожелаем удачи нашей команде в Новосибирске! Будем следить за новостями и держать вас в
-          курсе событий.
-        </p>
-        <p className="font-extrabold">Вперед, Like Volley! К новым победам!!!</p>
+    <article className="flex px-5 py-6 font-inter xl:px-20 xl:py-12">
+      <section className="flex flex-col gap-5">
+        <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
+        <div className="flex flex-col gap-8 xl:gap-16">
+          <hgroup className="flex flex-col gap-5">
+            <h1 className="text-5xl leading-11 font-bold wrap-anywhere">{post.title}</h1>
+            <p className="text-lg text-foreground-secondary">{post.shortDescription}</p>
+          </hgroup>
+          <div className="flex flex-col xl:gap-3">
+            <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
+              <Image src="/news/news_2.webp" alt="Фото учеников школы" fill />
+            </div>
+            <p className="text-right text-base text-foreground-secondary">
+              Фото сделано: {post.mainPhotoMadeBy}
+            </p>
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
+        </div>
       </section>
     </article>
   );
