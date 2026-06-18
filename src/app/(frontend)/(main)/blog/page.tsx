@@ -1,13 +1,33 @@
+import { PostMainCard } from "@/features/blog-navigation/ui/post-main-card";
+import { getPayloadClient } from "@/shared/cms";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Blog() {
-  // @todo реализовать получение через cms
-  // @todo при cms id далить
+type BlogPageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function Blog({ searchParams }: BlogPageProps) {
+  const { category: activeCategoryId } = await searchParams;
+
+  const payload = await getPayloadClient();
+
+  const posts = await payload.find({
+    collection: "posts",
+    pagination: false,
+    where: {
+      ...(activeCategoryId && { category: { equals: activeCategoryId } }),
+    },
+  });
+
+  const postMainCardData = posts.docs[0];
+  const { title, shortDescription } = postMainCardData;
+
   const postId = "1";
 
   return (
-    <section className="flex flex-col items-center gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
+    <section className="flex flex-col items-center gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-6">
+      <PostMainCard title={title} shortDescription={shortDescription} />
       <h1 className="font-shantell text-4xl font-bold text-accent-orange md:text-6xl">Новости</h1>
       <section className="grid gap-5 xl:grid-cols-3">
         <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
