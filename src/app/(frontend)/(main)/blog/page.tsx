@@ -1,16 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PostMobileCard } from "@/entities";
+import { getPayloadClient } from "@/shared/cms";
 
-export default function Blog() {
-  // @todo реализовать получение через cms
-  // @todo при cms id далить
-  const postId = "2";
+type BlogPageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function Blog({ searchParams }: BlogPageProps) {
+  const { category: activeCategoryId } = await searchParams;
+
+  const payload = await getPayloadClient();
+
+  const posts = await payload.find({
+    collection: "posts",
+    pagination: false,
+    where: {
+      ...(activeCategoryId && { category: { equals: activeCategoryId } }),
+    },
+  });
+
+  const postsData = posts.docs;
 
   return (
     <section className="flex flex-col items-center gap-5 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20">
       <h1 className="font-shantell text-4xl font-bold text-accent-orange md:text-6xl">Новости</h1>
       <section className="grid gap-5 xl:grid-cols-3">
-        <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
+        {postsData.map((item) => (
+          <PostMobileCard key={item.id} item={item} />
+        ))}
+
+        {/* <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
           <Image
             width={1280}
             height={853}
@@ -26,7 +46,7 @@ export default function Blog() {
               девушек до 14 лет в г. Новосибирске.
             </p>
           </hgroup>
-        </Link>
+        </Link> */}
       </section>
     </section>
   );
