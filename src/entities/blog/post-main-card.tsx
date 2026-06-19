@@ -22,7 +22,7 @@ export function PostMainCard({ items }: PostMainCardProps) {
         <Badge title="Для родителей" />
         <div className="flex flex-col gap-6 xl:gap-9">
           <hgroup className="flex flex-col gap-3 xl:gap-4.5">
-            <h2 className="text-lg font-bold xl:text-4xl">{items.title}</h2>
+            <h2 className="line-clamp-3 text-lg font-bold xl:text-4xl">{items.title}</h2>
             <p className="line-clamp-3 text-sm xl:text-lg">{items.shortDescription}</p>
           </hgroup>
           <DateWithReadTime date={items.createdAt} readTime={items.readTime} />
