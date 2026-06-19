@@ -3,6 +3,8 @@ import Link from "next/link";
 import { PostMainCard } from "@/entities";
 import { getPayloadClient } from "@/shared/cms";
 
+export const dynamic = "force-dynamic";
+
 type BlogPageProps = {
   searchParams: Promise<{ category?: string }>;
 };
