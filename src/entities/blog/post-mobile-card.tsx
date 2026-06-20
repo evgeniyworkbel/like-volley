@@ -17,7 +17,7 @@ export function PostMobileCard({ id, title, readTime, createdAt }: PostMobileCar
       </div>
       <div className="flex w-44 flex-col justify-center gap-4">
         <Badge title="Для родителей" />
-        <h2 className="line-clamp-2 font-bold transition-colors duration-200 group-hover:text-accent-orange">
+        <h2 className="font-bold transition-colors duration-200 group-hover:text-accent-orange">
           {title}
         </h2>
         <DateWithReadTime date={createdAt} readTime={readTime} />
