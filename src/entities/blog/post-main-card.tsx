@@ -20,7 +20,7 @@ export function PostMainCard({ title, shortDescription, readTime, createdAt }: P
         <Badge title="Для родителей" />
         <div className="flex flex-col gap-6 xl:gap-9">
           <hgroup className="flex flex-col gap-3 xl:gap-4.5">
-            <h3 className="line-clamp-3 text-lg font-bold xl:text-4xl">{title}</h3>
+            <h3 className="text-lg font-bold xl:text-4xl">{title}</h3>
             <p className="line-clamp-3 text-sm xl:text-lg">{shortDescription}</p>
           </hgroup>
           <DateWithReadTime date={createdAt} readTime={readTime} />
