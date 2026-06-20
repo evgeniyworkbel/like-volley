@@ -10,19 +10,19 @@ type BlogPageProps = {
 };
 
 export default async function Blog({ searchParams }: BlogPageProps) {
-  const { category: activeCategoryId } = await searchParams;
-
+  const { category } = await searchParams;
   const payload = await getPayloadClient();
-
   const posts = await payload.find({
     collection: "posts",
-    pagination: false,
+    limit: 1,
+    // todo : уточнить на этапе https://app.weeek.net/ws/856312/task/171,
     where: {
-      ...(activeCategoryId && { category: { equals: activeCategoryId } }),
+      ...(category && { category: { equals: category } }),
     },
   });
 
-  const postMainCardData = posts.docs[0];
+  const mainPostData = posts.docs[0];
+  const { title, shortDescription, readTime, createdAt } = mainPostData;
 
   const postId = "1";
 
@@ -31,10 +31,16 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
         <span className="text-foreground">Наш</span> Блог
       </h1>
-      <PostMainCard items={postMainCardData} />
+      <PostMainCard
+        title={title}
+        shortDescription={shortDescription}
+        readTime={readTime}
+        createdAt={createdAt}
+      />
       <section className="grid gap-5 xl:grid-cols-3">
         <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
           <Image width={1280} height={853} src="/news/news_2.webp" alt="Фото учеников школы" />
+          {/* @todo удалить это фото из public после внедрения цмс */}
           <hgroup>
             <h2 className="text-xl font-medium">Исторический момент для нашей школы!</h2>
             <p className="text-sm text-pretty">
