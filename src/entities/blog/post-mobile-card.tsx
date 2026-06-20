@@ -4,7 +4,7 @@ import { DateWithReadTime } from "./date-with-read-time";
 import { Post } from "@/shared/cms/payload-types";
 
 type PostMobileCardProps = {
-  item: Pick<Post, "id" | "title" | "shortDescription" | "createdAt" | "readTime">;
+  item: Pick<Post, "id" | "title" | "createdAt" | "readTime">;
 };
 
 export function PostMobileCard({ item }: PostMobileCardProps) {
@@ -16,12 +16,12 @@ export function PostMobileCard({ item }: PostMobileCardProps) {
       <div className="relative aspect-[0.784] w-23 overflow-hidden rounded-2xl">
         <Image src="/news/news_2.webp" className="object-cover" alt="Фото новости блога" fill />
       </div>
-      <hgroup className="flex w-44 flex-col justify-center gap-4">
+      <div className="flex w-44 flex-col justify-center gap-4">
         <h2 className="line-clamp-2 font-bold transition-colors duration-200 group-hover:text-accent-orange">
           {item.title}
         </h2>
         <DateWithReadTime date={item.createdAt} readTime={item.readTime} />
-      </hgroup>
+      </div>
     </Link>
   );
 }
