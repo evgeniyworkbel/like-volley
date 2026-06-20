@@ -1,5 +1,5 @@
-import { PostMobileCard } from "@/entities";
 import { PostMainCard } from "@/entities/blog/post-main-card";
+import { PostMobileCard } from "@/entities/blog/post-mobile-card";
 import { getPayloadClient } from "@/shared/cms";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +22,6 @@ export default async function Blog({ searchParams }: BlogPageProps) {
 
   const mainPost = posts.docs[0];
   const postsData = posts.docs;
-  console.log(postsData);
 
   return (
     <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">
