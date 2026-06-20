@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Post } from "@/shared/cms/payload-types";
 import { DateWithReadTime } from "./date-with-read-time";
 import { Badge } from "./badge";
+import { PostCardProps } from "./model/types";
 
-type PostMobileCardProps = Pick<Post, "id" | "title" | "createdAt" | "readTime">;
+type PostMobileCardProps = Omit<PostCardProps, "shortDescription">;
 
 export function PostMobileCard({ id, title, readTime, createdAt }: PostMobileCardProps) {
   return (

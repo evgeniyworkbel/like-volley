@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Post } from "@/shared/cms/payload-types";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
+import { PostCardProps } from "./model/types";
 
-type PostMainCardProps = Pick<Post, "title" | "shortDescription" | "readTime" | "createdAt">;
+type PostMainCardProps = Omit<PostCardProps, "id">;
 
 export function PostMainCard({ title, shortDescription, readTime, createdAt }: PostMainCardProps) {
   return (
