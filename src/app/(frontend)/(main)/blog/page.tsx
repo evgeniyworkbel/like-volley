@@ -21,7 +21,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   });
 
   const mainPost = posts.docs[0];
-  const postsData = posts.docs;
+  const postsData = posts.docs.slice(1);
 
   return (
     <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">

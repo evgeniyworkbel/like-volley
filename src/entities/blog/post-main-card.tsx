@@ -2,8 +2,9 @@ import Image from "next/image";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
 import { PostCardProps } from "./model/types";
+import { Except } from "type-fest";
 
-type PostMainCardProps = Omit<PostCardProps, "id">;
+type PostMainCardProps = Except<PostCardProps, "id">;
 
 export function PostMainCard({ title, shortDescription, readTime, createdAt }: PostMainCardProps) {
   return (
