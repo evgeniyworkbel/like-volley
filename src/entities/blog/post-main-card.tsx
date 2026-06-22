@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Badge } from "./badge";
+import { Except } from "@/shared/types";
+// import { PostCategory } from "@/shared/cms/payload-types";
+// import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
 import { PostCardProps } from "./model/types";
-import { Except } from "type-fest";
 
 type PostMainCardProps = Except<PostCardProps, "id">;
 
@@ -18,7 +19,7 @@ export function PostMainCard({ title, shortDescription, readTime, createdAt }: P
         />
       </div>
       <div className="flex flex-col gap-3 px-3 pb-3 xl:px-5 xl:pb-8">
-        <Badge title="Для родителей" />
+        {/* <Badge label={(category as PostCategory).label} /> */}
         <div className="flex flex-col gap-6 xl:gap-9">
           <hgroup className="flex flex-col gap-3 xl:gap-4.5">
             <h3 className="text-lg font-bold xl:text-4xl">{title}</h3>
