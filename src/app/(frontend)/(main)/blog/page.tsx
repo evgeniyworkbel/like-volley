@@ -36,16 +36,19 @@ export default async function Blog({ searchParams }: BlogPageProps) {
         createdAt={mainPost.createdAt}
       />
       <section className="grid gap-6 xl:grid-cols-3">
-        {restPosts.map((item) => (
-          <PostMobileCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={item.category}
-            readTime={item.readTime}
-            createdAt={item.createdAt}
-          />
-        ))}
+        {restPosts.map((item) => {
+          const categoryLabel = typeof item.category === "object" ? item.category.label : "";
+          return (
+            <PostMobileCard
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              category={categoryLabel}
+              readTime={item.readTime}
+              createdAt={item.createdAt}
+            />
+          );
+        })}
       </section>
     </section>
   );
