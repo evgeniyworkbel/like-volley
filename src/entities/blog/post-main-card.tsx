@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { Post } from "@/shared/cms/payload-types";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
-import { Post } from "@/shared/cms/payload-types";
 
 type PostMainCardProps = Pick<
   Post,
