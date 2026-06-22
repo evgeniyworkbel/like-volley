@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Except } from "@/shared/types";
 
+import { Post } from "@/shared/cms/payload-types";
 import { DateWithReadTime } from "./date-with-read-time";
-import { PostCardProps } from "./model/types";
 import { Badge } from "./badge";
 
-type PostMobileCardProps = Except<PostCardProps, "shortDescription">;
+type PostMobileCardProps = Pick<Post, "id" | "title" | "category" | "readTime" | "createdAt">;
 
 export function PostMobileCard({ id, category, title, readTime, createdAt }: PostMobileCardProps) {
   const categoryLabel = typeof category === "object" ? category.label : "";

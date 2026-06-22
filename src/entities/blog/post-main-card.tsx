@@ -1,10 +1,12 @@
 import Image from "next/image";
-import { Except } from "@/shared/types";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
-import { PostCardProps } from "./model/types";
+import { Post } from "@/shared/cms/payload-types";
 
-type PostMainCardProps = Except<PostCardProps, "id">;
+type PostMainCardProps = Pick<
+  Post,
+  "title" | "category" | "shortDescription" | "readTime" | "createdAt"
+>;
 
 export function PostMainCard({
   title,
