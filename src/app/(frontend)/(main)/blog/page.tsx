@@ -44,6 +44,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
               id={item.id}
               title={item.title}
               category={categoryLabel}
+              mainPhoto={item.mainPhoto}
               readTime={item.readTime}
               createdAt={item.createdAt}
             />
