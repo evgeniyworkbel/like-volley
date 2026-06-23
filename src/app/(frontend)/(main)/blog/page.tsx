@@ -1,5 +1,4 @@
-import { PostDesktopCard, PostMainCard } from "@/entities/blog";
-import { PostMobileCard } from "@/entities/blog";
+import { PostMainCard, PostsCards } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 
 export const dynamic = "force-dynamic";
@@ -14,7 +13,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const posts = await payload.find({
     collection: "posts",
     // todo : уточнить на этапе https://app.weeek.net/ws/856312/task/171,
-    limit: 3,
+    limit: 7,
     where: {
       ...(category && { category: { equals: category } }),
     },
@@ -26,8 +25,6 @@ export default async function Blog({ searchParams }: BlogPageProps) {
     return { ...item, category };
   });
   const [mainPost, ...restPosts] = mappedPosts;
-
-  // const isMobile = useIsMobile();
 
   return (
     <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">
@@ -41,30 +38,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
         readTime={mainPost.readTime}
         createdAt={mainPost.createdAt}
       />
-      <section className="grid gap-6 xl:grid-cols-3 xl:gap-x-5 xl:gap-y-9">
-        {restPosts.map((item) => (
-          <PostMobileCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={item.category}
-            mainPhoto={item.mainPhoto}
-            readTime={item.readTime}
-            createdAt={item.createdAt}
-          />
-        ))}
-        {restPosts.map((item) => (
-          <PostDesktopCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={item.category}
-            shortDescription={item.shortDescription}
-            readTime={item.readTime}
-            createdAt={item.createdAt}
-          />
-        ))}
-      </section>
+      <PostsCards restPosts={restPosts} />
     </section>
   );
 }

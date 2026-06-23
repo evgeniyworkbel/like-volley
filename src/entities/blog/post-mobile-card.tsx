@@ -14,7 +14,7 @@ export function PostMobileCard({
   title,
   category,
   readTime,
-  mainPhoto,
+  // mainPhoto,
   createdAt,
 }: PostMobileCardProps) {
   return (
@@ -24,7 +24,7 @@ export function PostMobileCard({
     >
       <div className="relative flex aspect-[0.784] h-29 shrink-0 overflow-hidden rounded-2xl">
         {/* @todo:заменить alt */}
-        <Image src={mainPhoto} className="object-cover" alt="Фото новости блога" fill />
+        <Image src="/news/news_2.webp" className="object-cover" alt="Фото новости блога" fill />
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
