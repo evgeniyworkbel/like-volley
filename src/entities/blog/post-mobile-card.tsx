@@ -23,6 +23,7 @@ export function PostMobileCard({
       href={`/blog/${id}`}
     >
       <div className="relative flex aspect-[0.784] h-29 shrink-0 overflow-hidden rounded-2xl">
+        {/* @todo:заменить alt */}
         <Image src={mainPhoto} className="object-cover" alt="Фото новости блога" fill />
       </div>
       <div className="flex flex-col gap-4">
