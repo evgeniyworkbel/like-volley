@@ -29,7 +29,8 @@ export function PostDesktopCard({
       <div className="relative h-62.5 w-full">
         <Image src="/news/news_2.webp" className="object-cover" alt="Фото новости блога" fill />
       </div>
-      <div className="flex min-h-57 flex-col gap-3 px-3 py-3">
+
+      <div className="flex h-57 flex-col gap-3 p-3">
         <Badge label={category} />
         <h4 className="text-lg font-bold transition-colors group-hover:text-accent-orange">
           {title}

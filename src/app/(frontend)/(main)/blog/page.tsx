@@ -27,17 +27,19 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const [mainPost, ...restPosts] = mappedPosts;
 
   return (
-    <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">
-      <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
-        <span className="text-foreground">Наш</span> Блог
-      </h1>
-      <PostMainCard
-        title={mainPost.title}
-        category={mainPost.category}
-        shortDescription={mainPost.shortDescription}
-        readTime={mainPost.readTime}
-        createdAt={mainPost.createdAt}
-      />
+    <section className="flex flex-col gap-10 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12">
+      <div className="flex flex-col gap-6">
+        <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
+          <span className="text-foreground">Наш</span> Блог
+        </h1>
+        <PostMainCard
+          title={mainPost.title}
+          category={mainPost.category}
+          shortDescription={mainPost.shortDescription}
+          readTime={mainPost.readTime}
+          createdAt={mainPost.createdAt}
+        />
+      </div>
       <PostsCards restPosts={restPosts} />
     </section>
   );
