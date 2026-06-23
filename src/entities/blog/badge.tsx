@@ -1,7 +1,5 @@
-import { PostCategory } from "@/shared/cms/payload-types";
-
 type BadgeProps = {
-  label: PostCategory["label"];
+  label: string;
 };
 
 export function Badge({ label }: BadgeProps) {
