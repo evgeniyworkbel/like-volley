@@ -40,7 +40,7 @@ export function PostDesktopCard({
 
       <div className="flex flex-col gap-3 p-3">
         <Badge label={category} />
-        <h4 className="text-lg font-bold transition-colors group-hover:text-accent-orange">
+        <h4 className="text-lg leading-6 font-bold transition-colors group-hover:text-accent-orange">
           {title}
         </h4>
         <p className="line-clamp-3 text-sm">{shortDescription}</p>
