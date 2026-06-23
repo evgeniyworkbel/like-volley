@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import { PostMainCard } from "@/entities";
+import { PostMainCard } from "@/entities/blog";
+import { PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 
 export const dynamic = "force-dynamic";
@@ -15,14 +14,18 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const posts = await payload.find({
     collection: "posts",
     // todo : уточнить на этапе https://app.weeek.net/ws/856312/task/171,
-    limit: 1,
+    limit: 3,
     where: {
       ...(category && { category: { equals: category } }),
     },
   });
 
-  const mainPost = posts.docs[0];
-  const postId = "1";
+  const postsData = posts.docs;
+  const mappedPosts = postsData.map((item) => {
+    const category = typeof item.category === "object" ? item.category.label : "";
+    return { ...item, category };
+  });
+  const [mainPost, ...restPosts] = mappedPosts;
 
   return (
     <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">
@@ -31,23 +34,23 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       </h1>
       <PostMainCard
         title={mainPost.title}
+        category={mainPost.category}
         shortDescription={mainPost.shortDescription}
         readTime={mainPost.readTime}
         createdAt={mainPost.createdAt}
       />
-      <section className="grid gap-5 xl:grid-cols-3">
-        <Link className="flex flex-col gap-2 overflow-hidden" href={`/blog/${postId}`}>
-          {/* @todo удалить это фото из public после внедрения цмс */}
-          <Image width={1280} height={853} src="/news/news_2.webp" alt="Фото учеников школы" />
-          <hgroup>
-            <h2 className="text-xl font-medium">Исторический момент для нашей школы!</h2>
-            <p className="text-sm text-pretty">
-              С 20 по 27 апреля 2026 года команда «Лайк Воллей» примет участие в престижных
-              Международных соревнованиях по волейболу «Кубок Дружбы U14» 2026 среди юношей и
-              девушек до 14 лет в г. Новосибирске.
-            </p>
-          </hgroup>
-        </Link>
+      <section className="grid gap-6 xl:grid-cols-3">
+        {restPosts.map((item) => (
+          <PostMobileCard
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            category={item.category}
+            mainPhoto={item.mainPhoto}
+            readTime={item.readTime}
+            createdAt={item.createdAt}
+          />
+        ))}
       </section>
     </section>
   );
