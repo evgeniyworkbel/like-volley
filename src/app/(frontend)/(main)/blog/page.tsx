@@ -21,7 +21,11 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   });
 
   const postsData = posts.docs;
-  const [mainPost, ...restPosts] = postsData;
+  const mappedPosts = postsData.map((item) => {
+    const category = typeof item.category === "object" ? item.category.label : "";
+    return { ...item, category };
+  });
+  const [mainPost, ...restPosts] = mappedPosts;
 
   // const isMobile = useIsMobile();
 
@@ -44,6 +48,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
             id={item.id}
             title={item.title}
             category={item.category}
+            mainPhoto={item.mainPhoto}
             readTime={item.readTime}
             createdAt={item.createdAt}
           />

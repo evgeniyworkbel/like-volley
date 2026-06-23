@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
-import { DateWithReadTime } from "@/entities";
+import { DateWithReadTime } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {

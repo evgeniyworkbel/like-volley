@@ -1,4 +1,8 @@
-import { BadgeProps } from "./model/types";
+import { PostCategory } from "@/shared/cms/payload-types";
+
+type BadgeProps = {
+  label: PostCategory["label"];
+};
 
 export function Badge({ label }: BadgeProps) {
   return (
