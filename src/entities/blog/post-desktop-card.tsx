@@ -30,10 +30,11 @@ export function PostDesktopCard({
 
   return (
     <Link
-      className="group flex flex-col overflow-hidden rounded-2xl rounded-t-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors active:bg-[oklch(0.9226_0.0053_264.44)]"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors active:bg-[oklch(0.9226_0.0053_264.44)]"
       href={`/blog/${id}`}
     >
       <div className="relative h-62.5 w-full">
+        {/* @todo:заменить alt */}
         <Image src="/news/news_2.webp" className="object-cover" alt="Фото новости блога" fill />
       </div>
 
