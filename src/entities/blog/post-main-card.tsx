@@ -3,7 +3,10 @@ import { Post } from "@/shared/cms/payload-types";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
 
-type PostMainCardProps = Pick<Post, "title" | "shortDescription" | "readTime" | "createdAt"> & {
+type PostMainCardProps = Pick<
+  Post,
+  "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
+> & {
   category: string;
 };
 
@@ -12,17 +15,13 @@ export function PostMainCard({
   category,
   shortDescription,
   readTime,
+  mainPhoto,
   createdAt,
 }: PostMainCardProps) {
   return (
     <div className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
       <div className="relative flex aspect-[1.167] w-full xl:aspect-[3.2]">
-        <Image
-          src="/news/news_2.webp"
-          className="object-cover"
-          alt="Фото главной новости  блога"
-          fill
-        />
+        <Image src={mainPhoto} className="object-cover" alt="Фото главной новости  блога" fill />
       </div>
       <div className="flex flex-col gap-3 px-3 pb-3 xl:px-5 xl:pb-8">
         <Badge label={category} />
