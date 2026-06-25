@@ -37,6 +37,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
         category={mainPost.category}
         shortDescription={mainPost.shortDescription}
         readTime={mainPost.readTime}
+        mainPhoto={mainPost.mainPhoto}
         createdAt={mainPost.createdAt}
       />
       <section className="grid gap-6 xl:grid-cols-3">
@@ -46,8 +47,8 @@ export default async function Blog({ searchParams }: BlogPageProps) {
             id={item.id}
             title={item.title}
             category={item.category}
-            mainPhoto={item.mainPhoto}
             readTime={item.readTime}
+            mainPhoto={item.mainPhoto}
             createdAt={item.createdAt}
           />
         ))}

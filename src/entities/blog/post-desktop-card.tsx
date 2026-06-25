@@ -8,7 +8,7 @@ import { CopyLinkButton } from "./copy-link-button";
 
 type PostDesktopCardProps = Pick<
   Post,
-  "id" | "title" | "shortDescription" | "mainPhoto" | "readTime" | "createdAt"
+  "id" | "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
 > & {
   category: string;
 };
@@ -19,6 +19,7 @@ export function PostDesktopCard({
   category,
   shortDescription,
   readTime,
+  mainPhoto,
   createdAt,
 }: PostDesktopCardProps) {
   return (
@@ -27,8 +28,8 @@ export function PostDesktopCard({
       href={`/blog/${id}`}
     >
       <div className="relative h-62.5 w-full">
-        {/* @todo:заменить alt and mainPhoto */}
-        <Image src="/news/news_2.webp" className="object-cover" alt="Фото новости блога" fill />
+        {/* @todo: добавить alt */}
+        <Image src={mainPhoto} className="object-cover" alt="" fill />
       </div>
 
       <div className="flex flex-col gap-3 p-3">
