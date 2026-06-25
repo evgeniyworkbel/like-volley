@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Post } from "@/shared/cms/payload-types";
 import { DateWithReadTime } from "./date-with-read-time";
 import { Badge } from "./badge";
-import { CopyLinkButton } from "./copy-link-button";
 
 type PostDesktopCardProps = Pick<
   Post,
@@ -38,10 +37,7 @@ export function PostDesktopCard({
           {title}
         </h4>
         <p className="line-clamp-3 text-sm">{shortDescription}</p>
-        <div className="flex items-center justify-between">
-          <DateWithReadTime date={createdAt} readTime={readTime} />
-          <CopyLinkButton id={id} />
-        </div>
+        <DateWithReadTime date={createdAt} readTime={readTime} />
       </div>
     </Link>
   );
