@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { headers } from "next/headers";
 
 import { Post } from "@/shared/cms/payload-types";
 import { DateWithReadTime } from "./date-with-read-time";
@@ -14,7 +13,7 @@ type PostDesktopCardProps = Pick<
   category: string;
 };
 
-export async function PostDesktopCard({
+export function PostDesktopCard({
   id,
   title,
   category,
@@ -22,11 +21,6 @@ export async function PostDesktopCard({
   readTime,
   createdAt,
 }: PostDesktopCardProps) {
-  const headersList = await headers();
-  const host = headersList.get("host") || "localhost:3000";
-  const protocol = headersList.get("x-forwarded-proto") || "https";
-  const shareUrl = `${protocol}://${host}/blog/${id}`;
-
   return (
     <Link
       className="group flex flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors active:bg-[oklch(0.9226_0.0053_264.44)]"
@@ -45,7 +39,7 @@ export async function PostDesktopCard({
         <p className="line-clamp-3 text-sm">{shortDescription}</p>
         <div className="flex items-center justify-between">
           <DateWithReadTime date={createdAt} readTime={readTime} />
-          <CopyLinkButton shareUrl={shareUrl} />
+          <CopyLinkButton id={id} />
         </div>
       </div>
     </Link>
