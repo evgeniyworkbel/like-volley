@@ -1,14 +1,17 @@
 "use client";
+
+import { MouseEvent } from "react";
 import { LinkIcon } from "@/shared/icons";
 
 type CopyLinkButtonProps = {
-  id: number;
+  shareUrl: string;
 };
 
-export function CopyLinkButton({ id }: CopyLinkButtonProps) {
-  const handleCopy = () => {
-    const articleUrl = `${window.location.origin}/blog/${id}`;
-    navigator.clipboard.writeText(articleUrl);
+export function CopyLinkButton({ shareUrl }: CopyLinkButtonProps) {
+  const handleCopy = (e: MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(shareUrl);
   };
 
   return (
