@@ -2,7 +2,9 @@ import { userAgent } from "next/server";
 import { headers } from "next/headers";
 import { PostMainCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
-import { TYPES_DEVICES_MAP } from "./model/ constants";
+import { TYPES_DEVICES_MAP } from "./model/constants";
+import Link from "next/link";
+import { ArrowTopIcon } from "@/shared/icons";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +30,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   });
 
   const postsData = posts.docs;
+  console.log(posts);
   const mappedPosts = postsData.map((item) => {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
@@ -53,6 +56,21 @@ export default async function Blog({ searchParams }: BlogPageProps) {
             <PostCard key={item.id} {...item} />
           ))}
         </section>
+        {posts.hasNextPage && (
+          <Link
+            className="inline-flex cursor-pointer items-center gap-4.5 self-center rounded-[40px] bg-accent-orange px-7.5 py-3 text-base text-white"
+            href={{
+              pathname: "/blog",
+              query: {
+                ...(category && { category }),
+                page: posts.nextPage,
+              },
+            }}
+          >
+            Загрузить больше новостей
+            <ArrowTopIcon className="shrink-0 rotate-180" />
+          </Link>
+        )}
       </div>
     </section>
   );
