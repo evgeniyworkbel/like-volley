@@ -1,6 +1,8 @@
+import { userAgent } from "next/server";
+import { headers } from "next/headers";
 import { PostMainCard } from "@/entities/blog";
-import { PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
+import { TYPES_DEVICES_MAP } from "./model/ constants";
 
 export const dynamic = "force-dynamic";
 
@@ -11,10 +13,15 @@ type BlogPageProps = {
 export default async function Blog({ searchParams }: BlogPageProps) {
   const { category } = await searchParams;
   const payload = await getPayloadClient();
+
+  const { device } = userAgent({ headers: await headers() });
+  const typeCurrentDevice = device.type || "desktop";
+
+  const { limit, postComponent: PostCard } = TYPES_DEVICES_MAP[typeCurrentDevice];
+
   const posts = await payload.find({
     collection: "posts",
-    // todo : уточнить на этапе https://app.weeek.net/ws/856312/task/171,
-    limit: 3,
+    limit: limit,
     where: {
       ...(category && { category: { equals: category } }),
     },
@@ -28,31 +35,25 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const [mainPost, ...restPosts] = mappedPosts;
 
   return (
-    <section className="flex flex-col items-center gap-6 px-5 py-10 md:gap-10 xl:gap-31 xl:px-20 xl:py-12">
-      <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
-        <span className="text-foreground">Наш</span> Блог
-      </h1>
-      <PostMainCard
-        title={mainPost.title}
-        category={mainPost.category}
-        shortDescription={mainPost.shortDescription}
-        readTime={mainPost.readTime}
-        mainPhoto={mainPost.mainPhoto}
-        createdAt={mainPost.createdAt}
-      />
-      <section className="grid gap-6 xl:grid-cols-3">
-        {restPosts.map((item) => (
-          <PostMobileCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={item.category}
-            readTime={item.readTime}
-            mainPhoto={item.mainPhoto}
-            createdAt={item.createdAt}
-          />
-        ))}
-      </section>
+    <section className="flex flex-col gap-10 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12">
+      <div className="flex flex-col gap-6">
+        <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
+          <span className="text-foreground">Наш</span> Блог
+        </h1>
+        <PostMainCard
+          title={mainPost.title}
+          category={mainPost.category}
+          shortDescription={mainPost.shortDescription}
+          mainPhoto={mainPost.mainPhoto}
+          readTime={mainPost.readTime}
+          createdAt={mainPost.createdAt}
+        />
+        <section className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+          {restPosts.map((item) => (
+            <PostCard key={item.id} {...item} />
+          ))}
+        </section>
+      </div>
     </section>
   );
 }
