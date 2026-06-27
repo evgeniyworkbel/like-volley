@@ -21,7 +21,7 @@ export function PopularPosts({ popularPosts }: PopularPostsProps) {
           <h1 className="text-6xl text-[28px] font-bold text-accent-orange">
             <span className="text-foreground">Популярные</span> новости
           </h1>
-          <Link className="flex items-center gap-2" href="./">
+          <Link className="flex items-center gap-2" href={{ pathname: "./" }}>
             <span className="text-[20px] font-bold text-accent-orange">Еще новости</span>
             <span className="flex size-8.5 items-center justify-center rounded-full border border-accent-orange">
               <RightIcon className="text-accent-orange" />
