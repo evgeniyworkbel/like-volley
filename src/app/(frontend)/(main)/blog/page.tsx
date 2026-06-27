@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PostMainCard } from "@/entities/blog";
 import { PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
@@ -42,15 +43,16 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       />
       <section className="grid gap-6 xl:grid-cols-3">
         {restPosts.map((item) => (
-          <PostMobileCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            category={item.category}
-            readTime={item.readTime}
-            mainPhoto={item.mainPhoto}
-            createdAt={item.createdAt}
-          />
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostMobileCard
+              className="active:bg-[oklch(0.9431_0_0)] active:[&_h4]:text-accent-orange"
+              title={item.title}
+              category={item.category}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+            />
+          </Link>
         ))}
       </section>
     </section>
