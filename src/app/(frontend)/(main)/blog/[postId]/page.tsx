@@ -44,9 +44,11 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
                 Фото сделано: {post.mainPhotoMadeBy}
               </p>
             </div>
-            <div
-              dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }}
-            />
+            {post.mainPhotoMadeBy && (
+              <p className="text-right text-base text-foreground-secondary">
+                Фото сделано: {post.mainPhotoMadeBy}
+              </p>
+            )}
           </div>
         </section>
       </article>
