@@ -25,9 +25,11 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
             <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
               <Image src="/news/news_2.webp" alt="Фото учеников школы" fill />
             </div>
-            <p className="text-right text-base text-foreground-secondary">
-              Фото сделано: {post.mainPhotoMadeBy}
-            </p>
+            {post.mainPhotoMadeBy && (
+              <p className="text-right text-base text-foreground-secondary">
+                Фото сделано: {post.mainPhotoMadeBy}
+              </p>
+            )}
           </div>
           <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
         </div>
