@@ -1,8 +1,23 @@
-type ContainerWithShadowProps = React.PropsWithChildren;
+import { cn } from "../lib";
 
-export function ContainerWithShadow({ children }: ContainerWithShadowProps) {
+type ContainerWithShadowProps = React.PropsWithChildren & { shadowPosition?: "both" | "top" };
+
+export function ContainerWithShadow({
+  shadowPosition = "both",
+  children,
+}: ContainerWithShadowProps) {
   return (
-    <div className="flex flex-col rounded-[42px] shadow-[0_-20px_30px_0_oklch(0%_0_0/0.1),0_20px_30px_0_oklch(0%_0_0/0.1)]">
+    <div
+      className={cn(
+        "flex flex-col shadow-[0_-20px_30px_0_oklch(0%_0_0/0.1),0_20px_30px_0_oklch(0%_0_0/0.1)]",
+        {
+          "rounded-[42px]": shadowPosition === "both",
+        },
+        {
+          "rounded-t-[42px]": shadowPosition === "top",
+        },
+      )}
+    >
       {children}
     </div>
   );
