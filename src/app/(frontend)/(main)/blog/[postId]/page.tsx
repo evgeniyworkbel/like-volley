@@ -7,16 +7,18 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
   const payload = await getPayloadClient();
 
-  const post = await payload.findByID({
-    collection: "posts",
-    id: postId,
-  });
+  const [post, popularPosts] = await Promise.all([
+    payload.findByID({
+      collection: "posts",
+      id: postId,
+    }),
+    payload.find({
+      collection: "posts",
+      limit: 4,
+      sort: "-createdAt",
+    }),
+  ]);
 
-  const popularPosts = await payload.find({
-    collection: "posts",
-    limit: 4,
-    sort: "-createdAt",
-  });
   const mappedPosts = popularPosts.docs.map((item) => {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
