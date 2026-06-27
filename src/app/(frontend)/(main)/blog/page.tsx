@@ -1,10 +1,10 @@
 import { userAgent } from "next/server";
+import Link from "next/link";
 import { headers } from "next/headers";
 import { PostMainCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
-import { TYPES_DEVICES_MAP } from "./model/constants";
-import Link from "next/link";
 import { ArrowTopIcon } from "@/shared/icons";
+import { TYPES_DEVICES_MAP } from "./model/constants";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +13,8 @@ type BlogPageProps = {
 };
 
 export default async function Blog({ searchParams }: BlogPageProps) {
+  const x = await searchParams;
+  console.log(x);
   const { category } = await searchParams;
   const payload = await getPayloadClient();
 
