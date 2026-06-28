@@ -14,7 +14,7 @@ export function ContainerWithShadow({
           "rounded-[42px]": shadowPosition === "both",
         },
         {
-          "rounded-t-[42px]": shadowPosition === "top",
+          "hidden rounded-t-[42px] xl:flex": shadowPosition === "top",
         },
       )}
     >
