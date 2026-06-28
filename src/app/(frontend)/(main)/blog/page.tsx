@@ -1,30 +1,26 @@
-import { userAgent } from "next/server";
 import Link from "next/link";
-import { headers } from "next/headers";
-
-import { PostMainCard } from "@/entities/blog";
+import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { ArrowTopIcon } from "@/shared/icons";
-import { TYPES_DEVICES_MAP } from "./model/constants";
+import { buttonVariants } from "@/shared/ui/button";
 
 export const dynamic = "force-dynamic";
 
 type BlogPageProps = {
-  searchParams: Promise<{ category?: string; page?: number }>;
+  searchParams: Promise<{ category?: string; limit?: string }>;
 };
 
 export default async function Blog({ searchParams }: BlogPageProps) {
-  const { category, page } = await searchParams;
+  const { category, limit } = await searchParams;
   const payload = await getPayloadClient();
 
-  const { device } = userAgent({ headers: await headers() });
-  const typeCurrentDevice = device.type || "desktop";
-  const { limit, postComponent: PostCard } = TYPES_DEVICES_MAP[typeCurrentDevice];
+  const STEP = 13;
+  const currentLimit = Number(limit) || STEP;
 
   const posts = await payload.find({
     collection: "posts",
-    limit: limit,
-    page: page || 1,
+    limit: currentLimit,
+    page: 1,
     where: {
       ...(category && { category: { equals: category } }),
     },
@@ -37,9 +33,10 @@ export default async function Blog({ searchParams }: BlogPageProps) {
     return { ...item, category };
   });
   const [mainPost, ...restPosts] = mappedPosts;
+  const hasMorePosts = posts.totalDocs > postsData.length;
 
   return (
-    <section className="flex flex-col gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12">
+    <section className="flex flex-col gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12 [&_a]:self-center">
       <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
         <span className="text-foreground">Наш</span> Блог
       </h1>
@@ -51,20 +48,43 @@ export default async function Blog({ searchParams }: BlogPageProps) {
         readTime={mainPost.readTime}
         createdAt={mainPost.createdAt}
       />
-      <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+      <section className="grid gap-6 xl:hidden">
         {restPosts.map((item) => (
-          <PostCard key={item.id} {...item} />
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostMobileCard
+              title={item.title}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
         ))}
-      </div>
-      {posts.hasNextPage && (
+      </section>
+      <section className="hidden xl:grid xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+        {restPosts.map((item) => (
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              shortDescription={item.shortDescription}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
+        ))}
+      </section>
+      {hasMorePosts && (
         <Link
-          className="inline-flex cursor-pointer items-center gap-4.5 self-center rounded-[40px] bg-accent-orange px-7.5 py-3 text-base text-white"
+          className={buttonVariants({ color: "primary", size: "md" })}
           href={{
             query: {
               ...(category && { category }),
-              page: posts.nextPage,
+              limit: currentLimit + STEP,
             },
           }}
+          scroll={false}
         >
           Загрузить больше новостей
           <ArrowTopIcon className="shrink-0 rotate-180" />
