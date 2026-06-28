@@ -26,9 +26,9 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const popularPostsData = mappedPosts;
 
   return (
-    <>
-      <article className="flex flex-col px-5 py-6 font-inter xl:gap-12 xl:px-20 xl:py-12">
-        <section className="flex flex-col gap-5">
+    <article>
+      <section className="flex flex-col font-inter">
+        <div className="flex flex-col gap-5 px-5 py-6 xl:px-20 xl:py-12">
           <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
           <div className="flex flex-col gap-8 xl:gap-16">
             <hgroup className="flex flex-col gap-5">
@@ -40,19 +40,17 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
                 {/* "todo: изменить alt" */}
                 <Image src={post.mainPhoto} alt="Фото учеников школы" fill />
               </div>
-              <p className="text-right text-base text-foreground-secondary">
-                Фото сделано: {post.mainPhotoMadeBy}
-              </p>
+              {post.mainPhotoMadeBy && (
+                <p className="text-right text-base text-foreground-secondary">
+                  Фото сделано: {post.mainPhotoMadeBy}
+                </p>
+              )}
             </div>
-            {post.mainPhotoMadeBy && (
-              <p className="text-right text-base text-foreground-secondary">
-                Фото сделано: {post.mainPhotoMadeBy}
-              </p>
-            )}
           </div>
-        </section>
-      </article>
-      <PopularPosts popularPosts={popularPostsData} />
-    </>
+          <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
+        </div>
+        <PopularPosts popularPosts={popularPostsData} />
+      </section>
+    </article>
   );
 }
