@@ -3,3 +3,4 @@ export const faqSectionId = "faq-section";
 export const coachesSectionId = "coaches-section";
 export const locationsSectionId = "locations-section";
 export const giftCertificatesSectionId = "gift-certificates-section";
+export const blogSectionId = "blog-section";

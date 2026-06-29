@@ -22,7 +22,7 @@ export function FooterNav() {
             <Link href={navLinks.faqSection.href}>{navLinks.faqSection.title}</Link>
           </li>
           <li>
-            <Link href={navLinks.news.href}>{navLinks.news.title}</Link>
+            <Link href={navLinks.blogSection.href}>{navLinks.news.title}</Link>
           </li>
         </ul>
       </div>

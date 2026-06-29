@@ -15,7 +15,7 @@ export async function GiftCertificates() {
   return (
     <section
       id={giftCertificatesSectionId}
-      className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:py-15"
+      className="flex flex-col items-center gap-18 px-5 py-10 xl:items-start xl:gap-0 xl:px-20 xl:pt-15 xl:pb-30"
     >
       <div className="flex w-full flex-col items-center gap-14 text-center xl:flex-row xl:items-start xl:gap-44 xl:text-left">
         <div className="flex flex-col items-center gap-10 xl:items-start">
