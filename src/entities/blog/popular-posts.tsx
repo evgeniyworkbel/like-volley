@@ -15,7 +15,7 @@ type PopularPostsProps = {
 
 export function PopularPosts({ popularPosts }: PopularPostsProps) {
   return (
-    <ContainerWithShadow shadowPosition="top">
+    <ContainerWithShadow className="hidden rounded-b-none xl:flex">
       <section className="flex flex-col gap-6 xl:gap-10 xl:px-20 xl:py-12">
         <div className="flex items-center justify-between">
           <h1 className="text-6xl text-[28px] font-bold text-accent-orange">
