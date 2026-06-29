@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { headers } from "next/headers";
+import { userAgent } from "next/server";
+
 import { SectionTitle } from "@/shared/ui";
 import { blogSectionId, navLinks } from "@/shared/constants";
 import { RightIcon } from "@/shared/icons";
@@ -6,10 +9,13 @@ import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard, PostMainCard } from "@/entities/blog";
 
 export async function Blog() {
+  const { device } = userAgent({ headers: await headers() });
+  const LimitPostsDevice = device.type === "mobile" ? 4 : 9;
+
   const payload = await getPayloadClient();
   const posts = await payload.find({
     collection: "posts",
-    limit: 9,
+    limit: LimitPostsDevice,
   });
 
   const postsData = posts.docs;
@@ -17,23 +23,22 @@ export async function Blog() {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
   });
-  const [mainPost, post2, post3, post4, post5, ...restPosts] = mappedPosts;
+
+  const [mainPost, post2, post3, post4, post5, ...desktopPosts] = mappedPosts;
   const topFourPosts = [post2, post3, post4, post5];
+  const mobilePosts = [mainPost, post2, post3, post4];
+  const restPost = device.type === "mobile" ? mobilePosts : desktopPosts;
 
   return (
     <section
       id={blogSectionId}
-      className="flex w-full flex-col items-center gap-6 px-5 py-14.5 xl:gap-10 xl:px-20"
+      className="flex flex-col items-center gap-6 px-5 py-14.5 xl:gap-10 xl:px-20"
     >
       <div className="flex w-full items-center justify-center xl:justify-between">
         <SectionTitle className="font-inter text-[28px]">
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
         </SectionTitle>
-        <Link
-          className="hidden items-center gap-2 xl:flex"
-          href={navLinks.news.href}
-          rel="noopener noreferrer"
-        >
+        <Link className="hidden items-center gap-2 xl:flex" href={navLinks.news.href}>
           <span className="text-sm font-bold uppercase">все фотоальбомы</span>
           <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
             <RightIcon />
@@ -69,7 +74,7 @@ export async function Blog() {
       </div>
 
       <div className="flex w-full flex-col gap-6 xl:flex-row xl:gap-5">
-        {restPosts.map((item) => (
+        {restPost.map((item) => (
           <PostDesktopCard
             key={item.id}
             title={item.title}
@@ -81,11 +86,7 @@ export async function Blog() {
           />
         ))}
       </div>
-      <Link
-        className="flex items-center gap-2 xl:hidden"
-        href={navLinks.news.href}
-        rel="noopener noreferrer"
-      >
+      <Link className="flex items-center gap-2 xl:hidden" href={navLinks.news.href}>
         <span className="text-sm font-bold uppercase">все фотоальбомы</span>
         <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
           <RightIcon />
