@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { headers } from "next/headers";
-import { userAgent } from "next/server";
 
 import { SectionTitle } from "@/shared/ui";
 import { blogSectionId, navLinks } from "@/shared/constants";
@@ -9,13 +7,10 @@ import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard, PostMainCard } from "@/entities/blog";
 
 export async function Blog() {
-  const { device } = userAgent({ headers: await headers() });
-  const LimitPostsDevice = device.type === "mobile" ? 4 : 9;
-
   const payload = await getPayloadClient();
   const posts = await payload.find({
     collection: "posts",
-    limit: LimitPostsDevice,
+    limit: 9,
   });
 
   const postsData = posts.docs;
@@ -27,7 +22,6 @@ export async function Blog() {
   const [mainPost, post2, post3, post4, post5, ...desktopPosts] = mappedPosts;
   const topFourPosts = [post2, post3, post4, post5];
   const mobilePosts = [mainPost, post2, post3, post4];
-  const restPost = device.type === "mobile" ? mobilePosts : desktopPosts;
 
   return (
     <section
@@ -45,8 +39,7 @@ export async function Blog() {
           </span>
         </Link>
       </div>
-
-      <div className="hidden w-full gap-5 xl:grid xl:grid-cols-4">
+      <div className="hidden w-full xl:grid xl:grid-cols-4 xl:gap-5">
         {mainPost && (
           <div className="xl:col-span-2 xl:row-span-2">
             <PostMainCard
@@ -73,8 +66,8 @@ export async function Blog() {
         ))}
       </div>
 
-      <div className="flex w-full flex-col gap-6 xl:flex-row xl:gap-5">
-        {restPost.map((item) => (
+      <div className="hidden w-full xl:flex xl:gap-5">
+        {desktopPosts.map((item) => (
           <PostDesktopCard
             key={item.id}
             title={item.title}
@@ -86,6 +79,20 @@ export async function Blog() {
           />
         ))}
       </div>
+      <div className="flex w-full flex-col gap-6 xl:hidden">
+        {mobilePosts.map((item) => (
+          <PostDesktopCard
+            key={item.id}
+            title={item.title}
+            shortDescription={item.shortDescription}
+            readTime={item.readTime}
+            mainPhoto={item.mainPhoto}
+            createdAt={item.createdAt}
+            category={item.category}
+          />
+        ))}
+      </div>
+
       <Link className="flex items-center gap-2 xl:hidden" href={navLinks.news.href}>
         <span className="text-sm font-bold uppercase">все фотоальбомы</span>
         <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
