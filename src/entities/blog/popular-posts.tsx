@@ -1,20 +1,11 @@
 import Link from "next/link";
-import { Post } from "@/shared/cms/payload-types";
 import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
 import { RightIcon } from "@/shared/icons";
 import { navLinks } from "@/shared/constants";
-import { PostDesktopCard } from "./post-desktop-card";
 
-type PopularPostsProps = {
-  popularPosts: (Pick<
-    Post,
-    "id" | "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
-  > & {
-    category: string;
-  })[];
-};
+type PopularPostsProps = React.PropsWithChildren;
 
-export function PopularPosts({ popularPosts }: PopularPostsProps) {
+export function PopularPosts({ children }: PopularPostsProps) {
   return (
     <ContainerWithShadow className="hidden rounded-b-none xl:flex">
       <section className="flex flex-col gap-6 xl:gap-10 xl:px-20 xl:py-12">
@@ -29,21 +20,7 @@ export function PopularPosts({ popularPosts }: PopularPostsProps) {
             </span>
           </Link>
         </div>
-
-        <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
-          {popularPosts.map((item) => (
-            <PostDesktopCard
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              shortDescription={item.shortDescription}
-              readTime={item.readTime}
-              mainPhoto={item.mainPhoto}
-              createdAt={item.createdAt}
-              category={item.category}
-            />
-          ))}
-        </div>
+        {children}
       </section>
     </ContainerWithShadow>
   );
