@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { DateWithReadTime, PopularPosts, PostDesktopCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
+import { navLinks } from "@/shared/constants";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
@@ -52,16 +54,16 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
         <PopularPosts>
           <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
             {popularPostsData.map((item) => (
-              <PostDesktopCard
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                shortDescription={item.shortDescription}
-                readTime={item.readTime}
-                mainPhoto={item.mainPhoto}
-                createdAt={item.createdAt}
-                category={item.category}
-              />
+              <Link key={item.id} href={`${navLinks.news.href}/${item.id}`}>
+                <PostDesktopCard
+                  title={item.title}
+                  shortDescription={item.shortDescription}
+                  readTime={item.readTime}
+                  mainPhoto={item.mainPhoto}
+                  createdAt={item.createdAt}
+                  category={item.category}
+                />
+              </Link>
             ))}
           </div>
         </PopularPosts>
