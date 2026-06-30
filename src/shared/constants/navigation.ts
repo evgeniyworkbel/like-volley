@@ -1,4 +1,5 @@
 import {
+  blogSectionId,
   coachesSectionId,
   faqSectionId,
   gallerySectionId,
@@ -31,6 +32,10 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   coachesSection: {
     title: "Тренеры",
     href: `/#${coachesSectionId}`,
+  },
+  blogSection: {
+    title: "Новости",
+    href: `/#${blogSectionId}`,
   },
   // Links for pages
   policy: {
