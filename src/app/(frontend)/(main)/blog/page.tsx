@@ -3,6 +3,7 @@ import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { ArrowTopIcon } from "@/shared/icons";
 import { buttonVariants } from "@/shared/ui/button";
+import { navLinks } from "@/shared/constants";
 
 export const dynamic = "force-dynamic";
 
@@ -63,7 +64,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       </section>
       <section className="hidden xl:grid xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
         {restPosts.map((item) => (
-          <Link key={item.id} href={`/blog/${item.id}`}>
+          <Link key={item.id} href={`${navLinks.news.href}/${item.id}`}>
             <PostDesktopCard
               title={item.title}
               shortDescription={item.shortDescription}
