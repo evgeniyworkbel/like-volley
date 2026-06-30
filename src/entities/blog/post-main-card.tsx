@@ -19,7 +19,7 @@ export function PostMainCard({
   createdAt,
 }: PostMainCardProps) {
   return (
-    <div className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
+    <article className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
       <div className="relative flex aspect-[1.167] w-full xl:aspect-[3.2]">
         <Image src={mainPhoto} className="object-cover" alt="Фото главной новости  блога" fill />
       </div>
@@ -33,6 +33,6 @@ export function PostMainCard({
           <DateWithReadTime date={createdAt} readTime={readTime} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
