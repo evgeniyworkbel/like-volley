@@ -52,7 +52,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
           <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
         </div>
         <PopularPosts>
-          <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+          <div className="hidden gap-6 xl:grid xl:grid-cols-4 xl:gap-x-5">
             {popularPostsData.map((item) => (
               <Link key={item.id} href={`${navLinks.news.href}/${item.id}`}>
                 <PostDesktopCard
