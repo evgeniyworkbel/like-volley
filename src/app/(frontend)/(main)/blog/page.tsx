@@ -11,16 +11,15 @@ type BlogPageProps = {
   searchParams: Promise<{ category?: string; limit?: string }>;
 };
 
+const defaultLimit = 13;
+
 export default async function Blog({ searchParams }: BlogPageProps) {
   const { category, limit } = await searchParams;
+  const currLimit = Number(limit) || defaultLimit;
   const payload = await getPayloadClient();
-
-  const STEP = 13;
-  const currentLimit = Number(limit) || STEP;
-
   const posts = await payload.find({
     collection: "posts",
-    limit: currentLimit,
+    limit: currLimit,
     page: 1,
     where: {
       ...(category && { category: { equals: category } }),
@@ -82,7 +81,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
           href={{
             query: {
               ...(category && { category }),
-              limit: currentLimit + STEP,
+              limit: currLimit,
             },
           }}
           scroll={false}
