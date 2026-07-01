@@ -20,7 +20,7 @@ export function PopularPosts({ children }: PopularPostsProps) {
             </span>
           </Link>
         </div>
-        {children}
+        <div className="hidden gap-6 xl:grid xl:grid-cols-4 xl:gap-x-5">{children}</div>
       </section>
     </ContainerWithShadow>
   );
