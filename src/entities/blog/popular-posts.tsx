@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
-import { RightIcon } from "@/shared/icons";
+import { ArrowTopIcon } from "@/shared/icons";
 import { navLinks } from "@/shared/constants";
 
 type PopularPostsProps = React.PropsWithChildren;
@@ -16,7 +16,7 @@ export function PopularPosts({ children }: PopularPostsProps) {
           <Link className="flex items-center gap-2" href={navLinks.news.href}>
             <span className="text-[20px] font-bold text-accent-orange">Еще новости</span>
             <span className="flex size-8.5 items-center justify-center rounded-full border border-accent-orange">
-              <RightIcon className="text-accent-orange" />
+              <ArrowTopIcon className="rotate-90 text-accent-orange" />
             </span>
           </Link>
         </div>
