@@ -20,7 +20,6 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const posts = await payload.find({
     collection: "posts",
     limit: currLimit,
-    page: 1,
     where: {
       ...(category && { category: { equals: category } }),
     },
@@ -61,9 +60,9 @@ export default async function Blog({ searchParams }: BlogPageProps) {
           </Link>
         ))}
       </section>
-      <section className="hidden xl:grid xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+      <section className="hidden grid-cols-4 gap-x-5 gap-y-9 xl:grid">
         {restPosts.map((item) => (
-          <Link key={item.id} href={`${navLinks.news.href}/${item.id}`}>
+          <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
             <PostDesktopCard
               title={item.title}
               shortDescription={item.shortDescription}
@@ -81,7 +80,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
           href={{
             query: {
               ...(category && { category }),
-              limit: currLimit,
+              limit: currLimit + defaultLimit,
             },
           }}
           scroll={false}
