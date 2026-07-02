@@ -49,8 +49,9 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       />
       <section className="grid gap-6 xl:hidden">
         {restPosts.map((item) => (
-          <Link key={item.id} href={`/blog/${item.id}`}>
+          <Link key={item.id} href={`${navLinks.blog.href}${item.id}`}>
             <PostMobileCard
+              className="active:bg-[oklch(0.9431_0_0)] active:[&_h4]:text-accent-orange"
               title={item.title}
               readTime={item.readTime}
               mainPhoto={item.mainPhoto}
