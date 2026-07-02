@@ -53,7 +53,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
         </div>
         <PopularPosts>
           {popularPostsData.map((item) => (
-            <Link key={item.id} href={`${navLinks.news.href}/${item.id}`}>
+            <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
               <PostDesktopCard
                 title={item.title}
                 shortDescription={item.shortDescription}

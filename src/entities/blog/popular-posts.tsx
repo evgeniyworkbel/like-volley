@@ -13,7 +13,7 @@ export function PopularPosts({ children }: PopularPostsProps) {
           <h1 className="text-6xl text-[28px] text-accent-orange">
             <span className="text-foreground">Популярные</span> новости
           </h1>
-          <Link className="flex items-center gap-2" href={navLinks.news.href}>
+          <Link className="flex items-center gap-2" href={navLinks.blog.href}>
             <span className="text-xl text-accent-orange">Еще новости</span>
             <span className="flex size-8.5 items-center justify-center rounded-full border border-accent-orange">
               <ArrowTopIcon className="rotate-90 text-accent-orange" />
