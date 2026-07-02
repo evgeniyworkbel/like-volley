@@ -1,38 +1,70 @@
 import Image from "next/image";
+import Link from "next/link";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
-import { DateWithReadTime } from "@/entities/blog";
+import { DateWithReadTime, PopularPosts, PostDesktopCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
+import { navLinks } from "@/shared/constants";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
   const payload = await getPayloadClient();
 
-  const post = await payload.findByID({
-    collection: "posts",
-    id: postId,
+  const [post, popularPosts] = await Promise.all([
+    payload.findByID({
+      collection: "posts",
+      id: postId,
+    }),
+    payload.find({
+      collection: "posts",
+      limit: 4,
+      sort: "-createdAt",
+    }),
+  ]);
+
+  const mappedPosts = popularPosts.docs.map((item) => {
+    const category = typeof item.category === "object" ? item.category.label : "";
+    return { ...item, category };
   });
+  const popularPostsData = mappedPosts;
 
   return (
-    <article className="flex px-5 py-6 font-inter xl:px-20 xl:py-12">
-      <section className="flex flex-col gap-5">
-        <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
-        <div className="flex flex-col gap-8 xl:gap-16">
-          <hgroup className="flex flex-col gap-5">
-            <h1 className="text-5xl leading-11 font-bold wrap-anywhere">{post.title}</h1>
-            <p className="text-lg text-foreground-secondary">{post.shortDescription}</p>
-          </hgroup>
-          <div className="flex flex-col xl:gap-3">
-            <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
-              <Image src="/news/news_2.webp" alt="Фото учеников школы" fill />
+    <article>
+      <section className="flex flex-col font-inter">
+        <div className="flex flex-col gap-5 px-5 py-6 xl:px-20 xl:py-12">
+          <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
+          <div className="flex flex-col gap-8 xl:gap-16">
+            <hgroup className="flex flex-col gap-5">
+              <h1 className="text-5xl leading-11 font-bold wrap-anywhere">{post.title}</h1>
+              <p className="text-lg text-foreground-secondary">{post.shortDescription}</p>
+            </hgroup>
+            <div className="flex flex-col xl:gap-3">
+              <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
+                {/* "todo: изменить alt" */}
+                <Image src={post.mainPhoto} alt="Фото учеников школы" fill />
+              </div>
+              {post.mainPhotoMadeBy && (
+                <p className="text-right text-base text-foreground-secondary">
+                  Фото сделано: {post.mainPhotoMadeBy}
+                </p>
+              )}
             </div>
-            {post.mainPhotoMadeBy && (
-              <p className="text-right text-base text-foreground-secondary">
-                Фото сделано: {post.mainPhotoMadeBy}
-              </p>
-            )}
           </div>
           <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
         </div>
+        <PopularPosts>
+          {popularPostsData.map((item) => (
+            <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
+              <PostDesktopCard
+                title={item.title}
+                shortDescription={item.shortDescription}
+                readTime={item.readTime}
+                mainPhoto={item.mainPhoto}
+                createdAt={item.createdAt}
+                category={item.category}
+              />
+            </Link>
+          ))}
+        </PopularPosts>
       </section>
     </article>
   );
