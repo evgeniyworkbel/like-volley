@@ -16,7 +16,6 @@ export async function PopularPosts() {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
   });
-  const popularPostsData = mappedPosts;
 
   return (
     <ContainerWithShadow className="hidden rounded-b-none xl:flex">
@@ -31,7 +30,7 @@ export async function PopularPosts() {
           </Link>
         </div>
         <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
-          {popularPostsData.map((item) => (
+          {mappedPosts.map((item) => (
             <Link key={item.id} href={`/blog/${item.id}`}>
               <PostDesktopCard
                 key={item.id}
