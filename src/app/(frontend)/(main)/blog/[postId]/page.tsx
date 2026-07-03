@@ -14,7 +14,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
 
   return (
     <article>
-      <section className="flex flex-col font-inter">
+      <section className="flex flex-col">
         <div className="flex flex-col gap-5 px-5 py-6 xl:px-20 xl:py-12">
           <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
           <div className="flex flex-col gap-8 xl:gap-16">
