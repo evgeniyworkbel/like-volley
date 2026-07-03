@@ -1,31 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
-import { DateWithReadTime, PopularPosts, PostDesktopCard } from "@/entities/blog";
+import { DateWithReadTime, PopularPosts } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
-import { navLinks } from "@/shared/constants";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
   const payload = await getPayloadClient();
 
-  const [post, popularPosts] = await Promise.all([
-    payload.findByID({
-      collection: "posts",
-      id: postId,
-    }),
-    payload.find({
-      collection: "posts",
-      limit: 4,
-      sort: "-createdAt",
-    }),
-  ]);
-
-  const mappedPosts = popularPosts.docs.map((item) => {
-    const category = typeof item.category === "object" ? item.category.label : "";
-    return { ...item, category };
+  const post = await payload.findByID({
+    collection: "posts",
+    id: postId,
   });
-  const popularPostsData = mappedPosts;
 
   return (
     <article>
@@ -51,20 +36,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
           </div>
           <div dangerouslySetInnerHTML={{ __html: convertLexicalToHTML({ data: post.content }) }} />
         </div>
-        <PopularPosts>
-          {popularPostsData.map((item) => (
-            <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
-              <PostDesktopCard
-                title={item.title}
-                shortDescription={item.shortDescription}
-                readTime={item.readTime}
-                mainPhoto={item.mainPhoto}
-                createdAt={item.createdAt}
-                category={item.category}
-              />
-            </Link>
-          ))}
-        </PopularPosts>
+        <PopularPosts />
       </section>
     </article>
   );

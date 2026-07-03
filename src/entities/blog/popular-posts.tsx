@@ -1,26 +1,51 @@
 import Link from "next/link";
 import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
-import { ArrowTopIcon } from "@/shared/icons";
 import { navLinks } from "@/shared/constants";
+import { NavArrow } from "@/shared/ui";
+import { PostDesktopCard } from "./post-desktop-card";
+import { getPayloadClient } from "@/shared/cms";
 
-type PopularPostsProps = React.PropsWithChildren;
+export async function PopularPosts() {
+  const payload = await getPayloadClient();
+  const popularPosts = await payload.find({
+    collection: "posts",
+    limit: 4,
+    sort: "-createdAt",
+  });
 
-export function PopularPosts({ children }: PopularPostsProps) {
+  const mappedPosts = popularPosts.docs.map((item) => {
+    const category = typeof item.category === "object" ? item.category.label : "";
+    return { ...item, category };
+  });
+  const popularPostsData = mappedPosts;
+
   return (
     <ContainerWithShadow className="hidden rounded-b-none xl:flex">
       <section className="flex flex-col gap-6 xl:gap-10 xl:px-20 xl:py-12">
         <div className="flex items-center justify-between font-bold">
-          <h1 className="text-6xl text-[28px] text-accent-orange">
+          <h1 className="text-6xl text-accent-orange">
             <span className="text-foreground">Популярные</span> новости
           </h1>
           <Link className="flex items-center gap-2" href={navLinks.blog.href}>
             <span className="text-xl text-accent-orange">Еще новости</span>
-            <span className="flex size-8.5 items-center justify-center rounded-full border border-accent-orange">
-              <ArrowTopIcon className="rotate-90 text-accent-orange" />
-            </span>
+            <NavArrow />
           </Link>
         </div>
-        <div className="hidden gap-6 xl:grid xl:grid-cols-4 xl:gap-x-5">{children}</div>
+        <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
+          {popularPostsData.map((item) => (
+            <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
+              <PostDesktopCard
+                key={item.id}
+                title={item.title}
+                shortDescription={item.shortDescription}
+                readTime={item.readTime}
+                mainPhoto={item.mainPhoto}
+                createdAt={item.createdAt}
+                category={item.category}
+              />
+            </Link>
+          ))}
+        </div>
       </section>
     </ContainerWithShadow>
   );

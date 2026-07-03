@@ -1,6 +1,7 @@
 import { cn } from "../lib";
+import { NativeDivProps } from "../types";
 
-type ContainerWithShadowProps = React.HTMLAttributes<HTMLDivElement>;
+type ContainerWithShadowProps = Pick<NativeDivProps, "className" | "children">;
 
 export function ContainerWithShadow({ className, children }: ContainerWithShadowProps) {
   return (
