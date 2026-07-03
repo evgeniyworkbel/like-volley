@@ -6,13 +6,13 @@ import { PostDesktopCard } from "./post-desktop-card";
 
 export async function PopularPosts() {
   const payload = await getPayloadClient();
-  const popularPosts = await payload.find({
+  const posts = await payload.find({
     collection: "posts",
     limit: 4,
     sort: "-createdAt",
   });
 
-  const mappedPosts = popularPosts.docs.map((item) => {
+  const mappedPosts = posts.docs.map((item) => {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
   });
