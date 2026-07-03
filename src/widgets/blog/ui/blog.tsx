@@ -32,7 +32,7 @@ export async function Blog() {
         <SectionTitle className="font-inter text-[28px]">
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
         </SectionTitle>
-        <Link className="hidden items-center gap-2 xl:flex" href={navLinks.news.href}>
+        <Link className="hidden items-center gap-2 xl:flex" href={`/blog`}>
           <span className="text-sm font-bold uppercase">все фотоальбомы</span>
           <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
             <RightIcon />

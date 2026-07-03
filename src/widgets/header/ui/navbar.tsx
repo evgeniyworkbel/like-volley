@@ -32,8 +32,8 @@ export function Navbar({ className, phoneLinkClassName, data, onLinkClick }: Nav
       <Link href={navLinks.faqSection.href} onClick={onLinkClick}>
         {navLinks.faqSection.title}
       </Link>
-      <Link href={navLinks.blogSection.href} onClick={onLinkClick}>
-        {navLinks.news.title}
+      <Link href={navLinks.blog.href} onClick={onLinkClick}>
+        {navLinks.blog.title}
       </Link>
       <a
         className={phoneLinkClassName}

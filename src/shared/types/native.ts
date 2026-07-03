@@ -1,4 +1,2 @@
-export type NativeLinkProps = Pick<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  "className" | "href" | "target" | "rel"
->;
+export type NativeLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+export type NativeDivProps = React.HTMLAttributes<HTMLDivElement>;
