@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
-import { navLinks } from "@/shared/constants";
 import { NavArrow } from "@/shared/ui";
 import { PostDesktopCard } from "./post-desktop-card";
 import { getPayloadClient } from "@/shared/cms";
@@ -26,14 +25,14 @@ export async function PopularPosts() {
           <h1 className="text-6xl text-accent-orange">
             <span className="text-foreground">Популярные</span> новости
           </h1>
-          <Link className="flex items-center gap-2" href={navLinks.blog.href}>
+          <Link className="flex items-center gap-2" href={`/blog`}>
             <span className="text-xl text-accent-orange">Еще новости</span>
             <NavArrow />
           </Link>
         </div>
         <div className="grid gap-6 xl:grid-cols-4 xl:gap-x-5 xl:gap-y-9">
           {popularPostsData.map((item) => (
-            <Link key={item.id} href={`${navLinks.blog.href}/${item.id}`}>
+            <Link key={item.id} href={`/blog/${item.id}`}>
               <PostDesktopCard
                 key={item.id}
                 title={item.title}
