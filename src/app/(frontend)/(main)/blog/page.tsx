@@ -3,6 +3,7 @@ import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { ArrowTopIcon } from "@/shared/icons";
 import { buttonVariants } from "@/shared/ui/button";
+import { cn } from "@/shared/lib";
 
 export const dynamic = "force-dynamic";
 
@@ -34,7 +35,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
   const hasMorePosts = posts.totalDocs > postsData.length;
 
   return (
-    <section className="flex flex-col gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12 [&_a]:self-center">
+    <section className="flex flex-col gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12">
       <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
         <span className="text-foreground">Наш</span> Блог
       </h1>
@@ -76,7 +77,7 @@ export default async function Blog({ searchParams }: BlogPageProps) {
       </section>
       {hasMorePosts && (
         <Link
-          className={buttonVariants({ color: "primary", size: "md" })}
+          className={cn(buttonVariants({ color: "primary", size: "sm" }), "mx-auto")}
           href={{
             query: {
               ...(category && { category }),
