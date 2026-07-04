@@ -8,6 +8,7 @@ type PostMainCardProps = Pick<
   Post,
   "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
 > & {
+  id?: Post["id"];
   category: string;
   ImageAspectRatio?: string;
 };

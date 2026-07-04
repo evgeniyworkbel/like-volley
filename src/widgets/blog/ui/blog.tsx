@@ -12,8 +12,7 @@ export async function Blog() {
     limit: 9,
   });
 
-  const postsData = posts.docs;
-  const mappedPosts = postsData.map((item) => {
+  const mappedPosts = posts.docs.map((item) => {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
   });
@@ -38,7 +37,7 @@ export async function Blog() {
       </div>
       <div className="hidden w-full xl:grid xl:grid-cols-4 xl:gap-5">
         {mainPost && (
-          <div className="xl:col-span-2 xl:row-span-2">
+          <Link className="xl:col-span-2 xl:row-span-2" href={`/blog/${mainPost.id}`}>
             <PostMainCard
               title={mainPost.title}
               ImageAspectRatio="aspect-[1.3673]"
@@ -48,45 +47,48 @@ export async function Blog() {
               createdAt={mainPost.createdAt}
               category={mainPost.category}
             />
-          </div>
+          </Link>
         )}
         {topFourPosts.map((item) => (
-          <PostDesktopCard
-            key={item.id}
-            ImageAspectRatio="aspect-[1.732]"
-            title={item.title}
-            readTime={item.readTime}
-            mainPhoto={item.mainPhoto}
-            createdAt={item.createdAt}
-            category={item.category}
-          />
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              ImageAspectRatio="aspect-[1.732]"
+              title={item.title}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
         ))}
       </div>
 
       <div className="hidden w-full xl:flex xl:gap-5">
         {desktopPosts.map((item) => (
-          <PostDesktopCard
-            key={item.id}
-            title={item.title}
-            shortDescription={item.shortDescription}
-            readTime={item.readTime}
-            mainPhoto={item.mainPhoto}
-            createdAt={item.createdAt}
-            category={item.category}
-          />
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              shortDescription={item.shortDescription}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
         ))}
       </div>
       <div className="flex w-full flex-col gap-6 xl:hidden">
         {mobilePosts.map((item) => (
-          <PostDesktopCard
-            key={item.id}
-            title={item.title}
-            shortDescription={item.shortDescription}
-            readTime={item.readTime}
-            mainPhoto={item.mainPhoto}
-            createdAt={item.createdAt}
-            category={item.category}
-          />
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              shortDescription={item.shortDescription}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
         ))}
       </div>
 
