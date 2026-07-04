@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-import { SectionTitle } from "@/shared/ui";
-import { blogSectionId, navLinks } from "@/shared/constants";
-import { RightIcon } from "@/shared/icons";
+import { NavArrow, SectionTitle } from "@/shared/ui";
+import { blogSectionId } from "@/shared/constants";
 import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard, PostMainCard } from "@/entities/blog";
 
@@ -33,10 +32,8 @@ export async function Blog() {
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
         </SectionTitle>
         <Link className="hidden items-center gap-2 xl:flex" href={`/blog`}>
-          <span className="text-sm font-bold uppercase">все фотоальбомы</span>
-          <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
-            <RightIcon />
-          </span>
+          <span className="text-xl font-bold text-accent-orange">Еще новости</span>
+          <NavArrow />
         </Link>
       </div>
       <div className="hidden w-full xl:grid xl:grid-cols-4 xl:gap-5">
@@ -93,11 +90,8 @@ export async function Blog() {
         ))}
       </div>
 
-      <Link className="flex items-center gap-2 xl:hidden" href={navLinks.news.href}>
-        <span className="text-sm font-bold uppercase">все фотоальбомы</span>
-        <span className="flex size-8.5 items-center justify-center rounded-full border border-black/20">
-          <RightIcon />
-        </span>
+      <Link className="flex items-center gap-2 xl:hidden" href={`/blog`}>
+        <span className="text-xl font-bold text-accent-orange">Еще новости</span>
       </Link>
     </section>
   );
