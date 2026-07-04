@@ -4,29 +4,32 @@ import { cn } from "@/shared/lib";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
 
+const aspectVariants = {
+  blog: " aspect-[1.167] xl:aspect-[3.2]",
+  widget: "aspect-[1.3673]",
+};
+
 type PostMainCardProps = Pick<
   Post,
   "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
 > & {
   id?: Post["id"];
   category: string;
-  ImageAspectRatio?: string;
+  viewMode?: keyof typeof aspectVariants;
 };
 
 export function PostMainCard({
-  ImageAspectRatio,
   title,
   category,
   shortDescription,
   readTime,
   mainPhoto,
   createdAt,
+  viewMode = "blog",
 }: PostMainCardProps) {
   return (
     <article className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
-      <div
-        className={cn("relative flex aspect-[1.167] w-full xl:aspect-[1.3673]", ImageAspectRatio)}
-      >
+      <div className={cn("relative flex w-full", aspectVariants[viewMode])}>
         <Image src={mainPhoto} className="object-cover" alt="Фото главной новости  блога" fill />
       </div>
       <div className="flex flex-col gap-3 px-3 pb-3 xl:px-5 xl:pb-8">

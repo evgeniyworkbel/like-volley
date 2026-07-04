@@ -40,24 +40,24 @@ export async function Blog() {
           <Link className="xl:col-span-2 xl:row-span-2" href={`/blog/${mainPost.id}`}>
             <PostMainCard
               title={mainPost.title}
-              ImageAspectRatio="aspect-[1.3673]"
               shortDescription={mainPost.shortDescription}
               readTime={mainPost.readTime}
               mainPhoto={mainPost.mainPhoto}
               createdAt={mainPost.createdAt}
               category={mainPost.category}
+              viewMode="widget"
             />
           </Link>
         )}
         {topFourPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
             <PostDesktopCard
-              ImageAspectRatio="aspect-[1.732]"
               title={item.title}
               readTime={item.readTime}
               mainPhoto={item.mainPhoto}
               createdAt={item.createdAt}
               category={item.category}
+              viewMode="widget"
             />
           </Link>
         ))}

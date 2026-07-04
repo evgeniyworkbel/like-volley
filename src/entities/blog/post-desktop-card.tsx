@@ -5,10 +5,15 @@ import { cn } from "@/shared/lib";
 import { DateWithReadTime } from "./date-with-read-time";
 import { Badge } from "./badge";
 
+const aspectVariants = {
+  blog: "aspect-[1.22]",
+  widget: "aspect-[1.732]",
+};
+
 type PostDesktopCardProps = Pick<Post, "title" | "readTime" | "mainPhoto" | "createdAt"> &
   Partial<Pick<Post, "shortDescription">> & {
     category: string;
-    ImageAspectRatio?: string;
+    viewMode?: keyof typeof aspectVariants;
   };
 
 export function PostDesktopCard({
@@ -18,12 +23,11 @@ export function PostDesktopCard({
   readTime,
   mainPhoto,
   createdAt,
-  ImageAspectRatio,
+  viewMode = "blog",
 }: PostDesktopCardProps) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors hover:[&_h4]:text-accent-orange">
-      {/* @todo: проверить при merge */}
-      <div className={cn("relative aspect-[1.22] w-full", ImageAspectRatio)}>
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors hover:[&_h4]:text-accent-orange">
+      <div className={cn("relative w-full", aspectVariants[viewMode])}>
         {/* @todo: добавить alt */}
         <Image src={mainPhoto} className="object-cover" alt="" fill />
       </div>
