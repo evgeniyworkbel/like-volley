@@ -21,18 +21,20 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <ContainerWithShadow>
+      <ContainerWithShadow className="rounded-b-none">
         <Advantages />
         <Reviews />
         <Coaches />
         <Locations />
         <SignUpForWorkout />
         <GiftCertificates />
+        <ContainerWithShadow className="rounded-b-none">
+          <Blog />
+          <Gallery />
+          <Faq />
+          <Banner />
+        </ContainerWithShadow>
       </ContainerWithShadow>
-      <Blog />
-      <Gallery />
-      <Faq />
-      <Banner />
     </div>
   );
 }

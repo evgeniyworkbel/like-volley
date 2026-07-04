@@ -25,14 +25,14 @@ export async function Blog() {
   return (
     <section
       id={blogSectionId}
-      className="flex flex-col items-center gap-6 px-5 py-14.5 xl:gap-10 xl:px-20"
+      className="flex flex-col items-center gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-14.5"
     >
       <div className="flex w-full items-center justify-center xl:justify-between">
         <SectionTitle className="font-inter text-[28px]">
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
         </SectionTitle>
         <Link className="hidden items-center gap-2 xl:flex" href={`/blog`}>
-          <span className="text-xl font-bold text-accent-orange">Еще новости</span>
+          <span className="text-xl font-bold text-accent-orange">Все новости</span>
           <NavArrow />
         </Link>
       </div>
@@ -91,7 +91,8 @@ export async function Blog() {
       </div>
 
       <Link className="flex items-center gap-2 xl:hidden" href={`/blog`}>
-        <span className="text-xl font-bold text-accent-orange">Еще новости</span>
+        <span className="text-xl font-bold text-accent-orange">Все новости</span>
+        <NavArrow />
       </Link>
     </section>
   );
