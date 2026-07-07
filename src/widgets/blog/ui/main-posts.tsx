@@ -19,7 +19,7 @@ export async function MainPosts() {
 
   const [mainPost, post2, post3, post4, post5, ...restPosts] = mappedPosts;
   const secondaryPosts = [post2, post3, post4, post5];
-  const mobilePosts = [mainPost, post2, post3, post4];
+  const mobilePosts = [mainPost, post2];
 
   return (
     <section
