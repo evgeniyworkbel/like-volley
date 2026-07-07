@@ -10,7 +10,7 @@ import {
   Coaches,
   Locations,
   Reviews,
-  Blog,
+  MainPosts,
 } from "@/widgets";
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
@@ -29,7 +29,7 @@ export default function Home() {
         <SignUpForWorkout />
         <GiftCertificates />
         <ContainerWithShadow className="rounded-b-none">
-          <Blog />
+          <MainPosts />
           <Gallery />
           <Faq />
           <Banner />

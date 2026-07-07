@@ -1,1 +1,1 @@
-export { Blog } from "./ui/blog";
+export { MainPosts } from "./ui/main-posts";

@@ -13,7 +13,7 @@ type BlogPageProps = {
 
 const defaultLimit = 13;
 
-export default async function Blog({ searchParams }: BlogPageProps) {
+export default async function MainPosts({ searchParams }: BlogPageProps) {
   const { category, limit } = await searchParams;
   const currLimit = Number(limit) || defaultLimit;
   const payload = await getPayloadClient();

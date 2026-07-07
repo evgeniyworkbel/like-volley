@@ -5,7 +5,7 @@ import { blogSectionId } from "@/shared/constants";
 import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard, PostMainCard } from "@/entities/blog";
 
-export async function Blog() {
+export async function MainPosts() {
   const payload = await getPayloadClient();
   const posts = await payload.find({
     collection: "posts",
