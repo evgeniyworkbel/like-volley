@@ -33,7 +33,6 @@ export async function PopularPosts() {
           {mappedPosts.map((item) => (
             <Link key={item.id} href={`/blog/${item.id}`}>
               <PostDesktopCard
-                key={item.id}
                 title={item.title}
                 shortDescription={item.shortDescription}
                 readTime={item.readTime}
