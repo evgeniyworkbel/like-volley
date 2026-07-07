@@ -17,7 +17,7 @@ export async function MainPosts() {
     return { ...item, category };
   });
 
-  const [mainPost, post2, post3, post4, post5, ...desktopPosts] = mappedPosts;
+  const [mainPost, post2, post3, post4, post5, ...restPosts] = mappedPosts;
   const topFourPosts = [post2, post3, post4, post5];
   const mobilePosts = [mainPost, post2, post3, post4];
 
@@ -30,13 +30,13 @@ export async function MainPosts() {
         <SectionTitle className="font-inter text-[28px]">
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
         </SectionTitle>
-        <Link className="hidden items-center gap-2 xl:flex" href={`/blog`}>
+        <Link className="hidden items-center gap-2 xl:flex" href="/blog">
           <span className="text-xl font-bold text-accent-orange">Все новости</span>
           <NavArrow />
         </Link>
       </div>
       <div className="hidden w-full xl:grid xl:grid-cols-4 xl:gap-5">
-        {mainPost && (
+        {
           <Link className="xl:col-span-2 xl:row-span-2" href={`/blog/${mainPost.id}`}>
             <PostMainCard
               title={mainPost.title}
@@ -48,7 +48,7 @@ export async function MainPosts() {
               viewMode="widget"
             />
           </Link>
-        )}
+        }
         {topFourPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
             <PostDesktopCard
@@ -58,21 +58,6 @@ export async function MainPosts() {
               createdAt={item.createdAt}
               category={item.category}
               viewMode="widget"
-            />
-          </Link>
-        ))}
-      </div>
-
-      <div className="hidden w-full xl:flex xl:gap-5">
-        {desktopPosts.map((item) => (
-          <Link key={item.id} href={`/blog/${item.id}`}>
-            <PostDesktopCard
-              title={item.title}
-              shortDescription={item.shortDescription}
-              readTime={item.readTime}
-              mainPhoto={item.mainPhoto}
-              createdAt={item.createdAt}
-              category={item.category}
             />
           </Link>
         ))}
@@ -91,8 +76,21 @@ export async function MainPosts() {
           </Link>
         ))}
       </div>
-
-      <Link className="flex items-center gap-2 xl:hidden" href={`/blog`}>
+      <div className="hidden w-full xl:flex xl:gap-5">
+        {restPosts.map((item) => (
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              shortDescription={item.shortDescription}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
+        ))}
+      </div>
+      <Link className="flex items-center gap-2 xl:hidden" href="/blog">
         <span className="text-xl font-bold text-accent-orange">Все новости</span>
         <NavArrow />
       </Link>
