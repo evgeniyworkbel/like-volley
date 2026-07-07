@@ -18,7 +18,7 @@ export async function MainPosts() {
   });
 
   const [mainPost, post2, post3, post4, post5, ...restPosts] = mappedPosts;
-  const topFourPosts = [post2, post3, post4, post5];
+  const secondaryPosts = [post2, post3, post4, post5];
   const mobilePosts = [mainPost, post2, post3, post4];
 
   return (
@@ -49,7 +49,7 @@ export async function MainPosts() {
             />
           </Link>
         }
-        {topFourPosts.map((item) => (
+        {secondaryPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
             <PostDesktopCard
               title={item.title}
