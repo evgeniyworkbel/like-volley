@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { NavArrow, SectionTitle } from "@/shared/ui";
-import { blogSectionId } from "@/shared/constants";
 import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard, PostMainCard } from "@/entities/blog";
 
@@ -22,10 +21,7 @@ export async function MainPosts() {
   const mobilePosts = [mainPost, post2];
 
   return (
-    <section
-      id={blogSectionId}
-      className="flex flex-col items-center gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-14.5"
-    >
+    <section className="flex flex-col items-center gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-14.5">
       <div className="flex w-full items-center justify-center xl:justify-between">
         <SectionTitle className="font-inter text-[28px]">
           Пульс&nbsp;<span className="text-accent-orange">событий</span>
