@@ -36,8 +36,7 @@ export function PostMainCard({
         <div className="flex flex-col gap-6 xl:gap-9">
           <hgroup className="flex flex-col gap-3 xl:gap-4.5">
             <h3 className="text-lg font-bold xl:text-4xl">{title}</h3>
-            {/* на виджете 2  на page -3 сделал 2 что б  не тянуть правую часть виджета  */}
-            <p className="line-clamp-2 text-sm xl:text-lg">{shortDescription}</p>
+            <p className="line-clamp-3 text-sm xl:text-lg">{shortDescription}</p>
           </hgroup>
           <DateWithReadTime date={createdAt} readTime={readTime} />
         </div>
