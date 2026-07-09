@@ -29,7 +29,7 @@ export async function Faq() {
       className="flex flex-col gap-6 px-5 py-10 xl:gap-0 xl:px-20 xl:py-15"
     >
       <hgroup className="flex flex-col text-center xl:max-w-1/2 xl:gap-4 xl:text-left xl:text-lg">
-        <SectionTitle className="font-inter">
+        <SectionTitle>
           Вопросы и <span className="text-accent-orange">ответы</span>
         </SectionTitle>
         <p className="text-foreground-secondary md:leading-6.5">

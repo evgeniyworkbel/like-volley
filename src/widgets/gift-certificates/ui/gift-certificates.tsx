@@ -20,7 +20,7 @@ export async function GiftCertificates() {
       <div className="flex w-full flex-col items-center gap-14 text-center xl:flex-row xl:items-start xl:gap-44 xl:text-left">
         <div className="flex flex-col items-center gap-10 xl:items-start">
           <div className="flex flex-col items-center gap-2.75 xl:max-w-116 xl:items-start xl:gap-4">
-            <SectionTitle className="font-inter text-[28px] leading-none">
+            <SectionTitle className="text-[28px] leading-none">
               Подарочный
               <br />
               <span className="text-accent-orange">сертификат</span>
