@@ -31,33 +31,6 @@ export async function MainPosts() {
           <NavArrow />
         </Link>
       </div>
-      <div className="hidden w-full grid-cols-4 gap-5 xl:grid">
-        {
-          <Link className="col-span-2 row-span-2" href={`/blog/${mainPost.id}`}>
-            <PostMainCard
-              title={mainPost.title}
-              shortDescription={mainPost.shortDescription}
-              readTime={mainPost.readTime}
-              mainPhoto={mainPost.mainPhoto}
-              createdAt={mainPost.createdAt}
-              category={mainPost.category}
-              viewMode="widget"
-            />
-          </Link>
-        }
-        {secondaryPosts.map((item) => (
-          <Link key={item.id} href={`/blog/${item.id}`}>
-            <PostDesktopCard
-              title={item.title}
-              readTime={item.readTime}
-              mainPhoto={item.mainPhoto}
-              createdAt={item.createdAt}
-              category={item.category}
-              viewMode="widget"
-            />
-          </Link>
-        ))}
-      </div>
       <div className="flex w-full flex-col gap-6 xl:hidden">
         {mobilePosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
@@ -72,6 +45,33 @@ export async function MainPosts() {
           </Link>
         ))}
       </div>
+
+      <div className="hidden w-full grid-cols-4 gap-5 xl:grid">
+        <Link className="col-span-2 row-span-2" href={`/blog/${mainPost.id}`}>
+          <PostMainCard
+            title={mainPost.title}
+            shortDescription={mainPost.shortDescription}
+            readTime={mainPost.readTime}
+            mainPhoto={mainPost.mainPhoto}
+            createdAt={mainPost.createdAt}
+            category={mainPost.category}
+            viewMode="widget"
+          />
+        </Link>
+        {secondaryPosts.map((item) => (
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+              viewMode="widget"
+            />
+          </Link>
+        ))}
+      </div>
+
       <div className="hidden w-full gap-5 xl:flex">
         {restPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
