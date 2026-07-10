@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { formatReadingTime } from "@/shared/lib";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 
@@ -17,7 +18,7 @@ export function DateWithReadTime({ date, readTime }: DateWithReadTimeProps) {
           height={16}
           alt="Символ глаза - колличество просмотров"
         />
-        <span>{readTime} минут</span>
+        <span>{formatReadingTime(readTime)}</span>
       </div>
     </div>
   );
