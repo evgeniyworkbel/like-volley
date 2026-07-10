@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
+import { PostDesktopCard } from "@/entities/blog/post-desktop-card";
+import { ContainerWithShadow } from "@/shared/ui/";
 import { NavArrow } from "@/shared/ui";
 import { getPayloadClient } from "@/shared/cms";
-import { PostDesktopCard } from "./post-desktop-card";
 
 export async function PopularPosts() {
   const payload = await getPayloadClient();
