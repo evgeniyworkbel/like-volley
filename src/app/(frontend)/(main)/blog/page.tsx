@@ -31,7 +31,8 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
     const category = typeof item.category === "object" ? item.category.label : "";
     return { ...item, category };
   });
-  const [mainPost, ...restPosts] = mappedPosts;
+  const mainPost = mappedPosts.at(0);
+  const restPosts = mappedPosts.slice(1);
   const hasMorePosts = posts.totalDocs > postsData.length;
 
   return (
@@ -39,14 +40,16 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
       <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
         <span className="text-foreground">Наш</span> Блог
       </h1>
-      <PostMainCard
-        title={mainPost.title}
-        category={mainPost.category}
-        shortDescription={mainPost.shortDescription}
-        mainPhoto={mainPost.mainPhoto}
-        readTime={mainPost.readTime}
-        createdAt={mainPost.createdAt}
-      />
+      {mainPost && (
+        <PostMainCard
+          title={mainPost.title}
+          category={mainPost.category}
+          shortDescription={mainPost.shortDescription}
+          mainPhoto={mainPost.mainPhoto}
+          readTime={mainPost.readTime}
+          createdAt={mainPost.createdAt}
+        />
+      )}
       <section className="grid gap-6 xl:hidden">
         {restPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
