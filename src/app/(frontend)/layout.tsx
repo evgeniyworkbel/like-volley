@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
-        <div className="isolate">{children}</div>
+        <div className="isolate h-full">{children}</div>
       </body>
     </html>
   );
