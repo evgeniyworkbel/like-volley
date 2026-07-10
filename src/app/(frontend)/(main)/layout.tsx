@@ -3,9 +3,9 @@ import { Footer, Header } from "@/widgets";
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
-    <div className="grid h-full grid-rows-[auto_1fr_auto]">
+    <div className="flex h-full flex-col">
       <Header />
-      <main>
+      <main className="grow">
         <Container>{children}</Container>
       </main>
       <Footer />
