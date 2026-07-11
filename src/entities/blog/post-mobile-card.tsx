@@ -32,7 +32,7 @@ export function PostMobileCard({
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
           <Badge label={category} />
-          <h4 className="font-bold transition-colors">{title}</h4>
+          <h4 className="text-sm leading-6 font-bold transition-colors">{title}</h4>
         </div>
         <DateWithReadTime date={createdAt} readTime={readTime} />
       </div>
