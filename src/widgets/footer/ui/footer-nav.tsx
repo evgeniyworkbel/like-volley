@@ -4,7 +4,7 @@ import { navLinks } from "@/shared/constants";
 export function FooterNav() {
   return (
     <div className="flex flex-col items-center justify-center gap-12.5 md:flex-row md:items-start md:gap-33 xl:justify-between xl:gap-20 [&_a:hover]:underline [&_a:hover]:underline-offset-4">
-      <div className="flex flex-col gap-4.5 md:gap-7 xl:min-w-29 xl:items-start">
+      <div className="flex flex-col items-center gap-4.5 md:gap-7 xl:min-w-29 xl:items-start">
         <h2 className="text-sm">Навигация сайта</h2>
         <ul className="flex flex-col items-center gap-4.5 text-lg font-bold uppercase md:items-start xl:text-lg">
           <li>
@@ -14,13 +14,15 @@ export function FooterNav() {
             <Link href={navLinks.coachesSection.href}>{navLinks.coachesSection.title}</Link>
           </li>
           <li>
+            <Link href={navLinks.giftCertificatesSection.href}>
+              {navLinks.giftCertificatesSection.title}
+            </Link>
+          </li>
+          <li>
             <Link href={navLinks.faqSection.href}>{navLinks.faqSection.title}</Link>
           </li>
           <li>
-            <Link href={navLinks.gallerySection.href}>{navLinks.gallerySection.title}</Link>
-          </li>
-          <li>
-            <Link href={navLinks.news.href}>{navLinks.news.title}</Link>
+            <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
           </li>
         </ul>
       </div>

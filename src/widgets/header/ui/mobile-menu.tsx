@@ -40,12 +40,13 @@ export function MobileMenu({ data }: MobileMenuProps) {
       )}
       <Navbar
         className={cn(
-          "fixed top-0 left-0 w-full flex-col rounded-b-2xl bg-background/60 py-5 font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out [&>*:last-child]:rounded-[40px] [&>*:last-child]:bg-accent-blue [&>*:last-child]:px-12 [&>*:last-child]:py-4 [&>*:last-child]:text-white [&>*:last-child]:no-underline",
+          "fixed top-0 left-0 w-full flex-col rounded-b-2xl bg-background/60 py-5 text-center font-shantell text-2xl backdrop-blur-sm transition-transform duration-500 ease-in-out",
           {
             "translate-y-23": isOpen,
             "-translate-y-full": !isOpen,
           },
         )}
+        phoneLinkClassName="rounded-[40px] bg-accent-blue px-12 py-4 text-white no-underline tracking-tight"
         data={data}
         onLinkClick={closeMenu}
       />

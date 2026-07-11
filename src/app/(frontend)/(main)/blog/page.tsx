@@ -1,0 +1,98 @@
+import Link from "next/link";
+import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
+import { getPayloadClient } from "@/shared/cms";
+import { ArrowTopIcon } from "@/shared/icons";
+import { buttonVariants } from "@/shared/ui/button";
+import { cn } from "@/shared/lib";
+
+export const dynamic = "force-dynamic";
+
+type BlogPageProps = {
+  searchParams: Promise<{ category?: string; limit?: string }>;
+};
+
+const defaultLimit = 13;
+
+export default async function MainPosts({ searchParams }: BlogPageProps) {
+  const { category, limit } = await searchParams;
+  const currLimit = Number(limit) || defaultLimit;
+  const payload = await getPayloadClient();
+  const posts = await payload.find({
+    collection: "posts",
+    limit: currLimit,
+    where: {
+      ...(category && { category: { equals: category } }),
+    },
+  });
+
+  const postsData = posts.docs;
+
+  const mappedPosts = postsData.map((item) => {
+    const category = typeof item.category === "object" ? item.category.label : "";
+    return { ...item, category };
+  });
+  const mainPost = mappedPosts.at(0);
+  const restPosts = mappedPosts.slice(1);
+  const hasMorePosts = posts.totalDocs > postsData.length;
+
+  return (
+    <section className="flex flex-col items-center gap-6 px-5 py-10 xl:items-start xl:gap-10 xl:px-20 xl:py-12">
+      <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
+        <span className="text-foreground">Наш</span> Блог
+      </h1>
+      {mainPost && (
+        <PostMainCard
+          title={mainPost.title}
+          category={mainPost.category}
+          shortDescription={mainPost.shortDescription}
+          mainPhoto={mainPost.mainPhoto}
+          readTime={mainPost.readTime}
+          createdAt={mainPost.createdAt}
+        />
+      )}
+      <section className="grid gap-6 xl:hidden">
+        {restPosts.map((item) => (
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostMobileCard
+              className="active:bg-[oklch(0.9431_0_0)] active:[&_h4]:text-accent-orange"
+              title={item.title}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
+        ))}
+      </section>
+      <section className="hidden grid-cols-4 gap-x-5 gap-y-9 xl:grid">
+        {restPosts.map((item) => (
+          <Link key={item.id} href={`/blog/${item.id}`}>
+            <PostDesktopCard
+              title={item.title}
+              shortDescription={item.shortDescription}
+              readTime={item.readTime}
+              mainPhoto={item.mainPhoto}
+              createdAt={item.createdAt}
+              category={item.category}
+            />
+          </Link>
+        ))}
+      </section>
+      {hasMorePosts && (
+        <Link
+          className={cn(buttonVariants({ color: "primary", size: "sm" }), "mx-auto")}
+          href={{
+            query: {
+              ...(category && { category }),
+              limit: currLimit + defaultLimit,
+            },
+          }}
+          scroll={false}
+        >
+          Загрузить больше новостей
+          <ArrowTopIcon className="shrink-0 rotate-180" />
+        </Link>
+      )}
+    </section>
+  );
+}

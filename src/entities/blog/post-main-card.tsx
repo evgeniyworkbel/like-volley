@@ -1,0 +1,46 @@
+import Image from "next/image";
+import { Post } from "@/shared/cms/payload-types";
+import { cn } from "@/shared/lib";
+import { Badge } from "./badge";
+import { DateWithReadTime } from "./date-with-read-time";
+
+const aspectVariants = {
+  blog: " aspect-[1.167] xl:aspect-[3.2]",
+  widget: "aspect-[1.3673]",
+};
+
+type PostMainCardProps = Pick<
+  Post,
+  "title" | "shortDescription" | "readTime" | "mainPhoto" | "createdAt"
+> & {
+  category: string;
+  viewMode?: keyof typeof aspectVariants;
+};
+
+export function PostMainCard({
+  title,
+  category,
+  shortDescription,
+  readTime,
+  mainPhoto,
+  createdAt,
+  viewMode = "blog",
+}: PostMainCardProps) {
+  return (
+    <article className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
+      <div className={cn("relative flex w-full", aspectVariants[viewMode])}>
+        <Image src={mainPhoto} className="object-cover" alt="Фото главной новости  блога" fill />
+      </div>
+      <div className="flex flex-col gap-3 px-3 pb-3 xl:px-5 xl:pb-8">
+        <Badge label={category} />
+        <div className="flex flex-col gap-6 xl:gap-9">
+          <hgroup className="flex flex-col gap-3 xl:gap-4.5">
+            <h3 className="text-lg leading-6 font-bold xl:text-4xl xl:leading-[1.11]">{title}</h3>
+            <p className="line-clamp-3 text-sm xl:text-lg">{shortDescription}</p>
+          </hgroup>
+          <DateWithReadTime date={createdAt} readTime={readTime} />
+        </div>
+      </div>
+    </article>
+  );
+}

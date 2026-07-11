@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Shantell_Sans, Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -37,10 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
-        <div className="isolate">{children}</div>
+        <div className="isolate h-full">{children}</div>
+        <Toaster />
       </body>
     </html>
   );
