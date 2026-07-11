@@ -35,7 +35,7 @@ export function PostMainCard({
         <Badge label={category} />
         <div className="flex flex-col gap-6 xl:gap-9">
           <hgroup className="flex flex-col gap-3 xl:gap-4.5">
-            <h3 className="text-lg leading-6 font-bold xl:text-4xl">{title}</h3>
+            <h3 className="text-lg leading-6 font-bold xl:text-4xl xl:leading-[1.11]">{title}</h3>
             <p className="line-clamp-3 text-sm xl:text-lg">{shortDescription}</p>
           </hgroup>
           <DateWithReadTime date={createdAt} readTime={readTime} />
