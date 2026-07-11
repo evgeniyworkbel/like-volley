@@ -31,12 +31,11 @@ export function PostDesktopCard({
         {/* @todo: добавить alt */}
         <Image src={mainPhoto} className="object-cover" alt="" fill />
       </div>
-
-      <div className="flex flex-col justify-center gap-3 p-3">
+      <div className="flex grow flex-col justify-center gap-3 p-3">
         <Badge label={category} />
         <h4 className="text-lg leading-6 font-bold transition-colors">{title}</h4>
         <p className="line-clamp-3 text-sm">{shortDescription}</p>
-        <DateWithReadTime date={createdAt} readTime={readTime} />
+        <DateWithReadTime className="mt-auto" date={createdAt} readTime={readTime} />
       </div>
     </article>
   );
