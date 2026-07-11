@@ -1,5 +1,4 @@
-export { PostMainCard } from "./post-main-card";
-export { DateWithReadTime } from "./date-with-read-time";
-export { PostMobileCard } from "./post-mobile-card";
-export { PostDesktopCard } from "./post-desktop-card";
-export { PopularPosts } from "../../widgets/popular-posts/ui/popular-posts";
+export { PostMainCard } from "./ui/post-main-card";
+export { DateWithReadTime } from "./ui/date-with-read-time";
+export { PostMobileCard } from "./ui/post-mobile-card";
+export { PostDesktopCard } from "./ui/post-desktop-card";

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostDesktopCard } from "@/entities/blog/post-desktop-card";
+import { PostDesktopCard } from "@/entities/blog";
 import { ContainerWithShadow } from "@/shared/ui/";
 import { NavArrow } from "@/shared/ui";
 import { getPayloadClient } from "@/shared/cms";
