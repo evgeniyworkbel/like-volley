@@ -11,3 +11,4 @@ export { Locations } from "./locations";
 export { GiftCertificates } from "./gift-certificates";
 export { Reviews } from "./reviews";
 export { MainPosts } from "./main-posts";
+export { PopularPosts } from "./popular-posts";

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ContainerWithShadow } from "@/shared/ui";
 import { NavArrow } from "@/shared/ui";
 import { getPayloadClient } from "@/shared/cms";
-import { PostDesktopCard } from "./post-desktop-card";
+import { PostDesktopCard } from "../../../entities/blog/post-desktop-card";
 
 export async function PopularPosts() {
   const payload = await getPayloadClient();
