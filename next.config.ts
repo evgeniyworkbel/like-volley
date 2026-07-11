@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
   // streaming responses
   // https://github.com/leerob/next-self-host/blob/main/next.config.ts
   compress: false,
+  allowedDevOrigins: ["192.168.1.9"],
 };
 
 export default withPayload(nextConfig);
