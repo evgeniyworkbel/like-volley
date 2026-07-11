@@ -1,4 +1,4 @@
-import { ContainerWithShadow } from "@/shared/ui/container-with-shadow";
+import { ContainerWithShadow } from "@/shared/ui";
 import {
   Hero,
   Advantages,
@@ -10,7 +10,7 @@ import {
   Coaches,
   Locations,
   Reviews,
-  // MainPosts,
+  MainPosts,
 } from "@/widgets";
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
@@ -29,7 +29,7 @@ export default function Home() {
         <SignUpForWorkout />
         <GiftCertificates />
         <ContainerWithShadow className="rounded-b-none">
-          {/* <MainPosts /> */}
+          <MainPosts />
           <Gallery />
           <Faq />
           <Banner />

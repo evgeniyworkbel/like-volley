@@ -6,3 +6,4 @@ export { Map } from "./map";
 export { Select } from "./select";
 export { Container } from "./container";
 export { NavArrow } from "./nav-arrow";
+export { ContainerWithShadow } from "./container-with-shadow";
