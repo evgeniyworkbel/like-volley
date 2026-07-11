@@ -16,9 +16,15 @@ export async function MainPosts() {
     return { ...item, category };
   });
 
-  const [mainPost, post2, post3, post4, post5, ...restPosts] = mappedPosts;
-  const secondaryPosts = [post2, post3, post4, post5];
-  const mobilePosts = [mainPost, post2];
+  const post1 = mappedPosts.at(0);
+  const post2 = mappedPosts.at(1);
+  const post3 = mappedPosts.at(2);
+  const post4 = mappedPosts.at(3);
+  const post5 = mappedPosts.at(4);
+  const restPosts = mappedPosts.slice(5);
+
+  const secondaryPosts = [post2, post3, post4, post5].filter((item) => !!item);
+  const mobilePosts = [post1, post2].filter((item) => !!item);
 
   return (
     <section className="flex flex-col items-center gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-14.5">
@@ -47,17 +53,19 @@ export async function MainPosts() {
       </div>
 
       <div className="hidden w-full grid-cols-4 gap-5 xl:grid">
-        <Link className="col-span-2 row-span-2" href={`/blog/${mainPost.id}`}>
-          <PostMainCard
-            title={mainPost.title}
-            shortDescription={mainPost.shortDescription}
-            readTime={mainPost.readTime}
-            mainPhoto={mainPost.mainPhoto}
-            createdAt={mainPost.createdAt}
-            category={mainPost.category}
-            viewMode="widget"
-          />
-        </Link>
+        {post1 && (
+          <Link className="col-span-2 row-span-2" href={`/blog/${post1.id}`}>
+            <PostMainCard
+              title={post1.title}
+              shortDescription={post1.shortDescription}
+              readTime={post1.readTime}
+              mainPhoto={post1.mainPhoto}
+              createdAt={post1.createdAt}
+              category={post1.category}
+              viewMode="widget"
+            />
+          </Link>
+        )}
         {secondaryPosts.map((item) => (
           <Link key={item.id} href={`/blog/${item.id}`}>
             <PostDesktopCard
