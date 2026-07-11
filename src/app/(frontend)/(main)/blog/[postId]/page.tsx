@@ -21,7 +21,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
           <SharePost className="w-fit xl:hidden" />
           <div className="flex items-center justify-between">
             <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
-            <SharePost className="hidden" />
+            <SharePost className="hidden xl:flex" />
           </div>
           <div className="flex flex-col gap-8 xl:gap-16">
             <hgroup className="flex flex-col gap-5">
