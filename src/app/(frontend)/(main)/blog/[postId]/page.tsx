@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
-import { DateWithReadTime, PopularPosts } from "@/entities/blog";
+import { DateWithReadTime } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
+import { PopularPosts } from "@/widgets";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
