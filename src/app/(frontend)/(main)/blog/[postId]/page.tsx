@@ -3,6 +3,7 @@ import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { DateWithReadTime } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
+import { SharePost } from "@/features/share-post";
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
@@ -17,7 +18,11 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
     <article>
       <section className="flex flex-col">
         <div className="flex flex-col gap-5 px-5 py-6 xl:px-20 xl:py-12">
-          <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
+          <SharePost className="w-fit xl:hidden" />
+          <div className="flex items-center justify-between">
+            <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
+            <SharePost className="hidden" />
+          </div>
           <div className="flex flex-col gap-8 xl:gap-16">
             <hgroup className="flex flex-col gap-5">
               <h1 className="text-5xl leading-11 font-bold wrap-anywhere">{post.title}</h1>
