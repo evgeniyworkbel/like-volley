@@ -39,27 +39,23 @@ export async function uploadFile({
 
   const fileBufferOrStream = tempFilePath ? fs.createReadStream(tempFilePath) : buffer;
 
+  const objectParams = {
+    Body: fileBufferOrStream,
+    Bucket: bucket,
+    ContentType: mimeType,
+    Key: fileKey,
+    ...(acl ? { ACL: acl } : {}),
+  };
+
   if (buffer.length > 0 && buffer.length < multipartThreshold) {
-    await client.putObject({
-      ACL: acl,
-      Body: fileBufferOrStream,
-      Bucket: bucket,
-      ContentType: mimeType,
-      Key: fileKey,
-    });
+    await client.putObject(objectParams);
 
     return;
   }
 
   const parallelUpload = new Upload({
     client,
-    params: {
-      ACL: acl,
-      Body: fileBufferOrStream,
-      Bucket: bucket,
-      ContentType: mimeType,
-      Key: fileKey,
-    },
+    params: objectParams,
     partSize: multipartThreshold,
     queueSize: 4,
   });

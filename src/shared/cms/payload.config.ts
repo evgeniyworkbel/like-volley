@@ -26,6 +26,9 @@ import { OfferAgreementPage } from "./globals/OfferAgreementPage";
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+const ycS3Acl = process.env.YC_S3_ACL;
+const yandexStorageAcl = ycS3Acl === "public-read" || ycS3Acl === "private" ? ycS3Acl : undefined;
+
 export default buildConfig({
   admin: {
     meta: { icons: { icon: "/cms-icon.png" } },
@@ -75,7 +78,7 @@ export default buildConfig({
   sharp,
   plugins: [
     yandexStorage({
-      acl: "public-read",
+      acl: yandexStorageAcl,
       bucket: process.env.YC_S3_BUCKET || "",
       collections: {
         media: true,
