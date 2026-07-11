@@ -36,7 +36,7 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
   const hasMorePosts = posts.totalDocs > postsData.length;
 
   return (
-    <section className="flex flex-col gap-6 px-5 py-10 xl:gap-10 xl:px-20 xl:py-12">
+    <section className="flex flex-col items-center gap-6 px-5 py-10 xl:items-start xl:gap-10 xl:px-20 xl:py-12">
       <h1 className="text-[28px] font-bold text-accent-orange md:hidden md:text-6xl">
         <span className="text-foreground">Наш</span> Блог
       </h1>
