@@ -40,7 +40,7 @@
     "@hookform/resolvers": "5.4.0",
     "@payloadcms/db-postgres": "3.85.0",
     "@payloadcms/next": "3.85.0",
-    "@payloadcms/plugin-cloud-storage": "3.85.1",
+    "@payloadcms/plugin-cloud-storage": "3.85.0",
     "@payloadcms/richtext-lexical": "3.85.0",
     "@payloadcms/translations": "3.85.0",
     "@payloadcms/ui": "3.85.0",
