@@ -43,7 +43,7 @@ export const Posts: CollectionConfig = {
       type: "upload",
       relationTo: "media",
       label: { en: "Main photo", ru: "Главное фото" },
-      // required: true,
+      required: true,
     },
     {
       name: "mainPhotoMadeBy",

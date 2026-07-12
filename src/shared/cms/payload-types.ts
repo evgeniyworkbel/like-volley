@@ -313,7 +313,7 @@ export interface Post {
   title: string;
   shortDescription: string;
   readTime: number;
-  mainPhoto?: (number | null) | Media;
+  mainPhoto: number | Media;
   mainPhotoMadeBy?: string | null;
   content: {
     root: {
