@@ -4,11 +4,12 @@ export const Owner: GlobalConfig = {
   slug: "owner",
   label: { en: "Owner", ru: "Основатель школы" },
   fields: [
-    // todo
-    // {
-    //   name: "photo",
-    //   type: "upload",
-    // },
+    {
+      name: "photo",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
     {
       name: "lastName",
       type: "text",
