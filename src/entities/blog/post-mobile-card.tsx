@@ -4,6 +4,7 @@ import { Post } from "@/shared/cms/payload-types";
 import { DateWithReadTime } from "./date-with-read-time";
 import { Badge } from "./badge";
 import { cn } from "@/shared/lib";
+import { toImgAttrs } from "@/shared/cms";
 
 type PostMobileCardProps = Pick<Post, "title" | "mainPhoto" | "readTime" | "createdAt"> & {
   className?: string;
@@ -18,6 +19,8 @@ export function PostMobileCard({
   mainPhoto,
   createdAt,
 }: PostMobileCardProps) {
+  const { src, alt } = toImgAttrs(mainPhoto);
+
   return (
     <article
       className={cn(
@@ -26,8 +29,7 @@ export function PostMobileCard({
       )}
     >
       <div className="relative flex aspect-[0.784] h-29 shrink-0 overflow-hidden rounded-2xl">
-        {/* @todo: добавить alt */}
-        <Image src={mainPhoto ?? ""} className="object-cover" alt="" fill />
+        <Image src={src} className="object-cover" alt={alt} fill />
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">

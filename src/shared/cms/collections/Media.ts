@@ -13,7 +13,10 @@ export const Media: CollectionConfig = {
     {
       name: "alt",
       type: "text",
-      label: { en: "Alt text (for seo)", ru: "Альтернативный текст (для seo)" },
+      label: {
+        en: "Description what is shown at image (for seo)",
+        ru: "Описание того, что изображено на картинке (для seo)",
+      },
       admin: {
         description:
           "Как правильно написать alt текст для картинки https://doka.guide/html/alt/#osnovnye-pravila-zapolneniya",

@@ -3,6 +3,7 @@ import { Post } from "@/shared/cms/payload-types";
 import { cn } from "@/shared/lib";
 import { Badge } from "./badge";
 import { DateWithReadTime } from "./date-with-read-time";
+import { toImgAttrs } from "@/shared/cms";
 
 const aspectVariants = {
   blog: " aspect-[1.167] xl:aspect-[3.2]",
@@ -26,15 +27,12 @@ export function PostMainCard({
   createdAt,
   viewMode = "blog",
 }: PostMainCardProps) {
+  const { src, alt } = toImgAttrs(mainPhoto);
+
   return (
     <article className="flex w-full flex-col gap-3 overflow-hidden rounded-xl border border-[oklch(0.9276_0.0058_264.53)] xl:gap-5 xl:rounded-t-2xl">
       <div className={cn("relative flex w-full", aspectVariants[viewMode])}>
-        <Image
-          src={mainPhoto ?? ""}
-          className="object-cover"
-          alt="Фото главной новости  блога"
-          fill
-        />
+        <Image src={src} className="object-cover" alt={alt} fill />
       </div>
       <div className="flex flex-col gap-3 px-3 pb-3 xl:px-5 xl:pb-8">
         <Badge label={category} />
