@@ -27,7 +27,7 @@ export function PostMobileCard({
     >
       <div className="relative flex aspect-[0.784] h-29 shrink-0 overflow-hidden rounded-2xl">
         {/* @todo: добавить alt */}
-        <Image src={mainPhoto} className="object-cover" alt="" fill />
+        <Image src={mainPhoto ?? ""} className="object-cover" alt="" fill />
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
