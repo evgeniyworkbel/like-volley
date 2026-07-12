@@ -1,8 +1,7 @@
-import { SectionTitle } from "@/shared/ui";
-import { gallerySectionId } from "@/shared/constants";
+import { NavArrow, SectionTitle } from "@/shared/ui";
+import { contactsLinks, gallerySectionId } from "@/shared/constants";
 import { galleryData } from "../model/data";
 import { GalleryCard } from "./gallery-card";
-import { FullAlbumButton } from "./full-album-button";
 
 export function Gallery() {
   return (
@@ -14,14 +13,30 @@ export function Gallery() {
         <SectionTitle className="text-[28px]">
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
         </SectionTitle>
-        <FullAlbumButton />
+        <a
+          className="hidden items-center gap-2 xl:flex"
+          href={contactsLinks.gallery.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="text-xl font-bold text-accent-orange">Все фотоальбомы</span>
+          <NavArrow />
+        </a>
       </div>
       <div className="flex flex-col gap-5 xl:flex-row xl:px-18.5">
         {galleryData.map((item) => (
           <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
         ))}
       </div>
-      <FullAlbumButton />
+      <a
+        className="flex items-center gap-2 xl:hidden"
+        href={contactsLinks.gallery.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="text-xl font-bold text-accent-orange">Все фотоальбомы</span>
+        <NavArrow />
+      </a>
     </section>
   );
 }
