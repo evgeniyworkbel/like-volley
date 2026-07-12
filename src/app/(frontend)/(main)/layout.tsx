@@ -1,13 +1,11 @@
 import { Container } from "@/shared/ui";
 import { Footer, Header } from "@/widgets";
 
-type MainLayoutProps = Readonly<{ children: React.ReactNode }>;
-
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
-    <div>
+    <div className="flex h-full flex-col">
       <Header />
-      <main>
+      <main className="grow">
         <Container>{children}</Container>
       </main>
       <Footer />

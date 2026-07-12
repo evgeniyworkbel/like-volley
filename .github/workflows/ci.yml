@@ -20,6 +20,8 @@ jobs:
         with:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/like-volley:latest
+          build-args: |
+            NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${{ vars.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID }}
       - name: Login to remote server, pull repo and start app
         uses: appleboy/ssh-action@v1
         with:

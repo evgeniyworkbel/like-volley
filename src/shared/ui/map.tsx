@@ -23,7 +23,7 @@ export function Map({ location, restrictMapArea, zoomRange, markers }: MapProps)
       location={reactify.useDefault(location, [location])}
       restrictMapArea={restrictMapArea}
       zoomRange={zoomRange}
-      // behaviors={[]}
+      behaviors={["drag", "dblClick", "pinchZoom"]}
     >
       <YMapDefaultSchemeLayer />
       <YMapDefaultFeaturesLayer />

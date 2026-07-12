@@ -1,0 +1,13 @@
+.infiniteLine {
+  animation: right-left 10s linear infinite;
+}
+
+@keyframes right-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-7.14%, 0);
+  }
+}

@@ -1,0 +1,38 @@
+import { CollectionConfig } from "payload";
+
+export const Reviews: CollectionConfig = {
+  slug: "reviews",
+  labels: {
+    plural: { en: "Reviews", ru: "Отзывы" },
+  },
+  admin: {
+    description: "Секция отзывов",
+  },
+  fields: [
+    {
+      name: "text",
+      type: "textarea",
+      label: { en: "Text", ru: "Текст отзыва" },
+      required: true,
+    },
+    {
+      name: "firstName",
+      type: "text",
+      label: { en: "First name", ru: "Имя" },
+      required: true,
+    },
+    {
+      name: "lastName",
+      type: "text",
+      label: { en: "Last name", ru: "Фамилия" },
+    },
+    {
+      name: "link",
+      type: "text",
+      label: "Ссылка на отзыв",
+      required: true,
+    },
+  ],
+  orderable: true,
+  disableBulkEdit: true,
+};

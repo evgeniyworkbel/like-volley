@@ -2,19 +2,27 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { buildConfig } from "payload";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { EXPERIMENTAL_TableFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import { en } from "@payloadcms/translations/languages/en";
 import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
 
 import { migrations } from "./migrations";
+import { yandexStorage } from "./storage";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
 import { Faq } from "./collections/Faq";
+import { Advantages } from "./collections/Advantages";
+import { Certificates } from "./collections/Certificates";
+import { PostCategories } from "./collections/PostCategories";
+import { Posts } from "./collections/Posts";
+import { PhotoAlbums } from "./collections/PhotoAlbums";
+import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
 import { CompanyInfo } from "./globals/CompanyInfo";
+import { OfferAgreementPage } from "./globals/OfferAgreementPage";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -30,9 +38,22 @@ export default buildConfig({
       logout: { Button: "./ui/logout-btn" },
     },
   },
-  collections: [Users, Media, Coaches, Faq],
-  globals: [CompanyInfo, Owner, PolicyPage],
-  editor: lexicalEditor(),
+  collections: [
+    Users,
+    Media,
+    Coaches,
+    Faq,
+    Certificates,
+    Advantages,
+    Reviews,
+    PostCategories,
+    Posts,
+    PhotoAlbums,
+  ],
+  globals: [CompanyInfo, Owner, PolicyPage, OfferAgreementPage],
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()],
+  }),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
@@ -47,7 +68,27 @@ export default buildConfig({
   i18n: {
     supportedLanguages: { en, ru },
   },
+  upload: {
+    abortOnLimit: true,
+    limits: {
+      fileSize: 5000000, // 5MB, written in bytes
+    },
+  },
   sharp,
-  plugins: [],
+  plugins: [
+    yandexStorage({
+      acl: "public-read",
+      auth: {
+        type: "static",
+        accessKeyId: process.env.YC_S3_ACCESS_KEY_ID || "",
+        secretAccessKey: process.env.YC_S3_SECRET_ACCESS_KEY || "",
+      },
+      bucket: process.env.YC_S3_BUCKET || "",
+      collections: {
+        media: true,
+      },
+      enabled: Boolean(process.env.YC_S3_BUCKET),
+    }),
+  ],
   telemetry: false,
 });

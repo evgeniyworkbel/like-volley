@@ -1,0 +1,11 @@
+{
+	"editor.wordWrap": "bounded",
+	"editor.wordWrapColumn": 180,
+	"js/ts.preferences.autoImportFileExcludePatterns": [
+		"lucide-react",
+		"zod",
+		"@base-ui/react",
+		"type-fest",
+		"class-variance-authority"
+	]
+}

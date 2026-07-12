@@ -1,4 +1,4 @@
-import { Title } from "@/shared/ui";
+import { SectionTitle } from "@/shared/ui";
 import { contactsLinks, gallerySectionId } from "@/shared/constants";
 import { RightIcon } from "@/shared/icons";
 import { galleryData } from "../model/data";
@@ -11,9 +11,9 @@ export function Gallery() {
       className="flex flex-col flex-wrap items-center justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
     >
       <div className="flex w-full flex-col items-center justify-between xl:flex-row">
-        <Title>
+        <SectionTitle>
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
-        </Title>
+        </SectionTitle>
         <a
           className="flex items-center gap-2"
           href={contactsLinks.gallery.href}

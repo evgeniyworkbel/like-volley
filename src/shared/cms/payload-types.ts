@@ -71,6 +71,12 @@ export interface Config {
     media: Media;
     coaches: Coach;
     faq: Faq;
+    certificates: Certificate;
+    advantages: Advantage;
+    reviews: Review;
+    "post-categories": PostCategory;
+    posts: Post;
+    "photo-albums": PhotoAlbum;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -82,6 +88,12 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     coaches: CoachesSelect<false> | CoachesSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
+    certificates: CertificatesSelect<false> | CertificatesSelect<true>;
+    advantages: AdvantagesSelect<false> | AdvantagesSelect<true>;
+    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
+    "post-categories": PostCategoriesSelect<false> | PostCategoriesSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
+    "photo-albums": PhotoAlbumsSelect<false> | PhotoAlbumsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -97,13 +109,18 @@ export interface Config {
     "company-info": CompanyInfo;
     owner: Owner;
     policy: Policy;
+    "offer-agreement": OfferAgreement;
   };
   globalsSelect: {
     "company-info": CompanyInfoSelect<false> | CompanyInfoSelect<true>;
     owner: OwnerSelect<false> | OwnerSelect<true>;
     policy: PolicySelect<false> | PolicySelect<true>;
+    "offer-agreement": OfferAgreementSelect<false> | OfferAgreementSelect<true>;
   };
   locale: null;
+  widgets: {
+    collections: CollectionsWidget;
+  };
   user: User;
   jobs: {
     tasks: unknown;
@@ -227,6 +244,111 @@ export interface Faq {
   createdAt: string;
 }
 /**
+ * Секция сертификатов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "certificates".
+ */
+export interface Certificate {
+  id: number;
+  _order?: string | null;
+  cost?: string | null;
+  count?: string | null;
+  certificateType?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Секция преимуществ
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "advantages".
+ */
+export interface Advantage {
+  id: number;
+  _order?: string | null;
+  score: number;
+  showPlus?: boolean | null;
+  title: string;
+  subtitle: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Секция отзывов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews".
+ */
+export interface Review {
+  id: number;
+  _order?: string | null;
+  text: string;
+  firstName: string;
+  lastName?: string | null;
+  link: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Категории постов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-categories".
+ */
+export interface PostCategory {
+  id: number;
+  label: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Публикации
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  category: number | PostCategory;
+  title: string;
+  shortDescription: string;
+  readTime: number;
+  mainPhoto: number | Media;
+  mainPhotoMadeBy?: string | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Коллекция фотоальбомов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums".
+ */
+export interface PhotoAlbum {
+  id: number;
+  thumbnail: number | Media;
+  albumName: string;
+  albumDate: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -265,6 +387,30 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "faq";
         value: number | Faq;
+      } | null)
+    | ({
+        relationTo: "certificates";
+        value: number | Certificate;
+      } | null)
+    | ({
+        relationTo: "advantages";
+        value: number | Advantage;
+      } | null)
+    | ({
+        relationTo: "reviews";
+        value: number | Review;
+      } | null)
+    | ({
+        relationTo: "post-categories";
+        value: number | PostCategory;
+      } | null)
+    | ({
+        relationTo: "posts";
+        value: number | Post;
+      } | null)
+    | ({
+        relationTo: "photo-albums";
+        value: number | PhotoAlbum;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -379,6 +525,79 @@ export interface FaqSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "certificates_select".
+ */
+export interface CertificatesSelect<T extends boolean = true> {
+  _order?: T;
+  cost?: T;
+  count?: T;
+  certificateType?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "advantages_select".
+ */
+export interface AdvantagesSelect<T extends boolean = true> {
+  _order?: T;
+  score?: T;
+  showPlus?: T;
+  title?: T;
+  subtitle?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews_select".
+ */
+export interface ReviewsSelect<T extends boolean = true> {
+  _order?: T;
+  text?: T;
+  firstName?: T;
+  lastName?: T;
+  link?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-categories_select".
+ */
+export interface PostCategoriesSelect<T extends boolean = true> {
+  label?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  category?: T;
+  title?: T;
+  shortDescription?: T;
+  readTime?: T;
+  mainPhoto?: T;
+  mainPhotoMadeBy?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums_select".
+ */
+export interface PhotoAlbumsSelect<T extends boolean = true> {
+  thumbnail?: T;
+  albumName?: T;
+  albumDate?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -475,6 +694,31 @@ export interface Policy {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "offer-agreement".
+ */
+export interface OfferAgreement {
+  id: number;
+  title: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "company-info_select".
  */
 export interface CompanyInfoSelect<T extends boolean = true> {
@@ -511,6 +755,27 @@ export interface PolicySelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "offer-agreement_select".
+ */
+export interface OfferAgreementSelect<T extends boolean = true> {
+  title?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "collections_widget".
+ */
+export interface CollectionsWidget {
+  data?: {
+    [k: string]: unknown;
+  };
+  width: "full";
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -17,7 +17,7 @@ export async function Footer() {
 
   return (
     <footer className="bg-accent-orange text-white">
-      <Container className="flex flex-col gap-12.5 py-12.5 md:flex-wrap xl:flex-row xl:gap-10 xl:p-20">
+      <Container className="flex flex-col gap-12.5 px-5 py-10 md:flex-wrap xl:flex-row xl:gap-10 xl:px-20 xl:py-15">
         <div className="flex w-full flex-col gap-12.5 border-white/70 xl:flex-row xl:justify-between xl:border-b xl:pb-10">
           <div className="flex flex-col items-center gap-5 xl:items-start">
             <Link href={navLinks.home.href}>
@@ -52,7 +52,10 @@ export async function Footer() {
                 </li>
               </ul>
             </div>
-            <SignUpForWorkoutBtn className="w-80 px-25 text-base font-bold text-accent-orange uppercase md:w-76" />
+            <SignUpForWorkoutBtn
+              className="w-80 px-25 text-base font-bold uppercase md:w-76"
+              color="secondary"
+            />
           </div>
         </div>
         <div className="flex w-full flex-col items-center gap-6 text-sm xl:flex-row xl:justify-between">

@@ -1,4 +1,10 @@
-import { coachesSectionId, faqSectionId, gallerySectionId, locationsSectionId } from "./html-attrs";
+import {
+  coachesSectionId,
+  faqSectionId,
+  gallerySectionId,
+  giftCertificatesSectionId,
+  locationsSectionId,
+} from "./html-attrs";
 import { LinkHref } from "../types";
 
 export const navLinks: Record<string, { title: string; href: LinkHref }> = {
@@ -8,19 +14,23 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   },
   locationsSection: {
     title: "Локации",
-    href: `#${locationsSectionId}`,
+    href: `/#${locationsSectionId}`,
   },
   gallerySection: {
-    title: "Галерея",
-    href: `#${gallerySectionId}`,
+    title: "Живые моменты",
+    href: `/#${gallerySectionId}`,
+  },
+  giftCertificatesSection: {
+    title: "Подарочные сертификаты",
+    href: `/#${giftCertificatesSectionId}`,
   },
   faqSection: {
     title: "FAQ",
-    href: `#${faqSectionId}`,
+    href: `/#${faqSectionId}`,
   },
   coachesSection: {
     title: "Тренеры",
-    href: `#${coachesSectionId}`,
+    href: `/#${coachesSectionId}`,
   },
   // Links for pages
   policy: {
@@ -30,5 +40,9 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
   offerAgreement: {
     title: "Договор оферты",
     href: "/offer-agreement",
+  },
+  blog: {
+    title: "Новости",
+    href: "/blog",
   },
 } as const;

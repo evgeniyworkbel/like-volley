@@ -1,4 +1,3 @@
-import { offerAgreementFileStorageUrl } from "@/shared/constants";
 import type { NextConfig } from "next";
 import { withPayload } from "@payloadcms/next/withPayload";
 
@@ -7,22 +6,23 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   images: {
     qualities: [75, 100],
-  },
-  async redirects() {
-    return [
+    remotePatterns: [
       {
-        source: "/offer-agreement",
-        destination: offerAgreementFileStorageUrl,
-        basePath: false,
-        permanent: true,
+        protocol: "https",
+        hostname: "storage.yandexcloud.net",
+        port: "",
+        pathname: "/global1/**",
+        search: "",
       },
-    ];
+    ],
   },
+
   // Nginx will do gzip compression. We disable
   // compression here so we can prevent buffering
   // streaming responses
   // https://github.com/leerob/next-self-host/blob/main/next.config.ts
   compress: false,
+  allowedDevOrigins: ["192.168.1.9"],
 };
 
 export default withPayload(nextConfig);
