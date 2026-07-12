@@ -1,6 +1,6 @@
 import { Carousel } from "@/shared/ui";
 import { coachesSectionId } from "@/shared/constants";
-import { COMPANY_CITIES_OPTIONS, getMediaAttrs, getPayloadClient } from "@/shared/cms";
+import { COMPANY_CITIES_OPTIONS, getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
 
@@ -12,7 +12,7 @@ export async function Coaches() {
     const foundCity = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
     return {
       ...item,
-      ...getMediaAttrs(item.photo),
+      ...toImgAttrs(item.photo),
       city: foundCity ? (foundCity.label as string) : "",
     };
   });
@@ -32,7 +32,7 @@ export async function Coaches() {
             patronymicName={item.patronymicName}
             description={item.description}
             city={item.city}
-            src={item.url}
+            src={item.src}
             alt={item.alt}
           />
         ))}
