@@ -81,6 +81,14 @@ export const locationsMarkers: Record<CompanyCities, Array<DefaultMarkerProps>> 
       coordinates: [27.609607, 53.918389],
       redirectLink: "https://yandex.ru/maps/-/CPSDAKYI",
     },
+    {
+      ...initialMarkerProps,
+      id: "m7",
+      title: "ул. Солтыса, 187/1 (технопарк)",
+      // todo: поменять координаты и ссылку после того как денис добавил филиал на яндекс карту
+      coordinates: [27.644907, 53.902793],
+      redirectLink: "https://yandex.by/maps/-/CPxoBUly",
+    },
   ],
   brest: [
     {
@@ -103,6 +111,14 @@ export const locationsMarkers: Record<CompanyCities, Array<DefaultMarkerProps>> 
       title: "ул. Московская, 348/3",
       coordinates: [23.773761, 52.105637],
       redirectLink: "https://yandex.by/maps/-/CLCMjE81",
+    },
+    {
+      ...initialMarkerProps,
+      id: "b4",
+      title: "пр. Машерова, 33 (СШ №13)",
+      // todo: поменять координаты и ссылку после того как денис добавил филиал на яндекс карту
+      coordinates: [23.699837, 52.086615],
+      redirectLink: "https://yandex.by/maps/-/CPxoBX6C",
     },
   ],
 };
