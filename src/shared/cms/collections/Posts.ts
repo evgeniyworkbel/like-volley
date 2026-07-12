@@ -62,4 +62,5 @@ export const Posts: CollectionConfig = {
     },
   ],
   disableBulkEdit: true,
+  defaultSort: "-createdAt",
 };
