@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { DateWithReadTime } from "@/entities/blog";
-import { getPayloadClient } from "@/shared/cms";
+import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
 
@@ -11,6 +12,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
     collection: "posts",
     id: postId,
   });
+  const { src, alt } = toImgAttrs(post.mainPhoto);
 
   return (
     <article>
@@ -29,7 +31,7 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
             <div className="flex flex-col xl:gap-3">
               <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
                 {/* "todo: изменить alt" */}
-                {/* <Image src={post.mainPhoto} alt="Фото учеников школы" fill /> */}
+                <Image src={src} alt={alt} fill />
               </div>
               {post.mainPhotoMadeBy && (
                 <p className="text-right text-base text-foreground-secondary">
