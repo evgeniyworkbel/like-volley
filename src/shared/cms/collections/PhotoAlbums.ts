@@ -3,7 +3,7 @@ import { CollectionConfig } from "payload";
 export const PhotoAlbums: CollectionConfig = {
   slug: "photo-albums",
   labels: {
-    plural: { en: "Photo Albums", ru: "Фотоальбомы" },
+    plural: { en: "Photo albums", ru: "Фотоальбомы" },
   },
   admin: {
     description: "Коллекция фотоальбомов",
