@@ -52,7 +52,6 @@ export const Coaches: CollectionConfig = {
       type: "select",
       label: { en: "City", ru: "Город" },
       options: COMPANY_CITIES_OPTIONS,
-      unique: true,
       required: true,
     },
   ],
