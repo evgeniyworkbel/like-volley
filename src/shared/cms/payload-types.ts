@@ -659,6 +659,7 @@ export interface CompanyInfo {
  */
 export interface Owner {
   id: number;
+  photo: number | Media;
   lastName: string;
   firstName: string;
   patronymicName?: string | null;
@@ -736,6 +737,7 @@ export interface CompanyInfoSelect<T extends boolean = true> {
  * via the `definition` "owner_select".
  */
 export interface OwnerSelect<T extends boolean = true> {
+  photo?: T;
   lastName?: T;
   firstName?: T;
   patronymicName?: T;

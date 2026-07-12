@@ -1,6 +1,6 @@
 import { Carousel } from "@/shared/ui";
 import { coachesSectionId } from "@/shared/constants";
-import { COMPANY_CITIES_OPTIONS, getPayloadClient, toImgAttrs } from "@/shared/cms";
+import { COMPANY_CITIES_OPTIONS, getPayloadClient } from "@/shared/cms";
 import { CoachCard } from "./coach-card";
 import { OwnerCard } from "./owner-card";
 
@@ -9,12 +9,9 @@ export async function Coaches() {
   const coaches = await payload.find({ collection: "coaches", pagination: false });
 
   const coachesData = coaches.docs.map((item) => {
-    const foundCity = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
-    return {
-      ...item,
-      ...toImgAttrs(item.photo),
-      city: foundCity ? (foundCity.label as string) : "",
-    };
+    const cityOption = COMPANY_CITIES_OPTIONS.find((option) => option.value === item.city);
+    const city = cityOption?.label || "";
+    return { ...item, city };
   });
 
   return (
@@ -30,10 +27,10 @@ export async function Coaches() {
             lastName={item.lastName}
             firstName={item.firstName}
             patronymicName={item.patronymicName}
+            jobTitle={item.jobTitle}
             description={item.description}
             city={item.city}
-            src={item.src}
-            alt={item.alt}
+            photo={item.photo}
           />
         ))}
       </Carousel>

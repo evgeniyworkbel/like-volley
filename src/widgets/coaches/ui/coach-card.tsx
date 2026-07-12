@@ -1,18 +1,25 @@
+import { toImgAttrs } from "@/shared/cms";
+import { Coach } from "@/shared/cms/payload-types";
 import Image from "next/image";
-import { CoachModel } from "../model/types";
 
-type CoachCardProps = CoachModel;
+type CoachCardProps = Pick<
+  Coach,
+  "lastName" | "firstName" | "patronymicName" | "jobTitle" | "description" | "photo"
+> & {
+  city: string;
+};
 
 export function CoachCard({
   lastName,
   firstName,
   patronymicName,
+  jobTitle,
   description,
   city,
-  src,
-  alt,
+  photo,
 }: CoachCardProps) {
   const name = `${firstName} ${patronymicName}`;
+  const { src, alt } = toImgAttrs(photo);
 
   return (
     <div className="flex flex-col items-center overflow-hidden rounded-[18px] border-2 border-[oklch(0.8327_0.002_247.32)] text-center">
@@ -25,7 +32,10 @@ export function CoachCard({
             <span>{lastName}</span>
             <span>{name}</span>
           </h4>
-          <p className="text-balance text-foreground-secondary">{description}</p>
+          <p className="flex flex-col gap-1 text-balance text-foreground-secondary">
+            <span>{jobTitle}</span>
+            <span>{description}</span>
+          </p>
         </hgroup>
         <p className="text-foreground">
           Город:&nbsp;<span className="text-accent-orange">{city}</span>
