@@ -76,6 +76,7 @@ export interface Config {
     reviews: Review;
     "post-categories": PostCategory;
     posts: Post;
+    "photo-albums": PhotoAlbum;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -92,6 +93,7 @@ export interface Config {
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     "post-categories": PostCategoriesSelect<false> | PostCategoriesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    "photo-albums": PhotoAlbumsSelect<false> | PhotoAlbumsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -332,6 +334,20 @@ export interface Post {
   createdAt: string;
 }
 /**
+ * Коллекция фотоальбомов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums".
+ */
+export interface PhotoAlbum {
+  id: number;
+  thumbnail: number | Media;
+  albumName: string;
+  albumDate: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -390,6 +406,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "posts";
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: "photo-albums";
+        value: number | PhotoAlbum;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -560,6 +580,17 @@ export interface PostsSelect<T extends boolean = true> {
   mainPhoto?: T;
   mainPhotoMadeBy?: T;
   content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums_select".
+ */
+export interface PhotoAlbumsSelect<T extends boolean = true> {
+  thumbnail?: T;
+  albumName?: T;
+  albumDate?: T;
   updatedAt?: T;
   createdAt?: T;
 }

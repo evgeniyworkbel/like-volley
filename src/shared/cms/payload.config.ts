@@ -17,6 +17,7 @@ import { Advantages } from "./collections/Advantages";
 import { Certificates } from "./collections/Certificates";
 import { PostCategories } from "./collections/PostCategories";
 import { Posts } from "./collections/Posts";
+import { PhotoAlbums } from "./collections/PhotoAlbums";
 import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
@@ -47,6 +48,7 @@ export default buildConfig({
     Reviews,
     PostCategories,
     Posts,
+    PhotoAlbums,
   ],
   globals: [CompanyInfo, Owner, PolicyPage, OfferAgreementPage],
   editor: lexicalEditor({

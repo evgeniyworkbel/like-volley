@@ -41,14 +41,16 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
         <span className="text-foreground">Наш</span> Блог
       </h1>
       {mainPost && (
-        <PostMainCard
-          title={mainPost.title}
-          category={mainPost.category}
-          shortDescription={mainPost.shortDescription}
-          mainPhoto={mainPost.mainPhoto}
-          readTime={mainPost.readTime}
-          createdAt={mainPost.createdAt}
-        />
+        <Link href={`/blog/${mainPost.id}`}>
+          <PostMainCard
+            title={mainPost.title}
+            category={mainPost.category}
+            shortDescription={mainPost.shortDescription}
+            mainPhoto={mainPost.mainPhoto}
+            readTime={mainPost.readTime}
+            createdAt={mainPost.createdAt}
+          />
+        </Link>
       )}
       <section className="grid gap-6 xl:hidden">
         {restPosts.map((item) => (
