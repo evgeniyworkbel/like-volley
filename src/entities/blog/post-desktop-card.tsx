@@ -4,6 +4,7 @@ import { Post } from "@/shared/cms/payload-types";
 import { cn } from "@/shared/lib";
 import { DateWithReadTime } from "./date-with-read-time";
 import { Badge } from "./badge";
+import { toImgAttrs } from "@/shared/cms";
 
 const aspectVariants = {
   blog: "aspect-[1.22]",
@@ -25,11 +26,12 @@ export function PostDesktopCard({
   createdAt,
   viewMode = "blog",
 }: PostDesktopCardProps) {
+  const { src, alt } = toImgAttrs(mainPhoto);
+
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors hover:[&_h4]:text-accent-orange">
       <div className={cn("relative w-full", aspectVariants[viewMode])}>
-        {/* @todo: добавить alt */}
-        <Image src={mainPhoto} className="object-cover" alt="" fill />
+        <Image src={src} className="object-cover" alt={alt} fill />
       </div>
       <div className="flex grow flex-col justify-center gap-3 p-3">
         <Badge label={category} />

@@ -10,11 +10,13 @@ export const Coaches: CollectionConfig = {
     description: "Секция тренеров",
   },
   fields: [
-    // todo
-    // {
-    //   name: "photo",
-    //   type: "upload",
-    // },
+    {
+      name: "photo",
+      type: "upload",
+      relationTo: "media",
+      label: { en: "Photo", ru: "Фото" },
+      required: true,
+    },
     {
       name: "lastName",
       type: "text",
@@ -50,7 +52,6 @@ export const Coaches: CollectionConfig = {
       type: "select",
       label: { en: "City", ru: "Город" },
       options: COMPANY_CITIES_OPTIONS,
-      unique: true,
       required: true,
     },
   ],

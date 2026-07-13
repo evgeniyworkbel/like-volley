@@ -9,7 +9,6 @@ export async function PopularPosts() {
   const posts = await payload.find({
     collection: "posts",
     limit: 4,
-    sort: "-createdAt",
   });
 
   const mappedPosts = posts.docs.map((item) => {

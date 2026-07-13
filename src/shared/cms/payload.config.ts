@@ -8,6 +8,7 @@ import { ru } from "@payloadcms/translations/languages/ru";
 import sharp from "sharp";
 
 import { migrations } from "./migrations";
+import { yandexStorage } from "./storage";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Coaches } from "./collections/Coaches";
@@ -16,6 +17,7 @@ import { Advantages } from "./collections/Advantages";
 import { Certificates } from "./collections/Certificates";
 import { PostCategories } from "./collections/PostCategories";
 import { Posts } from "./collections/Posts";
+import { PhotoAlbums } from "./collections/PhotoAlbums";
 import { Reviews } from "./collections/Reviews";
 import { Owner } from "./globals/Owner";
 import { PolicyPage } from "./globals/PolicyPage";
@@ -46,6 +48,7 @@ export default buildConfig({
     Reviews,
     PostCategories,
     Posts,
+    PhotoAlbums,
   ],
   globals: [CompanyInfo, Owner, PolicyPage, OfferAgreementPage],
   editor: lexicalEditor({
@@ -72,6 +75,20 @@ export default buildConfig({
     },
   },
   sharp,
-  plugins: [],
+  plugins: [
+    yandexStorage({
+      acl: "public-read",
+      auth: {
+        type: "static",
+        accessKeyId: process.env.YC_S3_ACCESS_KEY_ID || "",
+        secretAccessKey: process.env.YC_S3_SECRET_ACCESS_KEY || "",
+      },
+      bucket: process.env.YC_S3_BUCKET || "",
+      collections: {
+        media: true,
+      },
+      enabled: Boolean(process.env.YC_S3_BUCKET),
+    }),
+  ],
   telemetry: false,
 });

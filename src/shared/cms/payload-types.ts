@@ -76,6 +76,7 @@ export interface Config {
     reviews: Review;
     "post-categories": PostCategory;
     posts: Post;
+    "photo-albums": PhotoAlbum;
     "payload-kv": PayloadKv;
     "payload-locked-documents": PayloadLockedDocument;
     "payload-preferences": PayloadPreference;
@@ -92,6 +93,7 @@ export interface Config {
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     "post-categories": PostCategoriesSelect<false> | PostCategoriesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    "photo-albums": PhotoAlbumsSelect<false> | PhotoAlbumsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-locked-documents":
       | PayloadLockedDocumentsSelect<false>
@@ -203,6 +205,7 @@ export interface Media {
 export interface Coach {
   id: number;
   _order?: string | null;
+  photo: number | Media;
   lastName: string;
   firstName: string;
   patronymicName: string;
@@ -311,7 +314,7 @@ export interface Post {
   title: string;
   shortDescription: string;
   readTime: number;
-  mainPhoto: string;
+  mainPhoto: number | Media;
   mainPhotoMadeBy?: string | null;
   content: {
     root: {
@@ -328,6 +331,20 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Коллекция фотоальбомов
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums".
+ */
+export interface PhotoAlbum {
+  id: number;
+  thumbnail: number | Media;
+  albumName: string;
+  albumDate: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -390,6 +407,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "posts";
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: "photo-albums";
+        value: number | PhotoAlbum;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -481,6 +502,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface CoachesSelect<T extends boolean = true> {
   _order?: T;
+  photo?: T;
   lastName?: T;
   firstName?: T;
   patronymicName?: T;
@@ -565,6 +587,17 @@ export interface PostsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "photo-albums_select".
+ */
+export interface PhotoAlbumsSelect<T extends boolean = true> {
+  thumbnail?: T;
+  albumName?: T;
+  albumDate?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv_select".
  */
 export interface PayloadKvSelect<T extends boolean = true> {
@@ -626,6 +659,7 @@ export interface CompanyInfo {
  */
 export interface Owner {
   id: number;
+  photo: number | Media;
   lastName: string;
   firstName: string;
   patronymicName?: string | null;
@@ -703,6 +737,7 @@ export interface CompanyInfoSelect<T extends boolean = true> {
  * via the `definition` "owner_select".
  */
 export interface OwnerSelect<T extends boolean = true> {
+  photo?: T;
   lastName?: T;
   firstName?: T;
   patronymicName?: T;
