@@ -11,7 +11,7 @@ export function GalleryCard({ src, albumName, albumDate, alt }: GalleryCardProps
   return (
     <div className="relative flex aspect-[0.979] h-84 items-end justify-center overflow-hidden rounded-4xl p-2 xl:aspect-[0.949] xl:h-97">
       <Image src={src} alt={alt} sizes="364px" fill />
-      <div className="flex w-full justify-between rounded-full bg-white px-3 py-2">
+      <div className="z-10 flex w-full justify-between rounded-full bg-white px-3 py-2">
         <div className="flex flex-col gap-1">
           <span className="line-clamp-1 font-semibold">{albumName}</span>
           <span className="text-sm">{formattedDate}</span>
