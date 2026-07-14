@@ -11,7 +11,6 @@ export async function Gallery() {
   });
 
   const galleryData = photoAlbums.docs;
-
   const mappedAlbums = galleryData.map((item) => ({
     ...item,
     ...toImgAttrs(item.thumbnail),
