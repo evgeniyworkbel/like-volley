@@ -1,13 +1,26 @@
 import { NavArrow, SectionTitle } from "@/shared/ui";
 import { contactsLinks, gallerySectionId } from "@/shared/constants";
-import { galleryData } from "../model/data";
+import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { GalleryCard } from "./gallery-card";
 
-export function Gallery() {
+export async function Gallery() {
+  const payload = await getPayloadClient();
+  const photoAlbums = await payload.find({
+    collection: "photo-albums",
+    pagination: false,
+  });
+
+  const galleryData = photoAlbums.docs;
+
+  const mappedAlbums = galleryData.map((item) => ({
+    ...item,
+    ...toImgAttrs(item.thumbnail),
+  }));
+
   return (
     <section
       id={gallerySectionId}
-      className="flex flex-col flex-wrap items-center justify-center gap-12 px-5 py-14.5 xl:flex-row xl:gap-20 xl:px-20"
+      className="flex flex-col flex-wrap items-center gap-6 px-5 py-14.5 xl:flex-row xl:gap-10 xl:px-20"
     >
       <div className="flex w-full flex-col items-center justify-between xl:flex-row">
         <SectionTitle className="text-[28px]">
@@ -23,9 +36,15 @@ export function Gallery() {
           <NavArrow />
         </a>
       </div>
-      <div className="flex flex-col gap-5 xl:flex-row xl:px-18.5">
-        {galleryData.map((item) => (
-          <GalleryCard key={item.alt} src={item.src} alt={item.alt} />
+      <div className="flex flex-col gap-5 xl:flex-row">
+        {mappedAlbums.map((item) => (
+          <GalleryCard
+            key={item.id}
+            src={item.src}
+            albumName={item.albumName}
+            albumDate={item.albumDate}
+            alt={item.alt}
+          />
         ))}
       </div>
       <a
