@@ -9,7 +9,7 @@ export type GalleryCardProps = Pick<ImageProps, "src" | "alt"> &
 export function GalleryCard({ src, albumName, albumDate, alt }: GalleryCardProps) {
   const formattedDate = format(albumDate, "dd.MM.yyyy");
   return (
-    <div className="relative flex aspect-[0.979] h-84 items-end justify-center overflow-hidden rounded-4xl p-2 xl:aspect-[0.949] xl:h-97">
+    <div className="relative flex aspect-[0.979] h-84 items-end overflow-hidden rounded-4xl p-2 xl:aspect-[0.949] xl:h-97">
       <Image src={src} alt={alt} sizes="364px" fill />
       <div className="z-10 flex w-full justify-between rounded-full bg-white py-2 pr-3 pl-4.5">
         <div className="flex flex-col gap-1">
