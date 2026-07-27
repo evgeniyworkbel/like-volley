@@ -7,11 +7,11 @@ export async function Gallery() {
   const payload = await getPayloadClient();
   const photoAlbums = await payload.find({
     collection: "photo-albums",
-    pagination: false,
+    limit: 3,
   });
 
-  const galleryData = photoAlbums.docs;
-  const mappedAlbums = galleryData.map((item) => ({
+  const photoAlbumsData = photoAlbums.docs;
+  const mappedAlbums = photoAlbumsData.map((item) => ({
     ...item,
     ...toImgAttrs(item.thumbnail),
   }));
