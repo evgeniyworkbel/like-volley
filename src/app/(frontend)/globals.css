@@ -50,11 +50,3 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter);
 }
-
-@layer utilities {
-  svg.lucide {
-    width: 20px;
-    height: 20px;
-    stroke-width: 1.5px;
-  }
-}
