@@ -1,9 +1,9 @@
 import { cn } from "@/shared/lib";
 import { cva, type VariantProps } from "class-variance-authority";
-import { ArrowTopIcon } from "../icons";
+import { ArrowUpIcon } from "../icons";
 
 const icons = {
-  arrow: <ArrowTopIcon className="shrink-0 rotate-90" />,
+  arrow: <ArrowUpIcon className="shrink-0 rotate-90" />,
 };
 
 const buttonVariants = cva(

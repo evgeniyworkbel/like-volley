@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
-import { ArrowTopIcon } from "@/shared/icons";
+import { ArrowUpIcon } from "@/shared/icons";
 import { buttonVariants } from "@/shared/ui/button";
 import { cn } from "@/shared/lib";
 
@@ -92,7 +92,7 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
           scroll={false}
         >
           Загрузить больше новостей
-          <ArrowTopIcon className="shrink-0 rotate-180" />
+          <ArrowUpIcon className="shrink-0 rotate-180" />
         </Link>
       )}
     </section>
