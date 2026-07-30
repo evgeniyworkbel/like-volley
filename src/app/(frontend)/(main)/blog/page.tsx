@@ -92,7 +92,7 @@ export default async function MainPosts({ searchParams }: BlogPageProps) {
           scroll={false}
         >
           Загрузить больше новостей
-          <ArrowUpIcon className="shrink-0 rotate-180" />
+          <ArrowUpIcon className="rotate-180" />
         </Link>
       )}
     </section>
