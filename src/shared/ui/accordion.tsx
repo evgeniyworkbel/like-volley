@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDownIcon } from "../icons";
 import { cn } from "../lib";
 
 export type AccordionItemModel = {
@@ -42,7 +42,7 @@ export function Accordion({ items, defaultOpened }: AccordionProps) {
                   isOpen ? "bg-accent-orange" : "bg-accent-orange-light",
                 )}
               >
-                <ChevronDown
+                <ChevronDownIcon
                   className={cn("text-white transition-transform duration-300", {
                     "rotate-180": isOpen,
                   })}
