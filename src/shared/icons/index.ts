@@ -1,5 +1,3 @@
 export { CarouselArrowIcon } from "./carousel-arrow-icon";
-export { RightIcon } from "./right-icon";
-export { LinkIcon } from "./link-icon";
-export { ChevronDownIcon } from "lucide-react";
-export { ArrowUpIcon } from "lucide-react";
+export { ArrowUpRight } from "./arrow-up-right";
+export { ChevronDownIcon, ArrowUpIcon, Link2Icon } from "lucide-react";

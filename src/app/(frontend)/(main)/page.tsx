@@ -1,4 +1,3 @@
-import { LucideProvider } from "lucide-react";
 import { ContainerWithShadow } from "@/shared/ui";
 import {
   Hero,
@@ -21,23 +20,21 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <div>
-      <LucideProvider>
-        <Hero />
+      <Hero />
+      <ContainerWithShadow className="rounded-b-none">
+        <Advantages />
+        <Reviews />
+        <Coaches />
+        <Locations />
+        <SignUpForWorkout />
+        <GiftCertificates />
         <ContainerWithShadow className="rounded-b-none">
-          <Advantages />
-          <Reviews />
-          <Coaches />
-          <Locations />
-          <SignUpForWorkout />
-          <GiftCertificates />
-          <ContainerWithShadow className="rounded-b-none">
-            <MainPosts />
-            <Gallery />
-            <Faq />
-            <Banner />
-          </ContainerWithShadow>
+          <MainPosts />
+          <Gallery />
+          <Faq />
+          <Banner />
         </ContainerWithShadow>
-      </LucideProvider>
+      </ContainerWithShadow>
     </div>
   );
 }
