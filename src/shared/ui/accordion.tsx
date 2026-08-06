@@ -38,8 +38,8 @@ export function Accordion({ items, defaultOpened }: AccordionProps) {
               {question}
               <div
                 className={cn(
-                  "flex size-5.5 items-center justify-center rounded-full transition-colors duration-300",
-                  isOpen ? "bg-accent-orange" : "bg-accent-orange-light",
+                  "flex size-5.5 items-center justify-center rounded-full bg-accent-orange-light transition-colors duration-300",
+                  { "bg-accent-orange": isOpen },
                 )}
               >
                 <ChevronDownIcon

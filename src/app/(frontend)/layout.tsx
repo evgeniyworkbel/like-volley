@@ -3,6 +3,7 @@ import { Shantell_Sans, Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
+import { LucideProvider } from "lucide-react";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   title: "Школа волейбола LikeVolley",
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
-    { name: "Ivan", url: "https://t.me/Ivann8234" },
+    { name: "Ivan Khristenko", url: "https://t.me/Ivann8234" },
     { name: "Stanislaw Olszewski", url: "https://www.linkedin.com/in/staols13" },
   ],
   formatDetection: { telephone: false, date: false, email: false, address: false },
@@ -40,8 +41,10 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
-        <div className="isolate h-full">{children}</div>
-        <Toaster />
+        <LucideProvider size={24}>
+          <div className="isolate h-full">{children}</div>
+          <Toaster />
+        </LucideProvider>
       </body>
     </html>
   );
