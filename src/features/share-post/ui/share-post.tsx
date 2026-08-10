@@ -1,6 +1,6 @@
 "use client";
 
-import { LinkIcon } from "@/shared/icons";
+import { Link2Icon } from "@/shared/icons";
 import { cn } from "@/shared/lib";
 import {
   FacebookIcon,
@@ -52,7 +52,7 @@ export function SharePost({ className, url }: SharePostProps) {
       </ThreadsShareButton>
       <span className="h-6 w-0.5 shrink-0 bg-[#CACACA]" />
       <button className="cursor-pointer text-accent-orange" onClick={handleCopyLink}>
-        <LinkIcon />
+        <Link2Icon />
       </button>
     </section>
   );

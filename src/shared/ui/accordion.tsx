@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AccordionArrowIcon } from "../icons";
+import { ChevronDownIcon } from "../icons";
 import { cn } from "../lib";
 
 export type AccordionItemModel = {
@@ -36,11 +36,18 @@ export function Accordion({ items, defaultOpened }: AccordionProps) {
           >
             <div className="my-6 flex items-center justify-between font-semibold select-none *:first:fill-accent-orange-light">
               {question}
-              <AccordionArrowIcon
-                className={cn("transition-transform", {
-                  "rotate-180 *:first:fill-accent-orange": isOpen,
-                })}
-              />
+              <div
+                className={cn(
+                  "flex size-5.5 items-center justify-center rounded-full bg-accent-orange-light transition-colors duration-300",
+                  { "bg-accent-orange": isOpen },
+                )}
+              >
+                <ChevronDownIcon
+                  className={cn("text-white transition-transform duration-300", {
+                    "rotate-180": isOpen,
+                  })}
+                />
+              </div>
             </div>
             <div
               className={cn("grid grid-rows-[0fr] transition-[grid-template-rows] duration-600", {
