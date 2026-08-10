@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Shantell_Sans, Inter } from "next/font/google";
-import { LucideProvider } from "lucide-react";
 import { Toaster } from "sonner";
+import { LucideProvider } from "lucide-react";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
 const inter = Inter({

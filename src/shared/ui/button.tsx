@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ArrowUpIcon } from "../icons";
 
 const icons = {
-  arrow: <ArrowUpIcon className="rotate-90" />,
+  arrow: <ArrowUpIcon className="shrink-0 rotate-90" />,
 };
 
 const buttonVariants = cva(
