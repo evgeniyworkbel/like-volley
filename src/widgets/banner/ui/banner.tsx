@@ -28,7 +28,6 @@ export function Banner() {
             src="/banner/promo.webp"
             quality={100}
             alt="Баннер, на котором изображены два спортсмена: женщина и мальчик."
-            sizes="(max-width: 1279px) 320px, 1280px"
             fill
           />
         </div>
