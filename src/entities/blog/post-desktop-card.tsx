@@ -31,7 +31,7 @@ export function PostDesktopCard({
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[oklch(0.9276_0.0058_264.53)] transition-colors hover:[&_h4]:text-accent-orange">
       <div className={cn("relative w-full", aspectVariants[viewMode])}>
-        <Image src={src} className="object-cover" alt={alt} fill />
+        <Image src={src} className="object-cover" alt={alt} sizes="305px" fill />
       </div>
       <div className="flex grow flex-col justify-center gap-3 p-3">
         <Badge label={category} />
