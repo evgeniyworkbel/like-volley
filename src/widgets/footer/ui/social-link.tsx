@@ -6,7 +6,7 @@ type SocialLinkProps = Pick<ImageProps, "src" | "alt"> & Pick<NativeLinkProps, "
 export function SocialLink({ src, href, target = "_blank", alt }: SocialLinkProps) {
   return (
     <a
-      className="flex size-11.5 justify-center rounded-[14px] bg-background"
+      className="flex size-11.5 items-center justify-center rounded-[14px] bg-background"
       href={href}
       target={target}
       rel="noopener noreferrer"
