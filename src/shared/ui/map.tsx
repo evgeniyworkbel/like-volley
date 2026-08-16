@@ -1,5 +1,7 @@
 "use client";
 
+import { Margin } from "ymaps3";
+import { useWindowSize } from "../hooks";
 import { useMapContext, DefaultMarkerProps, YMapProps } from "../lib";
 
 type MapProps = Pick<YMapProps, "location" | "restrictMapArea" | "zoomRange"> & {
@@ -10,11 +12,14 @@ type MapProps = Pick<YMapProps, "location" | "restrictMapArea" | "zoomRange"> & 
 // чтобы избавиться от тайпскрипт дырок и получить больше функционала (из cdn например не работает popup для маркера)
 export function Map({ location, restrictMapArea, zoomRange, markers }: MapProps) {
   const { reactify, reactifiedApi, uiTheme } = useMapContext();
+  const { isMobile } = useWindowSize();
 
   if (!reactify || !reactifiedApi || !uiTheme) return null;
 
   const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapControls } = reactifiedApi;
   const { YMapZoomControl, YMapDefaultMarker } = uiTheme;
+
+  const innerMapMargin: Margin = isMobile ? [90, 90, 90, 90] : [160, 160, 160, 160];
 
   const handleMarkerClick = (link: string) => () => window.open(link, "_blank");
 
@@ -24,6 +29,7 @@ export function Map({ location, restrictMapArea, zoomRange, markers }: MapProps)
       restrictMapArea={restrictMapArea}
       zoomRange={zoomRange}
       behaviors={["drag", "dblClick", "pinchZoom"]}
+      margin={innerMapMargin}
     >
       <YMapDefaultSchemeLayer />
       <YMapDefaultFeaturesLayer />
