@@ -345,6 +345,7 @@ export interface PhotoAlbum {
   thumbnail: number | Media;
   albumName: string;
   albumDate: string;
+  link: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -593,6 +594,7 @@ export interface PhotoAlbumsSelect<T extends boolean = true> {
   thumbnail?: T;
   albumName?: T;
   albumDate?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }
