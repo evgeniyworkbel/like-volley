@@ -2,19 +2,18 @@ import Image, { ImageProps } from "next/image";
 import { format } from "date-fns";
 import { PhotoAlbum } from "@/shared/cms/payload-types";
 import { ArrowUpRight } from "@/shared/icons";
-import { contactsLinks } from "@/shared/constants";
 
 export type GalleryCardProps = Pick<ImageProps, "src" | "alt"> &
-  Pick<PhotoAlbum, "albumName" | "albumDate">;
+  Pick<PhotoAlbum, "albumName" | "albumDate" | "link">;
 
-export function GalleryCard({ src, albumName, albumDate, alt }: GalleryCardProps) {
+export function GalleryCard({ src, albumName, albumDate, link, alt }: GalleryCardProps) {
   const formattedDate = format(albumDate, "dd.MM.yyyy");
   return (
     <div className="relative flex aspect-[0.979] h-84 items-end overflow-hidden rounded-4xl p-2 xl:aspect-[0.949] xl:h-97">
       <Image src={src} alt={alt} sizes="364px" fill />
       <a
         className="z-10 flex w-full justify-between rounded-full bg-white py-2 pr-3 pl-4.5"
-        href={contactsLinks.gallery.href}
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
       >

@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { NavArrow, SectionTitle } from "@/shared/ui";
-import { contactsLinks, gallerySectionId } from "@/shared/constants";
+import { gallerySectionId } from "@/shared/constants";
 import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { GalleryCard } from "./gallery-card";
 
@@ -25,15 +26,10 @@ export async function Gallery() {
         <SectionTitle className="text-[28px]">
           Живые&nbsp;<span className="text-accent-orange">моменты</span>
         </SectionTitle>
-        <a
-          className="hidden items-center gap-2 xl:flex"
-          href={contactsLinks.gallery.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link className="hidden items-center gap-2 xl:flex" href="/photo-albums">
           <span className="text-xl font-bold text-accent-orange">Все фотоальбомы</span>
           <NavArrow />
-        </a>
+        </Link>
       </div>
       <div className="flex flex-col gap-5 xl:flex-row">
         {mappedAlbums.map((item) => (
@@ -42,19 +38,15 @@ export async function Gallery() {
             src={item.src}
             albumName={item.albumName}
             albumDate={item.albumDate}
+            link={item.link}
             alt={item.alt}
           />
         ))}
       </div>
-      <a
-        className="flex items-center gap-2 xl:hidden"
-        href={contactsLinks.gallery.href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link className="flex items-center gap-2 xl:hidden" href="/photo-albums">
         <span className="text-xl font-bold text-accent-orange">Все фотоальбомы</span>
         <NavArrow />
-      </a>
+      </Link>
     </section>
   );
 }
