@@ -1235,7 +1235,8 @@
           "name": "link",
           "type": "varchar",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "https://zaviflash.wfolio.pro/disk/29-11-2024-like-volley-2-8zmnl7"
         },
         "updated_at": {
           "name": "updated_at",
