@@ -4,6 +4,7 @@ import { Toaster } from "sonner";
 import { LucideProvider } from "lucide-react";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
