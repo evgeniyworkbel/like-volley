@@ -32,7 +32,7 @@ export const PhotoAlbums: CollectionConfig = {
     {
       name: "link",
       type: "text",
-      label: "Ссылка на альбомы",
+      label: "Ссылка на альбом",
       required: true,
     },
   ],
