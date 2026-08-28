@@ -45,4 +45,8 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     title: "Новости",
     href: "/blog",
   },
+  photoAlbums: {
+    title: "Фотоальбомы",
+    href: "/photo-albums",
+  },
 } as const;

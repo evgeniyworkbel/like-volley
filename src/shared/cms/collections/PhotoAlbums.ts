@@ -29,5 +29,11 @@ export const PhotoAlbums: CollectionConfig = {
       label: { en: "Album Date", ru: "Дата альбома" },
       required: true,
     },
+    {
+      name: "link",
+      type: "text",
+      label: "Ссылка на альбом",
+      required: true,
+    },
   ],
 };
