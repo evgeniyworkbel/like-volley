@@ -10,6 +10,9 @@ type UseWindowSizeReturn = {
 
 export const useWindowSize = (): UseWindowSizeReturn => {
   const [windowSize, setWindowSize] = useState<UseWindowSizeValue>(() => {
+    if (typeof window === "undefined") {
+      return { width: Number.POSITIVE_INFINITY, height: Number.POSITIVE_INFINITY };
+    }
     return { width: window.innerWidth, height: window.innerHeight };
   });
 
