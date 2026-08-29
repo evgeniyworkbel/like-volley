@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Shantell_Sans, Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import { LucideProvider } from "lucide-react";
@@ -42,6 +43,7 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="iPF2jv45sAcWhWCUjAHYBQ" />
         <LucideProvider size={24}>
           <div className="isolate h-full">{children}</div>
           <Toaster />
