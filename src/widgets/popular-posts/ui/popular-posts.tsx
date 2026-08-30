@@ -20,9 +20,9 @@ export async function PopularPosts() {
     <ContainerWithShadow className="hidden rounded-b-none xl:flex">
       <section className="flex flex-col gap-6 xl:gap-10 xl:px-20 xl:py-12">
         <div className="flex items-center justify-between font-bold">
-          <h1 className="text-6xl text-accent-orange">
+          <h2 className="text-6xl text-accent-orange">
             <span className="text-foreground">Популярные</span> новости
-          </h1>
+          </h2>
           <Link className="flex items-center gap-2" href={`/blog`}>
             <span className="text-xl text-accent-orange">Еще новости</span>
             <NavArrow />
