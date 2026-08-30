@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { SignUpForWorkoutBtn } from "@/features";
 import { VerticalLooper } from "./vertical-looper";
