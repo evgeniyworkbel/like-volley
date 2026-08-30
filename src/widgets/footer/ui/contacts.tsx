@@ -1,17 +1,18 @@
 import { CompanyInfo } from "@/shared/cms/payload-types";
 import { contactsLinks } from "@/shared/constants";
-import { getPhoneHref } from "@/shared/lib";
+import { cn, getPhoneHref } from "@/shared/lib";
 import { SocialLink } from "./social-link";
 
 type ContactsProps = {
+  className?: string;
   data: CompanyInfo;
 };
 
-export function Contacts({ data }: ContactsProps) {
+export function Contacts({ className, data }: ContactsProps) {
   const { mobilePhone } = data;
 
   return (
-    <div className="flex gap-4">
+    <div className={cn("flex gap-4", className)}>
       <SocialLink
         href={getPhoneHref(mobilePhone)}
         target="_self"

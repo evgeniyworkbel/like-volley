@@ -32,7 +32,7 @@ export async function Footer() {
               Волейбол для всех возрастов с индивидуальным подходом и современными методиками
               обучения.
             </p>
-            <Contacts data={companyInfo} />
+            <Contacts className="mt-auto" data={companyInfo} />
           </div>
           <FooterNav />
           <div className="flex flex-col items-center gap-10 xl:items-start xl:justify-between">
