@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContainerWithShadow } from "@/shared/ui";
+import { ContainerWithShadow, SectionTitle } from "@/shared/ui";
 import { NavArrow } from "@/shared/ui";
 import { getPayloadClient } from "@/shared/cms";
 import { PostDesktopCard } from "../../../entities/blog/post-desktop-card";
@@ -19,12 +19,12 @@ export async function PopularPosts() {
   return (
     <ContainerWithShadow className="hidden rounded-b-none xl:flex">
       <section className="flex flex-col gap-6 xl:gap-10 xl:px-20 xl:py-12">
-        <div className="flex items-center justify-between font-bold">
-          <h2 className="text-6xl text-accent-orange">
-            <span className="text-foreground">Популярные</span> новости
-          </h2>
-          <Link className="flex items-center gap-2" href={`/blog`}>
-            <span className="text-xl text-accent-orange">Еще новости</span>
+        <div className="flex items-center justify-between">
+          <SectionTitle>
+            Популярные <span className="text-accent-orange">новости</span>
+          </SectionTitle>
+          <Link className="flex items-center gap-2" href="/blog">
+            <span className="text-xl font-bold text-accent-orange">Еще новости</span>
             <NavArrow />
           </Link>
         </div>
