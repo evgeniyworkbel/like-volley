@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { SectionTitle } from "@/shared/ui";
 import { SignUpForWorkoutBtn } from "@/features";
 import { VerticalLooper } from "./vertical-looper";
 import { photos } from "../model/constants";
@@ -10,17 +9,17 @@ export function Hero() {
   return (
     <section className="relative flex overflow-hidden px-5 py-10 text-black xl:py-25 xl:pt-17 xl:pl-24.5">
       <div className="z-10 mx-auto flex flex-col items-center gap-27.5 md:gap-29.5 xl:mx-0 xl:items-start">
-        <div className="flex flex-col gap-12 text-center md:max-w-180 xl:gap-5 xl:text-left">
-          <SectionTitle className="xl:text-6xl/21">
+        <hgroup className="flex flex-col gap-12 text-center md:max-w-180 xl:gap-5 xl:text-left">
+          <h1 className="font-inter text-[32px] font-bold text-foreground md:text-6xl xl:text-6xl/21">
             Школа волейбола для&nbsp;<span className="text-accent-orange">детей</span>&nbsp;
             <br className="md:hidden" />и<span className="text-accent-blue">&nbsp;взрослыx</span>
-          </SectionTitle>
+          </h1>
           <p className="text-[18px] font-medium">
             Профессиональные тренировки в Минске и Бресте
             <br />
             Тренируем юных чемпионов и прокачиваем любителей любого уровня
           </p>
-        </div>
+        </hgroup>
         <SignUpForWorkoutBtn text="Записаться на занятие" iconType="arrow" />
       </div>
 
