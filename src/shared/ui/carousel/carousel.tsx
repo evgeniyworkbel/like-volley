@@ -6,7 +6,6 @@ import { CarouselItem } from "./carousel-item";
 import { usePrevNextButtons } from "./use-prev-next-buttons";
 import { CarouselButton } from "./carousel-button";
 import { cn } from "@/shared/lib";
-import { SectionTitle } from "../section-title";
 
 export type CarouselProps = {
   innerWrapperClassName?: string;
@@ -25,9 +24,9 @@ export function Carousel({ innerWrapperClassName, slidesPerView, children }: Car
   return (
     <div className="flex w-full flex-col xl:w-auto xl:gap-10">
       <div className="hidden items-center justify-between px-3 xl:flex">
-        <SectionTitle className="xl:text-[44px]">
+        <h4 className="text-[44px] font-bold">
           Наши <span className="text-accent-orange">тренеры</span>
-        </SectionTitle>
+        </h4>
         <div className="flex gap-4.5">
           <CarouselButton className="hidden rotate-180 p-0 xl:inline" onClick={onPrevButtonClick} />
           <CarouselButton className="hidden p-0 xl:inline" onClick={onNextButtonClick} />
