@@ -24,7 +24,7 @@ export function Carousel({ innerWrapperClassName, slidesPerView, children }: Car
 
   return (
     <div className="flex w-full flex-col xl:w-auto xl:gap-10">
-      <div className="hidden w-full items-center justify-between xl:flex">
+      <div className="hidden items-center justify-between px-3 xl:flex">
         <SectionTitle className="xl:text-[44px]">
           Наши <span className="text-accent-orange">тренеры</span>
         </SectionTitle>
