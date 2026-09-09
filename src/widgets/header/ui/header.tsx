@@ -19,12 +19,7 @@ export async function Header() {
     >
       <Container className="flex items-center justify-between py-0.5 pr-12 pl-6 xl:px-20">
         <Link href={navLinks.home.href}>
-          <Image
-            src="/logo.svg"
-            width={122}
-            height={76}
-            alt="Логотип школы волейбола Like Volley"
-          />
+          <Image src="/logo.svg" width={122} height={76} alt="Логотип школы волейбола LikeVolley" />
         </Link>
         <Navbar className="hidden xl:flex" data={companyInfo} />
         <MobileMenu data={companyInfo} />

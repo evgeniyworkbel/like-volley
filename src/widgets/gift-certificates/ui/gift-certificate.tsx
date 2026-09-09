@@ -35,7 +35,7 @@ export async function GiftCertificate({
           className="xl:scale-[2.45]"
           width={22}
           height={15}
-          alt="Логотип школы волейбола Like Volley"
+          alt="Логотип школы волейбола LikeVolley"
         />
         <span className="rounded-[40px] bg-[oklch(0.75_0.06_260)] px-3 py-1 text-[10px] xl:py-2 xl:text-[14px]">
           Подарок

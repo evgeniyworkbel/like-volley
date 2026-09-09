@@ -25,7 +25,7 @@ export async function Footer() {
                 src="/logo-footer.svg"
                 width={122}
                 height={76}
-                alt="Логотип школы волейбола Like Volley"
+                alt="Логотип школы волейбола LikeVolley"
               />
             </Link>
             <p className="flex max-w-70.5 flex-col gap-2 text-center text-lg leading-[1.2] xl:max-w-66 xl:text-left">

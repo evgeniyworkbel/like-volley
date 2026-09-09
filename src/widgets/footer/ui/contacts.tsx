@@ -17,22 +17,22 @@ export function Contacts({ className, data }: ContactsProps) {
         href={getPhoneHref(mobilePhone)}
         target="_self"
         src="/phone.svg"
-        alt="Декоративная иконка телефона школы волейбола Like Volley"
+        alt="Декоративная иконка телефона школы волейбола LikeVolley"
       />
       <SocialLink
         href={contactsLinks.locations.href}
         src="/location.svg"
-        alt="Декоративная иконка локации школы волейбола Like Volley"
+        alt="Декоративная иконка локации школы волейбола LikeVolley"
       />
       <SocialLink
         href={contactsLinks.instagram.href}
         src="/instagram.svg"
-        alt="Декоративная иконка Instagram школы волейбола Like Volley"
+        alt="Декоративная иконка Instagram школы волейбола LikeVolley"
       />
       <SocialLink
         href={contactsLinks.telegram.href}
         src="/telegram.svg"
-        alt="Декоративная иконка Telegram школы волейбола Like Volley"
+        alt="Декоративная иконка Telegram школы волейбола LikeVolley"
       />
     </div>
   );
