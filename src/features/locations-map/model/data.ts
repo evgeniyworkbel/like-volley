@@ -89,6 +89,28 @@ export const locationsMarkers: Record<CompanyCities, Array<DefaultMarkerProps>> 
       coordinates: [27.644907, 53.902793],
       redirectLink: "https://yandex.by/maps/-/CPxoBUly",
     },
+    {
+      ...initialMarkerProps,
+      id: "m8",
+      title: "ул. Саперов, 5 (СК «Физкультурно-образовательный комплекс» АТЛАНТ)",
+      coordinates: [27.516313, 53.923238],
+      redirectLink: "https://yandex.ru/maps/-/CXUvjN9n",
+    },
+    {
+      ...initialMarkerProps,
+      id: "m9",
+      title:
+        "ул. Рабкоровская, 17/2 (УО «Белорусский государственный университет культуры и искусств»)",
+      coordinates: [27.542895, 53.887496],
+      redirectLink: "https://yandex.ru/maps/-/CXUvzZpT",
+    },
+    {
+      ...initialMarkerProps,
+      id: "m10",
+      title: "ул. Филимонова, 55/1 (Республиканское государственное училище олимпийского резерва)",
+      coordinates: [27.635637, 53.924574],
+      redirectLink: "https://yandex.ru/maps/-/CXUzEEjM",
+    },
   ],
   brest: [
     {
