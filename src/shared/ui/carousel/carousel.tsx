@@ -22,8 +22,16 @@ export function Carousel({ innerWrapperClassName, slidesPerView, children }: Car
   const { onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="flex w-full flex-col xl:w-auto xl:flex-row">
-      <CarouselButton className="hidden xl:inline" position="left" onClick={onPrevButtonClick} />
+    <div className="flex w-full flex-col xl:w-auto xl:gap-10">
+      <div className="hidden items-center justify-between px-3 xl:flex">
+        <h4 className="text-[44px] font-bold">
+          Наши <span className="text-accent-orange">тренеры</span>
+        </h4>
+        <div className="flex gap-4.5">
+          <CarouselButton className="hidden rotate-180 p-0 xl:inline" onClick={onPrevButtonClick} />
+          <CarouselButton className="hidden p-0 xl:inline" onClick={onNextButtonClick} />
+        </div>
+      </div>
       <div className={cn("overflow-hidden", innerWrapperClassName)} ref={emblaRef}>
         <div className="flex">
           {Children.map(children, (child) => (
@@ -33,11 +41,9 @@ export function Carousel({ innerWrapperClassName, slidesPerView, children }: Car
       </div>
 
       <div className="flex justify-between px-18 pt-5.5 xl:hidden">
-        <CarouselButton position="left" onClick={onPrevButtonClick} />
-        <CarouselButton position="right" onClick={onNextButtonClick} />
+        <CarouselButton className="rotate-180" onClick={onPrevButtonClick} />
+        <CarouselButton onClick={onNextButtonClick} />
       </div>
-
-      <CarouselButton className="hidden xl:inline" position="right" onClick={onNextButtonClick} />
     </div>
   );
 }
