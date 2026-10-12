@@ -1,10 +1,9 @@
 import { GalleryCard } from "@/widgets/gallery";
 import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { Metadata } from "next";
-import { generateMetaTitle } from "@/shared/lib";
 
 export const metadata: Metadata = {
-  title: generateMetaTitle("Фотоальбомы"),
+  title: "Фотоальбомы",
   description:
     "Живые моменты школы волейбола в фотографиях: игры, победы, тренировки и командный дух. Загляните в наши альбомы — там всё самое яркое",
 };

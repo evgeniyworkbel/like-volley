@@ -5,7 +5,6 @@ import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
 import { Metadata } from "next";
-import { generateMetaTitle } from "@/shared/lib";
 
 export async function generateMetadata({ params }: PageProps<"/blog/[postId]">): Promise<Metadata> {
   const { postId } = await params;
@@ -15,7 +14,7 @@ export async function generateMetadata({ params }: PageProps<"/blog/[postId]">):
     id: postId,
   });
   return {
-    title: generateMetaTitle(post.title),
+    title: post.title,
     description: post.shortDescription,
   };
 }

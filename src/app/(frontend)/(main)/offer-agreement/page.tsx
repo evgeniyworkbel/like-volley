@@ -1,10 +1,9 @@
 import { getPayloadClient } from "@/shared/cms";
-import { generateMetaTitle } from "@/shared/lib";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: generateMetaTitle("Договор оферты"),
+  title: "Договор оферты",
   description:
     "Договор оферты школы волейбола: правила записи в секцию, стоимость занятий, порядок оплаты и возврата. Условия оказания услуг для учеников и родителей",
 };
