@@ -7,7 +7,7 @@ import {
 } from "./html-attrs";
 import { LinkHref } from "../types";
 
-export const navLinks: Record<string, { title: string; href: LinkHref }> = {
+export const navLinks = {
   home: {
     title: "Главная",
     href: "/",
@@ -49,4 +49,4 @@ export const navLinks: Record<string, { title: string; href: LinkHref }> = {
     title: "Фотоальбомы",
     href: "/photo-albums",
   },
-} as const;
+} as const satisfies Record<string, { title: string; href: LinkHref }>;
