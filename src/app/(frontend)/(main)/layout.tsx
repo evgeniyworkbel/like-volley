@@ -1,4 +1,5 @@
 import { mainMetaTitle } from "@/shared/constants";
+import { getServerSideURL } from "@/shared/lib";
 import { Container } from "@/shared/ui";
 import { Footer, Header } from "@/widgets";
 import { Metadata } from "next";
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
 };
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
+  // todo: УДАЛИТЬ ПОСЛЕ ДЕБАГА
+  getServerSideURL();
+
   return (
     <div className="flex flex-col">
       <Header />
