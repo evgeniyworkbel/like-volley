@@ -4,6 +4,21 @@ import { DateWithReadTime } from "@/entities/blog";
 import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
+import { Metadata } from "next";
+import { generateMetaTitle } from "@/shared/lib";
+
+export async function generateMetadata({ params }: PageProps<"/blog/[postId]">): Promise<Metadata> {
+  const { postId } = await params;
+  const payload = await getPayloadClient();
+  const post = await payload.findByID({
+    collection: "posts",
+    id: postId,
+  });
+  return {
+    title: generateMetaTitle(post.title),
+    description: post.shortDescription,
+  };
+}
 
 export default async function Post({ params }: PageProps<"/blog/[postId]">) {
   const { postId } = await params;
