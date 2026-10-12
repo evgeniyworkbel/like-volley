@@ -16,7 +16,12 @@ export const metadata: Metadata = {
     "volleyball",
     "likevolley",
     "like volley",
+    "лайк",
+    "воллей",
+    "лайк воллей",
+    "лайкволлей",
     "записаться",
+    "играть",
   ],
 };
 
