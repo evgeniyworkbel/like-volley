@@ -17,34 +17,12 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Школа волейбола LikeVolley",
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
     { name: "Ivan Khristenko", url: "https://t.me/Ivann8234" },
     { name: "Stanislaw Olszewski", url: "https://www.linkedin.com/in/staols13" },
   ],
   formatDetection: { telephone: false, date: false, email: false, address: false },
-  keywords: [
-    "волейбол",
-    "школа",
-    "школа волейбола",
-    "секция",
-    "клуб",
-    "взрослые",
-    "дети",
-    "минск",
-    "брест",
-    "volleyball",
-    "likevolley",
-    "like volley",
-    "записаться",
-  ],
-  openGraph: {
-    title: "Волейбол для взрослых и детей",
-    type: "website",
-    images: ["/logo.svg"],
-    url: "https://likevolley.by",
-  },
 };
 
 // @todo: подключить новый счетчик под продакшн вебсайт

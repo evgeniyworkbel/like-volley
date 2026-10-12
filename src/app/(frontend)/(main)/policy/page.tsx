@@ -1,5 +1,13 @@
 import { getPayloadClient } from "@/shared/cms";
+import { generateMetaTitle } from "@/shared/lib";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: generateMetaTitle("Политика обработки персональных данных"),
+  description:
+    "Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности, правила обработки информации и права пользователей на нашем сайте",
+};
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
 // изменения сразу отображались без запуска нового билда)
