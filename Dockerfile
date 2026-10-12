@@ -43,5 +43,7 @@ ENV HOSTNAME="0.0.0.0"
 # https://github.com/vercel/next.js/blob/canary/examples/with-docker-compose/next-app/prod.Dockerfile
 ARG NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID
 ENV NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID=${NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID}
+ARG NEXT_PUBLIC_SERVER_URL
+ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
 
 CMD ["node", "server.js"]
