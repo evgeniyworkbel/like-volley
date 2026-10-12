@@ -1,5 +1,13 @@
 import { getPayloadClient } from "@/shared/cms";
+import { generateMetaTitle } from "@/shared/lib";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: generateMetaTitle("Договор оферты"),
+  description:
+    "Договор оферты школы волейбола: правила записи в секцию, стоимость занятий, порядок оплаты и возврата. Условия оказания услуг для учеников и родителей",
+};
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
 // изменения сразу отображались без запуска нового билда)
