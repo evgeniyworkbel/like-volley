@@ -24,6 +24,9 @@ export function FooterNav() {
           <li>
             <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
           </li>
+          <li>
+            <Link href={navLinks.blog.href}>{navLinks.photoAlbums.title}</Link>
+          </li>
         </ul>
       </div>
       <div className="flex flex-col items-center gap-4.5 text-[18px] md:items-start md:gap-7">
