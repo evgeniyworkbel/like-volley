@@ -25,7 +25,7 @@ export function FooterNav() {
             <Link href={navLinks.blog.href}>{navLinks.blog.title}</Link>
           </li>
           <li>
-            <Link href={navLinks.blog.href}>{navLinks.photoAlbums.title}</Link>
+            <Link href={navLinks.photoAlbums.href}>{navLinks.photoAlbums.title}</Link>
           </li>
         </ul>
       </div>
