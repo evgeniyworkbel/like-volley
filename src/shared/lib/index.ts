@@ -7,4 +7,3 @@ export { getBounds } from "./get-bounds";
 export { MapContext, useMapContext } from "./contexts";
 export type * from "./contexts";
 export type * from "./types";
-export { generateMetaTitle } from "./generate-meta-title";

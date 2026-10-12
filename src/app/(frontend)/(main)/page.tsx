@@ -1,4 +1,3 @@
-import { mainMetaTitle } from "@/shared/constants";
 import { ContainerWithShadow } from "@/shared/ui";
 import {
   Hero,
@@ -16,7 +15,6 @@ import {
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: mainMetaTitle,
   description:
     "Школа волейбола для детей и взрослыx. Профессиональные тренировки в Минске и Бресте Тренируем юных чемпионов и прокачиваем любителей любого уровня.",
 };

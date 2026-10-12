@@ -1,8 +1,13 @@
+import { mainMetaTitle } from "@/shared/constants";
 import { Container } from "@/shared/ui";
 import { Footer, Header } from "@/widgets";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+  title: {
+    template: `%s - ${mainMetaTitle}`,
+    default: mainMetaTitle,
+  },
   keywords: [
     "волейбол",
     "школа",
