@@ -6,6 +6,7 @@ export const formatPhone = (value: string | number): string => {
   }
 
   const countryCode = phoneNumber.substring(0, 3);
+
   const operatorCode = phoneNumber.substring(3, 5);
   const restOfNumber = phoneNumber.substring(5);
   const restOfNumberWithHyphens = [
