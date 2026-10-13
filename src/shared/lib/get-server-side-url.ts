@@ -1,19 +1,18 @@
 // todo: удалить после дебага
-console.log(
-  "снаружи",
-  process.env.NEXT_PUBLIC_SERVER_URL,
-  process.env.VERCEL_PROJECT_PRODUCTION_URL,
-  process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
-);
+/** @deprecated */
+export const envLogger = (prefix: string) => {
+  console.log(prefix, {
+    NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
+    VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID: process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
+  });
+};
+
+envLogger("на уровне файла");
 
 export const getServerSideURL = () => {
   // todo: удалить после дебага
-  console.log(
-    "внутри server",
-    process.env.NEXT_PUBLIC_SERVER_URL,
-    process.env.VERCEL_PROJECT_PRODUCTION_URL,
-    process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
-  );
+  envLogger("внутри getServerSideURL");
 
   return (
     process.env.NEXT_PUBLIC_SERVER_URL ||

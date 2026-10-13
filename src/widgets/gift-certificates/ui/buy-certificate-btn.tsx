@@ -3,6 +3,7 @@
 import { Button } from "@/shared/ui";
 import { ButtonProps } from "@/shared/ui/button";
 import { certificateFormLink } from "../model/constants";
+import { envLogger } from "@/shared/lib/get-server-side-url";
 
 type BuyCertificateBtnProps = Pick<ButtonProps, "className">;
 
@@ -12,12 +13,7 @@ export function BuyCertificateBtn({ className }: BuyCertificateBtnProps) {
   };
 
   // todo: удалить после дебага
-  console.log(
-    "внутри client",
-    process.env.NEXT_PUBLIC_SERVER_URL,
-    process.env.VERCEL_PROJECT_PRODUCTION_URL,
-    process.env.NEXT_PUBLIC_YANDEX_METRIKA_COUNTER_ID,
-  );
+  envLogger("внутри client компонента");
 
   return (
     <Button className={className} onClick={handleClick} iconType="arrow">
