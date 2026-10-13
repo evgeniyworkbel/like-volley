@@ -39,14 +39,13 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, date: false, email: false, address: false },
 };
 
-// @todo: подключить новый счетчик под продакшн вебсайт
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="ru" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
         <Script src="https://analytics.ahrefs.com/analytics.js" data-key="iPF2jv45sAcWhWCUjAHYBQ" />

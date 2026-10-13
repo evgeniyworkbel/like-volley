@@ -1,3 +1,4 @@
+import { getServerSideURL } from "@/shared/lib";
 import { ContainerWithShadow } from "@/shared/ui";
 import {
   Hero,
@@ -17,6 +18,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   description:
     "Школа волейбола для детей и взрослыx. Профессиональные тренировки в Минске и Бресте Тренируем юных чемпионов и прокачиваем любителей любого уровня.",
+  alternates: {
+    canonical: getServerSideURL(),
+  },
 };
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
