@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 export default function MainLayout({ children }: LayoutProps<"/">) {
   // todo: удалить после дебага
   envLogger("внутри server компонента");
+  console.log("MainLayout");
 
   return (
     <div className="flex flex-col">

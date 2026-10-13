@@ -1,6 +1,7 @@
 // todo: удалить после дебага
 /** @deprecated */
 export const envLogger = (prefix: string) => {
+  console.log("run envLogger");
   console.log(prefix, {
     NEXT_PUBLIC_SERVER_URL: process.env.NEXT_PUBLIC_SERVER_URL,
     VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
