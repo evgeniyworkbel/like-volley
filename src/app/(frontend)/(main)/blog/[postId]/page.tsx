@@ -5,6 +5,7 @@ import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
 import { Metadata } from "next";
+import { getServerSideURL } from "@/shared/lib";
 
 export async function generateMetadata({ params }: PageProps<"/blog/[postId]">): Promise<Metadata> {
   const { postId } = await params;
@@ -13,9 +14,22 @@ export async function generateMetadata({ params }: PageProps<"/blog/[postId]">):
     collection: "posts",
     id: postId,
   });
+
+  const mainPhoto =
+    typeof post.mainPhoto === "object" && "url" in post.mainPhoto ? post.mainPhoto : undefined;
+  const ogImages = mainPhoto && mainPhoto.url ? [{ url: mainPhoto.url }] : undefined;
+  const canonicalUrl = `${getServerSideURL()}/blog/${postId}`;
+
   return {
     title: post.title,
     description: post.shortDescription,
+    openGraph: {
+      title: post.title,
+      type: "website",
+      images: ogImages,
+      url: canonicalUrl,
+      description: post.shortDescription,
+    },
   };
 }
 
