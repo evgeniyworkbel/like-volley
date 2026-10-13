@@ -3,13 +3,16 @@ import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { ArrowUpIcon } from "@/shared/icons";
 import { buttonVariants } from "@/shared/ui/button";
-import { cn } from "@/shared/lib";
+import { cn, getServerSideURL } from "@/shared/lib";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Новости и блог",
   description:
     "Новости и статьи школы волейбола: советы тренеров, разбор техники, события, турниры и жизнь учеников. Читайте свежие материалы в нашем блоге",
+  alternates: {
+    canonical: `${getServerSideURL()}/blog`,
+  },
 };
 
 export const dynamic = "force-dynamic";
