@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
   // https://github.com/leerob/next-self-host/blob/main/next.config.ts
   compress: false,
   allowedDevOrigins: ["192.168.1.9"],
+  experimental: {
+    typedEnv: true,
+  },
 };
 
 export default withPayload(nextConfig);
