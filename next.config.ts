@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
   // Nginx will do gzip compression. We disable
   // compression here so we can prevent buffering
   // streaming responses
