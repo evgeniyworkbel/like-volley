@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="ru" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
         <Script src="https://analytics.ahrefs.com/analytics.js" data-key="iPF2jv45sAcWhWCUjAHYBQ" />
