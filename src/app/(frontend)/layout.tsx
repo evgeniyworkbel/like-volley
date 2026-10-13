@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import { LucideProvider } from "lucide-react";
 import "./globals.css";
 import { YandexMetrika } from "@/shared/analytics";
+import { getServerSideURL } from "@/shared/lib";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,6 +18,7 @@ const shantellSans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: getServerSideURL(),
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
     { name: "Ivan Khristenko", url: "https://t.me/Ivann8234" },
