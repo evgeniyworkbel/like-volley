@@ -1,5 +1,4 @@
 import { mainMetaTitle } from "@/shared/constants";
-import { envLogger } from "@/shared/lib/get-server-side-url";
 import { Container } from "@/shared/ui";
 import { Footer, Header } from "@/widgets";
 import { Metadata } from "next";
@@ -32,10 +31,6 @@ export const metadata: Metadata = {
 };
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
-  // todo: удалить после дебага
-  envLogger("внутри server компонента");
-  console.log("MainLayout");
-
   return (
     <div className="flex flex-col">
       <Header />
