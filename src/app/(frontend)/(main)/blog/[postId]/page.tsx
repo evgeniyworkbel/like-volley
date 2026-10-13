@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: PageProps<"/blog/[postId]">):
       url: canonicalUrl,
       description: post.shortDescription,
     },
+    alternates: {
+      canonical: canonicalUrl,
+    },
   };
 }
 
