@@ -39,7 +39,6 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, date: false, email: false, address: false },
 };
 
-// @todo: подключить новый счетчик под продакшн вебсайт
 export default function RootLayout({
   children,
 }: Readonly<{
