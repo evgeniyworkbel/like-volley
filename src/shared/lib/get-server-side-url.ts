@@ -1,4 +1,4 @@
-export const getServerSideURL = () => {
+export const getServerSideURL = (): string => {
   const productionUrl =
     process.env.NEXT_PUBLIC_SERVER_URL || process.env.VERCEL_PROJECT_PRODUCTION_URL;
   if (productionUrl) return `https://${productionUrl}`;
