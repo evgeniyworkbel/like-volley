@@ -6,6 +6,7 @@ import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
 import { Metadata } from "next";
 import { getServerSideURL } from "@/shared/lib";
+import { MAX_SEO_DESCRIPTION_LENGTH, MAX_SEO_TITLE_LENGTH } from "@/shared/constants";
 
 export async function generateMetadata({ params }: PageProps<"/blog/[postId]">): Promise<Metadata> {
   const { postId } = await params;
@@ -15,20 +16,22 @@ export async function generateMetadata({ params }: PageProps<"/blog/[postId]">):
     id: postId,
   });
 
+  const postTitle = post.title.slice(0, MAX_SEO_TITLE_LENGTH);
+  const postDescription = post.shortDescription.slice(0, MAX_SEO_DESCRIPTION_LENGTH);
   const mainPhoto =
     typeof post.mainPhoto === "object" && "url" in post.mainPhoto ? post.mainPhoto : undefined;
   const ogImages = mainPhoto && mainPhoto.url ? [{ url: mainPhoto.url }] : undefined;
   const canonicalUrl = `${getServerSideURL()}/blog/${postId}`;
 
   return {
-    title: post.title,
-    description: post.shortDescription,
+    title: postTitle,
+    description: postDescription,
     openGraph: {
-      title: post.title,
+      title: postTitle,
       type: "website",
       images: ogImages,
       url: canonicalUrl,
-      description: post.shortDescription,
+      description: postDescription,
     },
     alternates: {
       canonical: canonicalUrl,
