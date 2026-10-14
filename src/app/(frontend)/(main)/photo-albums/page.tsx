@@ -1,11 +1,15 @@
 import { GalleryCard } from "@/widgets/gallery";
 import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { Metadata } from "next";
+import { getServerSideURL } from "@/shared/lib";
 
 export const metadata: Metadata = {
   title: "Фотоальбомы",
   description:
     "Живые моменты школы волейбола в фотографиях: игры, победы, тренировки и командный дух. Загляните в наши альбомы — там всё самое яркое",
+  alternates: {
+    canonical: `${getServerSideURL()}/photo-albums`,
+  },
 };
 
 export const dynamic = "force-dynamic";
