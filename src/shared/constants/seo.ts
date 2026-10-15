@@ -1,3 +1,8 @@
+/** Рекомендуемая максимальная длина SEO-заголовка */
+export const MAX_SEO_TITLE_LENGTH = 60;
+/** Рекомендуемая максимальная длина SEO-описания */
+export const MAX_SEO_DESCRIPTION_LENGTH = 150;
+
 export const seoMainTitle = "Школа волейбола LikeVolley";
 
 export const seoKeywords = [
