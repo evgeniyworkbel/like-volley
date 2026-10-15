@@ -15,7 +15,7 @@ import {
 } from "@/widgets";
 import { Metadata } from "next";
 
-export const generateMetadata = (): Metadata => {
+export function generateMetadata(): Metadata {
   const pageDescription =
     "Школа волейбола для детей и взрослыx. Профессиональные тренировки в Минске и Бресте Тренируем юных чемпионов и прокачиваем любителей любого уровня";
 
@@ -28,7 +28,7 @@ export const generateMetadata = (): Metadata => {
       canonical: getServerSideURL(),
     },
   };
-};
+}
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
 // изменения сразу отображались без запуска нового билда)
