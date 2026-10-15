@@ -5,7 +5,7 @@ import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { PopularPosts } from "@/widgets";
 import { SharePost } from "@/features/share-post";
 import { Metadata } from "next";
-import { getServerSideURL } from "@/shared/lib";
+import { getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 import { MAX_SEO_DESCRIPTION_LENGTH, MAX_SEO_TITLE_LENGTH } from "@/shared/constants";
 
 export async function generateMetadata({ params }: PageProps<"/blog/[postId]">): Promise<Metadata> {
@@ -26,13 +26,12 @@ export async function generateMetadata({ params }: PageProps<"/blog/[postId]">):
   return {
     title: postTitle,
     description: postDescription,
-    openGraph: {
+    openGraph: mergeOpenGraph({
       title: postTitle,
-      type: "website",
       images: ogImages,
       url: canonicalUrl,
       description: postDescription,
-    },
+    }),
     alternates: {
       canonical: canonicalUrl,
     },

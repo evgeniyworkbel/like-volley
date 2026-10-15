@@ -3,14 +3,30 @@ import { getServerSideURL } from "@/shared/lib";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Политика обработки персональных данных",
-  description:
-    "Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности, правила обработки информации и права пользователей на нашем сайте",
-  alternates: {
-    canonical: `${getServerSideURL()}/policy`,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const payload = await getPayloadClient();
+  const policy = await payload.findGlobal({
+    slug: "policy",
+  });
+
+  const pageTitle = policy.title;
+  const pageDescription =
+    "Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности, правила обработки информации и права пользователей на нашем сайте";
+  const canonicalUrl = `${getServerSideURL()}/policy`;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+      title: pageTitle,
+      url: canonicalUrl,
+      description: pageDescription,
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,
 // изменения сразу отображались без запуска нового билда)

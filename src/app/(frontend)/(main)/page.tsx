@@ -1,4 +1,4 @@
-import { getServerSideURL } from "@/shared/lib";
+import { getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 import { ContainerWithShadow } from "@/shared/ui";
 import {
   Hero,
@@ -15,12 +15,19 @@ import {
 } from "@/widgets";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  description:
-    "Школа волейбола для детей и взрослыx. Профессиональные тренировки в Минске и Бресте Тренируем юных чемпионов и прокачиваем любителей любого уровня.",
-  alternates: {
-    canonical: getServerSideURL(),
-  },
+export const generateMetadata = (): Metadata => {
+  const pageDescription =
+    "Школа волейбола для детей и взрослыx. Профессиональные тренировки в Минске и Бресте Тренируем юных чемпионов и прокачиваем любителей любого уровня";
+
+  return {
+    description: pageDescription,
+    openGraph: mergeOpenGraph({
+      description: pageDescription,
+    }),
+    alternates: {
+      canonical: getServerSideURL(),
+    },
+  };
 };
 
 // todo: попробовать сделать все-таки роут статичным, но с инкрементальным рендерингом (чтобы после изменений в cms,

@@ -3,16 +3,27 @@ import { PostDesktopCard, PostMainCard, PostMobileCard } from "@/entities/blog";
 import { getPayloadClient } from "@/shared/cms";
 import { ArrowUpIcon } from "@/shared/icons";
 import { buttonVariants } from "@/shared/ui/button";
-import { cn, getServerSideURL } from "@/shared/lib";
+import { cn, getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Новости и блог",
-  description:
-    "Новости и статьи школы волейбола: советы тренеров, разбор техники, события, турниры и жизнь учеников. Читайте свежие материалы в нашем блоге",
-  alternates: {
-    canonical: `${getServerSideURL()}/blog`,
-  },
+export const generateMetadata = (): Metadata => {
+  const pageTitle = "Новости и блог";
+  const pageDescription =
+    "Новости и статьи школы волейбола: советы тренеров, разбор техники, события, турниры и жизнь учеников. Читайте свежие материалы в нашем блоге";
+  const canonicalUrl = `${getServerSideURL()}/blog`;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: mergeOpenGraph({
+      title: pageTitle,
+      url: canonicalUrl,
+      description: pageDescription,
+    }),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
 };
 
 export const dynamic = "force-dynamic";
