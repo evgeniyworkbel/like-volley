@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Политика обработки персональных данных",
   description:
     "Узнайте, как мы собираем, используем и защищаем ваши персональные данные. Политика конфиденциальности, правила обработки информации и права пользователей на нашем сайте",
+  openGraph: {
+    title: "Политика обработки персональных данных школы",
+    type: "website",
+    url: getServerSideURL() + "/policy",
+    images: [{ url: "/cms-icon.png", alt: "Логотип школы воллейбола LikeVolley" }],
+  },
   alternates: {
     canonical: `${getServerSideURL()}/policy`,
   },
