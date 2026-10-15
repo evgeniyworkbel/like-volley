@@ -1,5 +1,5 @@
 import { getPayloadClient } from "@/shared/cms";
-import { getServerSideURL } from "@/shared/lib";
+import { getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 import { convertLexicalToHTML } from "@payloadcms/richtext-lexical/html";
 import { Metadata } from "next";
 
@@ -17,11 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: pageTitle,
     description: pageDescription,
-    openGraph: {
+    openGraph: mergeOpenGraph({
       title: pageTitle,
       url: canonicalUrl,
       description: pageDescription,
-    },
+    }),
     alternates: {
       canonical: canonicalUrl,
     },
