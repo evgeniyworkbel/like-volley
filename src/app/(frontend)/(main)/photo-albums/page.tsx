@@ -1,16 +1,27 @@
 import { GalleryCard } from "@/widgets/gallery";
 import { getPayloadClient, toImgAttrs } from "@/shared/cms";
 import { Metadata } from "next";
-import { getServerSideURL } from "@/shared/lib";
+import { getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 
-export const metadata: Metadata = {
-  title: "Фотоальбомы",
-  description:
-    "Живые моменты школы волейбола в фотографиях: игры, победы, тренировки и командный дух. Загляните в наши альбомы — там всё самое яркое",
-  alternates: {
-    canonical: `${getServerSideURL()}/photo-albums`,
-  },
-};
+export function generateMetadata(): Metadata {
+  const pageTitle = "Фотоальбомы";
+  const pageDescription =
+    "Живые моменты школы волейбола в фотографиях: игры, победы, тренировки и командный дух. Загляните в наши альбомы — там всё самое яркое";
+  const canonicalUrl = `${getServerSideURL()}/photo-albums`;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: mergeOpenGraph({
+      title: pageTitle,
+      url: canonicalUrl,
+      description: pageDescription,
+    }),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
 
 export const dynamic = "force-dynamic";
 
