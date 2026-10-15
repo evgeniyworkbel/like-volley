@@ -24,12 +24,6 @@ export const metadata: Metadata = {
     template: `%s - ${seoMainTitle}`,
     default: seoMainTitle,
   },
-  openGraph: {
-    title: seoMainTitle,
-    type: "website",
-    url: getServerSideURL(),
-    images: [{ url: "/og/logo.png", alt: "Логотип школы воллейбола LikeVolley" }],
-  },
   keywords: seoKeywords,
   authors: [
     { name: "Evgeniy Samuta", url: "https://github.com/evgeniyworkbel" },
