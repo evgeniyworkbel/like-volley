@@ -6,7 +6,7 @@ import { buttonVariants } from "@/shared/ui/button";
 import { cn, getServerSideURL, mergeOpenGraph } from "@/shared/lib";
 import { Metadata } from "next";
 
-export const generateMetadata = (): Metadata => {
+export function generateMetadata(): Metadata {
   const pageTitle = "Новости и блог";
   const pageDescription =
     "Новости и статьи школы волейбола: советы тренеров, разбор техники, события, турниры и жизнь учеников. Читайте свежие материалы в нашем блоге";
@@ -24,7 +24,7 @@ export const generateMetadata = (): Metadata => {
       canonical: canonicalUrl,
     },
   };
-};
+}
 
 export const dynamic = "force-dynamic";
 
