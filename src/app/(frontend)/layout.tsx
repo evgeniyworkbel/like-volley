@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: seoMainTitle,
     type: "website",
     url: getServerSideURL(),
-    images: [{ url: "/logo.png", alt: "Логотип школы воллейбола LikeVolley" }],
+    images: [{ url: "/logo-test.png", alt: "Логотип школы воллейбола LikeVolley" }],
   },
   keywords: seoKeywords,
   authors: [
