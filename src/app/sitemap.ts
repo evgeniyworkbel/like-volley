@@ -23,6 +23,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const latestPhotoAlbum = getLatestByUpdatedAt(photoAlbums.docs);
   const now = new Date();
 
+  console.log("sitemapLog", { now, latestPost, latestPhotoAlbum, policy, offerAgreement });
+
   return [
     {
       url: serverUrl,
