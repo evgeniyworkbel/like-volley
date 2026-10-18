@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import { Shantell_Sans, Inter } from "next/font/google";
 import { Toaster } from "sonner";
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Toaster />
         </LucideProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? ""} />
     </html>
   );
 }
