@@ -43,7 +43,10 @@ export default function RootLayout({
     <html lang="ru" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${shantellSans.variable} antialiased`}>
         <YandexMetrika />
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="iPF2jv45sAcWhWCUjAHYBQ" />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key={process.env.NEXT_PUBLIC_AHREFS_DATA_KEY}
+        />
         <LucideProvider size={24}>
           <div className="isolate h-full">{children}</div>
           <Toaster />
