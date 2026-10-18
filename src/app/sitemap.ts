@@ -1,4 +1,4 @@
-import { getPayloadClient } from "@/shared/cms";
+import { getLatestByUpdatedAt, getPayloadClient } from "@/shared/cms";
 import { getServerSideURL } from "@/shared/lib";
 import type { MetadataRoute } from "next";
 
@@ -8,18 +8,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     collection: "posts",
     limit: 0,
   });
+  const photoAlbums = await payload.find({
+    collection: "photo-albums",
+  });
+  const offerAgreement = await payload.findGlobal({
+    slug: "offer-agreement",
+  });
+  const policy = await payload.findGlobal({
+    slug: "policy",
+  });
+
   const serverUrl = getServerSideURL();
+  const latestPost = getLatestByUpdatedAt(posts.docs);
+  const latestPhotoAlbum = getLatestByUpdatedAt(photoAlbums.docs);
+  const now = new Date();
 
   return [
     {
       url: serverUrl,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${serverUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: latestPost ? new Date(latestPost.updatedAt) : now,
       changeFrequency: "weekly",
       priority: 0.5,
     },
@@ -31,19 +44,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     {
       url: `${serverUrl}/offer-agreement`,
-      lastModified: new Date(),
+      lastModified: offerAgreement.updatedAt ? new Date(offerAgreement.updatedAt) : now,
       changeFrequency: "yearly",
       priority: 0.1,
     },
     {
       url: `${serverUrl}/photo-albums`,
-      lastModified: new Date(),
+      lastModified: latestPhotoAlbum ? new Date(latestPhotoAlbum.updatedAt) : now,
       changeFrequency: "monthly",
       priority: 0.1,
     },
     {
       url: `${serverUrl}/policy`,
-      lastModified: new Date(),
+      lastModified: policy.updatedAt ? new Date(policy.updatedAt) : now,
       changeFrequency: "yearly",
       priority: 0.1,
     },
