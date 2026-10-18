@@ -17,11 +17,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily",
       priority: 1,
     },
+    {
+      url: `${serverUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.5,
+    },
     ...posts.docs.map(({ id, updatedAt }) => ({
       url: `${serverUrl}/blog/${id}`,
       lastModified: new Date(updatedAt),
       changeFrequency: "weekly" as const,
       priority: 0.5,
     })),
+    {
+      url: `${serverUrl}/offer-agreement`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.1,
+    },
+    {
+      url: `${serverUrl}/photo-albums`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.1,
+    },
+    {
+      url: `${serverUrl}/policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.1,
+    },
   ];
 }
