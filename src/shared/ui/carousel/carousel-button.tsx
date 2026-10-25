@@ -1,19 +1,12 @@
-import { CarouselArrowIcon } from "@/shared/icons";
-import { cn } from "@/shared/lib";
+import { NavArrow } from "@/shared/ui";
 import { Button, ButtonProps } from "../button";
 
-type CarouselButtonProps = Pick<ButtonProps, "className" | "onClick"> & {
-  position: "left" | "right";
-};
+type CarouselButtonProps = Pick<ButtonProps, "className" | "onClick">;
 
-export function CarouselButton({ className, position = "right", onClick }: CarouselButtonProps) {
+export function CarouselButton({ className, onClick }: CarouselButtonProps) {
   return (
     <Button className={className} color="transparent" onClick={onClick}>
-      <CarouselArrowIcon
-        className={cn({
-          "rotate-180": position === "left",
-        })}
-      />
+      <NavArrow />
     </Button>
   );
 }
