@@ -63,7 +63,6 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
             </hgroup>
             <div className="flex flex-col xl:gap-3">
               <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
-                {/* "todo: изменить alt" */}
                 <Image src={src} alt={alt} fill />
               </div>
               {post.mainPhotoMadeBy && (
