@@ -56,16 +56,19 @@ export default async function Post({ params }: PageProps<"/blog/[postId]">) {
             <DateWithReadTime date={post.createdAt} readTime={post.readTime} />
             <SharePost className="hidden xl:flex" />
           </div>
-          <div className="flex flex-col gap-8 xl:gap-16">
+          <div className="flex flex-col gap-8">
             <hgroup className="flex flex-col gap-5">
               <h1 className="text-5xl leading-11 font-bold wrap-anywhere">{post.title}</h1>
               <p className="text-lg text-foreground-secondary">{post.shortDescription}</p>
             </hgroup>
             <div className="flex flex-col xl:gap-3">
-              <div className="relative flex aspect-[1.6] w-full overflow-hidden rounded-xl xl:aspect-[1.523]">
-                {/* "todo: изменить alt" */}
-                <Image src={src} alt={alt} fill />
-              </div>
+              <Image
+                src={src}
+                alt={alt}
+                width={900}
+                height={600}
+                className="mx-auto max-h-200 rounded-xl object-contain"
+              />
               {post.mainPhotoMadeBy && (
                 <p className="text-right text-base text-foreground-secondary">
                   Фото сделано: {post.mainPhotoMadeBy}
